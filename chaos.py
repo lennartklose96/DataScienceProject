@@ -1,4 +1,4 @@
-lennart = 1
+lennart = 5
 lasse = 1
 jonas = 1
-finn = 3
+finn = 2
