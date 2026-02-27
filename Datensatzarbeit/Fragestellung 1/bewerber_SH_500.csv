@@ -1,0 +1,501 @@
+stellenart,berufe,letzteTaetigkeit.jahr,letzteTaetigkeit.bezeichnung
+ARBEIT,['Pförtner/in'],2019,Helfer/in - Reinigung
+ARBEIT,"['Helfer/in - Büro, Verwaltung', 'Kaufmann/-frau - Groß- und Außenhandel (Außenhandel)']",2015,Helfer/in - Küche
+ARBEIT,['Helfer/in - Metallbearbeitung'],2013,Industriemechaniker/in
+ARBEIT,"['Gabelstaplerfahrer/in', 'Helfer/in - Verkauf', 'Tontechniker/in']",2013,"Helfer/in - Holz, Flechtwaren"
+ARBEIT,"['Helfer/in - Lagerwirtschaft, Transport', 'Gabelstaplerfahrer/in']",2016,Helfer/in - Tiefbau
+ARBEIT,['ERP-Berater/in - ERP-Consultant'],2026,Produktmanager/in
+ARBEIT,['Textilreiniger/in'],2019,Polizeivollzugsbeamter/-beamtin (höherer Dienst)
+ARBEIT,['Verkäufer/in'],,Verkäufer/in
+ARBEIT,"['Vorarbeiter/in - Reinigung', 'Disponent/in - Güterverkehr']",,"Kaufmann/-frau - Einzelhandel (Kraftfahrzeuge, Teile und Zubehör)"
+ARBEIT,['Montierer/in'],2026,Helfer/in - Metallbau
+ARBEIT,"['Bankkaufmann/-frau', 'Rechtsanwalts- und Notarfachangestellte/r', 'Kaufmännische Fachkraft']",2026,Bankkaufmann/-frau
+ARBEIT,['Sozialpädagogische/r Assistent/in / Kinderpfleger/in'],2025,Sozialpädagogische/r Assistent/in / Kinderpfleger/in
+ARBEIT,['Vertriebsassistent/in'],2026,Studiengangkoordinator/in
+ARBEIT,['Museumsaufseher/in'],2025,Versicherungskaufmann/-frau
+ARBEIT,['Pförtner/in'],2023,Sozialarbeiter/in / Sozialpädagoge/-pädagogin
+ARBEIT,['Helfer/in - Verkauf'],2026,Helfer/in - Verkauf
+ARBEIT,['Helfer/in - Reinigung'],,Musiklehrer/in
+ARBEIT,"['Helfer/in - Verkauf', 'Servicekraft - Gastronomie und Gastgewerbe', 'Helfer/in - Lagerwirtschaft, Transport']",,
+ARBEIT,['Pförtner/in'],2025,Pharmakant/in
+ARBEIT,['Helfer/in - Verkauf'],2026,Verkäufer/in
+ARBEIT,['Helfer/in - Verkauf'],2025,Helfer/in - Verkauf
+ARBEIT,"['Helfer/in - Lagerwirtschaft, Transport']",2024,Pflegeassistent/in
+ARBEIT,['Helfer/in - Verkauf'],2020,Helfer/in - Verkauf
+ARBEIT,"['Tierphysiotherapeut/in', 'Helfer/in - Büro, Verwaltung']",,Helfer/in - Verkauf
+ARBEIT,['Helfer/in - Verkauf'],2023,Verkäufer/in
+ARBEIT,['Helfer/in - Verkauf'],2026,Helfer/in - Verkauf
+ARBEIT,['Helfer/in - Lebensmittelherstellung'],2024,Lehrer/in (Uni) - Gesamtschulen
+ARBEIT,['Helfer/in - Verkauf'],,
+ARBEIT,"['Volkswirt/in', 'Helfer/in - Verkauf']",2026,Projektassistent/in
+ARBEIT,['Facharzt/-ärztin - Haut- und Geschlechtskrankheiten'],,Facharzt/-ärztin - Haut- und Geschlechtskrankheiten
+ARBEIT,"['Helfer/in - Büro, Verwaltung', 'Empfangskraft', 'Büroassistent/in']",2026,Pharmazeutisch-technische/r Assistent/in
+ARBEIT,['Helfer/in - Hochbau'],,
+ARBEIT,"['Qualitätsbeauftragte/r - Gesundheits-/Sozialwesen', 'Qualitätsmanager/in', 'Patientenmanager/in']",2026,Projektleiter/in
+ARBEIT,['Pförtner/in'],1999,Elektroinstallateur/in
+ARBEIT,['Servicekraft - Gastronomie und Gastgewerbe'],2025,Servicekraft - Gastronomie und Gastgewerbe
+ARBEIT,['Helfer/in - Verkauf'],,
+ARBEIT,['Betriebsschlosser/in'],2026,Betriebsschlosser/in
+ARBEIT,"['Helfer/in - Verkauf', 'Helfer/in - Lagerwirtschaft, Transport']",,
+ARBEIT,"['Helfer/in - Büro, Verwaltung']",2026,Pflegedienstleiter/in
+ARBEIT,"['Helfer/in - Maschinenbau, Betriebstechnik', 'Hausmeister/in', 'Maschinen- und Anlagenführer/in (ohne Angabe des Schwerpunkts)']",,Schleifer/in
+ARBEIT,['Helfer/in - Landwirtschaft'],2023,"Helfer/in - Lagerwirtschaft, Transport"
+ARBEIT,['Sozialarbeiter/in / Sozialpädagoge/-pädagogin'],,
+ARBEIT,['Helfer/in - Küche'],2026,Helfer/in - Küche
+ARBEIT,"['Helfer/in - Feinmechanik, Werkzeugbau']",2024,"Helfer/in - Kurier-, Zustell- und Postdienstleistungen"
+ARBEIT,['Koch/Köchin'],2026,Koch/Köchin
+ARBEIT,['Busfahrer/in'],2026,Hausmeister/in
+ARBEIT,['Elektromechaniker/in'],2025,Hausmeister/in
+ARBEIT,['Helfer/in - Verkauf'],,Gebäudereiniger/in
+ARBEIT,['Techniker/in - Kraftfahrzeugtechnik/Bachelor Professional in Technik'],2025,Ingenieur/in - Versorgungstechnik
+ARBEIT,"['Museumsaufseher/in', 'Berufskraftfahrer/in']",2025,Berufskraftfahrer/in
+ARBEIT,['Lehrer/in - Grundschulen'],2026,Lehrer/in - Grundschulen
+ARBEIT,['Ambulante/r Pfleger/in'],2024,Betreuungshelfer/in (Flüchtlingshilfe)
+ARBEIT,"['Helfer/in - Klempnerei, Installation']",,"Helfer/in - Klempnerei, Installation"
+ARBEIT,['Helfer/in - Verkauf'],,
+ARBEIT,['Helfer/in - Verkauf'],,Helfer/in - Verkauf
+ARBEIT,['Berechnungsingenieur/in'],2026,Softwareentwickler/in
+ARBEIT,['Pförtner/in'],2025,Betriebsleiter/in - technisch
+ARBEIT,['Gebäudereiniger/in'],2026,Bürokaufmann/-frau
+ARBEIT,['Gesundheits- und Krankenpfleger/in'],2025,Gesundheits- und Krankenpfleger/in
+ARBEIT,['Controller/in'],,Dozent/in - Hochschulen und Akademien
+ARBEIT,"['Onlinemarketing-Manager/in', 'Kaufmännische Fachkraft', 'SEA-Manager/in']",2026,SEA-Manager/in
+ARBEIT,"['Automobilmechaniker/in', 'Spielhallenaufsicht']",2026,"Maschinen- und Anlagenführer/in - Metall-, Kunststofftechnik"
+ARBEIT,"['Helfer/in - Hauswirtschaft', 'Helfer/in - Reinigung']",2026,Helfer/in - Hauswirtschaft
+ARBEIT,['Leiter/in - Vertrieb'],2026,Gebietsleiter/in - Außenwirtschaft
+ARBEIT,['Hauswirtschafter/in'],,Hauswirtschafter/in
+ARBEIT,['Montierer/in'],2026,Helfer/in - Elektro
+ARBEIT,"['Fitnesstrainer/in', 'Servicekraft - Gastronomie und Gastgewerbe']",2026,Fitnesstrainer/in
+ARBEIT,['Betreuungskraft / Alltagsbegleiter/in'],,Gemeindearbeiter/in
+ARBEIT,"['Schulbegleiter/in', 'Büroassistent/in', 'Kinderbetreuer/in']",2026,Pädagogische Fachkraft - Grundschulkindbetreuung
+ARBEIT,['Pizzabäcker/in'],2026,Pizzabäcker/in
+ARBEIT,"['Medizinische/r Fachangestellte/r', 'Helfer/in - Büro, Verwaltung']",2026,"Helfer/in - Büro, Verwaltung"
+ARBEIT,['Rettungsassistent/in'],2026,Rettungsassistent/in
+ARBEIT,"['Helfer/in - Verkauf', 'Kommissionierer/in', 'Kassierer/in (Handel)']",2026,Helfer/in - Verkauf
+ARBEIT,"['Helfer/in - Verkauf', 'Helfer/in - Büro, Verwaltung']",2024,"Helfer/in - Büro, Verwaltung"
+ARBEIT,['Gärtner/in - Garten- und Landschaftsbau'],2023,Gärtner/in - Garten- und Landschaftsbau
+ARBEIT,"['Kaufmann/-frau - Groß- und Außenhandel (Außenhandel)', 'Fachwirt/in - Wirtschaft', 'Managementassistent/in']",2026,Managementassistent/in
+ARBEIT,['Techniker/in - Maschinentechnik (ohne Schwerpunkt)/Bachelor Professional in Technik'],2026,Maschinenbaumechaniker/in
+ARBEIT,['Industriemeister/in - Medizintechnik'],2026,Fachverkäufer/in - Medizintechnik und medizinische Einrichtungen
+ARBEIT,"['Helfer/in - Lagerwirtschaft, Transport']",2026,"Helfer/in - Lagerwirtschaft, Transport"
+ARBEIT,"['Maler/in und Lackierer/in - Gestaltung und Instandhaltung', 'Helfer/in - Lebensmittelherstellung']",2026,Maler/in und Lackierer/in - Gestaltung und Instandhaltung
+ARBEIT,"['Sous-Chef/in', 'Koch/Köchin']",2025,Sous-Chef/in
+ARBEIT,"['Helfer/in - Ausbau', 'Helfer/in - Lagerwirtschaft, Transport']",2025,"Helfer/in - Lagerwirtschaft, Transport"
+ARBEIT,['Helfer/in - Verkauf'],2022,Helfer/in - Verkauf
+ARBEIT,"['Helfer/in - Lagerwirtschaft, Transport', 'Modeschneider/in', 'Helfer/in - Küche']",2026,Modeschneider/in
+ARBEIT,"['Solarmonteur/in', 'Helfer/in - Ausbau']",2025,Solarmonteur/in
+ARBEIT,"['Vertriebsberater/in', 'Fachkaufmann/-frau - Vertrieb', 'Innendienstleiter/in']",,Account-Manager/in
+ARBEIT,['Zimmerer/Zimmerin'],2026,Zimmerer/Zimmerin
+ARBEIT,"['Kassierer/in (Handel)', 'Helfer/in - Gartenbau', 'Helfer/in - Verkauf']",2025,Erzieher/in
+ARBEIT,['Berufskraftfahrer/in'],,Helfer/in - Küche
+ARBEIT,['Arzt/Ärztin'],2026,Arzt/Ärztin
+ARBEIT,"['Helfer/in - Büro, Verwaltung']",,
+ARBEIT,"['Friseur/in', 'Helfer/in - Friseurgewerbe']",2026,Friseur/in
+ARBEIT,"['Helfer/in - Lagerwirtschaft, Transport']",2021,Helfer/in - Lebensmittelherstellung
+ARBEIT,"['Kaufmann/-frau - Büromanagement', 'Betreuungskraft / Alltagsbegleiter/in']",2026,Betreuungskraft / Alltagsbegleiter/in
+ARBEIT,"['Großküchenkoch/-köchin', 'Koch/Köchin']",2026,Großküchenkoch/-köchin
+ARBEIT,"['Biochemiker/in', 'Ingenieur/in - Biotechnologie']",2025,Helfer/in - Verkauf
+ARBEIT,['Ingenieur/in - Maschinenbau'],,
+ARBEIT,"['Betriebswirt/in (Hochschule) - Marketing', 'Betriebswirt/in (Hochschule)']",2025,Betriebswirt/in (Hochschule) - Marketing
+ARBEIT,"['Helfer/in - Lagerwirtschaft, Transport']",2025,Auslieferungsfahrer/in (nicht Verkaufsfahrer/in)
+ARBEIT,"['Leiter/in - Gastronomiebetrieb', 'Hotelfachmann/-frau', 'Kaufmann/-frau - Tourismus und Freizeit']",2026,Hotelfachmann/-frau
+ARBEIT,"['Personalsachbearbeiter/in', 'Personalberater/in', 'Betriebswirt/in (Fachschule) - Kommunikation und Büromanagement/Bachelor Professional in Wirtschaft']",2026,Projektkoordinator/in (kaufmännisch)
+ARBEIT,['Spielhallenaufsicht'],,"Helfer/in - Lagerwirtschaft, Transport"
+ARBEIT,"['Berufskraftfahrer/in', 'Hausmeister/in']",2025,Hausmeister/in
+ARBEIT,"['Unternehmensberater/in', 'Onlinemarketing-Manager/in', 'Organisationsleiter/in']",2022,Fachkraft - Gastronomie (Restaurantservice)
+ARBEIT,"['Sales-Manager/in', 'Vertriebsassistent/in', 'Account-Manager/in']",2025,Kaufmann/-frau - Spedition und Logistikdienstleistung
+ARBEIT,['Producer/in'],,Regieassistent/in
+ARBEIT,['Sozialpädagogische/r Assistent/in / Kinderpfleger/in'],2025,Sozialpädagogische/r Assistent/in / Kinderpfleger/in
+ARBEIT,"['Maschinen- und Anlagenführer/in (ohne Angabe des Schwerpunkts)', 'Helfer/in - Lagerwirtschaft, Transport']",,"Helfer/in - Lagerwirtschaft, Transport"
+ARBEIT,"['Pförtner/in', 'Helfer/in - Metallbau', 'Helfer/in - Lagerwirtschaft, Transport']",2022,"Fachkraft - Kurier-, Express- und Postdienstleistungen"
+ARBEIT,"['Helfer/in - Lagerwirtschaft, Transport', 'Helfer/in - Reinigung']",,
+ARBEIT,['Empfangskraft'],2025,Empfangskraft
+ARBEIT,"['Assistent/in - Personalwesen', 'Lernbetreuer/in']",2023,Technical-Account-Manager/in
+ARBEIT,['Musiklehrer/in'],,Musiker/in - Internationale Folklore
+ARBEIT,['Sicherheitsmitarbeiter/in'],2025,Servicekraft - Gastronomie und Gastgewerbe
+ARBEIT,"['Helfer/in - Lagerwirtschaft, Transport', 'Helfer/in - Küche', 'Helfer/in - Lebensmittelherstellung']",2013,Industriemechaniker/in
+ARBEIT,['Busfahrer/in'],,Taxifahrer/in
+ARBEIT,['Leiter/in - Gastronomiebetrieb'],2026,Kaufmännische Fachkraft
+ARBEIT,"['Rechtsanwalts- und Notarfachangestellte/r', 'Kaufmännische Fachkraft']",2026,Rechtsanwalts- und Notarfachangestellte/r
+ARBEIT,"['Geschäftsführer/in', 'Business-Development-Manager/in', 'Leiter/in - Einkauf']",2025,Geschäftsführer/in
+ARBEIT,"['Bürokaufmann/-frau', 'Büroassistent/in', 'Kaufmännische Fachkraft']",2026,Bürokaufmann/-frau
+ARBEIT,"['Helfer/in - Reinigung', 'Beikoch/-köchin']",2022,Verkäufer/in
+ARBEIT,['Finanzbuchhalter/in'],2020,Buchhalter/in
+ARBEIT,['Helfer/in - Ausbau'],2024,Helfer/in - Ausbau
+ARBEIT,['Hausmeister/in'],2026,Ausbaufacharbeiter/in (ohne Angabe des Schwerpunkts)
+ARBEIT,"['Einzelhandelskaufmann/-frau', 'Verkäufer/in', 'Empfangskraft']",2025,Einzelhandelskaufmann/-frau
+ARBEIT,"['Business-Development-Manager/in', 'Bereichsleiter/in', 'Leiter/in - Vertriebsinnendienst']",2024,Bereichsleiter/in
+ARBEIT,"['EDV-Sachbearbeiter/in', 'Büroassistent/in']",2025,Land- und Baumaschinenmechatronikermeister/in/Bachelor Professional im Land- und Baumaschinenmechatroniker-Handwerk
+ARBEIT,"['Helfer/in - Gastgewerbe', 'Helfer/in - Reinigung']",2026,Servicekraft - Gastronomie und Gastgewerbe
+ARBEIT,"['Helfer/in - Lagerwirtschaft, Transport']",2024,Kommissionierer/in
+ARBEIT,"['Heimerzieher/in', 'Schulbegleiter/in', 'Pädagogische/r Assistent/in']",2025,Heimerzieher/in
+ARBEIT,['Helfer/in - Friseurgewerbe'],,
+ARBEIT,"['Assistent/in - Informatik (Softwaretechnik)', 'Softwareentwickler/in']",,
+ARBEIT,['Betreuungskraft / Alltagsbegleiter/in'],2024,Betreuungskraft / Alltagsbegleiter/in
+ARBEIT,"['Kaufmann/-frau - Groß- und Außenhandel (Außenhandel)', 'Industriekaufmann/-frau']",2024,Kaufmann/-frau - Groß- und Außenhandel (Außenhandel)
+ARBEIT,"['Berufskraftfahrer/in', 'Helfer/in - Lagerwirtschaft, Transport']",2025,Servicekraft - Gastronomie und Gastgewerbe
+ARBEIT,"['Helfer/in - Lagerwirtschaft, Transport']",2025,Helfer/in - Küche
+ARBEIT,"['Saunameister/in', 'Rettungsschwimmer/in', 'Helfer/in - Ver- und Entsorgung']",2025,Saunameister/in
+ARBEIT,['Helfer/in - Altenpflege/Persönliche Assistenz'],,
+ARBEIT,"['Platzwart/in', 'Hausmeister/in']",2025,Hafenarbeiter/in
+ARBEIT,"['Helfer/in - Küche', 'Helfer/in - Verkauf', 'Helfer/in - Lagerwirtschaft, Transport']",2026,Hausmeister/in
+ARBEIT,"['Controller/in', 'Kreditsachbearbeiter/in', 'Betriebswirt/in - allgemeine Betriebswirtschaft']",2026,Sachbearbeiter/in - Einkauf
+ARBEIT,"['Hausmeister/in', 'Dienstwagenfahrer/in']",2025,Hausmeister/in
+ARBEIT,['Industriekaufmann/-frau'],2026,Kaufmännische Fachkraft
+ARBEIT,['Helfer/in - Verkauf'],2023,Auslieferungsfahrer/in (nicht Verkaufsfahrer/in)
+ARBEIT,"['Hausmeister/in', 'Helfer/in - Gartenbau', 'Platzwart/in']",2024,Hausmeister/in
+ARBEIT,['Helfer/in - Reinigung'],,
+ARBEIT,"['Helfer/in - Gastgewerbe', 'Helfer/in - Reinigung']",2025,Servicekraft - Gastronomie und Gastgewerbe
+ARBEIT,"['Helfer/in - Reinigung', 'Helfer/in - Gartenbau', 'Helfer/in - Lagerwirtschaft, Transport']",2024,Helfer/in - Reinigung
+ARBEIT,"['Helfer/in - Reinigung', 'Helfer/in - Küche', 'Hauswirtschafter/in']",2026,Helfer/in - Tierpflege
+ARBEIT,['Fachkraft - Schutz und Sicherheit'],2025,Callcenteragent/in
+ARBEIT,"['Industrieelektriker/in - Betriebstechnik', 'Pförtner/in']",,
+ARBEIT,"['Gabelstaplerfahrer/in', 'Helfer/in - Verkauf', 'Helfer/in - Lagerwirtschaft, Transport']",,
+ARBEIT,['Helfer/in - Reinigung'],2024,Helfer/in - Reinigung
+ARBEIT,"['IT-Administrator/in', 'Techniker/in - Informatik (technische Informatik)/Bachelor Professional in Technik']",2025,IT-Administrator/in
+ARBEIT,"['Helfer/in - Lagerwirtschaft, Transport', 'Auslieferungsfahrer/in (nicht Verkaufsfahrer/in)', 'Helfer/in - Metallbau']",2014,Kommissionierer/in
+ARBEIT,"['Helfer/in - Lagerwirtschaft, Transport', 'Helfer/in - Küche', 'Helfer/in - Gastgewerbe']",2023,Sozialassistent/in
+ARBEIT,['Hausdame/Housekeeper'],2025,Helfer/in - Altenpflege/Persönliche Assistenz
+ARBEIT,['Pferdepfleger/in'],2024,Bereiter/in
+ARBEIT,['Helfer/in - Lebensmittelherstellung'],2026,Helfer/in - Lebensmittelherstellung
+ARBEIT,"['Küchenplaner/in', 'Kaufmännische Fachkraft']",2025,Küchenplaner/in
+ARBEIT,"['Auslieferungsfahrer/in (nicht Verkaufsfahrer/in)', 'Botenfahrer/in', 'Helfer/in - Lagerwirtschaft, Transport']",2024,Berufskraftfahrer/in
+ARBEIT,"['Helfer/in - Reinigung', 'Helfer/in - Küche']",2025,Helfer/in - Reinigung
+ARBEIT,"['Helfer/in - Papier, Verpackung', 'Helfer/in - Feinmechanik, Werkzeugbau']",2024,Auslieferungsfahrer/in (nicht Verkaufsfahrer/in)
+ARBEIT,['Historiker/in'],2025,Heimerzieher/in
+ARBEIT,"['Helfer/in - Büro, Verwaltung', 'Masseur/in und medizinische/r Bademeister/in', 'Pädagogische/r Assistent/in']",2015,Fachlehrer/in - berufliche/allgemeinbildende Schulen
+ARBEIT,['Maler/in und Lackierer/in - Maler/in'],2026,Maler/in und Lackierer/in - Maler/in
+ARBEIT,['Industrieelektriker/in - Betriebstechnik'],2026,"Kundendienstmonteur/in, -techniker/in"
+ARBEIT,['Helfer/in - Verkauf'],2024,"Helfer/in - Lagerwirtschaft, Transport"
+ARBEIT,"['Helfer/in - Ausbau', 'Ordner/in bei Veranstaltungen']",2025,Hausmeister/in
+ARBEIT,"['Büroassistent/in', 'Helfer/in - Büro, Verwaltung']",2023,Helfer/in - Verkauf
+ARBEIT,"['Helfer/in - Lagerwirtschaft, Transport', 'Gabelstaplerfahrer/in']",2025,Helfer/in - Ausbau
+ARBEIT,"['Hausmeister/in', 'Helfer/in - Gartenbau']",2023,Hausmeister/in
+ARBEIT,"['Verkäufer/in', 'Helfer/in - Verkauf', 'Helfer/in - Reinigung']",2024,Helfer/in - Reinigung
+ARBEIT,['Schulbegleiter/in'],,Hundefriseur/in
+ARBEIT,"['Helfer/in - Verkauf', 'Helfer/in - Holz, Flechtwaren', 'Botenfahrer/in']",,Helfer/in - Verkauf
+ARBEIT,"['Helfer/in - Tiefbau', 'Helfer/in - Hochbau', 'Helfer/in - Ausbau']",2025,"Helfer/in - Malerei, Lackiererei"
+ARBEIT,['Content-Manager/in'],2026,Redakteur/in
+ARBEIT,['Industriekaufmann/-frau'],2026,Redakteur/in
+ARBEIT,['Büroassistent/in'],2024,"Helfer/in - Lagerwirtschaft, Transport"
+ARBEIT,['Helfer/in - Lebensmittelherstellung'],2026,Helfer/in - Lebensmittelherstellung
+ARBEIT,['Assistenzarzt/-ärztin'],,Facharzt/-ärztin - Allgemeinmedizin (Hausarzt/-ärztin)
+ARBEIT,"['Bürokaufmann/-frau', 'Empfangskraft']",,"Gruppen-, Teamleiter/in"
+ARBEIT,"['Bautischler/in', 'Hausmeister/in']",2026,Beton- und Stahlbetonbauer/in
+ARBEIT,"['Helfer/in - Lagerwirtschaft, Transport']",,
+ARBEIT,['Fahrradmonteur/in'],2026,Helfer/in - Lebensmittelherstellung
+ARBEIT,"['Maler/in und Lackierer/in - Maler/in', 'Maler/in und Lackierer/in - Gestaltung und Instandhaltung']",2026,Maler/in und Lackierer/in - Gestaltung und Instandhaltung
+ARBEIT,"['Leiter/in - Produktion/Fertigung', 'Ingenieur/in - Verfahrenstechnik']",2026,Leiter/in - Produktion/Fertigung
+ARBEIT,"['Helfer/in - Lagerwirtschaft, Transport']",2026,Fleischzerleger/in
+ARBEIT,['Helfer/in - Elektro'],2025,Elektroniker/in - Informations- und Systemtechnik
+ARBEIT,"['Helfer/in - Lebensmittelherstellung', 'Helfer/in - Küche']",2025,"Helfer/in - Lagerwirtschaft, Transport"
+ARBEIT,"['Helfer/in - Lagerwirtschaft, Transport']",2026,"Helfer/in - Lagerwirtschaft, Transport"
+ARBEIT,['Helfer/in - Reinigung'],2025,Berufskraftfahrer/in
+ARBEIT,['Sekretär/in'],,
+ARBEIT,['Verkäufer/in'],,Helfer/in - Gastgewerbe
+ARBEIT,"['Helfer/in - Kurier-, Zustell- und Postdienstleistungen']",,
+ARBEIT,"['Fotograf/in', 'Datenerfasser/in']",2026,Betriebsleiter/in - Systemgastronomie
+ARBEIT,"['Helfer/in - Lagerwirtschaft, Transport']",2023,Helfer/in - Ausbau
+ARBEIT,"['Helfer/in - Holz, Flechtwaren']",2020,Mediengestalter/in Digital und Print - Gestaltung und Technik
+ARBEIT,"['Betriebsleiter/in - kaufmännisch', 'Geschäftsführer/in']",2026,Geschäftsführer/in
+ARBEIT,"['Filialleiter/in, Verkaufsstellenleiter/in', 'Einzelhandelskaufmann/-frau']",2026,Helfer/in - Gastgewerbe
+ARBEIT,"['Straßenbauer/in', 'Polier/in - Tiefbau']",,Straßenbauer/in
+ARBEIT,"['Helfer/in - Lagerwirtschaft, Transport']",2025,"Helfer/in - Lagerwirtschaft, Transport"
+ARBEIT,"['Film- und Videoeditor/in', 'Social-Media-Manager/in', 'Content Creator']",,Film- und Videoeditor/in
+ARBEIT,"['Bürokaufmann/-frau', 'Sekretär/in', 'Kaufmännische Fachkraft']",2026,Bürokaufmann/-frau
+ARBEIT,"['Kunsttherapeut/in', 'Lehrer/in/Dozent/in - Erwachsenenbildung', 'Event-Manager/in']",,Kinderbetreuer/in
+ARBEIT,['Pförtner/in'],2024,Übersetzer/in
+ARBEIT,"['Helfer/in - Lagerwirtschaft, Transport']",2024,Automobilmechaniker/in
+ARBEIT,['Betreuungskraft / Alltagsbegleiter/in'],2025,Pflegeassistent/in
+ARBEIT,"['Helfer/in - Lagerwirtschaft, Transport', 'Gabelstaplerfahrer/in']",2026,"Helfer/in - Kurier-, Zustell- und Postdienstleistungen"
+ARBEIT,['Helfer/in - Hochbau'],,
+ARBEIT,"['Chemielaborant/in', 'Techniker/in - Chemietechnik (Betriebstechnik)/Bachelor Professional in Technik', 'Analytiker/in - Chemie']",2023,Lehrer/in - Waldorfschulen
+ARBEIT,"['Onlineredakteur/in', 'Account-Manager/in']",2024,Onlineredakteur/in
+ARBEIT,['Berufskraftfahrer/in'],2026,Berufskraftfahrer/in
+ARBEIT,"['Helfer/in - Lagerwirtschaft, Transport', 'Helfer/in - Verkauf']",,
+ARBEIT,"['Helfer/in - Lagerwirtschaft, Transport', 'Helfer/in - Reinigung', 'Helfer/in - Kurier-, Zustell- und Postdienstleistungen']",2026,"Helfer/in - Lagerwirtschaft, Transport"
+ARBEIT,['Helfer/in - Küche'],2026,Helfer/in - Küche
+ARBEIT,"['Betreuungskraft / Alltagsbegleiter/in', 'Helfer/in - Altenpflege/Persönliche Assistenz', 'Helfer/in - Hauswirtschaft']",2026,Helfer/in - Hauswirtschaft
+ARBEIT,"['Helfer/in - Büro, Verwaltung']",2023,Erzieher/in
+ARBEIT,['Kaufmann/-frau - Groß- und Außenhandel (Außenhandel)'],2026,Einzelhandelskaufmann/-frau
+ARBEIT,"['Sicherheitsmitarbeiter/in', 'Fachkraft - Schutz und Sicherheit']",2026,Wach- und Sicherheitsfachmann/-frau
+ARBEIT,['Museumsaufseher/in'],2025,Bürokaufmann/-frau
+ARBEIT,"['Helfer/in - Lagerwirtschaft, Transport', 'Kommissionierer/in', 'Helfer/in - Reinigung']",2026,Fleischer/in - Schlachten
+ARBEIT,"['Pharmareferent/in', 'Pharmazeutisch-technische/r Assistent/in']",2026,Pharmareferent/in
+ARBEIT,['Sicherheitsmitarbeiter/in'],2025,Sicherheitsmitarbeiter/in
+ARBEIT,['Helfer/in - Gastgewerbe'],,
+ARBEIT,"['Helfer/in - Lagerwirtschaft, Transport']",,Location-Coordinator
+ARBEIT,"['Helfer/in - Lagerwirtschaft, Transport', 'Kommissionierer/in', 'Helfer/in - Verkauf']",2026,Leiter/in - Produktion/Fertigung
+ARBEIT,['Helfer/in - Chemie- und Pharmatechnik'],,
+ARBEIT,['Sozialarbeiter/in / Sozialpädagoge/-pädagogin'],,
+ARBEIT,"['Helfer/in - Küche', 'Helfer/in - Reinigung']",2026,Helfer/in - Küche
+ARBEIT,"['Helfer/in - Altenpflege/Persönliche Assistenz', 'Ambulante/r Pfleger/in']",2026,Helfer/in - Altenpflege/Persönliche Assistenz
+ARBEIT,['Helfer/in - Reinigung'],,Helfer/in - Reinigung
+ARBEIT,"['Helfer/in - Küche', 'Altenpflegehelfer/in', 'Helfer/in - Reinigung']",2019,Altenpflegehelfer/in
+ARBEIT,['Softwareentwickler/in'],2026,Technische/r Assistent/in - medizinische Gerätetechnik
+ARBEIT,['Berufskraftfahrer/in'],2026,Berufskraftfahrer/in
+ARBEIT,['Physiotherapeut/in'],2026,Qualitätsmanager/in
+ARBEIT,"['Helfer/in - Lagerwirtschaft, Transport', 'Helfer/in - Holz, Flechtwaren', 'Helfer/in - Lebensmittelherstellung']",,"Helfer/in - Kurier-, Zustell- und Postdienstleistungen"
+ARBEIT,"['Leiter/in - IT', 'IT-Projektkoordinator/in']",2026,Leiter/in - IT
+ARBEIT,['Data Scientist'],2015,Steuerfachangestellte/r
+ARBEIT,['Servicekraft - Gastronomie und Gastgewerbe'],2025,Verkäufer/in - Nahrungsmittelhandwerk
+ARBEIT,['Hausmeister/in'],2026,Bodenleger/in
+ARBEIT,"['Illustrator/in', 'Helfer/in - Metallbau', 'Industriemechaniker/in']",,Comic-Zeichner/in
+ARBEIT,['Gestalter/in - visuelles Marketing'],2026,Gestalter/in - visuelles Marketing
+ARBEIT,"['Helfer/in - Gartenbau', 'Hausmeister/in']",2026,Helfer/in - Gartenbau
+ARBEIT,"['Tierlehrer/in', 'Dozent/in - Hochschulen und Akademien', 'Fallmanager/in']",,Lehrer/in/Dozent/in - Erwachsenenbildung
+ARBEIT,['Helfer/in - Reinigung'],,Helfer/in - Reinigung
+ARBEIT,['Helfer/in - Verkauf'],,
+ARBEIT,"['Personalreferent/in', 'Personalsachbearbeiter/in']",,"Helfer/in - Büro, Verwaltung"
+ARBEIT,['Helfer/in - Reinigung'],,Helfer/in - Reinigung
+ARBEIT,"['Ingenieur/in - Stadt- und Regionalplanung', 'Stadt- und Regionalplaner/in']",2026,Stadt- und Regionalplaner/in
+ARBEIT,"['Ingenieur/in - Stadt- und Regionalplanung', 'Stadt- und Regionalplaner/in']",2026,Stadt- und Regionalplaner/in
+ARBEIT,"['Schulbegleiter/in', 'Betreuungskraft / Alltagsbegleiter/in']",2025,Betreuungskraft / Alltagsbegleiter/in
+ARBEIT,"['Personalreferent/in', 'Recruiter/in', 'Personalsachbearbeiter/in']",2026,Personalsachbearbeiter/in
+ARBEIT,['Erzieher/in'],,Erzieher/in
+ARBEIT,['Kapitän/in'],2026,Kapitän/in
+ARBEIT,['Kraftfahrzeugmechaniker/in'],2026,Kraftfahrzeugmechaniker/in
+ARBEIT,['Bürokaufmann/-frau'],2026,Bürokaufmann/-frau
+ARBEIT,['Kaufmann/-frau - Tourismus und Freizeit'],,Servicekraft - Gastronomie und Gastgewerbe
+ARBEIT,['Werkstattleiter/in'],2026,Maschineneinrichter/in (allgemein)
+ARBEIT,"['Assistent/in - Personalwesen', 'Personalsachbearbeiter/in', 'Personaldisponent/in']",2025,Leiter/in - Gastronomiebetrieb
+ARBEIT,"['Sales-Manager/in', 'Key-Account-Manager/in']",2026,Sales-Manager/in
+ARBEIT,['Fahrer/in - Personenbeförderung'],2023,Tischler/in
+ARBEIT,"['Sicherheitsmitarbeiter/in', 'Gabelstaplerfahrer/in']",2025,Helfer/in - Reinigung
+ARBEIT,"['Metallbauer/in - Konstruktionstechnik', 'Helfer/in - Metallbau']",2026,Metallbauer/in - Konstruktionstechnik
+ARBEIT,['Verkäufer/in'],2025,Empfangskraft
+ARBEIT,['Bürokaufmann/-frau'],2026,Bürokaufmann/-frau
+ARBEIT,['Altenpflegehelfer/in'],2026,Altenpflegehelfer/in
+ARBEIT,['Ingenieur/in - Maschinenbau'],2025,Empfangsmitarbeiter/in (Hotel)
+ARBEIT,['Leiter/in - Altenpflegeeinrichtung'],2026,Leiter/in - Altenpflegeeinrichtung
+ARBEIT,"['Journalist/in', 'Marketingfachkraft/-assistent/in', 'Kaufmännische Fachkraft']",,
+ARBEIT,"['Helfer/in - Küche', 'Beikoch/-köchin', 'Helfer/in - Verkauf']",2026,Helfer/in - Küche
+ARBEIT,['Qualitätsbeauftragte/r - Gesundheits-/Sozialwesen'],2026,Bereichsleiter/in
+ARBEIT,['Automobilkaufmann/-frau'],,
+ARBEIT,['Helfer/in - Verkauf'],2024,Helfer/in - Verkauf
+ARBEIT,"['Business-Analyst/in', 'Produktmanager/in', 'Product Owner']",2026,Informatiker/in
+ARBEIT,"['Verkäufer/in', 'Servicekraft - Gastronomie und Gastgewerbe']",,
+ARBEIT,"['Bürokaufmann/-frau', 'Bankkaufmann/-frau', 'Kaufmännische Fachkraft']",,
+ARBEIT,['Helfer/in - Küche'],2026,Helfer/in - Küche
+ARBEIT,['Wirtschaftsingenieur/in'],2026,Wirtschaftsingenieur/in
+ARBEIT,"['Gesundheitsmanager/in', 'Kaufmann/-frau - Gesundheitswesen', 'Pflegeberater/in']",2026,Gesundheits- und Krankenpfleger/in
+ARBEIT,"['Helfer/in - Tierpflege', 'Servicekraft - Gastronomie und Gastgewerbe']",,
+ARBEIT,['Designer/in (Ausbildung) - Medien'],2026,Designer/in (Ausbildung) - Medien
+ARBEIT,"['Assistenzarzt/-ärztin', 'Softwareentwickler/in', 'Berater/in - digitale Transformation']",2026,Web Developer
+ARBEIT,['Fachlagerist/in'],,Nachhilfelehrer/in
+ARBEIT,['Schalterauskunft'],2026,Helfer/in - Reinigung
+ARBEIT,['Wissenschaftliche/r Mitarbeiter/in'],2026,Bürokaufmann/-frau
+ARBEIT,"['Mediengestalter/in Digital und Print - Printmedien', 'Medientechnologe/-technologin Druck']",2026,Medientechnologe/-technologin Druckverarbeitung
+ARBEIT,['Onlinemarketing-Manager/in'],2026,Onlinemarketing-Manager/in
+ARBEIT,"['Einzelhandelskaufmann/-frau', 'Helfer/in - Büro, Verwaltung', 'Empfangskraft']",2026,Kaufmann/-frau - Einzelhandel
+ARBEIT,"['Helfer/in - Hotel', 'Helfer/in - Papier, Verpackung', 'Greenkeeper-Assistent/in']",2026,Hausdame/Housekeeper
+ARBEIT,"['Taxifahrer/in', 'Fahrer/in - Personenbeförderung', 'Botenfahrer/in']",2026,Taxifahrer/in
+ARBEIT,"['Fitnesstrainer/in', 'Helfer/in - Hochbau', 'Helfer/in - Tiefbau']",2026,Helfer/in - Ausbau
+ARBEIT,['Maurer/in'],2026,Maurer/in
+ARBEIT,"['Zerspanungsmechaniker/in', 'Konstruktionsmechaniker/in']",2026,Zerspanungsmechaniker/in
+ARBEIT,"['Helfer/in - Verkauf', 'Helfer/in - Ausbau']",,
+ARBEIT,"['Heilpraktiker/in - Psychotherapie', 'Kommunikationspsychologe/-psychologin', 'Kommunikationswissenschaftler/in']",2026,Psychologische/r Psychotherapeut/in
+ARBEIT,['Anlagenmechaniker/in'],2025,"Anlagenmechaniker/in - Sanitär-, Heizungs- und Klimatechnik"
+ARBEIT,['Assistenzarzt/-ärztin'],2026,Assistenzarzt/-ärztin
+ARBEIT,['Auslieferungsfahrer/in (nicht Verkaufsfahrer/in)'],2026,Auslieferungsfahrer/in (nicht Verkaufsfahrer/in)
+ARBEIT,"['Helfer/in - Lagerwirtschaft, Transport', 'Auslieferungsfahrer/in (nicht Verkaufsfahrer/in)', 'Helfer/in - Metallbearbeitung']",,
+ARBEIT,['Elektroniker/in - Geräte und Systeme'],2026,Elektroniker/in - Geräte und Systeme
+ARBEIT,['Lehrer/in/Dozent/in - Erwachsenenbildung'],2026,Lehrer/in/Dozent/in - Erwachsenenbildung
+ARBEIT,"['Helfer/in - Büro, Verwaltung']",2026,"Helfer/in - Büro, Verwaltung"
+ARBEIT,['Metallbauer/in - Konstruktionstechnik'],,
+ARBEIT,['Helfer/in - Verkauf'],,
+ARBEIT,['Verkäufer/in'],2024,Verkäufer/in
+ARBEIT,"['Technische/r Redakteur/in', 'Ingenieur/in - Maschinenbau']",2026,Technische/r Redakteur/in
+ARBEIT,['Web Developer'],2026,Auslieferungsfahrer/in (nicht Verkaufsfahrer/in)
+ARBEIT,['Interfacedesigner/in'],2026,Interfacedesigner/in
+ARBEIT,"['Helfer/in - Naturstein- und Mineralaufbereitung, Baustoffherstellung']",2026,"Helfer/in - Naturstein- und Mineralaufbereitung, Baustoffherstellung"
+ARBEIT,['Steuerfachangestellte/r'],2026,Steuerfachangestellte/r
+ARBEIT,"['Konditor/in', 'Konditormeister/in/Bachelor Professional im Konditor-Handwerk']",2026,Konditor/in
+ARBEIT,['Klinische/r Psychologe/Psychologin'],,Psychotherapeut/in
+ARBEIT,"['Helfer/in - Kurier-, Zustell- und Postdienstleistungen']",2025,"Helfer/in - Kurier-, Zustell- und Postdienstleistungen"
+ARBEIT,['Museumsaufseher/in'],2025,Speditionskaufmann/-frau
+ARBEIT,['Zahntechniker/in'],,Zahntechniker/in
+ARBEIT,"['Medizinische/r Fachangestellte/r', 'Praxismanager/in']",2026,Medizinische/r Fachangestellte/r
+ARBEIT,"['IT-Systemadministrator/in', 'Servicetechniker/in - IT', 'Fachinformatiker/in - Systemintegration']",2026,IT-Systemadministrator/in
+ARBEIT,"['HR Business Partner', 'Personalentwickler/in']",2026,HR Business Partner
+ARBEIT,['Sozialarbeiter/in / Sozialpädagoge/-pädagogin'],2025,Sozialarbeiter/in / Sozialpädagoge/-pädagogin
+ARBEIT,['Physiker/in'],2026,Physiker/in
+ARBEIT,['Hafenarbeiter/in'],2026,Hafenarbeiter/in
+ARBEIT,['Helfer/in - Lebensmittelherstellung'],2026,Helfer/in - Lebensmittelherstellung
+ARBEIT,['Projektleiter/in'],2026,Projektleiter/in
+ARBEIT,"['Helfer/in - Lagerwirtschaft, Transport']",2026,Lager- und Transportarbeiter/in
+ARBEIT,['Medizinische/r Fachangestellte/r'],,Medizinische/r Fachangestellte/r
+ARBEIT,"['Helfer/in - Fahrzeugbau und -instandhaltung', 'Helfer/in - Gastgewerbe']",2026,Helfer/in - Fahrzeugbau und -instandhaltung
+ARBEIT,['IT-Kundenbetreuer/in'],2026,Projektkoordinator/in (kaufmännisch)
+ARBEIT,['Bürokaufmann/-frau'],2026,Bürokaufmann/-frau
+ARBEIT,['Fachinformatiker/in - Systemintegration'],,Mediengestalter/in - Bild und Ton
+ARBEIT,"['Helfer/in - Kurier-, Zustell- und Postdienstleistungen']",2025,"Helfer/in - Kurier-, Zustell- und Postdienstleistungen"
+ARBEIT,['Helfer/in - Verkauf'],,Helfer/in - Verkauf
+ARBEIT,"['Marketingfachkraft/-assistent/in', 'Bürokaufmann/-frau', 'Empfangskraft']",,
+ARBEIT,"['Helfer/in - Lagerwirtschaft, Transport']",2025,Berufskraftfahrer/in
+ARBEIT,"['Trockenbaumonteur/in', 'Helfer/in - Ausbau']",2025,"Helfer/in - Holz, Flechtwaren"
+ARBEIT,['Küchenplaner/in'],2025,Küchenplaner/in
+ARBEIT,"['Betreuungskraft / Alltagsbegleiter/in', 'Helfer/in - Büro, Verwaltung', 'Empfangskraft']",2025,"Helfer/in - Lagerwirtschaft, Transport"
+ARBEIT,"['Fachkraft - Brief- und Frachtverkehr', 'Helfer/in - Kurier-, Zustell- und Postdienstleistungen', 'Einzelhandelskaufmann/-frau']",2026,"Helfer/in - Kurier-, Zustell- und Postdienstleistungen"
+ARBEIT,"['Helfer/in - Hotel', 'Helfer/in - Verkauf', 'Helfer/in - Gastgewerbe']",2026,Betreuungskraft / Alltagsbegleiter/in
+ARBEIT,"['Wissenschaftliche/r Mitarbeiter/in', 'Verwaltungsangestellte/r - gehobener Dienst']",2025,Lehrer/in - Gymnasien
+ARBEIT,"['Technische/r Assistent/in - medizinische Gerätetechnik', 'Fachkraft - Qualitätssicherung/-management', 'Projektassistent/in']",2025,Fachkraft - Qualitätssicherung/-management
+ARBEIT,['Verkäufer/in'],,Helfer/in - Verkauf
+ARBEIT,"['Botenfahrer/in', 'Helfer/in - Büro, Verwaltung', 'Helfer/in - Tierpflege']",2026,"Helfer/in - Büro, Verwaltung"
+ARBEIT,"['Lager- und Transportarbeiter/in', 'Gabelstaplerfahrer/in']",2024,Lager- und Transportarbeiter/in
+ARBEIT,['Helfer/in - Lebensmittelherstellung'],2019,Helfer/in - Lebensmittelherstellung
+ARBEIT,['Helfer/in - Küche'],2025,Helfer/in - Küche
+ARBEIT,"['Maschinen- und Anlagenführer/in (ohne Angabe des Schwerpunkts)', 'Gabelstaplerfahrer/in', 'Helfer/in - Lebensmittelherstellung']",2026,Helfer/in - Lebensmittelherstellung
+ARBEIT,"['Helfer/in - Büro, Verwaltung', 'Helfer/in - Verkauf', 'Büroassistent/in']",,
+ARBEIT,"['Helfer/in - Büro, Verwaltung', 'Helfer/in - Verkauf']",2025,Computergrafiker/in
+ARBEIT,"['Helfer/in - Lagerwirtschaft, Transport']",2026,"Helfer/in - Lagerwirtschaft, Transport"
+ARBEIT,"['Hauswart/in/Haustechniker/in', 'Helfer/in - Gartenbau']",2026,Hauswart/in/Haustechniker/in
+ARBEIT,['Helfer/in - Reinigung'],,Helfer/in - Reinigung
+ARBEIT,['Museumsaufseher/in'],2025,Verkäufer/in
+ARBEIT,"['Ingenieur/in - Medizintechnik', 'Qualitätsingenieur/in', 'Ingenieur/in - Maschinenbau']",,
+ARBEIT,['Syndikus-Anwalt/-Anwältin'],2025,Unternehmensberater/in
+ARBEIT,"['Hausmeister/in', 'Gemeindearbeiter/in']",2023,Feinwerkmechaniker/in - Feinmechanik
+ARBEIT,['Berufskraftfahrer/in'],,Helfer/in - Gartenbau
+ARBEIT,"['Betriebsschlosser/in', 'Feinpolierer/in']",2026,Betriebsschlosser/in
+ARBEIT,['Schulbegleiter/in'],2025,Schulbegleiter/in
+ARBEIT,"['Helfer/in - Ausbau', 'Stuckateur/in', 'Tätowierer/in']",2025,Tätowierer/in
+ARBEIT,"['Helfer/in - Lagerwirtschaft, Transport', 'Helfer/in - Verkauf', 'Helfer/in - Lebensmittelherstellung']",2024,"Helfer/in - Lagerwirtschaft, Transport"
+ARBEIT,"['Außendienstmitarbeiter/in', 'Sales-Manager/in']",2025,Vertriebsberater/in
+ARBEIT,['Eisenbahner/in - Betriebsdienst - Lokführer/in und Transport'],2026,Helfer/in - Metallbau
+ARBEIT,['Tischler/in'],,Tischler/in
+ARBEIT,['Helfer/in - Elektro'],2024,Helfer/in - Gartenbau
+ARBEIT,"['Gebäudeenergieberater/in', 'Hochbauingenieur/in']",2025,"Gruppen-, Teamleiter/in"
+ARBEIT,"['Unternehmensberater/in', 'Qualitätsmanager/in']",2024,Unternehmensberater/in
+ARBEIT,['Buchhalter/in'],2024,Lohn- und Gehaltsbuchhalter/in
+ARBEIT,"['Assistenzkraft - Kindertageseinrichtungen', 'Helfer/in - Büro, Verwaltung', 'Kaufmännische Fachkraft']",2026,Assistenzkraft - Kindertageseinrichtungen
+ARBEIT,"['Helfer/in - Lagerwirtschaft, Transport']",,
+ARBEIT,['Helfer/in - Reinigung'],,Helfer/in - Reinigung
+ARBEIT,['Friseur/in'],2016,Kosmetiker/in
+ARBEIT,"['Helfer/in - Lagerwirtschaft, Transport', 'Hausmeister/in', 'Empfangskraft']",,Sicherheitsmitarbeiter/in
+ARBEIT,"['Industriemeister/in - Metall', 'Qualitätskontrolleur/in', 'Ingenieur/in - Maschinenbau']",2026,Zerspanungsmechaniker/in
+ARBEIT,"['Kinderbetreuer/in', 'Kindergartenhelfer/in', 'Assistenzkraft - Kindertageseinrichtungen']",2024,Leiter/in - Verkauf (Handel)
+ARBEIT,"['Helfer/in - Hochbau', 'Tiefbaufacharbeiter/in (ohne Angabe des Schwerpunkts)']",,Tiefbaufacharbeiter/in (ohne Angabe des Schwerpunkts)
+ARBEIT,"['Sicherheitsmitarbeiter/in', 'Ordner/in bei Veranstaltungen']",,Sicherheitsmitarbeiter/in
+ARBEIT,"['Fachverkäufer/in - Lebensmittelhandwerk (Bäckerei)', 'Helfer/in - Verkauf', 'Helfer/in - Lagerwirtschaft, Transport']",2026,Helfer/in - Verkauf
+ARBEIT,"['Montierer/in', 'Helfer/in - Chemie- und Pharmatechnik', 'Chemisch-technische/r Assistent/in']",2025,Elektroprüfer/in
+ARBEIT,['Helfer/in - Bodenverlegung'],2025,Helfer/in - Bodenverlegung
+ARBEIT,['Helfer/in - Reinigung'],,
+ARBEIT,['Helfer/in - Elektro'],,Helfer/in - Gartenbau
+ARBEIT,"['Mechatroniker/in', 'Kaufmännische Fachkraft']",2026,Ordner/in bei Veranstaltungen
+ARBEIT,"['Helfer/in - Lagerwirtschaft, Transport', 'Kommissionierer/in']",2025,Gärtner/in - Garten- und Landschaftsbau
+ARBEIT,['Helfer/in - Fahrzeugbau und -instandhaltung'],,
+ARBEIT,"['Helfer/in - Lebensmittelherstellung', 'Helfer/in - Lagerwirtschaft, Transport', 'Auslieferungsfahrer/in (nicht Verkaufsfahrer/in)']",2025,Gebäudereiniger/in
+ARBEIT,"['Assistent/in - Gesundheits- und Sozialwesen', 'Verwaltungsangestellte/r - Krankenkassen, Krankenhäuser, Kliniken', 'Kaufmännische Fachkraft']",,Diskjockey
+ARBEIT,['Helfer/in - Reinigung'],,
+ARBEIT,['Sicherheitsmitarbeiter/in'],2026,Fahrer/in - Personenbeförderung
+ARBEIT,['Gewerbekundenberater/in'],2024,Gewerbekundenberater/in
+ARBEIT,"['Helfer/in - Küche', 'Helfer/in - Friseurgewerbe']",2026,"Helfer/in - Lagerwirtschaft, Transport"
+ARBEIT,"['Helfer/in - Lagerwirtschaft, Transport', 'Helfer/in - Tiefbau']",2026,"Helfer/in - Lagerwirtschaft, Transport"
+ARBEIT,['Sprechstunden-/Praxishelfer/in'],,Sprechstunden-/Praxishelfer/in
+ARBEIT,"['Montagemechaniker/in, Anlagenmonteur/in', 'Industriemechaniker/in']",2023,Metallbauer/in - Metallgestaltung
+ARBEIT,['Florist/in'],2025,Kassierer/in (Handel)
+ARBEIT,['Kaufmann/-frau - Büromanagement'],2026,Verwaltungsfachangestellte/r - Kommunalverwaltung
+ARBEIT,"['Helfer/in - Fahrzeugbau und -instandhaltung', 'Reifenmonteur/in']",2026,Helfer/in - Verkauf
+ARBEIT,['Nachhilfelehrer/in'],,
+ARBEIT,['Helfer/in - Küche'],2017,Büroassistent/in
+ARBEIT,"['Helfer/in - Verkauf', 'Helfer/in - Büro, Verwaltung']",2023,Servicekraft - Gastronomie und Gastgewerbe
+ARBEIT,"['Helfer/in - Kurier-, Zustell- und Postdienstleistungen', 'Helfer/in - Lagerwirtschaft, Transport', 'Helfer/in - Lebensmittelherstellung']",2025,"Kundendienstmonteur/in, -techniker/in"
+ARBEIT,"['Hausmeister/in', 'Elektroniker/in - Energie- und Gebäudetechnik', 'Helfer/in - Lagerwirtschaft, Transport']",2025,Helfer/in - Metallbau
+ARBEIT,"['Helfer/in - Ausbau', 'Hausmeister/in', 'Helfer/in - Lagerwirtschaft, Transport']",2025,Hausmeister/in
+ARBEIT,"['Zerspanungsmechaniker/in', 'Techniker/in - Kältetechnik/Bachelor Professional in Technik', 'Betriebstechniker/in']",2026,Betriebstechniker/in
+ARBEIT,['Journalist/in'],2025,Helfer/in - Gartenbau
+ARBEIT,"['Fachkraft - Möbel-, Küchen- und Umzugsservice']",2025,"Fachkraft - Möbel-, Küchen- und Umzugsservice"
+ARBEIT,"['Helfer/in - Gastgewerbe', 'Helfer/in - Altenpflege/Persönliche Assistenz', 'Kosmetiker/in']",2024,Kassierer/in (Handel)
+ARBEIT,"['Helfer/in - Lebensmittelherstellung', 'Auslieferungsfahrer/in (nicht Verkaufsfahrer/in)', 'Helfer/in - Reinigung']",2025,Auslieferungsfahrer/in (nicht Verkaufsfahrer/in)
+ARBEIT,"['Gabelstaplerfahrer/in', 'Helfer/in - Lagerwirtschaft, Transport', 'Helfer/in - Elektro']",2026,Lager- und Transportarbeiter/in
+ARBEIT,"['Betriebswirt/in (Hochschule) - Kostenrechnung und Kalkulation', 'Betriebswirt/in (Hochschule) - Rechnungswesen und Controlling']",2022,Betriebswirt/in (Hochschule) - Rechnungswesen und Controlling
+ARBEIT,"['Helfer/in - Reinigung', 'Helfer/in - Hauswirtschaft']",2022,Helfer/in - Verkauf
+ARBEIT,"['Helfer/in - Lagerwirtschaft, Transport']",,Helfer/in - Ausbau
+ARBEIT,"['Helfer/in - Altenpflege/Persönliche Assistenz', 'Helfer/in - Hauswirtschaft']",2018,Sekretär/in
+ARBEIT,"['Helfer/in - Lagerwirtschaft, Transport', 'Helfer/in - Reinigung', 'Helfer/in - Bodenverlegung']",,
+ARBEIT,"['Büroassistent/in', 'Außendienstmitarbeiter/in', 'Fachverkäufer/in - Nahrungsmittel']",,Außendienstmitarbeiter/in
+ARBEIT,['Designer/in (Hochschule)'],2020,Modenäher/in
+ARBEIT,"['Florist/in', 'Helfer/in - Gartenbau', 'Helfer/in - Verkauf']",2025,Baureiniger/in (Gebäudereinigung)
+ARBEIT,"['Helfer/in - Tiefbau', 'Helfer/in - Bodenverlegung', 'Helfer/in - Malerei, Lackiererei']",2025,Koch/Köchin
+ARBEIT,['Sicherheitsmitarbeiter/in'],2026,Sicherheitsmitarbeiter/in
+ARBEIT,"['Kaufmann/-frau - Büromanagement', 'Projektassistent/in', 'Sachbearbeiter/in - Einkauf']",2025,Bürokaufmann/-frau
+ARBEIT,"['Helfer/in - Verkauf', 'Helfer/in - Reinigung', 'Helfer/in - Lagerwirtschaft, Transport']",2026,Helfer/in - Verkauf
+ARBEIT,"['Schulbegleiter/in', 'Assistenzkraft - Kindertageseinrichtungen']",,Friseur/in
+ARBEIT,"['Helfer/in - Büro, Verwaltung', 'Callcenteragent/in', 'Vermietassistent/in (Kfz)']",2018,Buchhalter/in
+ARBEIT,"['Helfer/in - Küche', 'Helfer/in - Reinigung', 'Helfer/in - Lebensmittelherstellung']",,Auslieferungsfahrer/in (nicht Verkaufsfahrer/in)
+ARBEIT,['Helfer/in - Gartenbau'],2025,Helfer/in - Gartenbau
+ARBEIT,['Fachmann/-frau - Systemgastronomie'],,
+ARBEIT,['Schulbegleiter/in'],,
+ARBEIT,"['Vorarbeiter/in - Tiefbau', 'Tiefbaufacharbeiter/in (ohne Angabe des Schwerpunkts)', 'Straßenwärter/in']",2026,Tiefbaufacharbeiter/in (ohne Angabe des Schwerpunkts)
+ARBEIT,"['Berufskraftfahrer/in', 'Hausmeister/in', 'Helfer/in - Bodenverlegung']",2025,Hausmeister/in
+ARBEIT,"['Betreuungskraft / Alltagsbegleiter/in', 'Helfer/in - Büro, Verwaltung']",2019,Callcenteragent/in
+ARBEIT,['Fleischer/in'],2024,Helfer/in - Reinigung
+ARBEIT,"['Helfer/in - Lagerwirtschaft, Transport', 'Helfer/in - Papier, Verpackung']",2026,"Helfer/in - Lagerwirtschaft, Transport"
+ARBEIT,"['Sicherheitsmitarbeiter/in', 'Helfer/in - Gartenbau']",2025,Helfer/in - Gastgewerbe
+ARBEIT,['Fachinformatiker/in - Anwendungsentwicklung'],2024,Fitnesstrainer/in
+ARBEIT,"['Sicherheitsmitarbeiter/in', 'Auslieferungsfahrer/in (nicht Verkaufsfahrer/in)', 'Helfer/in - Lagerwirtschaft, Transport']",2025,Sicherheitsmitarbeiter/in
+ARBEIT,"['Helfer/in - Lagerwirtschaft, Transport', 'Helfer/in - Küche', 'Fahrzeugpfleger/in']",2026,Helfer/in - Reinigung
+ARBEIT,"['Helfer/in - Reinigung', 'Helfer/in - Gartenbau', 'Helfer/in - Hochbau']",2020,Helfer/in - Reinigung
+ARBEIT,"['Helfer/in - Büro, Verwaltung']",2017,Gärtner/in - Garten- und Landschaftsbau
+ARBEIT,['Helfer/in - Verkauf'],2026,Helfer/in - Verkauf
+ARBEIT,"['Berufskraftfahrer/in', 'Auslieferungsfahrer/in (nicht Verkaufsfahrer/in)', 'Botenfahrer/in']",2023,Berufskraftfahrer/in
+ARBEIT,['Schweißer/in'],2026,Helfer/in - Metallbau
+ARBEIT,"['Schulbegleiter/in', 'Helfer/in - Büro, Verwaltung']",2026,Schulbegleiter/in
+ARBEIT,['Helfer/in - Lebensmittelherstellung'],2022,Helfer/in - Ausbau
+ARBEIT,"['Helfer/in - Fahrzeugbau und -instandhaltung', 'Helfer/in - Farb- und Lacktechnik', 'Helfer/in - Malerei, Lackiererei']",2019,"Helfer/in - Malerei, Lackiererei"
+ARBEIT,['Helfer/in - Gartenbau'],2026,Hausmeister/in
+ARBEIT,"['Helfer/in - Lagerwirtschaft, Transport', 'Helfer/in - Verkauf']",2023,Helfer/in - Verkauf
+ARBEIT,"['Helfer/in - Lagerwirtschaft, Transport', 'Helfer/in - Verkauf']",2025,Helfer/in - Verkauf
+ARBEIT,"['Helfer/in - Büro, Verwaltung', 'Fachlagerist/in']",2020,"Helfer/in - Lagerwirtschaft, Transport"
+ARBEIT,"['Helfer/in - Büro, Verwaltung', 'Empfangskraft', 'Büroassistent/in']",2026,"Helfer/in - Büro, Verwaltung"
+ARBEIT,"['Kinderbetreuer/in', 'Servicekraft - Gastronomie und Gastgewerbe', 'Helfer/in - Lagerwirtschaft, Transport']",,Kinderbetreuer/in
+ARBEIT,"['Fachlagerist/in', 'Gabelstaplerfahrer/in', 'Helfer/in - Metallbearbeitung']",2026,Helfer/in - Tiefbau
+ARBEIT,['Fitnesstrainer/in'],2016,Helfer/in - Küche
+ARBEIT,"['Kaufmann/-frau - Gesundheitswesen', 'Arztsekretär/in', 'Kaufmännische Fachkraft']",2026,Kaufmännische Fachkraft
+ARBEIT,"['Helfer/in - Reinigung', 'Helfer/in - Hauswirtschaft']",2026,Helfer/in - Reinigung
+ARBEIT,"['Helfer/in - Verkauf', 'Helfer/in - Gartenbau', 'Helfer/in - Lagerwirtschaft, Transport']",,
+ARBEIT,"['Helfer/in - Lagerwirtschaft, Transport']",2024,"Helfer/in - Lagerwirtschaft, Transport"
+ARBEIT,"['Helfer/in - Reinigung', 'Hauswirtschafter/in (ohne Schwerpunkte)']",2023,Helfer/in - Reinigung
+ARBEIT,['Helfer/in - Ausbau'],,Helfer/in - Ausbau
+ARBEIT,"['Helfer/in - Lagerwirtschaft, Transport', 'Helfer/in - Küche']",2016,Helfer/in - Reinigung
+ARBEIT,"['Helfer/in - Büro, Verwaltung', 'Kaufmann/-frau - Bürokommunikation']",2021,Helfer/in - Gastgewerbe
+ARBEIT,"['Zerspanungsmechaniker/in - Automaten-Drehtechnik', 'CNC-Dreher/in']",2025,CNC-Dreher/in
+ARBEIT,"['Pflegeassistent/in', 'Altenpflegehelfer/in']",2022,"Kaufmann/-frau - Einzelhandel (Textil, Bekleidung)"
+ARBEIT,['Event-Manager/in'],2023,Vertriebsberater/in
+ARBEIT,"['Helfer/in - Verkauf', 'Helfer/in - Gastgewerbe']",,Helfer/in - Gastgewerbe
+ARBEIT,"['Kassierer/in (Handel)', 'Ambulante/r Pfleger/in', 'Helfer/in - Gastgewerbe']",,
+ARBEIT,"['Mediaplaner/in', 'Betriebswirt/in (Fachschule) - Marketingkommunikation/Bachelor Professional in Wirtschaft', 'Betriebswirt/in (Hochschule) - Marketing']",2026,Media-Fachkraft
+ARBEIT,['Helfer/in - Küche'],,
+ARBEIT,['Polster- und Dekorationsnäher/in'],2024,Polster- und Dekorationsnäher/in
+ARBEIT,['Pförtner/in'],2020,"Helfer/in - Büro, Verwaltung"
+ARBEIT,"['Helfer/in - Verkauf', 'Helfer/in - Küche', 'Helfer/in - Gastgewerbe']",,Helfer/in - Küche
+ARBEIT,['Helfer/in - Verkauf'],2024,Verkäufer/in
+ARBEIT,['Berufskraftfahrer/in'],2026,Berufskraftfahrer/in
+ARBEIT,['Lehrer/in - berufliche Schulen'],2026,Account-Manager/in
+ARBEIT,['Kaufmann/-frau - Büromanagement'],,
+ARBEIT,['Elektroniker/in - Energie- und Gebäudetechnik'],2024,Elektroniker/in - Energie- und Gebäudetechnik
+ARBEIT,"['Helfer/in - Büro, Verwaltung']",2025,Buchhalter/in
+ARBEIT,['Verkäufer/in'],,
+ARBEIT,['Pferdepfleger/in'],,Helfer/in - Landwirtschaft
+ARBEIT,['Museumsaufseher/in'],2025,Verwaltungsfachangestellte/r - Landesverwaltung
+ARBEIT,"['Assistent/in - Logistik', 'Mechaniker/in - Land- und Baumaschinentechnik']",2025,Mechaniker/in - Karosserieinstandhaltungstechnik
+ARBEIT,"['Physikalisch-technische/r Assistent/in', 'Physiklaborant/in']",2025,Wissenschaftliche/r Mitarbeiter/in
+ARBEIT,['Hörgeräteakustiker/in'],,
+ARBEIT,['Kaufmännische Fachkraft'],2026,Wirtschaftsingenieur/in
+ARBEIT,['Helfer/in - Küche'],,Helfer/in - Reinigung
+ARBEIT,['Helfer/in - Tiefbau'],2026,Helfer/in - Ver- und Entsorgung
+ARBEIT,['Prozessmanager/in - Produktionstechnologie'],2026,Prozessmanager/in - Produktionstechnologie
+ARBEIT,['Museumsaufseher/in'],2024,Erzieher/in
+ARBEIT,['Elektroniker/in - Betriebstechnik'],2026,Elektroniker/in - Betriebstechnik
+ARBEIT,"['Gabelstaplerfahrer/in', 'Helfer/in - Lagerwirtschaft, Transport', 'Auslieferungsfahrer/in (nicht Verkaufsfahrer/in)']",2026,Gabelstaplerfahrer/in
+ARBEIT,['Helfer/in - Küche'],,Helfer/in - Küche
+ARBEIT,['Helfer/in - Verkauf'],2026,Helfer/in - Verkauf
+ARBEIT,"['Helfer/in - Küche', 'Helfer/in - Reinigung']",2025,Helfer/in - Küche
+ARBEIT,['Helfer/in - Küche'],2024,Helfer/in - Gastgewerbe
+ARBEIT,"['Betreuungskraft / Alltagsbegleiter/in', 'Empfangskraft']",2024,Betreuungskraft / Alltagsbegleiter/in
+ARBEIT,['Immobilienmakler/in'],2024,Marketingfachkraft/-assistent/in
+ARBEIT,['Museumsaufseher/in'],2023,Krankenschwester/-pfleger
+ARBEIT,"['Bodensteward/-stewardess', 'Marketingfachkraft/-assistent/in']",,
+ARBEIT,['Helfer/in - Küche'],2025,Helfer/in - Küche
+ARBEIT,"['Handelsvertreter/in', 'Digital-Event-Manager/in']",2026,Handelsvertreter/in
+ARBEIT,['Helfer/in - Altenpflege/Persönliche Assistenz'],2026,Friseur/in
