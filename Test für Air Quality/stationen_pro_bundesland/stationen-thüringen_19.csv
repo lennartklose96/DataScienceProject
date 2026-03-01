@@ -1,0 +1,20 @@
+station id,station code,station name,station city,station synonym,station active from,station active to,station longitude,station latitude,network id,station setting id,station type id,network code,network name,station setting name,station setting short name,station type name,station street,station street nr,station zip code
+1828,DETH009,Gera Friedericistr.,Gera,,1991-04-01,,12.0749,50.8779,16,1,1,TH,Thüringen,städtisches Gebiet,städtisch,Hintergrund,Friedericistr.,8,07545
+1830,DETH011,Altenburg Theaterplatz,Altenburg,,1991-12-18,,12.4376,50.9878,16,1,1,TH,Thüringen,städtisches Gebiet,städtisch,Hintergrund,Theaterplatz,,04600
+1832,DETH013,Eisenach Werneburgstr.,Eisenach,,1996-04-23,,10.3172,50.9783,16,1,1,TH,Thüringen,städtisches Gebiet,städtisch,Hintergrund,Werneburgstr.,,99817
+1837,DETH018,Nordhausen,Nordhausen,,1991-09-01,,10.7914,51.4972,16,1,1,TH,Thüringen,städtisches Gebiet,städtisch,Hintergrund,Arnoldstr.,,99734
+1839,DETH020,Erfurt Krämpferstr.,Erfurt,,1991-03-01,,11.0379,50.9795,16,1,1,TH,Thüringen,städtisches Gebiet,städtisch,Hintergrund,Krämpferstr.,25,99084
+1845,DETH026,Dreißigacker,Dreißigacker,,1982-01-01,,10.3753,50.5618,16,5,1,TH,Thüringen,ländlich regional,ländlich,Hintergrund,Herpfer Str.,,98617
+1846,DETH027,Neuhaus,Neuhaus,,1987-10-01,,11.1346,50.5000,16,4,1,TH,Thüringen,ländlich abgelegen,ländlich,Hintergrund,Bornhügel,,98724
+1854,DETH036,Greiz Mollbergstr.,Greiz,,1992-10-22,,12.2052,50.6559,16,1,1,TH,Thüringen,städtisches Gebiet,städtisch,Hintergrund,Mollbergstr.,22,07973
+1859,DETH041,Jena Dammstr.,Jena,,1994-02-01,,11.5971,50.9335,16,1,1,TH,Thüringen,städtisches Gebiet,städtisch,Hintergrund,Dammstr.,,07749
+1860,DETH042,Possen,Sondershausen,,1996-01-12,,10.8672,51.3333,16,4,1,TH,Thüringen,ländlich abgelegen,ländlich,Hintergrund,--,,99706
+1861,DETH043,Erfurt Bergstr.,Erfurt,,1996-06-26,,11.0194,50.9849,16,1,3,TH,Thüringen,städtisches Gebiet,städtisch,Verkehr,Bergstraße,,99089
+1879,DETH061,Hummelshain,Hummelshain,,1999-10-07,,11.6612,50.7916,16,4,1,TH,Thüringen,ländlich abgelegen,ländlich,Hintergrund,--,,07646
+1890,DETH072,Suhl F.-König-Str,Suhl,,2002-01-01,,10.6931,50.6115,16,1,3,TH,Thüringen,städtisches Gebiet,städtisch,Verkehr,F.-König-Str.,,98527
+1899,DETH081,Erfurt Heinrichstr,Erfurt,,2004-08-25,,11.0104,50.9723,16,1,3,TH,Thüringen,städtisches Gebiet,städtisch,Verkehr,Heinrichstr.,11,99092
+1901,DETH083,Weimar Steubenstr.,Weimar,,2005-04-13,,11.3261,50.9775,16,1,3,TH,Thüringen,städtisches Gebiet,städtisch,Verkehr,Steubenstr.,10,99423
+1909,DETH091,Mühlhausen Wanfrieder Str,Mühlhausen,,2008-04-30,,10.4484,51.2052,16,1,3,TH,Thüringen,städtisches Gebiet,städtisch,Verkehr,Wanfrieder Str,149,99974
+1910,DETH093,Weimar Schwanseestr.,Weimar,,2009-01-08,,11.3210,50.9822,16,1,1,TH,Thüringen,städtisches Gebiet,städtisch,Hintergrund,Schwanseestr.,17,99423
+1912,DETH095,Mühlhausen Bastmarkt,Mühlhausen,,2009-04-30,,10.4510,51.2079,16,1,1,TH,Thüringen,städtisches Gebiet,städtisch,Hintergrund,Bastmarkt,24,99974
+1934,DETH117,Erfurt Bautzener Weg,Erfurt,Erfurt FH,2017-01-01,,11.0566,50.9931,16,2,1,TH,Thüringen,vorstädtisches Gebiet,vorstädtisch,Hintergrund,Bautzener Weg,5,99085
