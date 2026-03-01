@@ -1,0 +1,7 @@
+scope id,scope code,scope time base,scope time scope,scope time is max,scope name
+1,1TMW,day,86400,0,Tagesmittel
+2,1SMW,hour,3600,0,Ein-Stunden-Mittelwert
+3,1SMW_MAX,hour,3600,1,Ein-Stunden-Tagesmaxima
+4,8SMW,hour,28800,0,Acht-Stunden-Mittelwert
+5,8SMW_MAX,hour,28800,1,Acht-Stunden-Tagesmaxima
+6,1TMWGL,hour,3600,0,Tagesmittel (stündlich gleitend)
