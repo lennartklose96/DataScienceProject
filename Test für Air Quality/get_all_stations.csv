@@ -69,7 +69,6 @@ station id,station code,station name,station city,station synonym,station active
 443,DEBY009,Bamberg/Löwenbrücke,Bamberg,,1978-01-01,,10.8877,49.8983,2,1,1,BY,Bayern,städtisches Gebiet,städtisch,Hintergrund,Löwenbrücke,,96047
 446,DEBY012,Burghausen/Marktler Straße,Burghausen,,1976-01-01,,12.8293,48.1772,2,2,1,BY,Bayern,vorstädtisches Gebiet,vorstädtisch,Hintergrund,Klausenstraße,,84489
 466,DEBY032,Kulmbach/Konrad-Adenauer-Straße,Kulmbach,,1988-10-01,,11.4426,50.1031,2,1,1,BY,Bayern,städtisches Gebiet,städtisch,Hintergrund,Konrad-Adenauer-Straße,,95326
-467,DEBY033,Landshut/Podewilsstraße,Landshut,,1985-12-01,,12.1571,48.5398,2,1,3,BY,Bayern,städtisches Gebiet,städtisch,Verkehr,Podewilsstraße,,84028
 469,DEBY035,Lindau (Bodensee)/Friedrichshafener Straße,Lindau (Bodensee),,2013-12-12,,9.6889,47.5575,2,1,3,BY,Bayern,städtisches Gebiet,städtisch,Verkehr,Friedrichshafener Straße,,88131
 471,DEBY037,München/Stachus,München,,1978-01-01,,11.5649,48.1373,2,1,3,BY,Bayern,städtisches Gebiet,städtisch,Verkehr,Sonnenstraße,,80335
 473,DEBY039,München/Lothstraße,München,,1978-01-01,,11.5547,48.1545,2,1,1,BY,Bayern,städtisches Gebiet,städtisch,Hintergrund,Lothstraße,62,80335
@@ -336,6 +335,7 @@ station id,station code,station name,station city,station synonym,station active
 2113,DEBB110,Dallgow-Döberitz,Dallgow-Döberitz,,2019-06-19,,13.0488,52.5395,4,2,1,BB,Brandenburg,vorstädtisches Gebiet,vorstädtisch,Hintergrund,Am Egelpfuhl,,14624
 9480,DEBE125,Berlin Leipziger Straße (MC),Berlin,,2020-03-26,,13.3824,52.5098,3,1,3,BE,Berlin,städtisches Gebiet,städtisch,Verkehr,Leipziger Straße,5,10117
 9488,DENW405,Wesel-Obrighoven,Wesel,WES2,2020-11-19,,6.6551,51.6735,10,6,1,NW,Nordrhein-Westfalen,ländlich stadtnah,ländlich,Hintergrund,Obrighovener Straße,,46485
+9523,DEBW241,Ludwigsburg Schlossstraße,Ludwigsburg,,2020-01-01,,9.1937,48.8982,1,1,3,BW,Baden-Württemberg,städtisches Gebiet,städtisch,Verkehr,Schlossstraße,21,71634
 9525,DEBY198,Ingolstadt/Münchener Str.,Ingolstadt,,2022-01-01,,11.4346,48.7426,2,1,3,BY,Bayern,städtisches Gebiet,städtisch,Verkehr,Münchener Straße,,85051
 9529,DEST134,Dessau/Roßlau,Roßlau,,2021-01-01,,12.2387,51.8858,14,1,3,ST,Sachsen-Anhalt,städtisches Gebiet,städtisch,Verkehr,Goethestraße,,06862
 9530,DENW415,Oberhausen Duisburger Straße,Oberhausen,,2020-12-16,,6.8425,51.4784,10,1,3,NW,Nordrhein-Westfalen,städtisches Gebiet,städtisch,Verkehr,Duisburger Straße,208,46049
@@ -353,6 +353,7 @@ station id,station code,station name,station city,station synonym,station active
 10465,DEBB126,"Oranienburg, Bernauer Str.",Oranienburg,,2024-11-01,,13.2405,52.7557,4,1,3,BB,Brandenburg,städtisches Gebiet,städtisch,Verkehr,Bernauer Straße,23,16515
 10468,DEHB014,Bremen-Nordstraße,Bremen,,2024-01-01,,8.7756,53.0994,5,1,3,HB,Bremen,städtisches Gebiet,städtisch,Verkehr,Nordstr.,394,28219
 10469,DEBB127,Luckenwalde,Luckenwalde,,2025-02-28,,13.1794,52.0891,4,2,1,BB,Brandenburg,vorstädtisches Gebiet,vorstädtisch,Hintergrund,Kirchhofsweg,13,14943
+10470,DEBW249,Stuttgart Hauptstätter Straße,Stuttgart,,2024-01-01,,9.1709,48.7662,1,1,3,BW,Baden-Württemberg,städtisches Gebiet,städtisch,Verkehr,Hauptstätter Straße,121,70187
 10472,DEHE175,Rimberg,Breitenbach am Herzberg,,2025-06-16,,9.4612,50.7972,7,3,1,HE,Hessen,ländliches Gebiet,ländlich,Hintergrund,Sender Rimberg,,36287
 138,DEBE027,Berlin Marienfelde,Berlin,,1989-04-01,,13.3681,52.3984,3,6,1,BE,Berlin,ländlich stadtnah,ländlich,Hintergrund,Schichauweg (UBA-Gelände),66,12307
 169,DEBE062,Berlin Frohnau (3.5 m),Berlin,,1996-02-01,,13.2961,52.6533,3,6,1,BE,Berlin,ländlich stadtnah,ländlich,Hintergrund,Jägersteig (Funkturm 3.5 m),1,13465
@@ -411,6 +412,7 @@ station id,station code,station name,station city,station synonym,station active
 326,DEBW125,Pfinztal Karlsruher Straße,Berghausen,,2006-01-01,2025-12-31,8.5263,49.0037,1,2,3,BW,Baden-Württemberg,vorstädtisches Gebiet,vorstädtisch,Verkehr,Karlsruher Straße,,76327
 353,DEBW152,Heilbronn Weinsberger Straße-Ost,Heilbronn,,2009-01-01,,9.2259,49.1460,1,1,3,BW,Baden-Württemberg,städtisches Gebiet,städtisch,Verkehr,Weinsberger Straße,,74072
 357,DEBW156,Schramberg Oberndorfer Straße,Schramberg,,2011-08-01,,8.3906,48.2292,1,1,3,BW,Baden-Württemberg,städtisches Gebiet,städtisch,Verkehr,Oberndorfer Straße,,78713
+467,DEBY033,Landshut/Podewilsstraße,Landshut,,1985-12-01,,12.1571,48.5398,2,1,3,BY,Bayern,städtisches Gebiet,städtisch,Verkehr,Podewilsstraße,,84028
 487,DEBY053,Nürnberg/Bahnhof,Nürnberg,,1986-09-01,,11.0884,49.4459,2,1,3,BY,Bayern,städtisches Gebiet,städtisch,Verkehr,Köhnstraße,,90478
 538,DEBY118,Passau/Stelzhamerstraße,Passau,,2005-04-05,,13.4220,48.5736,2,1,1,BY,Bayern,städtisches Gebiet,städtisch,Hintergrund,Stelzhamerstraße,,94036
 1077,DENW022,Gelsenkirchen-Bismarck,Gelsenkirchen,GELS,1981-08-01,,7.1019,51.5336,10,2,1,NW,Nordrhein-Westfalen,vorstädtisches Gebiet,vorstädtisch,Hintergrund,Trinenkamp (Parkplatz am Sportplatz),,45889
@@ -420,7 +422,7 @@ station id,station code,station name,station city,station synonym,station active
 1582,DESH055,Lübeck Fackenburger Allee,Lübeck,,2015-01-01,,10.6649,53.8745,15,1,3,SH,Schleswig-Holstein,städtisches Gebiet,städtisch,Verkehr,Fackenburger Allee,51,23554
 1605,DESN017,Freiberg,Freiberg,,1994-09-01,,13.3468,50.9163,13,1,1,SN,Sachsen,städtisches Gebiet,städtisch,Hintergrund,Helmertplatz,,09599
 1679,DESN091,Zwickau-Werdauer Str.,Zwickau,ZwickauW,2011-10-20,,12.4866,50.7204,13,1,3,SN,Sachsen,städtisches Gebiet,städtisch,Verkehr,Werdauer Str./Crimmitschauer Str.,,08056
-9523,DEBW241,Ludwigsburg Schlossstraße,Ludwigsburg,,2020-01-01,,9.1937,48.8982,1,1,3,BW,Baden-Württemberg,städtisches Gebiet,städtisch,Verkehr,Schlossstraße,21,71634
 10351,DESH062,Norderstedt Bekwisch,Norderstedt,,2024-01-01,,9.9906,53.6760,15,1,1,SH,Schleswig-Holstein,städtisches Gebiet,städtisch,Hintergrund,Bekwisch,9,22848
 10388,DEST144,Magdeburg City-Tunnel,Magdeburg,,2024-01-01,,11.6306,52.1312,14,1,3,ST,Sachsen-Anhalt,städtisches Gebiet,städtisch,Verkehr,Ernst-Reuter-Allee,,39104
-10470,DEBW249,Stuttgart Hauptstätter Straße,Stuttgart,,2024-01-01,,9.1709,48.7662,1,1,3,BW,Baden-Württemberg,städtisches Gebiet,städtisch,Verkehr,Hauptstätter Straße,121,70187
+9566,DEBW245,Pforzheim Luisenstraße,Pforzheim,,2026-01-01,,8.6962,48.8937,1,1,3,BW,Baden-Württemberg,städtisches Gebiet,städtisch,Verkehr,Luisenstraße,18,75172
+321,DEBW120,Leonberg Grabenstraße,Leonberg,,2004-12-29,2024-12-31,9.0165,48.8010,1,1,3,BW,Baden-Württemberg,städtisches Gebiet,städtisch,Verkehr,Grabenstraße,,71229
