@@ -1,0 +1,26 @@
+station id,station code,station name,station city,station synonym,station active from,station active to,station longitude,station latitude,network id,station setting id,station type id,network code,network name,station setting name,station setting short name,station type name,station street,station street nr,station zip code
+1719,DEST002,Burg,Burg,,2020-01-22,,11.8648,52.2684,14,2,1,ST,Sachsen-Anhalt,vorstädtisches Gebiet,vorstädtisch,Hintergrund,Flickschupark,,39288
+1726,DEST011,Wernigerode/Bahnhof,Wernigerode,,2020-11-20,,10.7901,51.8394,14,1,1,ST,Sachsen-Anhalt,städtisches Gebiet,städtisch,Hintergrund,Bahnhofsvorplatz,,38855
+1730,DEST015,Bitterfeld/Wolfen,Greppin,,2022-01-10,,12.3029,51.6512,14,2,2,ST,Sachsen-Anhalt,vorstädtisches Gebiet,vorstädtisch,Industrie,Schrebergartenstraße,,06803
+1741,DEST028,Zeitz,Zeitz,,2016-03-01,,12.1413,51.0546,14,1,1,ST,Sachsen-Anhalt,städtisches Gebiet,städtisch,Hintergrund,Freiligrathstraße,,06712
+1742,DEST029,Bernburg,Bernburg,,2022-01-10,,11.7390,51.8035,14,2,1,ST,Sachsen-Anhalt,vorstädtisches Gebiet,vorstädtisch,Hintergrund,Platz der Jugend,,06406
+1751,DEST044,Halberstadt,Halberstadt,,1992-09-23,,11.0574,51.8970,14,1,1,ST,Sachsen-Anhalt,städtisches Gebiet,städtisch,Hintergrund,Paulsplan,,38820
+1752,DEST050,Halle/Nord,Halle/Saale,,2016-03-17,,11.9791,51.4962,14,1,1,ST,Sachsen-Anhalt,städtisches Gebiet,städtisch,Hintergrund,Schleiermacherstraße,306,06114
+1758,DEST066,Wittenberg/Bahnstrasse,Wittenberg,,2019-12-06,,12.6637,51.8709,14,1,1,ST,Sachsen-Anhalt,städtisches Gebiet,städtisch,Hintergrund,Bahnstraße,,06886
+1769,DEST077,Magdeburg/West,Magdeburg,,1994-01-04,,11.6115,52.1279,14,1,1,ST,Sachsen-Anhalt,städtisches Gebiet,städtisch,Hintergrund,Hans-Löscher-Straße,39,39108
+1776,DEST089,Zartau/Waldstation,Klötze,Level II 1501,2020-10-20,,11.1723,52.5931,14,5,1,ST,Sachsen-Anhalt,ländlich regional,ländlich,Hintergrund,Forsthaus Zartau,,38486
+1777,DEST090,Leuna,Leuna,,2018-11-23,,12.0321,51.3214,14,2,2,ST,Sachsen-Anhalt,vorstädtisches Gebiet,vorstädtisch,Industrie,Kreypauer Straße,,06237
+1779,DEST092,Wittenberg/Dessauer Strasse,Lutherstadt Wittenberg,,2018-02-06,,12.5983,51.8675,14,1,3,ST,Sachsen-Anhalt,städtisches Gebiet,städtisch,Verkehr,Dessauer Str.,,06886
+1782,DEST095,Aschersleben,Aschersleben,,2000-11-02,,11.4495,51.7595,14,1,3,ST,Sachsen-Anhalt,städtisches Gebiet,städtisch,Verkehr,Hinter dem Zoll,30,06449
+1785,DEST098,Unterharz / Friedrichsbrunn,Friedrichsbrunn,,2013-01-24,,11.0434,51.6624,14,5,1,ST,Sachsen-Anhalt,ländlich regional,ländlich,Hintergrund,Forsthaus Uhlenstein,,06493
+1789,DEST102,Halle/Paracelsusstr.,Halle/Saale,,2018-04-19,,11.9813,51.4948,14,1,3,ST,Sachsen-Anhalt,städtisches Gebiet,städtisch,Verkehr,Paracelsusstr.,,06114
+1790,DEST103,Magdeburg Schleinufer,Magdeburg,,2014-11-19,,11.6327,52.1208,14,1,3,ST,Sachsen-Anhalt,städtisches Gebiet,städtisch,Verkehr,Schleinufer,,39104
+1791,DEST104,Domäne Bobbe,Dornbock (Bobbe),,2009-12-17,,11.8914,51.8373,14,3,1,ST,Sachsen-Anhalt,ländliches Gebiet,ländlich,Hintergrund,Pappelweg,,06369
+1792,DEST105,Stendal Stadtsee,Stendal,,2016-03-21,,11.8503,52.6021,14,1,1,ST,Sachsen-Anhalt,städtisches Gebiet,städtisch,Hintergrund,Geschwister-Scholl-Str.,,39576
+1793,DEST106,Goldene Aue (Roßla),Roßla,,2016-02-29,,11.0911,51.4561,14,3,1,ST,Sachsen-Anhalt,ländliches Gebiet,ländlich,Hintergrund,Freibad,,06536
+1795,DEST108,Weißenfels/Am Krug,Weißenfels,,2017-09-12,,11.9610,51.1972,14,1,3,ST,Sachsen-Anhalt,städtisches Gebiet,städtisch,Verkehr,Am Krug,,06667
+1798,DEST112,Magdeburg/Guericke-Stra.,Magdeburg,,2016-01-01,,11.6319,52.1317,14,1,3,ST,Sachsen-Anhalt,städtisches Gebiet,städtisch,Verkehr,Otto-von-Guericke-Straße,,39104
+1819,DEST133,Halle/Riebeckplatz,Halle/Saale,,2019-06-01,,11.9839,51.4758,14,1,3,ST,Sachsen-Anhalt,städtisches Gebiet,städtisch,Verkehr,Merseburger Straße,,06110
+9529,DEST134,Dessau/Roßlau,Roßlau,,2021-01-01,,12.2387,51.8858,14,1,3,ST,Sachsen-Anhalt,städtisches Gebiet,städtisch,Verkehr,Goethestraße,,06862
+1749,DEST039,Brocken,Schierke,,2016-02-19,,10.6183,51.7986,14,4,1,ST,Sachsen-Anhalt,ländlich abgelegen,ländlich,Hintergrund,Brockengipfel,,38879
+10388,DEST144,Magdeburg City-Tunnel,Magdeburg,,2024-01-01,,11.6306,52.1312,14,1,3,ST,Sachsen-Anhalt,städtisches Gebiet,städtisch,Verkehr,Ernst-Reuter-Allee,,39104
