@@ -1,0 +1,61 @@
+station id,station code,station name,station city,station synonym,station active from,station active to,station longitude,station latitude,network id,station setting id,station type id,network code,network name,station setting name,station setting short name,station type name,station street,station street nr,station zip code
+1057,DENW002,Datteln-Hagem,Datteln,DATT,1986-12-01,,7.3314,51.6414,10,2,1,NW,Nordrhein-Westfalen,vorstädtisches Gebiet,vorstädtisch,Hintergrund,Mozartstraße (Grünfläche Schulgelände),,45711
+1061,DENW006,Lünen-Niederaden,Lünen,NIED,1981-01-02,,7.5698,51.5922,10,2,1,NW,Nordrhein-Westfalen,vorstädtisches Gebiet,vorstädtisch,Hintergrund,Kreisstraße (Schule),,44532
+1063,DENW008,Dortmund-Eving,Dortmund,DMD2,1988-11-01,,7.4574,51.5369,10,1,1,NW,Nordrhein-Westfalen,städtisches Gebiet,städtisch,Hintergrund,Burgweg,,44145
+1076,DENW021,Bottrop-Welheim,Bottrop,BOTT,1981-08-01,,6.9769,51.5260,10,1,2,NW,Nordrhein-Westfalen,städtisches Gebiet,städtisch,Industrie,Welheimer Straße (an der Schule),,46238
+1079,DENW024,Essen-Vogelheim,Essen,EVOG,1985-11-01,,6.9810,51.4965,10,1,1,NW,Nordrhein-Westfalen,städtisches Gebiet,städtisch,Hintergrund,Ecke Hafenstraße / Wildstraße,,45356
+1084,DENW029,Hattingen-Blankenstein,Hattingen,HATT,1986-11-01,,7.2085,51.4030,10,2,1,NW,Nordrhein-Westfalen,vorstädtisches Gebiet,vorstädtisch,Hintergrund,An der Becke (Gewerbegebiet Zum Ludwigstal),,45527
+1089,DENW034,Duisburg-Walsum,Duisburg,WALS,1981-01-02,,6.7484,51.5240,10,1,2,NW,Nordrhein-Westfalen,städtisches Gebiet,städtisch,Industrie,Sonnenstraße,,47179
+1093,DENW038,Mülheim-Styrum,Mülheim,STYR,1979-05-01,,6.8651,51.4535,10,1,1,NW,Nordrhein-Westfalen,städtisches Gebiet,städtisch,Hintergrund,Neustadtstraße (am Sportplatz),,45476
+1095,DENW040,Duisburg-Buchholz,Duisburg,BUCH,1979-05-01,,6.7630,51.3853,10,2,1,NW,Nordrhein-Westfalen,vorstädtisches Gebiet,vorstädtisch,Hintergrund,Böhmerstraße (an der Schule),,47249
+1097,DENW042,Krefeld-Linn,Krefeld,KREF,1983-09-01,,6.6402,51.3377,10,1,1,NW,Nordrhein-Westfalen,städtisches Gebiet,städtisch,Hintergrund,Hammerstraße (gegenüber Haus 52),,47809
+1098,DENW043,Essen-Ost Steeler Straße,Essen,VESN,1988-12-01,,7.0305,51.4512,10,1,3,NW,Nordrhein-Westfalen,städtisches Gebiet,städtisch,Verkehr,Steeler Straße / Ecke Markgrafenstraße,,45138
+1108,DENW053,Köln-Chorweiler,Köln,CHOR,1981-01-01,,6.8846,51.0193,10,1,1,NW,Nordrhein-Westfalen,städtisches Gebiet,städtisch,Hintergrund,Fühlinger Weg,,50765
+1113,DENW058,Hürth,Hürth,HUE2,1989-01-01,,6.8738,50.8762,10,2,2,NW,Nordrhein-Westfalen,vorstädtisches Gebiet,vorstädtisch,Industrie,Dunant-Straße (gegenüber dem Sportplatz),,50354
+1114,DENW059,Köln-Rodenkirchen,Köln,RODE,1980-12-01,,6.9851,50.8899,10,2,1,NW,Nordrhein-Westfalen,vorstädtisches Gebiet,vorstädtisch,Hintergrund,Friedrich-Ebert-Straße (Baumschule),,50996
+1117,DENW062,Bonn-Auerberg,Bonn,,1986-12-01,,7.0826,50.7536,10,2,1,NW,Nordrhein-Westfalen,vorstädtisches Gebiet,vorstädtisch,Hintergrund,An der Josefshöhe (neben P2 Sportplatz),,53117
+1119,DENW064,Simmerath (Eifel),Simmerath,EIFE,1983-09-01,,6.2810,50.6532,10,5,1,NW,Nordrhein-Westfalen,ländlich regional,ländlich,Hintergrund,An der B399 ca. 6km von Simmerath,,52152
+1120,DENW065,Netphen Rothaargebirge,Netphen,,1985-12-01,,8.1919,50.9303,10,5,1,NW,Nordrhein-Westfalen,ländlich regional,ländlich,Hintergrund,Nauholzer Weg (gegenüber Försterei Hohenroth),,57271
+1121,DENW066,Nettetal-Kaldenkirchen,Nettetal,,1987-12-01,,6.1958,51.3269,10,6,1,NW,Nordrhein-Westfalen,ländlich stadtnah,ländlich,Hintergrund,Juiser Feld,,41334
+1122,DENW067,Bielefeld-Ost,Bielefeld,BIEL,1989-03-01,,8.5484,52.0232,10,1,1,NW,Nordrhein-Westfalen,städtisches Gebiet,städtisch,Hintergrund,Hermann-Delius-Straße / Ecke Bleichstraße,,33607
+1123,DENW068,Soest-Ost,Soest,SOES,1989-03-01,,8.1480,51.5707,10,6,1,NW,Nordrhein-Westfalen,ländlich stadtnah,ländlich,Hintergrund,Enkesenweg,,59494
+1126,DENW071,Düsseldorf-Lörick,Düsseldorf,LOER,1983-09-01,,6.7324,51.2492,10,1,1,NW,Nordrhein-Westfalen,städtisches Gebiet,städtisch,Hintergrund,Zum Niederkasseler Deich,,40547
+1129,DENW074,Niederzier,Niederzier,NIZI,1991-08-01,,6.4693,50.8835,10,6,2,NW,Nordrhein-Westfalen,ländlich stadtnah,ländlich,Industrie,Treibbachstraße (am Feuerwehrgerätehaus),,52382
+1133,DENW078,Ratingen-Tiefenbroich,Ratingen,,1998-04-23,,6.8199,51.3034,10,2,1,NW,Nordrhein-Westfalen,vorstädtisches Gebiet,vorstädtisch,Hintergrund,Daniel-Goldbach-Straße,,40880
+1134,DENW079,Leverkusen-Manfort,Leverkusen,LEV2,1998-04-23,,7.0050,51.0289,10,2,1,NW,Nordrhein-Westfalen,vorstädtisches Gebiet,vorstädtisch,Hintergrund,Manforter Straße,,51373
+1135,DENW080,Solingen-Wald,Solingen,SOLI,1998-07-01,,7.0526,51.1838,10,2,1,NW,Nordrhein-Westfalen,vorstädtisches Gebiet,vorstädtisch,Hintergrund,Dültgenstaler Straße,,42719
+1136,DENW081,Borken-Gemen,Borken,BORG,1998-09-11,,6.8745,51.8620,10,6,1,NW,Nordrhein-Westfalen,ländlich stadtnah,ländlich,Hintergrund,"Pumpenwerk, Lise-Meitner-Straße 4",,46325
+1137,DENW082,Düsseldorf Corneliusstraße,Düsseldorf,DDCS,1997-03-13,,6.7825,51.2132,10,1,3,NW,Nordrhein-Westfalen,städtisches Gebiet,städtisch,Verkehr,Corneliusstraße,71,40215
+1139,DENW094,Aachen-Burtscheid,Aachen,AABU,1999-07-05,,6.0938,50.7547,10,1,1,NW,Nordrhein-Westfalen,städtisches Gebiet,städtisch,Hintergrund,Hein-Görgen-Straße,,52066
+1140,DENW095,Münster-Geist,Münster,MSGE,1999-10-06,,7.6116,51.9365,10,1,1,NW,Nordrhein-Westfalen,städtisches Gebiet,städtisch,Hintergrund,Gut Insel (Gelände der Ludwig-Erhard-Schule),,48151
+1141,DENW096,Mönchengladbach-Rheydt,Mönchengladbach,MGRH,1999-11-09,,6.4256,51.1546,10,2,1,NW,Nordrhein-Westfalen,vorstädtisches Gebiet,vorstädtisch,Hintergrund,Urftstraße / Ecke Hubertusstraße,,41239
+1157,DENW112,Duisburg Kardinal-Galen-Straße,Duisburg,VDUI,2002-06-10,,6.7719,51.4377,10,1,3,NW,Nordrhein-Westfalen,städtisches Gebiet,städtisch,Verkehr,Kardinal-Galen-Straße,,47051
+1159,DENW114,Wuppertal-Langerfeld,Wuppertal,WULA,2002-12-03,,7.2319,51.2776,10,1,1,NW,Nordrhein-Westfalen,städtisches Gebiet,städtisch,Hintergrund,Am Buchenloh,,42389
+1161,DENW116,Krefeld (Hafen),Krefeld,KRHA,2002-10-29,,6.6702,51.3426,10,2,2,NW,Nordrhein-Westfalen,vorstädtisches Gebiet,vorstädtisch,Industrie,Hentrichstraße,,47809
+1177,DENW133,Hagen Graf-von-Galen-Ring,Hagen,VHAM,2002-08-29,,7.4636,51.3628,10,1,3,NW,Nordrhein-Westfalen,städtisches Gebiet,städtisch,Verkehr,Graf-von-Galen-Ring,9,58095
+1178,DENW134,Essen Gladbecker Straße,Essen,VEAE,2003-10-29,,7.0053,51.4779,10,1,3,NW,Nordrhein-Westfalen,städtisches Gebiet,städtisch,Verkehr,Gladbecker Straße,244,45326
+1180,DENW136,Dortmund Brackeler Straße,Dortmund,VDOM,2003-11-15,,7.4836,51.5235,10,1,3,NW,Nordrhein-Westfalen,städtisches Gebiet,städtisch,Verkehr,Brackeler Straße,14/16,44145
+1222,DENW179,Schwerte,Schwerte,SHW2,2005-11-03,,7.5822,51.4488,10,1,1,NW,Nordrhein-Westfalen,städtisches Gebiet,städtisch,Hintergrund,Konrad-Zuse-Straße,,58239
+1224,DENW181,Warstein,Warstein,WAST,2005-12-22,,8.3608,51.4430,10,1,2,NW,Nordrhein-Westfalen,städtisches Gebiet,städtisch,Industrie,Rangetriftweg,,59581
+1231,DENW188,Oberhausen Mülheimer Straße 117,Oberhausen,,2005-06-27,,6.8636,51.4749,10,1,3,NW,Nordrhein-Westfalen,städtisches Gebiet,städtisch,Verkehr,Mülheimer Straße,117,46045
+1232,DENW189,Wuppertal Gathe,Wuppertal,VWEL,2005-06-30,,7.1474,51.2607,10,1,3,NW,Nordrhein-Westfalen,städtisches Gebiet,städtisch,Verkehr,Gathe / Wilhelmstraße,,42107
+1243,DENW200,Bielefeld Detmolder Straße,Bielefeld,VBID,2015-01-01,,8.5528,52.0056,10,1,3,NW,Nordrhein-Westfalen,städtisches Gebiet,städtisch,Verkehr,Detmolder Straße,177/179,33604
+1250,DENW207,Aachen Wilhelmstraße,Aachen,VACW,2007-01-10,,6.0958,50.7731,10,1,3,NW,Nordrhein-Westfalen,städtisches Gebiet,städtisch,Verkehr,Wilhelmstraße,22/24,52070
+1251,DENW208,Gelsenkirchen Kurt-Schumacher-Straße,Gelsenkirchen,VGES,2011-01-10,,7.0846,51.5279,10,1,3,NW,Nordrhein-Westfalen,städtisches Gebiet,städtisch,Verkehr,Kurt-Schumacher-Straße,109,45881
+1254,DENW211,Köln Clevischer Ring,Köln,,2006-05-06,,7.0046,50.9628,10,1,3,NW,Nordrhein-Westfalen,städtisches Gebiet,städtisch,Verkehr,Clevischer Ring,3,51065
+1255,DENW212,Köln Turiner Straße,Köln,VKTU,2007-03-29,,6.9576,50.9473,10,1,3,NW,Nordrhein-Westfalen,städtisches Gebiet,städtisch,Verkehr,Turiner Straße,19,50668
+1302,DENW259,Mönchengladbach Friedrich-Ebert-Straße,Mönchengladbach,VMGF,2009-01-09,,6.4399,51.1694,10,1,3,NW,Nordrhein-Westfalen,städtisches Gebiet,städtisch,Verkehr,Friedrich-Ebert-Straße,111/115,41236
+1303,DENW260,Münster Weseler Straße,Münster,VMS2,2009-01-12,,7.6194,51.9533,10,1,3,NW,Nordrhein-Westfalen,städtisches Gebiet,städtisch,Verkehr,Weseler Straße,38/40,48151
+1372,DENW329,Jackerath,Jackerath,JACK,2013-01-03,,6.4515,51.0338,10,3,2,NW,Nordrhein-Westfalen,ländliches Gebiet,ländlich,Industrie,Jülicher Straße,30/32,52445
+1380,DENW337,Jüchen-Hochneukirch,Jüchen,JHNK,2014-01-06,,6.4695,51.0976,10,6,2,NW,Nordrhein-Westfalen,ländlich stadtnah,ländlich,Industrie,Peter-Busch-Straße,,41363
+1381,DENW338,Duisburg-Bruckhausen,Duisburg,DUB2,2014-01-01,,6.7354,51.4855,10,1,2,NW,Nordrhein-Westfalen,städtisches Gebiet,städtisch,Industrie,Kaiser-Wilhelm-Straße / Ecke Kronstraße,,47169
+1397,DENW355,Leverkusen Gustav-Heinemann-Straße,Leverkusen,VLEG,2015-01-07,,7.0109,51.0315,10,1,3,NW,Nordrhein-Westfalen,städtisches Gebiet,städtisch,Verkehr,Gustav-Heinemann-Straße,,51377
+1398,DENW356,Lüdenscheid Lennestraße,Lüdenscheid,VLSL,2022-07-19,,7.6431,51.2276,10,1,3,NW,Nordrhein-Westfalen,städtisches Gebiet,städtisch,Verkehr,Lennestraße,71,58507
+9488,DENW405,Wesel-Obrighoven,Wesel,WES2,2020-11-19,,6.6551,51.6735,10,6,1,NW,Nordrhein-Westfalen,ländlich stadtnah,ländlich,Hintergrund,Obrighovener Straße,,46485
+9530,DENW415,Oberhausen Duisburger Straße,Oberhausen,,2020-12-16,,6.8425,51.4784,10,1,3,NW,Nordrhein-Westfalen,städtisches Gebiet,städtisch,Verkehr,Duisburger Straße,208,46049
+9589,DENW430,Düsseldorf Merowingerstraße,Düsseldorf,VDBI,2022-09-02,,6.7763,51.2026,10,1,3,NW,Nordrhein-Westfalen,städtisches Gebiet,städtisch,Verkehr,Merowingerstraße,75/77,40225
+9595,DENW431,Düsseldorf-Lohausen,Düsseldorf,DLO2,2020-08-03,,6.7443,51.2774,10,1,1,NW,Nordrhein-Westfalen,städtisches Gebiet,städtisch,Hintergrund,Ikarusstraße,,40474
+1065,DENW010,Unna-Königsborn,Unna,UNNA,1986-11-01,,7.6938,51.5475,10,2,1,NW,Nordrhein-Westfalen,vorstädtisches Gebiet,vorstädtisch,Hintergrund,Palaiseaustraße (Schulzentrum),,59425
+1070,DENW015,Marl-Sickingmühle,Marl,SICK,1981-01-01,,7.1227,51.6990,10,2,1,NW,Nordrhein-Westfalen,vorstädtisches Gebiet,vorstädtisch,Hintergrund,Alte Straße (vor der Schule),,45772
+1290,DENW247,Essen-Schuir (LANUV),Essen,ELAN,2008-05-01,,6.9656,51.4068,10,2,1,NW,Nordrhein-Westfalen,vorstädtisches Gebiet,vorstädtisch,Hintergrund,Wallneyer Straße (Gelände des LANUV),6,45133
+1077,DENW022,Gelsenkirchen-Bismarck,Gelsenkirchen,GELS,1981-08-01,,7.1019,51.5336,10,2,1,NW,Nordrhein-Westfalen,vorstädtisches Gebiet,vorstädtisch,Hintergrund,Trinenkamp (Parkplatz am Sportplatz),,45889
