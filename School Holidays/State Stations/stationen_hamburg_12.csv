@@ -1,0 +1,13 @@
+station id,station code,station name,station city,station synonym,station active from,station active to,station longitude,station latitude,network id,station setting id,station type id,network code,network name,station setting name,station setting short name,station type name,station street,station street nr,station zip code
+784,DEHH008,Hamburg Sternschanze,Hamburg,,1984-03-01,,9.9679,53.5641,6,1,1,HH,Hamburg,städtisches Gebiet,städtisch,Hintergrund,Dänenweg,,20357
+791,DEHH015,Hamburg Veddel,Hamburg,,1984-07-01,,10.0212,53.5233,6,1,2,HH,Hamburg,städtisches Gebiet,städtisch,Industrie,Am Zollhafen,,20539
+802,DEHH026,Hamburg Stresemannstraße,Hamburg,,1991-10-24,,9.9572,53.5606,6,1,3,HH,Hamburg,städtisches Gebiet,städtisch,Verkehr,Stresemannstraße,95,22769
+835,DEHH059,Hamburg Wilhelmsburg,Hamburg,61WB,2000-04-03,,9.9906,53.5079,6,1,1,HH,Hamburg,städtisches Gebiet,städtisch,Hintergrund,Rotenhäuser Damm,78a,21107
+840,DEHH064,Hamburg Kieler Straße,Hamburg,64KS,2001-05-31,,9.9446,53.5644,6,1,3,HH,Hamburg,städtisches Gebiet,städtisch,Verkehr,Kieler Straße,13,22769
+844,DEHH068,Hamburg Habichtstraße,Hamburg,68HB,2001-12-31,,10.0539,53.5923,6,1,3,HH,Hamburg,städtisches Gebiet,städtisch,Verkehr,Habichtstr.,59,22305
+846,DEHH070,Hamburg Max-Brauer-Allee II (Straße),Hamburg,70MB,2002-02-12,,9.9430,53.5557,6,1,3,HH,Hamburg,städtisches Gebiet,städtisch,Verkehr,Max-Brauer-Allee,92/94,22765
+855,DEHH079,Hamburg Altona Elbhang,Hamburg,80KT,2011-12-08,,9.9448,53.5453,6,1,1,HH,Hamburg,städtisches Gebiet,städtisch,Hintergrund,Olbersweg,,22767
+857,DEHH081,Hamburg Hafen,Hamburg,,2015-09-29,,9.9816,53.5292,6,1,1,HH,Hamburg,städtisches Gebiet,städtisch,Hintergrund,Worthdamm,49,20457
+10348,DEHH082,Hamburg Niendorf,Hamburg,83NI,2024-01-01,,9.9614,53.6222,6,2,1,HH,Hamburg,vorstädtisches Gebiet,vorstädtisch,Hintergrund,Hainholz,,22453
+826,DEHH050,Hamburg Neugraben,Hamburg,52NG,1998-07-01,,9.8572,53.4809,6,2,1,HH,Hamburg,vorstädtisches Gebiet,vorstädtisch,Hintergrund,Neugrabener Dorf,79/81,21147
+10466,DEHH083,Hamburg Bergstedt,Hamburg,84BS,2024-10-30,,10.1164,53.6828,6,2,1,HH,Hamburg,vorstädtisches Gebiet,vorstädtisch,Hintergrund,Trillup,,22395
