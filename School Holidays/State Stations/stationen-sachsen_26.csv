@@ -1,0 +1,27 @@
+station id,station code,station name,station city,station synonym,station active from,station active to,station longitude,station latitude,network id,station setting id,station type id,network code,network name,station setting name,station setting short name,station type name,station street,station street nr,station zip code
+1589,DESN001,Annaberg-Buchholz,Annaberg-Buchholz,,1994-09-01,,12.9973,50.5709,13,1,1,SN,Sachsen,städtisches Gebiet,städtisch,Hintergrund,Talstr./Str. der Einheit,,09456
+1592,DESN004,Bautzen,Bautzen,,1994-09-01,,14.4438,51.1757,13,1,1,SN,Sachsen,städtisches Gebiet,städtisch,Hintergrund,Stieberstr./Goethestr.,,02625
+1608,DESN020,Görlitz,Görlitz,,1986-10-01,,14.9740,51.1558,13,1,3,SN,Sachsen,städtisches Gebiet,städtisch,Verkehr,Zeppelinstr.,10,02828
+1612,DESN024,Klingenthal,Klingenthal,,1994-09-01,,12.4687,50.3548,13,1,1,SN,Sachsen,städtisches Gebiet,städtisch,Hintergrund,Graslitzer Str. (Parkplatz),,08248
+1613,DESN025,Leipzig-Mitte,Leipzig,,1990-12-01,,12.3772,51.3442,13,1,3,SN,Sachsen,städtisches Gebiet,städtisch,Verkehr,Willy-Brandt-Platz/Am Hallischen Tor,,04109
+1637,DESN049,Carlsfeld,Carlsfeld,,1990-07-01,,12.6111,50.4313,13,4,1,SN,Sachsen,ländlich abgelegen,ländlich,Hintergrund,Weitersglashütte,2a,08309
+1639,DESN051,Radebeul-Wahnsdorf,Radebeul,,1967-12-01,,13.6750,51.1195,13,6,1,SN,Sachsen,ländlich stadtnah,ländlich,Hintergrund,Altwahnsdorf,12,01445
+1647,DESN059,Leipzig-West,Leipzig,,1994-09-01,,12.2974,51.3179,13,2,1,SN,Sachsen,vorstädtisches Gebiet,vorstädtisch,Hintergrund,Nikolai-Rumjanzew-Str.,100,04207
+1662,DESN074,Schwartenberg,Neuhausen,,1998-02-06,,13.4651,50.6591,13,5,1,SN,Sachsen,ländlich regional,ländlich,Hintergrund,Am Schwartenberg,10,09544
+1663,DESN075,Plauen-Süd,Plauen,,1998-08-06,,12.1381,50.4861,13,1,3,SN,Sachsen,städtisches Gebiet,städtisch,Verkehr,Hofer Landstr./Oelsnitzer Str.,,08527
+1665,DESN077,Leipzig Lützner Str.,Leipzig,,2001-01-01,,12.3347,51.3359,13,1,3,SN,Sachsen,städtisches Gebiet,städtisch,Verkehr,Lützner Str.,34/36,04177
+1667,DESN079,Niesky,Sproitz,,2003-05-05,,14.7497,51.2854,13,5,1,SN,Sachsen,ländlich regional,ländlich,Hintergrund,An der Aue,,02906
+1671,DESN083,Chemnitz-Leipziger Str.,Chemnitz,,2016-04-01,,12.9034,50.8457,13,1,3,SN,Sachsen,städtisches Gebiet,städtisch,Verkehr,Leipziger Str.,,09113
+1672,DESN084,Dresden-Bergstr.,Dresden,,2016-05-21,,13.7316,51.0263,13,1,3,SN,Sachsen,städtisches Gebiet,städtisch,Verkehr,Bergstr.,,01069
+1680,DESN092,Dresden-Winckelmannstr.,Dresden,DD-Winck,2008-06-20,,13.7302,51.0361,13,1,1,SN,Sachsen,städtisches Gebiet,städtisch,Hintergrund,Winckelmannstraße,,01069
+9557,DESN130,Liebschützberg,Liebschützberg,,2021-08-17,,13.1322,51.3526,13,4,1,SN,Sachsen,ländlich abgelegen,ländlich,Hintergrund,Salzstraße,,04758
+1594,DESN006,Borna,Borna,,2015-04-14,,12.4931,51.1250,13,1,3,SN,Sachsen,städtisches Gebiet,städtisch,Verkehr,Sachsenallee,45,04552
+1633,DESN045,Zittau-Ost,Zittau,,1990-07-01,,14.8228,50.8924,13,2,1,SN,Sachsen,vorstädtisches Gebiet,vorstädtisch,Hintergrund,Brückenstr.,12,02763
+1640,DESN052,Zinnwald,Zinnwald,,1971-02-01,,13.7515,50.7315,13,5,1,SN,Sachsen,ländlich regional,ländlich,Hintergrund,Hochmoorweg,7,01773
+1641,DESN053,Fichtelberg,Oberwiesenthal,,1969-01-01,,12.9535,50.4285,13,4,1,SN,Sachsen,ländlich abgelegen,ländlich,Hintergrund,Gipfelplateau (DWD),,09484
+1649,DESN061,Dresden-Nord,Dresden,,1994-09-01,,13.7414,51.0649,13,1,3,SN,Sachsen,städtisches Gebiet,städtisch,Verkehr,Schlesischer Platz,,01097
+1668,DESN080,Schkeuditz,Schkeuditz,,2003-06-06,,12.2341,51.3961,13,6,1,SN,Sachsen,ländlich stadtnah,ländlich,Hintergrund,Leipziger Str.,59,04435
+1681,DESN093,Brockau,Netzschkau OT Brockau,Brockau,2011-01-01,,12.2111,50.6081,13,5,1,SN,Sachsen,ländlich regional,ländlich,Hintergrund,Elsterberger Straße,4,08491
+1692,DESN104,Chemnitz Hans-Link-Straße,Chemnitz,,2017-01-01,,12.9594,50.8552,13,1,1,SN,Sachsen,städtisches Gebiet,städtisch,Hintergrund,Hans-Link-Straße,4,09131
+1605,DESN017,Freiberg,Freiberg,,1994-09-01,,13.3468,50.9163,13,1,1,SN,Sachsen,städtisches Gebiet,städtisch,Hintergrund,Helmertplatz,,09599
+1679,DESN091,Zwickau-Werdauer Str.,Zwickau,ZwickauW,2011-10-20,,12.4866,50.7204,13,1,3,SN,Sachsen,städtisches Gebiet,städtisch,Verkehr,Werdauer Str./Crimmitschauer Str.,,08056
