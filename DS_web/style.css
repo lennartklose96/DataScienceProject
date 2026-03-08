@@ -1,0 +1,141 @@
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: Arial, sans-serif;
+}
+
+body {
+background-color: #cbe5e7;
+color: #000000;
+text-align: center;
+}
+
+header {
+padding: 20px;
+width: 100%;
+position: sticky;
+top: 0;
+background-color: rgb(53, 167, 187);
+border-radius: 25px;
+z-index: 1000;
+box-shadow: 0 5px 30px rgba(0, 0, 0, 0.63);
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-center {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex: 1;
+    max-width: 400px;
+}
+
+.nav-left, .nav-right {
+    flex-shrink: 0;
+}
+
+.nav-left {
+    margin-left: 40px;
+}
+
+.nav-right {
+    margin-right: 40px;
+}
+
+.nav-container a {
+    color: #f5f5f5;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.nav-container a:hover {
+    color: #0f1199;
+}
+
+h1 {
+padding: 5px;
+}
+
+.ersatz1 {
+padding: 7px;
+}
+
+.ersatz2 {
+padding: 4px;
+}
+
+.a{
+    max-width: 900px;
+    margin: 75px auto;
+    padding: 20px;
+    text-align: left;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    position: relative;
+    line-height: 1.5;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.63);
+}
+
+.b{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.c{
+    padding: 20px;
+    text-align: left;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    grid-row: span 3;
+    line-height: 1.5;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.63);
+}
+
+.d{
+    padding: 20px;
+    text-align: left;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    line-height: 1.5;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.63);
+}
+
+.e{
+    padding: 20px;
+    text-align: left;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    line-height: 1.5;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.63);
+}
+
+.f{
+    padding: 20px;
+    text-align: left;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    line-height: 1.5;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.63);
+}
+
+.g{
+    max-width: 900px;
+    margin: 75px auto 20px auto;
+    padding: 20px;
+    text-align: left;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    position: relative;
+    line-height: 1.5;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.63);
+}
