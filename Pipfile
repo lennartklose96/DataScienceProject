@@ -10,6 +10,8 @@ dash = "*"
 plotly = "*"
 pandas = "*"
 numpy = "*"
+plotly-express = "*"
+gunicorn = "*"
 
 [dev-packages]
 
