@@ -4,18 +4,18 @@
 
 1.2 How did the COVID-19 pandemic affect the air pollution compared to the previous and following years?
 
-3 How much do the annual average values for PM10, PM2.5, and NO_2 differ between the federal states in the period 2016–2026?
+2 How much do the annual average values for PM10, PM2.5, and NO_2 differ between the federal states in the period 2016–2026?
 
-4. How do the PM10 concentration between urban, suburban and rural areas differ in the period 2016-2026?
+3. How do the PM10 concentration between urban, suburban and rural areas differ in the period 2016-2026?
 
-4.1 Do the data for urban, suburban, and rural measuring stations differ in terms of the positioning of the stations (background, traffic, industry) in the period 2016-2026?
+3.1 Do the data for urban, suburban, and rural measuring stations differ in terms of the positioning of the stations (background, traffic, industry) in the period 2016-2026?
 
-5. How do the PM10 concentrations vary between seasons in the years 2016 to 2026?
+4. How do the PM10 concentrations vary between seasons in the years 2016 to 2026?
 
-6. How does daily maximum temperature influence PM10 and PM2.5 concentrations in major German cities between 2016 and 2026?
+5. How does daily maximum temperature influence PM10 and PM2.5 concentrations in major German cities between 2016 and 2026?
 
-7. How do rainfall patterns relate to changes in PM10 and PM2.5 concentrations in major German cities between 2016 and 2026?
+6. How do rainfall patterns relate to changes in PM10 and PM2.5 concentrations in major German cities between 2016 and 2026?
 
-8. What is the impact of summer school holidays in the individual federal states on NO_2 concentrations in the years 2016 to 2026?
+7. What is the impact of summer school holidays in the individual federal states on NO_2 concentrations in the years 2016 to 2026?
 
-(9. comparison with other countries)
+(8. comparison with other countries)
