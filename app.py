@@ -39,8 +39,12 @@ server = app.server
 ##################
 
 app.layout = html.Div([
+    
+    ###############
+    ### Weather ###
+    ###############
+    
     html.H2("Air Quality & Weather"),
-
     html.Div([
         html.Div([
             html.H4("Select Year:"),
