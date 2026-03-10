@@ -9,16 +9,34 @@
 
 <header>
     <nav class="nav-container">
+
         <a href="index.html" class="nav-left">Home</a>
+
         <div class="nav-center">
-            <a href="data.html">Data</a>
-            <a href="quest.html">Research Questions</a>
+
+            <div class="dropdown">
+                <a href="data.html" class="dropbtn">Data</a>
+
+                <div class="dropdown-content">
+                    <a href="data.html#acquisition">Data Acquisition</a>
+                    <a href="data.html#ourdata">Our Data</a>
+                    <a href="data.html#features">Used Features</a>
+                </div>
+            </div>
+
+            <a href="uba.html">UBA Data</a>
+            <a href="weather.html">Weather</a>
+            <a href="holidays.html">Holidays</a>
+            <a href="international.html">International</a>
+
         </div>
+
         <a href="about.html" class="nav-right">About</a>
+
     </nav>
 </header>
 
-<section class="a2">
+<section class="a2" id="acquisition">
     <section class="a3">
         <h1>Data Acquisition</h1>
         <p>Für unser Projekt wurden verschiedene Datenquellen zusammengeführt, um die 
@@ -37,31 +55,146 @@
             zu identifizieren. 
         </p>
     </section>
-    <section class="b3">
+    <section class="b3" id="ourdata">
         <section class="c4">
         <h3>UBA API</h3>
-        <p>Hier erfolgt die Abfrage aller Daten rum um die Messstationen in Deutschland.
+        <p>Hier erfolgt die Abfrage aller Daten rund um die Messstationen in Deutschland.
         </p>
         <a href="https://www.umweltbundesamt.de/system/files/medien/358/dokumente/schnittstellenbeschreibung_luftdaten_api_v4.pdf" target="_blank" class="button-link">Zur Seite</a>
         </section>
         <section class="c4">
-        <h3>Wetter API</h3>
+        <h3>Weather API</h3>
         <p>Hier sucht man sich für den gewählten Zeitraum die Wetterdaten und gegebenfalls 
             auch spezifische Städte, die man betrachten möchte, heraus.
         </p>
         <a href="https://open-meteo.com/" target="_blank" class="button-link">Zur Seite</a>
         </section>
         <section class="c4">
-        <h3>Ferien API</h3>
+        <h3>Holiday API</h3>
         <p>Die API gibt einem die Ferientage für die einzelen Bundesländer zurück. 
         </p>
         <a href="https://ferien-api.maxleistner.de/" target="_blank" class="button-link">Zur Seite</a>
         </section>
         <section class="c4">
-        <h3>Vergleichs API</h3>
+        <h3>Comparison API</h3>
         <p>Hier erhält man, wie bei der UBA API, Daten über Luftverschmutzungswerte anderer Länder.
         </p>
         <a href="https://openaq.org/" target="_blank" class="button-link">Zur Seite</a>
+        </section>
+    </section>
+</section>
+
+
+
+<section class="b5" id="features">
+    <section class="c6">
+    <h1>Our data</h1>
+    <p>...
+
+    </p>
+    </section>
+
+    <section class="d2">
+    
+        <details>
+            <summary>UBA API request</summary>
+
+            <pre>
+                {"city": "Berlin",
+                "pm10": 18,
+                "pm25": 11,
+                "no2": 22}
+            </pre>
+
+        </details>
+    
+    </section>
+
+    <section class="d2">
+    
+        <details>
+            <summary>Weather API request</summary>
+
+            <pre>
+                {"city": "Berlin",
+                "pm10": 18,
+                "pm25": 11,
+                "no2": 22}
+            </pre>
+
+        </details>
+
+    </section>
+
+    <section class="d2">
+    
+        <details>
+            <summary>Holiday API request</summary>
+
+            <pre>
+                {"city": "Berlin",
+                "pm10": 18,
+                "pm25": 11,
+                "no2": 22}
+            </pre>
+
+        </details>
+
+    </section>
+
+    <section class="d2">
+    
+        <details>
+            <summary>Comparison API request</summary>
+
+            <pre>
+                {"city": "Berlin",
+                "pm10": 18,
+                "pm25": 11,
+                "no2": 22}
+            </pre>
+
+        </details>
+
+    </section>
+</section>
+
+
+
+<section class="a2">
+    <section class="a4">
+        <h1>Used Features</h1>
+    </section>
+    <section class="b4">
+        <section class="c5">
+        <h3>PM₁₀</h3>
+        <p>...
+        </p>
+        </section>
+        <section class="c5">
+        <h3>PM₂.₅</h3>
+        <p>...
+        </p>
+        </section>
+        <section class="c5">
+        <h3>NO₂</h3>
+        <p>...
+        </p>
+        </section>
+        <section class="c5">
+        <h3>Temperature</h3>
+        <p>...
+        </p>
+        </section>
+        <section class="c5">
+        <h3>Rainfall patterns</h3>
+        <p>...
+        </p>
+        </section>
+        <section class="c5">
+        <h3>summer holidays</h3>
+        <p>...
+        </p>
         </section>
     </section>
 </section>
