@@ -10,8 +10,9 @@ dash = "*"
 plotly = "*"
 pandas = "*"
 numpy = "*"
-plotly-express = "*"
 gunicorn = "*"
+plotly-express = "*"
+dash-ag-grid = "*"
 
 [dev-packages]
 
