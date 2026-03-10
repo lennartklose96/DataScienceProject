@@ -119,7 +119,7 @@ def update_combined_graph(selected_year, selected_weather):
         y=df_filtered[selected_weather],
         name=weather_labels[selected_weather],
         mode="lines+markers",
-        line=dict(color="#f34033", width=3),
+        line=dict(color="#f54033", width=3),
         yaxis="y2"
     ))
 
