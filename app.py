@@ -67,7 +67,10 @@ app.layout = html.Div([
         ], style={"width": "350px", "display": "inline-block"})
     ]),
 
-    dcc.Graph(id="weather-graph")
+    html.Div(
+        dcc.Graph(id="weather-graph"),
+        style={"width": "900px", "margin": "0 auto"}
+    )
 ])
 
 #################
@@ -118,14 +121,14 @@ def update_combined_graph(selected_year, selected_weather):
 
     # Layout
     fig_weather.update_layout(
-    title=f"Air Quality & {weather_labels[selected_weather]} in {selected_year}",
-    title_x=0.5,  # Center title
-    xaxis=dict(title="Month"),
-    yaxis=dict(title="Concentration (µg/m³)", side="left"),
-    yaxis2=dict(
-        title=selected_weather.replace("_"," ").title(),
-        overlaying="y",
-        side="right"
+        title=f"Air Quality & {weather_labels[selected_weather]} in {selected_year}",
+        title_x=0.5,  # Center title
+        xaxis=dict(title="Month"),
+        yaxis=dict(title="Concentration (µg/m³)", side="left"),
+        yaxis2=dict(
+            title=selected_weather.replace("_"," ").title(),
+            overlaying="y",
+            side="right"
     ),
     barmode="group",
     legend=dict(
