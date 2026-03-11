@@ -8,7 +8,9 @@ import plotly.graph_objects as go
 ### Initialize Dash app ###
 ###########################
 
-dash.register_page(__name__)
+#dash.register_page(__name__)
+
+app = dash.Dash(__name__)
 
 #################
 ### Constants ###
@@ -54,7 +56,7 @@ for c in countries:
 ### Page layout ###
 ##################
 
-layout = html.Div(children=[
+app.layout = html.Div(children=[
     
     ###############
     ### Weather ###
@@ -153,6 +155,8 @@ def update_graph(selected_year, selected_month, selected_mode, selected_pollutan
     return fig
 
 
+if __name__ == "__main__":
+    app.run(debug=True)   
     
 
 
