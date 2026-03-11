@@ -83,7 +83,6 @@ layout = html.Div([
     ),
 
     html.Br(),
-
     html.Label("Select Pollutants"),
     dcc.Dropdown(
         id="Q10_pollutant-dropdown",
