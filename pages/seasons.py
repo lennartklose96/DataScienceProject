@@ -29,8 +29,8 @@ external_stylesheets = ["https://codepen.io/chriddyp/pen/bWLwgP.css"]
 ### Initialize Dash app ###
 ###########################
 
-app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
-server = app.server
+# Initialize Dash page
+dash.register_page(__name__)
 
 ###########################
 ### Loading data frames ###
@@ -61,7 +61,7 @@ df_grouped_year = df_seasons.groupby(["year", "season"])["value"].mean().reset_i
 ### App layout ###
 ##################
 
-app.layout = html.Div([
+layout = html.Div([
     html.H2("PM10 Seasonal Analysis"),
     html.Div([
         html.H4("Select Year:"),
@@ -149,6 +149,3 @@ def update_pie(selected_year):
 
     # Return the callback
     return fig_bar, fig_pie
-
-if __name__ == "__main__":
-    app.run(debug=True)
