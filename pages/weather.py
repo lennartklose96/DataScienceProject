@@ -81,11 +81,7 @@ layout = html.Div([
 )
 def update_combined_graph(selected_year, selected_weather):
 
-    ###############
-    ### Weather ###
-    ###############
-
-    # Weather DF filtered
+    # Filter data
     df_filtered = df_weather[df_weather["year"] == selected_year].sort_values("month")
 
     fig_weather = go.Figure()
@@ -106,7 +102,7 @@ def update_combined_graph(selected_year, selected_weather):
         yaxis="y1"
     ))
 
-    # Add line for selected weather variable
+    # Add weather line trace
     fig_weather.add_trace(go.Scatter(
         x=df_filtered["month"],
         y=df_filtered[selected_weather],
@@ -116,26 +112,37 @@ def update_combined_graph(selected_year, selected_weather):
         yaxis="y2"
     ))
 
-    # Layout
+    # Define fixed ranges for second y-axis
+    if selected_weather == "peak_temperature":
+        y2_range = [0, 40]  # fixed temperature range
+    else:  # precipitation_mm
+        y2_range = [0, 10]  # fixed precipitation range
+
+    # Update layout
     fig_weather.update_layout(
         title=f"Air Quality & {weather_labels[selected_weather]} in {selected_year}",
-        title_x=0.5,  # Center title
+        title_x=0.5,
         xaxis=dict(title="Month"),
-        yaxis=dict(title="Concentration (µg/m³)", side="left"),
+        yaxis=dict(
+            title="Concentration (µg/m³)",
+            side="left",
+            range=[0, 30]  # fixed PM range
+        ),
         yaxis2=dict(
-            title=selected_weather.replace("_"," ").title(),
+            title=weather_labels[selected_weather],
             overlaying="y",
-            side="right"
-    ),
-    barmode="group",
-    legend=dict(
-        x=1,
-        y=1,
-        xanchor='right',
-        yanchor='top',
-        orientation="h"
-    ),
-    margin=dict(l=50, r=50, t=80, b=50)
-)
+            side="right",
+            range=y2_range  # fixed range
+        ),
+        barmode="group",
+        legend=dict(
+            x=1,
+            y=1,
+            xanchor='right',
+            yanchor='top',
+            orientation="h"
+        ),
+        margin=dict(l=50, r=50, t=80, b=50)
+    )
 
     return fig_weather
