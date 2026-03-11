@@ -17,13 +17,11 @@ SEASONS_ORDER = ["Spring", "Summer", "Fall", "Winter"]
 
 # Define colors for each season
 season_colors = {
-    "Spring": "#98E221",  # DeepSkyBlue
-    "Summer": "#FFEB3C",  # Gold
-    "Fall":   "#F3A32B",  # DarkOrange
-    "Winter": "#65B2FA"   # DodgerBlue
+    "Spring": "#98E221",  
+    "Summer": "#FFEB3C",
+    "Fall":   "#F3A32B",
+    "Winter": "#65B2FA"
 }
-
-external_stylesheets = ["https://codepen.io/chriddyp/pen/bWLwgP.css"]
 
 ###########################
 ### Initialize Dash app ###
@@ -62,11 +60,13 @@ df_grouped_year = df_seasons.groupby(["year", "season"])["value"].mean().reset_i
 ##################
 
 layout = html.Div([
+    # Page title
     html.H2("PM10 Seasonal Analysis"),
+    # Year dropdown
     html.Div([
         html.H4("Select Year:"),
         dcc.Dropdown(
-            id="season-year-dropdown",
+            id="seasons_year-dropdown",
             options=[{"label": y, "value": y} for y in sorted(df_grouped_year["year"].unique())],
             value=df_grouped_year["year"].unique()[0],
             clearable=False,
@@ -75,8 +75,8 @@ layout = html.Div([
     ], style={"width": "200px", "margin-bottom": "20px"}),
     # Two charts side by side
     html.Div([
-        dcc.Graph(id="season-bar", style={"width": "48%"}),
-        dcc.Graph(id="season-pie", style={"width": "48%"})
+        dcc.Graph(id="seasons_bar", style={"width": "48%"}),
+        dcc.Graph(id="seasons_pie", style={"width": "48%"})
     ], style={"display": "flex", "justify-content": "space-between"})
 ])
 
@@ -84,15 +84,10 @@ layout = html.Div([
 ### Callbacks ###
 #################
 
-
-###########################
-### Yearly Distribution ###
-###########################
-
 @callback(
-    Output("season-bar", "figure"),
-    Output("season-pie", "figure"),
-    Input("season-year-dropdown", "value")
+    Output("seasons_bar", "figure"),
+    Output("seasons_pie", "figure"),
+    Input("seasons_year-dropdown", "value")
 )
 def update_pie(selected_year):
     # Filter data for the selected year
@@ -120,17 +115,17 @@ def update_pie(selected_year):
         yaxis_title="PM10 (µg/m³)",
         legend_title_text = "Season"
     )
-
+    # Fixed range to make comparisons easier
     fig_bar.update_yaxes(range=[0, 25])
     
     # Adding grid lines
     fig_bar.update_yaxes(
-        showgrid=True,            # turn on horizontal grid
-        gridcolor="#d3d3d3",      # light gray lines
+        showgrid=True,
+        gridcolor="#d3d3d3",
         gridwidth=1,
         zeroline=False,
-        showline=True,            # optional: show the axis line
-        linecolor="#000000"       # color of the axis line
+        showline=True,
+        linecolor="#000000"
     )
     
     # ---------
@@ -147,5 +142,5 @@ def update_pie(selected_year):
     )
     fig_pie.update_layout(title_x=0.5)
 
-    # Return the callback
+    # Return the figured for the callback
     return fig_bar, fig_pie

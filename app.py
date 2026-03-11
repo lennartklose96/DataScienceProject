@@ -6,11 +6,6 @@ from dash import callback, Input, Output
 import plotly.express as px
 import plotly.graph_objects as go
 
-
-
-# Order of the months in the year
-MONTH_ORDER = ["January","February","March","April","May","June","July","August","September","October","November","December"]
-
 ###############
 ### Styling ###
 ###############
@@ -35,7 +30,7 @@ server = app.server
 ##################
 
 app.layout = html.Div([
-    html.H1('Data Science Project pages'),
+    html.H1('Data Science Project pages - Air Pollution'),
     html.Div([
         html.Div(
             dcc.Link(f"{page['name']} - {page['path']}", href=page["relative_path"])

@@ -9,12 +9,6 @@ import plotly.graph_objects as go
 # Order of the months in the year
 MONTH_ORDER = ["January","February","March","April","May","June","July","August","September","October","November","December"]
 
-###############
-### Styling ###
-###############
-
-external_stylesheets = ["https://codepen.io/chriddyp/pen/bWLwgP.css"]
-
 ###########################
 ### Loading data frames ###
 ###########################
@@ -51,29 +45,29 @@ layout = html.Div([
         html.Div([
             html.H4("Select Year:"),
             dcc.Dropdown(
-                id="weather-year-dropdown",
+                id="weather_year-dropdown",
                 options=[{"label": y, "value": y} for y in sorted(df_weather["year"].unique())],
                 value=df_weather["year"].unique()[0],
-                clearable=False
+                clearable=False,
+                searchable=False
             ),
         ], style={"width": "200px", "display": "inline-block", "margin-right": "20px"}),
 
         html.Div([
             html.H4("Select Weather Variable:"),
-            dcc.Dropdown(
-                id="weather-dropdown",
+            dcc.RadioItems(
+                id="weather_dropdown",
                 options=[
                     {"label": "Peak Temperature", "value": "peak_temperature"},
                     {"label": "Precipitation", "value": "precipitation_mm"}
                 ],
                 value="peak_temperature",
-                style={"width": "300px"},
-                clearable=False
+                style={"width": "300px"}
             )
         ], style={"width": "350px", "display": "inline-block"})
     ]),
     # Weather graph
-    html.Div(dcc.Graph(id="weather-graph"))
+    html.Div(dcc.Graph(id="weather_graph"))
 ])
 
 #################
@@ -81,9 +75,9 @@ layout = html.Div([
 #################
 
 @callback(
-    Output("weather-graph", "figure"),
-    Input("weather-year-dropdown", "value"),
-    Input("weather-dropdown", "value")
+    Output("weather_graph", "figure"),
+    Input("weather_year-dropdown", "value"),
+    Input("weather_dropdown", "value")
 )
 def update_combined_graph(selected_year, selected_weather):
 
