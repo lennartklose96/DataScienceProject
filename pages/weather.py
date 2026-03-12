@@ -143,8 +143,7 @@ layout = html.Div([
             "or the amount of rain and air pollution. There simply were not any visible "
             "trends that indicate those variables are in any way correlated."
         ])
-    ], style={"margin-top": "30px"}),
-
+    ]),
 ])
 
 #################

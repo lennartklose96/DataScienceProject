@@ -150,8 +150,7 @@ layout = html.Div([
           "A likely cause for this is that a lot of families going on vacation end up having fewer daily "
           "commutes (for example, to bring their children to school), or leave the country entirely."
         ])
-    ], style={"margin-top": "30px"}),
-
+    ]),
 ])
 
 
