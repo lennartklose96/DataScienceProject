@@ -8,6 +8,8 @@ import plotly.graph_objects as go
 
 # Order of the months in the year
 MONTH_ORDER = ["January","February","March","April","May","June","July","August","September","October","November","December"]
+PM10_LABEL = "PM\u2081\u2080"   # PM₁₀
+PM25_LABEL = "PM\u2082.\u2085"  # PM₂.₅
 
 ###########################
 ### Loading data frames ###
@@ -35,26 +37,85 @@ dash.register_page(__name__)
 ##################
 
 layout = html.Div([
-    
-    ###############
-    ### Weather ###
-    ###############
-    
-    html.H2("Air Quality & Weather"),
+
+    # Title
+    html.H2([
+        "Air Quality and Weather in Major German Cities"
+    ]),
+
+    # Research question
     html.Div([
+        html.H3("Research Question"),
+        # The actual question
+        html.H4([
+            "How do temperature and precipitation influence ",
+            html.Span(["PM", html.Sub("10")]),
+            " and ",
+            html.Span(["PM", html.Sub("2.5")]),
+            " concentrations in major German cities between 2016 and 2025?"
+        ]),
+        # Description of why it is interesting and relevant
+        html.P([
+            "This question was mostly based on our own curiousity. We were unsure if the weather "
+            "could influence the amount of air pollution. Perhaps high temperatures could destroy particles," 
+            "or the rainfall might wash them away. Unsure what we would find, we wanted to examine if there is "
+            "a correlation here at all, and if there were any, come up with theories as for why this might be."
+        ]),
+    ]),
+
+    # Data description
+    html.Div([
+        html.H6([
+            "Used Data"
+        ]),
+        html.P([
+            "We used daily pollution data provided by the Umweltbundesamt API for ",
+            html.Span(["PM", html.Sub("10")]),
+            " and ",
+            html.Span(["PM", html.Sub("2.5")]), 
+            " before aggregating it into monthly segments."
+            ". Weather data (temperature and precipitation) was obtained from the Open-Meteo API. "
+            "As the amount of data we could request from Open-Meteo was imited, we chose to only look at the 100 largest german cities."
+            "The Open-Meteo API requires geocoordinates to request weather related data, which were provided for the stations used by the Umweltbundesamt."
+        ]),
+    ]),
+
+    # Visualization description
+    html.Div([
+        html.H6([
+            "Visualization"
+        ]),
+        html.P([
+            "This visualization shows monthly ",
+            html.Span(["PM", html.Sub("10")]),
+            " and ",
+            html.Span(["PM", html.Sub("2.5")]),
+            " concentrations alongside temperature or precipitation for a selected year."
+        ]),
+    ]),
+
+    html.Hr(),
+
+    # Controls in a horizontal layout
+    html.Div([
+        # Year dropdown
         html.Div([
-            html.H4("Select Year:"),
+            html.Label("Select Year:"),
             dcc.Dropdown(
                 id="weather_year-dropdown",
-                options=[{"label": y, "value": y} for y in sorted(df_weather["year"].unique())],
-                value=df_weather["year"].unique()[0],
+                options=[
+                    {"label": y, "value": y}
+                    for y in sorted(df_weather["year"].unique())
+                ],
+                value=sorted(df_weather["year"].unique())[0],
                 clearable=False,
                 searchable=False
             ),
-        ], style={"width": "200px", "display": "inline-block", "margin-right": "20px"}),
+        ], style={"margin-right": "40px", "width": "200px"}),
 
+        # Weather variable radio buttons
         html.Div([
-            html.H4("Select Weather Variable:"),
+            html.Label("Select Weather Variable:"),
             dcc.RadioItems(
                 id="weather_dropdown",
                 options=[
@@ -62,12 +123,28 @@ layout = html.Div([
                     {"label": "Precipitation", "value": "precipitation_mm"}
                 ],
                 value="peak_temperature",
-                style={"width": "300px"}
+                labelStyle={"display": "inline-block", "margin-right": "20px"}
             )
-        ], style={"width": "350px", "display": "inline-block"})
-    ]),
-    # Weather graph
-    html.Div(dcc.Graph(id="weather_graph"))
+        ])
+    ],
+    style={"display": "flex", "align-items": "center", "margin-bottom": "30px"}),
+
+    # Visualization
+    dcc.Graph(id="weather_graph"),
+
+    html.Hr(),
+
+    # Interpretation
+    html.Div([
+        html.H4("Interpretation"),
+        html.P([
+            "By looking at all the different years and observing the peak temperature "
+            "and precipitation, we concluded there is no correlation between the temperature "
+            "or the amount of rain and air pollution. There simply were not any visible "
+            "trends that indicate those variables are in any way correlated."
+        ])
+    ], style={"margin-top": "30px"}),
+
 ])
 
 #################
@@ -90,14 +167,14 @@ def update_combined_graph(selected_year, selected_weather):
     fig_weather.add_trace(go.Bar(
         x=df_filtered["month"],
         y=df_filtered["pm10"],
-        name="PM10",
+        name=PM10_LABEL,
         marker_color="#fcc653",
         yaxis="y1"
     ))
     fig_weather.add_trace(go.Bar(
         x=df_filtered["month"],
         y=df_filtered["pm25"],
-        name="PM2.5",
+        name=PM25_LABEL,
         marker_color="#53befc",
         yaxis="y1"
     ))
@@ -120,7 +197,7 @@ def update_combined_graph(selected_year, selected_weather):
 
     # Update layout
     fig_weather.update_layout(
-        title=f"Air Quality & {weather_labels[selected_weather]} in {selected_year}",
+        title=f"Air Quality & {weather_labels[selected_weather]} [{selected_year}]",
         title_x=0.5,
         xaxis=dict(title="Month"),
         yaxis=dict(

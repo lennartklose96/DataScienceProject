@@ -12,6 +12,20 @@ import plotly.graph_objects as go
 
 external_stylesheets = ["https://codepen.io/chriddyp/pen/bWLwgP.css"]
 
+# Custom labels for pages
+custom_labels = {
+    "/corona" : "COVID-19",
+    "/countries" : "Other Countries",
+    "/germany" : "Trends in Germany",
+    "/home" : "Home",
+    "/location" : "Rural Areas",
+    "/newyears" : "New Years",
+    "/seasons" : "Seasons",
+    "/holiday": "Summer Holidays",
+    "/states" : "States",
+    "/weather": "Weather"
+}
+
 #########################
 ### App initilization ###
 #########################
@@ -30,16 +44,28 @@ server = app.server
 ##################
 
 app.layout = html.Div([
-    html.H1('Data Science Project pages - Air Pollution'),
+    html.H1(
+        "Air Pollution in Germany"
+    ),
+    # Navigation links
     html.Div([
         html.Div(
-            dcc.Link(f"{page['name']} - {page['path']}", href=page["relative_path"])
+            dcc.Link(
+                custom_labels.get(page["path"], page["name"]),
+                href=page["relative_path"],
+                style={"margin-right": "20px"}  # optional spacing
+            )
         ) for page in dash.page_registry.values()
-    ]),
+    ], style={"margin-bottom": "30px"}),
+
+    # Page container
     dash.page_container
 ])
 
 
-# Run the app
+###################
+### Run the APP ###
+###################
+
 if __name__ == "__main__":
     app.run(debug=True)

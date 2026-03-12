@@ -9,6 +9,8 @@ import numpy as np
 
 # Order of the months in the year
 MONTH_ORDER = ["January","February","March","April","May","June","July","August","September","October","November","December"]
+PM10_LABEL = "PM\u2081\u2080"   # PM₁₀
+PM25_LABEL = "PM\u2082.\u2085"  # PM₂.₅
 
 ###############
 ### Styling ###
@@ -175,8 +177,8 @@ def update_heatmap(selected_year):
 
     # Replace y-axis labels with proper notation + units
     pollutant_labels = [
-        "PM₁₀ (µg/m³)",
-        "PM₂.₅ (µg/m³)"
+        "PM\u2081\u2080",  # PM10
+        "PM\u2082.\u2085"  # PM2.5
     ]
 
     # Build heatmap
