@@ -30,8 +30,11 @@ data2 = {
     }
 }
 
+for period in data.values():         # daily, monthly, yearly
+    for df in period.values():        # PM10, PM2.5, NO2
+        df["date start"] = pd.to_datetime(df["date start"])
 
-for period in data2.values():           # daily, monthly, yearly
+for period in data2.values():         # daily, monthly, yearly
     for df in period.values():        # PM10, PM2.5, NO2
         df["date start"] = pd.to_datetime(df["date start"])
 
@@ -52,6 +55,7 @@ app.layout = html.Div([
         ],
         value="daily",
         clearable=False,
+        style={"margin-right": "40px", "width": "200px"}
     ),
 
     html.Br(),
@@ -66,7 +70,8 @@ app.layout = html.Div([
         ],
         value=["PM10"],
         multi=True,
-        clearable=False
+        clearable=False,
+        style={"margin-right": "40px", "width": "200px"}
     ),
 
     dcc.Graph(id="pollution-graph"),
@@ -84,6 +89,7 @@ app.layout = html.Div([
         ],
         value="daily",
         clearable=False,
+        style={"margin-right": "40px", "width": "200px"}
     ),
 
     html.Br(),
@@ -98,7 +104,8 @@ app.layout = html.Div([
         ],
         value=["PM10"],
         multi=True,
-        clearable=False
+        clearable=False,
+        style={"margin-right": "40px", "width": "200px"}
     ),
 
     dcc.Graph(id="pollution-graph-2")
@@ -126,6 +133,30 @@ def update_graph(time_period, pollutants):
                 name=p
             )
         )
+
+        # Regression
+        if len(df) > 1:  # mindestens 2 Punkte
+            x_num = df["date start"].map(pd.Timestamp.toordinal)
+            y = df["value"]
+
+            n_points = len(df)
+            if n_points <= 20:
+                deg = min(2, n_points - 1)
+            else:
+                deg = 3
+
+            coeff = np.polyfit(x_num, y, deg)
+            poly = np.poly1d(coeff)
+            y_reg = poly(x_num)
+
+            fig.add_trace(
+                go.Scatter(
+                    x=df["date start"],
+                    y=y_reg,
+                    mode="lines",
+                    name=p + " trend",
+                )
+            )
 
     fig.update_layout(
         title="Air quality during the coronavirus pandemic",

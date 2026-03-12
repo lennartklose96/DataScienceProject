@@ -1,83 +1,122 @@
-import pandas as pd
 import dash
-from dash import dcc
-from dash import html
-from dash import callback, Input, Output
+from dash import html, dcc, callback, Input, Output
+import pandas as pd 
 import plotly.express as px
 import plotly.graph_objects as go
-import numpy as np
-
 
 ###########################
 ### Initialize Dash app ###
 ###########################
 
-# Initialize Dash page
 dash.register_page(__name__)
+
+#################
+### Constants ###
+#################
+
+MONTH_ORDER = ["January","February","March","April","May","June","July","August","September","October","November","December"]
+YEARS = [2016,2017,2018,2019,2020,2021,2022,2023,2024,2025,2026]
+POLLUTANTS = ["PM10","PM2,5","NO2"]
 
 ###########################
 ### Loading data frames ###
 ###########################
 
-df_1 = pd.read_csv("Collected Data/Question 2/PM10/daily_avg_baden-württemberg_PM10.csv")
-df_2 = pd.read_csv("Collected Data/Question 2/PM10/daily_avg_bayern_PM10.csv")
-df_3 = pd.read_csv("Collected Data/Question 2/PM10/daily_avg_berlin_PM10.csv")
-df_4 = pd.read_csv("Collected Data/Question 2/PM10/daily_avg_brandenburg_PM10.csv")
-df_5 = pd.read_csv("Collected Data/Question 2/PM10/daily_avg_bremen_PM10.csv")
-df_6 = pd.read_csv("Collected Data/Question 2/PM10/daily_avg_hamburg_PM10.csv")
-df_7 = pd.read_csv("Collected Data/Question 2/PM10/daily_avg_hessen_PM10.csv")
-df_8 = pd.read_csv("Collected Data/Question 2/PM10/daily_avg_mecklenburg-vorpommern_PM10.csv")
-df_9 = pd.read_csv("Collected Data/Question 2/PM10/daily_avg_niedersachsen_PM10.csv")
-df_10 = pd.read_csv("Collected Data/Question 2/PM10/daily_avg_nordrhein-westfalen_PM10.csv")
-df_11 = pd.read_csv("Collected Data/Question 2/PM10/daily_avg_rheinland-pfalz_PM10.csv")
-df_12 = pd.read_csv("Collected Data/Question 2/PM10/daily_avg_saarland_PM10.csv")
-df_13 = pd.read_csv("Collected Data/Question 2/PM10/daily_avg_sachsen_PM10.csv")
-df_14 = pd.read_csv("Collected Data/Question 2/PM10/daily_avg_sachsen-anhalt_PM10.csv")
-df_15 = pd.read_csv("Collected Data/Question 2/PM10/daily_avg_schleswig-holstein_PM10.csv")
-df_16 = pd.read_csv("Collected Data/Question 2/PM10/daily_avg_thüringen_PM10.csv")
-
-data = {
-    "Baden-Württemberg": df_1,
-    "Bayern": df_2,
-    "Berlin": df_3,
-    "Brandenburg": df_4,
-    "Bremen": df_5,
-    "Hamburg": df_6,
-    "Hessen": df_7,
-    "Mecklenburg-Vorpommern": df_8,
-    "Niedersachsen": df_9,
-    "Nordrhein-Westfalen": df_10,
-    "Rheinland-Pfalz": df_11,
-    "Saarland": df_12,
-    "Sachsen": df_13,
-    "Sachsen-Anhalt": df_14,
-    "Schleswig-Holstein": df_15,
-    "Thüringen": df_16
+daily_data = {
+    "PM10": {},
+    "PM2,5": {},
+    "NO2": {}
+}
+monthly_data = {
+    "PM10": {},
+    "PM2,5": {},
+    "NO2": {}
 }
 
-for df in data.values():
-    df["date start"] = pd.to_datetime(df["date start"])
-    df["year"] = df["date start"].dt.year
+countries = [
+    "baden-württemberg",
+    "bayern",
+    "berlin",
+    "brandenburg",
+    "bremen",
+    "hamburg",
+    "hessen",
+    "mecklenburg-vorpommern",
+    "niedersachsen",
+    "nordrhein-westfalen",
+    "rheinland-pfalz",
+    "saarland",
+    "sachsen",
+    "sachsen-anhalt",
+    "schleswig-holstein",
+    "thüringen"
+]
 
-years = sorted(df_1["year"].unique())
-years = sorted(data["Baden-Württemberg"]["year"].unique())
+def add_data(country):
+
+    for p in POLLUTANTS:
+
+        try:
+            daily_data[p][country] = pd.read_csv(f"Collected Data/Question 2/{p}/daily_avg_{country}_{p}.csv")
+            monthly_data[p][country] = pd.read_csv(f"Collected Data/Question 2/{p}/monthly_avg_{country}_{p}.csv")
+        
+        except Exception:
+            pass
+
+for c in countries:
+    add_data(c)
+
 
 ##################
-### App layout ###
+### Page layout ###
 ##################
 
-layout = html.Div([
-    html.H2("Federal States"),
-    dcc.Graph(id='states_graph-with-slider'),
+layout = html.Div(children=[
+    
+    ###############
+    ### Weather ###
+    ###############
+    
+    html.H2("Air Quality in different Countries"),
+    
+    html.Div(children='''
+        Compare the Air Quality in different Countries from 2016-2026.
+    '''),
 
-    dcc.Slider(
-        min(years),
-        max(years),
-        step=None,
-        value=min(years),
-        marks={str(year): str(year) for year in years},
-        id='states_year-slider'
-    )
+    dcc.RadioItems(id="states_date-mode",
+                   options=["Monthly", "Daily"],
+                   value="Monthly"
+                   ),
+
+    dcc.RadioItems(id="states_pollutant-mode",
+                   options=[
+            {"label": "PM\u2081\u2080", "value": "PM10"},
+            {"label": "PM\u2082.\u2085", "value": "PM2,5"},
+            {"label": "NO\u2082", "value": "NO2"}
+        ],
+                   value="PM10"
+                   ),
+
+    dcc.RangeSlider(
+        1, 
+        12,
+        id="states_month-slider",
+        allowCross=False,
+        marks={i+1: m for i, m in enumerate(MONTH_ORDER)},
+        value=[1, 12]
+        ),
+
+    dcc.RangeSlider(
+        2016, 
+        2026,
+        id="states_year-slider",
+        allowCross=False,
+        marks={y: str(y) for y in YEARS},
+        value=[2016, 2026]
+        ),
+
+    dcc.Graph(id="states_data-graph")
+    
 ])
 
 #################
@@ -85,33 +124,51 @@ layout = html.Div([
 #################
 
 @callback(
-    Output('states_graph-with-slider', 'figure'),
-    Input('states_year-slider', 'value')
+    Output("states_data-graph", "figure"),
+    Input("states_year-slider", "value"),
+    Input("states_month-slider", "value"),
+    Input("states_date-mode", "value"),
+    Input("states_pollutant-mode", "value")
 )
-
-def update_figure(selected_year):
+def update_graph(selected_year, selected_month, selected_mode, selected_pollutant):
 
     fig = go.Figure()
 
-    for state, df in data.items():
+    ##################
+    ### Select DFs ###
+    ##################
+        
+    if selected_mode == "Daily":
+        data = daily_data[selected_pollutant].items()
+    else:
+        data = monthly_data[selected_pollutant].items()
 
-        filtered_df = df[df["year"] == selected_year]
+    
+    for country, df in data:
 
-        fig.add_trace(
-            go.Scatter(
-                x=filtered_df["date start"],
-                y=filtered_df["value"],
-                mode="lines",
-                name=state
+            df["date start"] = pd.to_datetime(df["date start"])
+            df["year"] = df["date start"].dt.year
+            df["month"] = df["date start"].dt.month
+
+            filtered_df_year = df[df["year"].between(selected_year[0], selected_year[1])]
+
+            filtered_df_month = filtered_df_year[filtered_df_year["month"].between(selected_month[0], selected_month[1])]
+
+            fig.add_trace(
+                go.Scatter(
+                    x=filtered_df_month["date start"],
+                    y=filtered_df_month["value"],
+                    mode="lines",
+                    name=country
+                )
             )
-        )
-
+        
     fig.update_layout(
-        title="PM10 Air Pollution by German Federal State",
-        xaxis_title="Date",
-        yaxis_title="PM<sub>10</sub> µg/m³",
-        width=1000,
-        height=500
+            title=f"{selected_pollutant[:2]}<sub>{selected_pollutant[2:]}</sub> Air Pollution by Countries",
+            xaxis_title="Time",
+            yaxis_title=f"{selected_pollutant[:2]}<sub>{selected_pollutant[2:]}</sub> µg/m³",
+            width=1000,
+            height=500
     )
 
     return fig

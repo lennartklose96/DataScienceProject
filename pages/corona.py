@@ -32,20 +32,7 @@ data = {
     }
 }
 
-data2 = {
-    "daily": {
-        "PM10": pd.read_csv("Collected Data/Question 1.1/corona_PM10.csv"),
-        "PM2.5": pd.read_csv("Collected Data/Question 1.1/corona_PM2,5.csv"),
-        "NO2": pd.read_csv("Collected Data/Question 1.1/corona_NO2.csv"),
-    },
-    "monthly": {
-        "PM10": pd.read_csv("Collected Data/Question 1.1/monthly_avg_corona_PM10.csv"),
-        "PM2.5": pd.read_csv("Collected Data/Question 1.1/monthly_avg_corona_PM2,5.csv"),
-        "NO2": pd.read_csv("Collected Data/Question 1.1/monthly_avg_corona_NO2.csv"),
-    }
-}
-
-for period in data2.values():           # daily, monthly, yearly
+for period in data.values():          # daily, monthly, monthly-10-year-span
     for df in period.values():        # PM10, PM2.5, NO2
         df["date start"] = pd.to_datetime(df["date start"])
 
@@ -64,10 +51,11 @@ layout = html.Div([
         id="corona_time-dropdown",
         options=[
             {"label": "Daily", "value": "daily"},
-            {"label": "Monthly", "value": "monthly"}
+            {"label": "Monthly", "value": "monthly"},
         ],
         value="daily",
         clearable=False,
+        style={"margin-right": "40px", "width": "200px"}
     ),
 
     html.Br(),
@@ -82,43 +70,11 @@ layout = html.Div([
         ],
         value=["PM10"],
         multi=True,
-        clearable=False
+        clearable=False,
+        style={"margin-right": "40px", "width": "200px"}
     ),
 
     dcc.Graph(id="corona_pollution-graph"),
-
-    html.Hr(),
-
-    html.H2("COVID-19"),
-
-    html.Label("Select Time Period"),
-    dcc.Dropdown(
-        id="corona_time-dropdown-2",
-        options=[
-            {"label": "Daily", "value": "daily"},
-            {"label": "Monthly", "value": "monthly"}
-        ],
-        value="daily",
-        clearable=False,
-    ),
-
-    html.Br(),
-
-    html.Label("Select Pollutants"),
-    dcc.Dropdown(
-        id="corona_pollutant-dropdown-2",
-        options=[
-            {"label": "PM\u2081\u2080", "value": "PM10"},
-            {"label": "PM\u2082.\u2085", "value": "PM2.5"},
-            {"label": "NO\u2082", "value": "NO2"}
-        ],
-        value=["PM10"],
-        multi=True,
-        clearable=False
-    ),
-
-    dcc.Graph(id="corona_pollution-graph-2")
-
 ])
 
 #################
@@ -146,35 +102,9 @@ def update_graph(time_period, pollutants):
             )
         )
 
-    fig.update_layout(
-        title="Air quality during the coronavirus pandemic",
-        xaxis_title="Date",
-        yaxis_title="Concentration (µg/m³)",
-        showlegend=False
-    )
-
-    return fig
-
-@callback(
-    Output("corona_pollution-graph-2", "figure"),
-    Input("corona_time-dropdown-2", "value"),
-    Input("corona_pollutant-dropdown-2", "value")
-)
-def update_graph_2(time_period, pollutants):
-
-    fig = go.Figure()
 
     for p in pollutants:
-        df = data2[time_period][p]
-
-        fig.add_trace(
-            go.Bar(
-                x=df["date start"],
-                y=df["value"],
-                name=p
-            )
-        )
-
+        df = data[time_period][p]
         # Regression
         if len(df) > 1:  # mindestens 2 Punkte
             x_num = df["date start"].map(pd.Timestamp.toordinal)
