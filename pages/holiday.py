@@ -68,7 +68,7 @@ layout = html.Div([
     # Research question
     html.Div([
         html.H3("Research Question"),
-        # The actual quesiton
+        # The actual question
         html.H4([
             "How do summer school holidays in German federal states affect ",
             html.Span(["PM", html.Sub("10")]),
