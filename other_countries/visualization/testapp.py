@@ -4,19 +4,18 @@ import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
 
-###########################
-### Initialize Dash app ###
-###########################
+############################
+### Initialize Dash page ###
+############################
 
 #dash.register_page(__name__)
-
 app = dash.Dash(__name__)
 
 #################
 ### Constants ###
 #################
 
-MONTH_ORDER = ["January","February","March","April","May","June","July","August","September","October","November","December"]
+MONTH_ORDER = ["JAN","FEB","MAR","APR","MAY","JUNE","JULY","AUG","SEPT","OCT","NOV","DEC"]
 YEARS = [2016,2017,2018,2019,2020,2021,2022,2023,2024,2025,2026]
 POLLUTANTS = ["PM10","PM2.5","NO2"]
 
@@ -58,58 +57,142 @@ for c in countries:
 
 app.layout = html.Div(children=[
     
-    ###############
-    ### Weather ###
-    ###############
-    
-    html.H2("Air Quality in different Countries"),
-    
-    html.Div(children='''
-        Compare the Air Quality in different Countries from 2016-2026.
-    '''),
+   #Title    
+    html.H2("Air Pollution in different Countries"),
 
-    dcc.RadioItems(id="countries_date-mode",
+    #Research question
+    html.Div([
+        html.H3("Research Question"),
+        # The actual question
+        html.H4([
+            "How does Germany compare to other countries in terms of the daily and monthly average concentrations of PM2.5, PM10 and NO2?"
+        ]),
+        # Description of why it is interesting and relevant
+        html.P([
+           "TODO"
+        ]),
+    ]),
+    
+    # Data description
+    html.Div([
+        html.H6("Used Data"),
+        html.P([
+            "TODO"
+        ]),
+    ]),
+
+    # Visualization description
+    html.Div([
+        html.H6("Visualization"),
+        html.P([
+           "TODO"
+        ]),
+    ]),
+
+    html.Hr(),
+    
+    # Controls (time period + pollutants)
+    html.Div([
+
+        html.Div([
+            html.Label("Select Time Period"),
+            dcc.RadioItems(id="countries_time-period",
                    options=["Monthly", "Daily"],
-                   value="Monthly"
-                   ),
+                   value="Monthly",
+                   style={"width": "200px"}
+                ),
+        ]),
 
-    dcc.RadioItems(id="countries_pollutant-mode",
-                   options=["PM10", "PM2.5", "NO2"],
-                   value="PM10"
-                   ),
+        html.Div([
+            html.Label("Select Pollutants"),
+            dcc.Dropdown(
+                id="countries_pollutant-dropdown",
+                options=[
+                    {"label": "PM\u2081\u2080", "value": "PM10"},
+                    {"label": "PM\u2082.\u2085", "value": "PM2.5"},
+                    {"label": "NO\u2082", "value": "NO2"}
+                ],
+                value="PM10",
+                multi=True,
+                clearable=False,
+                searchable=False,
+                style={"width": "200px"}
+            ),
+        ]),
 
-    dcc.RangeSlider(
-        1, 
-        12,
-        id="countries_month-slider",
-        allowCross=False,
-        marks={i+1: m for i, m in enumerate(MONTH_ORDER)},
-        value=[1, 12]
-        ),
-
-    dcc.RangeSlider(
-        2016, 
-        2026,
-        id="countries_year-slider",
-        allowCross=False,
-        marks={y: str(y) for y in YEARS},
-        value=[2016, 2026]
-        ),
-
-    dcc.Graph(id="countries_data-graph")
+    ], style={
+        "display": "flex",
+        "gap": "40px",
+        "margin-bottom": "20px"
+    }),
     
+    # Visualizations side by side
+    html.Div([
+        dcc.Graph(id="countries_pollution-graph", style={"width": "50%"}),
+        #dcc.Graph(id="corona_boxplot-graph", style={"width": "50%"})
+    ], 
+    style={
+        "display": "flex",
+        "gap": "20px"
+    }),
+
+    # Controls (RangeSlider for months + years)
+    html.Div([
+
+        html.Div([
+            html.Label("Select Month", style={"textAlign": "center", "width": "100%"}),
+            dcc.RangeSlider(
+            1, 
+            12,
+            id="countries_month-slider",
+            allowCross=False,
+            marks={i+1: m for i, m in enumerate(MONTH_ORDER)},
+            value=[1, 12],
+            ),
+        ]),
+
+        html.Div([
+            html.Label("Select Year", style={"textAlign": "center", "width": "100%"}),
+            dcc.RangeSlider(
+                2016, 
+                2026,
+                id="countries_year-slider",
+                allowCross=False,
+                marks={y: str(y) for y in YEARS},
+                value=[2016, 2026],
+            ),
+        ]),
+
+    ], style={
+    "width": "50%",
+    "display": "flex",
+    "flexDirection": "column",
+    "gap": "30px",
+    "margin": "30px auto"
+}),
+
+    html.Hr(),
+
+    # Interpretation
+    html.Div([
+        html.H4("Interpretation"),
+        html.P([
+            "TODO"
+        ])
+    ]),
 ])
+    
 
 #################
 ### Callbacks ###
 #################
 
 @callback(
-    Output("countries_data-graph", "figure"),
+    Output("countries_pollution-graph", "figure"),
     Input("countries_year-slider", "value"),
     Input("countries_month-slider", "value"),
-    Input("countries_date-mode", "value"),
-    Input("countries_pollutant-mode", "value")
+    Input("countries_time-period", "value"),
+    Input("countries_pollutant-dropdown", "value")
 )
 def update_graph(selected_year, selected_month, selected_mode, selected_pollutant):
 
@@ -154,9 +237,9 @@ def update_graph(selected_year, selected_month, selected_mode, selected_pollutan
 
     return fig
 
-
 if __name__ == "__main__":
-    app.run(debug=True)   
+    app.run(debug=True)  
+
     
 
 
