@@ -209,7 +209,8 @@ def update_combined_graph(selected_year, selected_weather):
             title=weather_labels[selected_weather],
             overlaying="y",
             side="right",
-            range=y2_range  # fixed range
+            range=y2_range,
+            showgrid = False
         ),
         barmode="group",
         legend=dict(
