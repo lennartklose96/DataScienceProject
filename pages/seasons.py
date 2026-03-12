@@ -96,28 +96,28 @@ def update_pie(selected_year):
     # ---------
     # Bar chart
     # ---------
-
     fig_bar = px.bar(
         df_year,
         x="season",
         y="value",
-        title=f"PM10 Concentration per season [{selected_year}]",
+        title=f"PM₁₀ Concentration per Season [{selected_year}]",
         color="season",
         color_discrete_map=season_colors,
         category_orders={"season": SEASONS_ORDER},
         text="value"
-
     )
-    # Adding axis titles
+
+    # Update layout with proper units
     fig_bar.update_layout(
         title_x=0.5,
-        xaxis_title = "Season",
-        yaxis_title="PM10 (µg/m³)",
-        legend_title_text = "Season"
+        xaxis_title="Season",
+        yaxis_title="PM₁₀ (µg/m³)",
+        legend_title_text="Season"
     )
-    # Fixed range to make comparisons easier
+
+    # Fixed range for easier comparison
     fig_bar.update_yaxes(range=[0, 25])
-    
+
     # Adding grid lines
     fig_bar.update_yaxes(
         showgrid=True,
@@ -127,7 +127,7 @@ def update_pie(selected_year):
         showline=True,
         linecolor="#000000"
     )
-    
+
     # ---------
     # Pie chart
     # ---------
@@ -135,12 +135,12 @@ def update_pie(selected_year):
         df_year,
         names="season",
         values="value",
-        title=f"Relative PM10 distribution per season [{selected_year}]",
+        title=f"Relative PM₁₀ Distribution per Season [{selected_year}]",
         color="season",
-        color_discrete_map = season_colors,
+        color_discrete_map=season_colors,
         category_orders={"season": SEASONS_ORDER}
     )
     fig_pie.update_layout(title_x=0.5)
 
-    # Return the figured for the callback
+    # Return figures for the callback
     return fig_bar, fig_pie
