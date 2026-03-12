@@ -21,11 +21,19 @@ dash.register_page(__name__)
 data = {
     "PM10":  pd.read_csv("Collected Data/Question 1.2/neujahr_PM10.csv"),
     "PM2.5":  pd.read_csv("Collected Data/Question 1.2/neujahr_PM2,5.csv"),
-    "NO2":  pd.read_csv("Collected Data/Question 1.2/neujahr_NO2.csv")
+    "NO2":  pd.read_csv("Collected Data/Question 1.2/neujahr_NO2.csv"),
+
+    "PM10yearly":  pd.read_csv("Collected Data/Question 1/yearly_avg_deutschland_PM10.csv"),
+    "PM2.5yearly":  pd.read_csv("Collected Data/Question 1/yearly_avg_deutschland_PM2,5.csv"),
+    "NO2yearly":  pd.read_csv("Collected Data/Question 1/yearly_avg_deutschland_NO2.csv")
 }
 
-for df in data.values():
-    df["date start"] = pd.to_datetime(df["date start"])
+for name, df in data.items():
+
+    if "yearly" in name:
+        df["date start"] = pd.to_datetime(df["date start"], format="%Y")
+    else:
+        df["date start"] = pd.to_datetime(df["date start"])
 
 
 ##################
@@ -41,12 +49,16 @@ layout = html.Div([
         options=[
             {"label": "PM\u2081\u2080", "value": "PM10"},
             {"label": "PM\u2082.\u2085", "value": "PM2.5"},
-            {"label": "NO\u2082", "value": "NO2"}
+            {"label": "NO\u2082", "value": "NO2"},
+            {"label": "PM\u2081\u2080 avg for each year", "value": "PM10yearly"},
+            {"label": "PM\u2082.\u2085 avg for each year", "value": "PM2.5yearly"},
+            {"label": "NO\u2082 avg for each year", "value": "NO2yearly"}
         ],
         value=["PM10"],
         clearable=False,
         searchable = False,
-        multi=True
+        multi=True,
+        style={"margin-right": "40px", "width": "200px"}
     ),
 
     dcc.Graph(id="newyears_pollutant-graph")

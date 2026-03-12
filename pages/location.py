@@ -48,9 +48,21 @@ data2 = {
 }
 
 
-for period in data2.values():           # daily, monthly, yearly
-    for df in period.values():        # PM10, PM2.5, NO2
-        df["date start"] = pd.to_datetime(df["date start"])
+for period in data2.values():
+    for df in period.values():
+
+        if df["date start"].astype(str).str.len().iloc[0] == 7:
+            df["date start"] = pd.to_datetime(df["date start"], format="%Y-%m")
+        else:
+            df["date start"] = pd.to_datetime(df["date start"])
+
+for period in data.values():
+    for df in period.values():
+
+        if df["date start"].astype(str).str.len().iloc[0] == 7:
+            df["date start"] = pd.to_datetime(df["date start"], format="%Y-%m")
+        else:
+            df["date start"] = pd.to_datetime(df["date start"])
 
 pollutants={"PM10","PM2.5","NO2"}
 
@@ -71,7 +83,8 @@ layout = html.Div([
         ],
         value="daily",
         clearable=False,
-        searchable = False
+        searchable = False,
+        style={"margin-right": "40px", "width": "200px"}
     ),
 
     html.Br(),
@@ -87,7 +100,8 @@ layout = html.Div([
         value=["rural"],
         multi=True,
         clearable=False,
-        searchable = False
+        searchable = False,
+        style={"margin-right": "40px", "width": "200px"}
     ),
 
     dcc.Graph(id="location_pollution-graph"),
@@ -106,7 +120,8 @@ layout = html.Div([
         ],
         value="rural",
         clearable=False,
-        searchable = False
+        searchable = False,
+        style={"margin-right": "40px", "width": "200px"}
     ),
 
     html.Br(),
@@ -117,12 +132,13 @@ layout = html.Div([
         options=[
             {"label": "Background", "value": "background"},
             {"label": "Traffic", "value": "traffic"},
-            {"label": "Industry", "value": "industry"}
+            {"label": "Industry", "value": "industrie"}
         ],
         value=["background"],
         multi=True,
         clearable=False,
-        searchable = False
+        searchable = False,
+        style={"margin-right": "40px", "width": "200px"}
     ),
 
     dcc.Graph(id="location_pollution-graph-2")
@@ -154,8 +170,34 @@ def update_graph(time_period, pollutants):
             )
         )
 
+    for p in pollutants:
+        df = data[time_period][p]
+                # Regression
+        if len(df) > 1:  # mindestens 2 Punkte
+            x_num = df["date start"].map(pd.Timestamp.toordinal)
+            y = df["value"]
+
+            n_points = len(df)
+            if n_points <= 20:
+                deg = min(2, n_points - 1)
+            else:
+                deg = 3
+
+            coeff = np.polyfit(x_num, y, deg)
+            poly = np.poly1d(coeff)
+            y_reg = poly(x_num)
+
+            fig.add_trace(
+                go.Scatter(
+                    x=df["date start"],
+                    y=y_reg,
+                    mode="lines",
+                    name=p + " trend",
+                )
+            )
+
     fig.update_layout(
-        title="Air quality over the last 10 years",
+        title="Air quality over the last 10 years for PM\u2081\u2080",
         xaxis_title="Date",
         yaxis_title="Concentration (µg/m³)",
         showlegend=False
@@ -208,7 +250,7 @@ def update_graph_2(time_period, pollutants):
             )
 
     fig.update_layout(
-        title="Air quality over the last 10 years",
+        title="Air quality over the last 10 years for PM\u2081\u2080",
         xaxis_title="Date",
         yaxis_title="Concentration (µg/m³)",
         showlegend=False
