@@ -72,76 +72,186 @@ pollutants={"PM10","PM2.5","NO2"}
 
 layout = html.Div([
 
+    ######################
+    ### First question ###
+    ######################
+
+    # Title
     html.H2("Air Pollution Levels by Area Type"),
 
-    html.Label("Select Time Period"),
-    dcc.Dropdown(
-        id="location_time-dropdown",
-        options=[
-            {"label": "Daily", "value": "daily"},
-            {"label": "Monthly", "value": "monthly"}
-        ],
-        value="daily",
-        clearable=False,
-        searchable = False,
-        style={"margin-right": "40px", "width": "200px"}
-    ),
+    # Research question
+    html.Div([
+        html.H3("Research Question"),
+        html.H4([
+            "How does air pollution vary across urban, suburban and rural areas?"
+        ]),
+        html.P([
+            "TODO"
+        ]),
+    ]),
 
-    html.Br(),
+    # Data description
+    html.Div([
+        html.H6("Used Data"),
+        html.P([
+            "TODO"
+        ]),
+    ]),
 
-    html.Label("Select Area Type"),
-    dcc.Dropdown(
-        id="location_area-dropdown",
-        options=[
-            {"label": "Rural", "value": "rural"},
-            {"label": "Urban", "value": "urban"},
-            {"label": "Suburban", "value": "suburban"}
-        ],
-        value=["rural"],
-        multi=True,
-        clearable=False,
-        searchable = False,
-        style={"margin-right": "40px", "width": "200px"}
-    ),
+    # Visualization description
+    html.Div([
+        html.H6("Visualization"),
+        html.P([
+            "TODO"
+        ]),
+    ]),
 
+    html.Hr(),
+
+    # Controls (time period + area type)
+    html.Div([
+
+        html.Div([
+            html.Label("Select Time Period"),
+            dcc.Dropdown(
+                id="location_time-dropdown",
+                options=[
+                    {"label": "Daily", "value": "daily"},
+                    {"label": "Monthly", "value": "monthly"}
+                ],
+                value="daily",
+                clearable=False,
+                searchable=False,
+                style={"width": "200px"}
+            ),
+        ]),
+
+        html.Div([
+            html.Label("Select Area Type"),
+            dcc.Dropdown(
+                id="location_area-dropdown",
+                options=[
+                    {"label": "Rural", "value": "rural"},
+                    {"label": "Urban", "value": "urban"},
+                    {"label": "Suburban", "value": "suburban"}
+                ],
+                value=["rural"],
+                multi=True,
+                clearable=False,
+                searchable=False,
+                style={"width": "200px"}
+            ),
+        ]),
+
+    ], style={
+        "display": "flex",
+        "gap": "40px",
+        "margin-bottom": "20px"
+    }),
+
+    # Graph
     dcc.Graph(id="location_pollution-graph"),
 
     html.Hr(),
 
+    # Interpretation
+    html.Div([
+        html.H4("Interpretation"),
+        html.P([
+            "TODO"
+        ])
+    ]),
+
+    html.Hr(),
+
+    #######################
+    ### Second question ###
+    #######################
+
+    # Title for second section
     html.H2("Air Pollution Levels by Area Type and Source"),
 
-    html.Label("Select Area Type"),
-    dcc.Dropdown(
-        id="location_area-dropdown-2",
-        options=[
-            {"label": "Rural", "value": "rural"},
-            {"label": "Urban", "value": "urban"},
-            {"label": "Suburban", "value": "suburban"}
-        ],
-        value="rural",
-        clearable=False,
-        searchable = False,
-        style={"margin-right": "40px", "width": "200px"}
-    ),
+    # Research question
+    html.Div([
+        html.H3("Research Question"),
+        html.H4([
+            "How does air pollution vary between background, traffic and industrial monitoring stations?"
+        ]),
+        html.P([
+            "TODO"
+        ]),
+    ]),
 
-    html.Br(),
+    # Data description
+    html.Div([
+        html.H6("Used Data"),
+        html.P([
+            "TODO"
+        ]),
+    ]),
 
-    html.Label("Select Pollutants"),
-    dcc.Dropdown(
-        id="location_source-dropdown-2",
-        options=[
-            {"label": "Background", "value": "background"},
-            {"label": "Traffic", "value": "traffic"},
-            {"label": "Industry", "value": "industrie"}
-        ],
-        value=["background"],
-        multi=True,
-        clearable=False,
-        searchable = False,
-        style={"margin-right": "40px", "width": "200px"}
-    ),
+    # Visualization description
+    html.Div([
+        html.H6("Visualization"),
+        html.P([
+            "TODO"
+        ]),
+    ]),
 
-    dcc.Graph(id="location_pollution-graph-2")
+    # Controls (area type + source)
+    html.Div([
+
+        html.Div([
+            html.Label("Select Area Type"),
+            dcc.Dropdown(
+                id="location_area-dropdown-2",
+                options=[
+                    {"label": "Rural", "value": "rural"},
+                    {"label": "Urban", "value": "urban"},
+                    {"label": "Suburban", "value": "suburban"}
+                ],
+                value="rural",
+                clearable=False,
+                searchable=False,
+                style={"width": "200px"}
+            ),
+        ]),
+
+        html.Div([
+            html.Label("Select Pollutants"),
+            dcc.Dropdown(
+                id="location_source-dropdown-2",
+                options=[
+                    {"label": "Background", "value": "background"},
+                    {"label": "Traffic", "value": "traffic"},
+                    {"label": "Industry", "value": "industrie"}
+                ],
+                value=["background"],
+                multi=True,
+                clearable=False,
+                searchable=False,
+                style={"width": "200px"}
+            ),
+        ]),
+
+    ], style={
+        "display": "flex",
+        "gap": "40px",
+        "margin-bottom": "20px"
+    }),
+
+    # Graph
+    dcc.Graph(id="location_pollution-graph-2"),
+
+    html.Hr(),
+
+    # Interpretation
+    html.Div([
+        html.H4("Interpretation"),
+        html.P([
+            "TODO"
+        ])
+    ]),
 
 ])
 
@@ -199,8 +309,7 @@ def update_graph(time_period, pollutants):
     fig.update_layout(
         title="Air quality over the last 10 years for PM\u2081\u2080",
         xaxis_title="Date",
-        yaxis_title="Concentration (µg/m³)",
-        showlegend=False
+        yaxis_title="Concentration (µg/m³)"
     )
 
     return fig
@@ -252,8 +361,7 @@ def update_graph_2(time_period, pollutants):
     fig.update_layout(
         title="Air quality over the last 10 years for PM\u2081\u2080",
         xaxis_title="Date",
-        yaxis_title="Concentration (µg/m³)",
-        showlegend=False
+        yaxis_title="Concentration (µg/m³)"
     )
 
     return fig
