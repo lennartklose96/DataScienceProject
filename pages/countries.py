@@ -102,80 +102,88 @@ layout = html.Div(children=[
     ]),
 
     html.Hr(),
-    
-    # Controls (time period + pollutants)
     html.Div([
-
+        # Controls (time period + pollutants)
         html.Div([
-            html.Label("Select Time Period"),
-            dcc.RadioItems(id="countries_time-period",
-                   options=["Monthly", "Daily"],
-                   value="Monthly",
-                   style={"width": "200px"}
+
+            html.Div([
+                html.Label("Select Time Period"),
+                dcc.RadioItems(id="countries_time-period",
+                    options=["Monthly", "Daily"],
+                    value="Monthly",
+                    style={"width": "200px"}
+                    ),
+            ]),
+
+            html.Div([
+                html.Label("Select Pollutants"),
+                dcc.Dropdown(
+                    id="countries_pollutant-dropdown",
+                    options=[
+                        {"label": "PM\u2081\u2080", "value": "PM10"},
+                        {"label": "PM\u2082.\u2085", "value": "PM2.5"},
+                        {"label": "NO\u2082", "value": "NO2"}
+                    ],
+                    value=["PM10"],
+                    multi=True,
+                    clearable=False,
+                    searchable=False,
+                    style={"width": "200px"}
                 ),
-        ]),
+            ]),
 
+        ], style={
+            "display": "flex",
+            "gap": "40px",
+            "margin-bottom": "20px"
+        }),
+        
         html.Div([
-            html.Label("Select Pollutants"),
-            dcc.Dropdown(
-                id="countries_pollutant-dropdown",
-                options=[
-                    {"label": "PM\u2081\u2080", "value": "PM10"},
-                    {"label": "PM\u2082.\u2085", "value": "PM2.5"},
-                    {"label": "NO\u2082", "value": "NO2"}
-                ],
-                value=["PM10"],
-                multi=True,
-                clearable=False,
-                searchable=False,
-                style={"width": "200px"}
-            ),
-        ]),
-
-    ], style={
-        "display": "flex",
-        "gap": "40px",
-        "margin-bottom": "20px"
-    }),
-    
-    # Visualizations side by side
-    dcc.Graph(id="countries_pollution-graph"),
-    #dcc.Graph(id="corona_boxplot-graph", style={"width": "50%"})
-
-    # Controls (RangeSlider for months + years)
-    html.Div([
-
+            # Visualizations side by side
+            dcc.Graph(id="countries_pollution-graph"),
+            #dcc.Graph(id="corona_boxplot-graph", style={"width": "50%"})
+        ], style={
+            "display": "flex",
+            "gap": "20px",
+            "border-radius": "3px",
+            "border": "1px solid black",
+            "box-shadow": "0 5px 30px rgba(0, 0, 0, 0.63)"
+            }),
+        # Controls (RangeSlider for months + years)
         html.Div([
-            html.Label("Select Month", style={"textAlign": "center", "width": "100%"}),
-            dcc.RangeSlider(
-            1, 
-            12,
-            id="countries_month-slider",
-            allowCross=False,
-            marks={i+1: m for i, m in enumerate(MONTH_ORDER)},
-            value=[1, 12],
-            ),
-        ]),
 
-        html.Div([
-            html.Label("Select Year", style={"textAlign": "center", "width": "100%"}),
-            dcc.RangeSlider(
-                2016, 
-                2026,
-                id="countries_year-slider",
+            html.Div([
+                html.Label("Select Month", style={"textAlign": "center", "width": "100%"}),
+                dcc.RangeSlider(
+                1, 
+                12,
+                id="countries_month-slider",
                 allowCross=False,
-                marks={y: str(y) for y in YEARS},
-                value=[2016, 2026],
-            ),
-        ]),
+                marks={i+1: m for i, m in enumerate(MONTH_ORDER)},
+                value=[1, 12],
+                ),
+            ]),
 
-    ],style={
-        "width": "80%",
-        "display": "flex",
-        "flexDirection": "column",
-        "gap": "30px",
-        "margin": "30px auto"
-    }),
+            html.Div([
+                html.Label("Select Year", style={"textAlign": "center", "width": "100%"}),
+                dcc.RangeSlider(
+                    2016, 
+                    2026,
+                    id="countries_year-slider",
+                    allowCross=False,
+                    marks={y: str(y) for y in YEARS},
+                    value=[2016, 2026],
+                ),
+            ]),
+
+        ],style={
+            "width": "80%",
+            "display": "flex",
+            "flexDirection": "column",
+            "gap": "30px",
+            "margin": "30px auto"
+        }),
+    ]),
 
     html.Hr(),
 

@@ -137,56 +137,61 @@ layout = html.Div([
     ]),
 
     html.Hr(),
-
-    # Controls (time period + pollutants)
     html.Div([
-
+        # Controls (time period + pollutants)
         html.Div([
-            html.Label("Select Time Period"),
-            dcc.Dropdown(
-                id="corona_time-dropdown",
-                options=[
-                    {"label": "Daily", "value": "daily"},
-                    {"label": "Monthly", "value": "monthly"},
-                ],
-                value="daily",
-                clearable=False,
-                searchable=False,
-                style={"width": "200px"}
-            ),
-        ]),
 
+            html.Div([
+                html.Label("Select Time Period"),
+                dcc.Dropdown(
+                    id="corona_time-dropdown",
+                    options=[
+                        {"label": "Daily", "value": "daily"},
+                        {"label": "Monthly", "value": "monthly"},
+                    ],
+                    value="daily",
+                    clearable=False,
+                    searchable=False,
+                    style={"width": "200px"}
+                ),
+            ]),
+
+            html.Div([
+                html.Label("Select Pollutants"),
+                dcc.Dropdown(
+                    id="corona_pollutant-dropdown",
+                    options=[
+                        {"label": "PM\u2081\u2080", "value": "PM10"},
+                        {"label": "PM\u2082.\u2085", "value": "PM2.5"},
+                        {"label": "NO\u2082", "value": "NO2"}
+                    ],
+                    value=["PM10"],
+                    multi=True,
+                    clearable=False,
+                    searchable=False,
+                    style={"width": "200px"}
+                ),
+            ]),
+
+        ], style={
+            "display": "flex",
+            "gap": "40px",
+            "margin-bottom": "20px",
+
+        }),
+
+        # Visualizations side by side
         html.Div([
-            html.Label("Select Pollutants"),
-            dcc.Dropdown(
-                id="corona_pollutant-dropdown",
-                options=[
-                    {"label": "PM\u2081\u2080", "value": "PM10"},
-                    {"label": "PM\u2082.\u2085", "value": "PM2.5"},
-                    {"label": "NO\u2082", "value": "NO2"}
-                ],
-                value=["PM10"],
-                multi=True,
-                clearable=False,
-                searchable=False,
-                style={"width": "200px"}
-            ),
-        ]),
-
-    ], style={
-        "display": "flex",
-        "gap": "40px",
-        "margin-bottom": "20px"
-    }),
-
-    # Visualizations side by side
-    html.Div([
-        dcc.Graph(id="corona_pollution-graph", style={"width": "50%"}),
-        dcc.Graph(id="corona_boxplot-graph", style={"width": "50%"})
-    ], style={
-        "display": "flex",
-        "gap": "20px"
-    }),
+            dcc.Graph(id="corona_pollution-graph", style={"width": "50%"}),
+            dcc.Graph(id="corona_boxplot-graph", style={"width": "50%"})
+        ], style={
+            "display": "flex",
+            "gap": "20px",
+            "border-radius": "3px",
+            "border": "1px solid black",
+            "box-shadow": "0 5px 30px rgba(0, 0, 0, 0.63)"
+        }),
+    ]),
 
     html.Hr(),
 
