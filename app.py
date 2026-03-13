@@ -16,6 +16,7 @@ external_stylesheets = ["https://codepen.io/chriddyp/pen/bWLwgP.css"]
 custom_labels = {
     "/corona" : "COVID-19",
     "/countries" : "Other Countries",
+    "/data" : "Data",
     "/germany" : "Trends in Germany",
     "/home" : "Home",
     "/location" : "Rural Areas",
@@ -47,22 +48,130 @@ app.layout = html.Div([
     html.H1(
         "Air Pollution in Germany"
     ),
-    # Navigation links
-    html.Div([
-        html.Div(
-            dcc.Link(
-                custom_labels.get(page["path"], page["name"]),
-                href=page["relative_path"],
-                style={"margin-right": "20px"}  # optional spacing
-            )
-        ) for page in dash.page_registry.values()
-    ], style={"margin-bottom": "30px"}),
 
-    # Page container
+    html.Div([
+
+        dcc.Link("Home", href="/home", 
+            style={"border": "1px solid black",
+                    "padding": "8px 15px",
+                    "border-radius": "5px",
+                    "text-decoration": "none",
+                    "background-color": "#ffffff",
+                    "color": "black",
+                    "height":"22px"}),
+
+        dcc.Link("Data", href="/data", 
+            style={"border": "1px solid black",
+                    "padding": "8px 15px",
+                    "border-radius": "5px",
+                    "text-decoration": "none",
+                    "background-color": "#ffffff",
+                    "color": "black",
+                    "height":"22px"}),
+
+        dcc.Dropdown(
+            options=[
+                {"label": "Trends in Germany", "value": "/germany"},
+                {"label": "New Years", "value": "/newyears"},
+                {"label": "COVID-19", "value": "/corona"},
+                {"label": "States", "value": "/states"},
+                {"label": "Rural Areas", "value": "/location"},
+                {"label": "Seasons", "value": "/seasons"}
+            ],
+            placeholder="UBA",
+            id="germany-dropdown1",
+            style={"width": "100px",
+                    "border": "1px solid black",
+                    "border-radius": "5px",
+                    "text-decoration": "none",
+                    "color": "black",
+                    "height":"38px"},
+                    maxHeight=400,
+                    searchable=False
+        ),
+
+        dcc.Dropdown(
+            options=[
+                {"label": "Weather", "value": "/weather"}
+            ],
+            placeholder="Weather",
+            id="events-dropdown2",
+            style={"width": "140px",
+                   "border": "1px solid black",
+                    "border-radius": "5px",
+                    "text-decoration": "none",
+                    "color": "black",
+                    "height":"38px"},
+                    maxHeight=400,
+                    searchable=False
+        ),
+
+        dcc.Dropdown(
+            options=[
+                {"label": "Summer Holidays", "value": "/holiday"}
+            ],
+            placeholder="Holidays",
+            id="events-dropdown3",
+            style={"width": "140px",
+                   "border": "1px solid black",
+                    "border-radius": "5px",
+                    "text-decoration": "none",
+                    "color": "black",
+                    "height":"38px"},
+                    maxHeight=400,
+                    searchable=False
+        ),
+
+        dcc.Dropdown(
+            options=[
+                {"label": "Other Countries", "value": "/countries"}
+            ],
+            placeholder="International",
+            id="events-dropdown4",
+            style={"width": "190px", 
+                   "border": "1px solid black",
+                    "border-radius": "5px",
+                    "text-decoration": "none",
+                    "color": "black",
+                    "height":"38px"},
+                    maxHeight=400,
+                    searchable=False
+        )
+
+    ], style={"display": "flex", 
+                    "gap": "20px", 
+                    "margin-right": "20px",
+                    "border": "1px solid black",
+                    "padding": "8px 15px",
+                    "border-radius": "5px",
+                    "text-decoration": "none",
+                    "background-color": "#f5f5f5",
+                    "color": "black",
+                    "align-items":"center",
+                    "justify-content": "center",
+                    "box-shadow": "0 5px 30px rgba(0, 0, 0, 0.63)",
+                    "position": "sticky",
+                    "top":"0",
+                    "z-index": "1000"}),
+
+    dcc.Location(id="url"),
+
     dash.page_container
 ])
 
+@callback(
+    Output("url", "pathname"),
+    Input("germany-dropdown1", "value"),
+    Input("events-dropdown2", "value"),
+    Input("events-dropdown3", "value"),
+    Input("events-dropdown4", "value"),
+    prevent_initial_call=True
+)
+def navigate_page(v1, v2, v3, v4):
 
+    for v in [v1, v2, v3, v4]:
+        if v:
+            return v
 ###################
 ### Run the APP ###
 ###################
