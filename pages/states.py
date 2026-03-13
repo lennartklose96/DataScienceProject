@@ -178,8 +178,17 @@ layout = html.Div([
         ]),
     ]),
 
-    # Graph
-    dcc.Graph(id="states_data-graph"),
+    html.Div([
+        # Graph
+        dcc.Graph(id="states_data-graph", style={"width": "100%"}),
+    ], style={
+            "display": "flex",
+            "gap": "20px",
+            "border-radius": "3px",
+            "border": "1px solid black",
+            "box-shadow": "0 5px 30px rgba(0, 0, 0, 0.63)",
+            "margin-top":"10px"
+            }),
 
     html.Hr(),
 

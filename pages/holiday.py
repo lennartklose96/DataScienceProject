@@ -136,8 +136,16 @@ layout = html.Div([
         "margin-bottom": "20px"
     }),
 
-    # Visualization
-    dcc.Graph(id="holiday_heatmap-matrix"),
+    html.Div([
+        # Visualization
+        dcc.Graph(id="holiday_heatmap-matrix" , style={"width": "100%"}),
+    ], style={
+            "display": "flex",
+            "gap": "20px",
+            "border-radius": "3px",
+            "border": "1px solid black",
+            "box-shadow": "0 5px 30px rgba(0, 0, 0, 0.63)"
+            }),
 
     html.Hr(),
 
