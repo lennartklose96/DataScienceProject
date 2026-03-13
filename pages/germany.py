@@ -7,6 +7,20 @@ import plotly.express as px
 import plotly.graph_objects as go
 import numpy as np
 
+##################
+### Constants ####
+##################
+
+PM10_LABEL = "PM\u2081\u2080"   # PM₁₀
+PM25_LABEL = "PM\u2082.\u2085"  # PM₂.₅
+NO2_LABEL = "NO\u2082"          # NO₂
+
+# Dictionary for labels per pollutant
+POLLUTANT_LABELS = {
+    "PM10": PM10_LABEL,   # PM₁₀
+    "PM2.5": PM25_LABEL,  # PM₂.₅
+    "NO2":  NO2_LABEL     # NO₂
+}
 
 ###########################
 ### Initialize Dash app ###
@@ -55,39 +69,89 @@ pollutants={"PM10","PM2.5","NO2"}
 
 layout = html.Div([
 
+    # Title
     html.H2("Air Pollution Germany"),
 
-    html.Label("Select Time Period"),
-    dcc.Dropdown(
-        id="Q10_time-dropdown",
-        options=[
-            {"label": "Daily", "value": "daily"},
-            {"label": "Monthly", "value": "monthly"},
-            {"label": "Yearly", "value": "yearly"}
-        ],
-        value="monthly",
-        clearable=False,
-        style={"margin-right": "40px", "width": "200px"}
-    ),
+    # Research question
+    html.Div([
+        html.H3("Research Question"),
+        html.H4([
+            "How did the concentration of pollution develop in the past ten years in Germany?"
+        ]),
+        html.P([
+           "TODO"
+        ]),
+    ]),
 
-    html.Br(),
-    html.Label("Select Pollutants"),
-    dcc.Dropdown(
-        id="Q10_pollutant-dropdown",
-        options=[
-            {"label": "PM\u2081\u2080", "value": "PM10"},
-            {"label": "PM\u2082.\u2085", "value": "PM2.5"},
-            {"label": "NO\u2082", "value": "NO2"}
-        ],
-        value=["PM10"],
-        multi=True,
-        clearable=False,
-        style={"margin-right": "40px", "width": "200px"}
-    ),
+    # Data description
+    html.Div([
+        html.H6("Used Data"),
+        html.P([
+            "TODO"
+        ]),
+    ]),
 
-    dcc.Graph(id="Q10_pollution-graph")
+    # Visualization description
+    html.Div([
+        html.H6("Visualization"),
+        html.P([
+           "TODO"
+        ]),
+    ]),
+
+    html.Hr(),
+
+    # Controls
+    html.Div([
+
+        html.Div([
+            html.Label("Select Time Period"),
+            dcc.Dropdown(
+                id="Q10_time-dropdown",
+                options=[
+                    {"label": "Daily", "value": "daily"},
+                    {"label": "Monthly", "value": "monthly"},
+                    {"label": "Yearly", "value": "yearly"}
+                ],
+                value="monthly",
+                clearable=False,
+                searchable=False,
+                style={"width": "200px"}
+            ),
+        ]),
+
+        html.Div([
+            html.Label("Select Pollutants"),
+            dcc.Dropdown(
+                id="Q10_pollutant-dropdown",
+                options=[
+                    {"label": POLLUTANT_LABELS["PM10"], "value": "PM10"},
+                    {"label": POLLUTANT_LABELS["PM2.5"], "value": "PM2.5"},
+                    {"label": POLLUTANT_LABELS["NO2"], "value": "NO2"}
+                ],
+                value=["PM10"],
+                multi=True,
+                clearable=False,
+                searchable=False,
+                style={"width": "200px"}
+            ),
+        ]),
+    ], style={"display": "flex", "align-items": "center", "margin-bottom": "30px", "gap" : "40px"}),
+
+    # Graph
+    dcc.Graph(id="Q10_pollution-graph"),
+
+    html.Hr(),
+
+    # Interpretation
+    html.Div([
+        html.H4("Interpretation"),
+        html.P([
+            "TODO"
+        ])
+    ]),
+
 ])
-
 
 @callback(
     Output("Q10_pollution-graph", "figure"),
@@ -105,7 +169,7 @@ def update_graph(time_period, pollutants):
             go.Bar(
                 x=df["date start"],
                 y=df["value"],
-                name=p
+                name=POLLUTANT_LABELS[p]
             )
         )
 
@@ -129,15 +193,20 @@ def update_graph(time_period, pollutants):
                     x=df["date start"],
                     y=y_reg,
                     mode="lines",
-                    name=p + " trend",
+                    name=POLLUTANT_LABELS[p] + " trend",
                 )
             )
 
     fig.update_layout(
-        title="Air quality over the last 10 years",
+        title="Air quality in Germany over the last 10 years",
         xaxis_title="Date",
-        yaxis_title="Concentration (µg/m³)",
-        showlegend=False
+        yaxis_title="Concentration (µg/m³)"
     )
 
     return fig
+
+options=[
+                    {"label": POLLUTANT_LABELS["PM10"], "value": "PM10"},
+                    {"label": POLLUTANT_LABELS["PM2.5"], "value": "PM2.5"},
+                    {"label": POLLUTANT_LABELS["NO2"], "value": "NO2"}
+                ],
