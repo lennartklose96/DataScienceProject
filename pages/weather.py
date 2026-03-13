@@ -129,8 +129,16 @@ layout = html.Div([
     ],
     style={"display": "flex", "align-items": "center", "margin-bottom": "30px"}),
 
+    html.Div([
     # Visualization
-    dcc.Graph(id="weather_graph"),
+    dcc.Graph(id="weather_graph" , style={"width": "100%"}),
+    ] , style={
+            "display": "flex",
+            "gap": "20px",
+            "border-radius": "3px",
+            "border": "1px solid black",
+            "box-shadow": "0 5px 30px rgba(0, 0, 0, 0.63)"
+            }),
 
     html.Hr(),
 
@@ -161,7 +169,7 @@ def update_combined_graph(selected_year, selected_weather):
     df_filtered = df_weather[df_weather["year"] == selected_year].sort_values("month")
 
     fig_weather = go.Figure()
-
+    
     # Add PM bars
     fig_weather.add_trace(go.Bar(
         x=df_filtered["month"],

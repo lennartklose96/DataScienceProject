@@ -14,6 +14,7 @@ external_stylesheets = ["https://codepen.io/chriddyp/pen/bWLwgP.css"]
 
 # Custom labels for pages
 custom_labels = {
+    "/about" : "About",
     "/corona" : "COVID-19",
     "/countries" : "Other Countries",
     "/data" : "Data",
@@ -45,9 +46,6 @@ server = app.server
 ##################
 
 app.layout = html.Div([
-    html.H1(
-        "Air Pollution in Germany"
-    ),
 
     html.Div([
 
@@ -58,7 +56,8 @@ app.layout = html.Div([
                     "text-decoration": "none",
                     "background-color": "#ffffff",
                     "color": "black",
-                    "height":"22px"}),
+                    "height":"22px"}
+        ),
 
         dcc.Link("Data", href="/data", 
             style={"border": "1px solid black",
@@ -67,7 +66,8 @@ app.layout = html.Div([
                     "text-decoration": "none",
                     "background-color": "#ffffff",
                     "color": "black",
-                    "height":"22px"}),
+                    "height":"22px"}
+        ),
 
         dcc.Dropdown(
             options=[
@@ -75,8 +75,8 @@ app.layout = html.Div([
                 {"label": "New Years", "value": "/newyears"},
                 {"label": "COVID-19", "value": "/corona"},
                 {"label": "States", "value": "/states"},
-                {"label": "Rural Areas", "value": "/location"},
-                {"label": "Seasons", "value": "/seasons"}
+                {"label": "Location", "value": "/location"},
+                {"label": "Season", "value": "/seasons"}
             ],
             placeholder="UBA",
             id="germany-dropdown1",
@@ -136,11 +136,22 @@ app.layout = html.Div([
                     "height":"38px"},
                     maxHeight=400,
                     searchable=False
-        )
+        ),
+
+        dcc.Link("About", href="/about", 
+            style={"border": "1px solid black",
+                    "padding": "8px 15px",
+                    "border-radius": "5px",
+                    "text-decoration": "none",
+                    "background-color": "#ffffff",
+                    "color": "black",
+                    "height":"22px"}
+        ),
+
 
     ], style={"display": "flex", 
                     "gap": "20px", 
-                    "margin-right": "20px",
+                    "margin": "0px",
                     "border": "1px solid black",
                     "padding": "8px 15px",
                     "border-radius": "5px",

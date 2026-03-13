@@ -144,7 +144,14 @@ layout = html.Div([
     html.Div([
         dcc.Graph(id="seasons_bar", style={"width": "48%"}),
         dcc.Graph(id="seasons_pie", style={"width": "48%"})
-    ], style={"display": "flex", "justify-content": "space-between"}),
+    ], style={"display": "flex", 
+              "justify-content": 
+              "space-between", 
+              "display": "flex",
+              "gap": "20px",
+              "border-radius": "3px",
+              "border": "1px solid black",
+              "box-shadow": "0 5px 30px rgba(0, 0, 0, 0.63)"}),
 
     html.Hr(),
 
