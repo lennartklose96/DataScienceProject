@@ -52,6 +52,25 @@ countries = [
     "thüringen"
 ]
 
+country_labels = {
+    "baden-württemberg": "Baden-Württemberg",
+    "bayern": "Bayern",
+    "berlin": "Berlin",
+    "brandenburg": "Brandenburg",
+    "bremen": "Bremen",
+    "hamburg": "Hamburg",
+    "hessen": "Hessen",
+    "mecklenburg-vorpommern": "Mecklenburg-Vorpommern",
+    "niedersachsen": "Niedersachsen",
+    "nordrhein-westfalen": "Nordrhein-Westfalen",
+    "rheinland-pfalz": "Rheinland-Pfalz",
+    "saarland": "Saarland",
+    "sachsen": "Sachsen",
+    "sachsen-anhalt": "Sachsen-Anhalt",
+    "schleswig-holstein": "Schleswig-Holstein",
+    "thüringen": "Thüringen"
+}
+
 def add_data(country):
 
     for p in POLLUTANTS:
@@ -71,52 +90,107 @@ for c in countries:
 ### Page layout ###
 ##################
 
-layout = html.Div(children=[
-    
-    ###############
-    ### Weather ###
-    ###############
-    
-    html.H2("Air Quality in different Countries"),
-    
-    html.Div(children='''
-        Compare the Air Quality in different Countries from 2016-2026.
-    '''),
+layout = html.Div([
 
-    dcc.RadioItems(id="states_date-mode",
-                   options=["Monthly", "Daily"],
-                   value="Monthly"
-                   ),
+    # Title
+    html.H2("Air Quality in different German States"),
 
-    dcc.RadioItems(id="states_pollutant-mode",
-                   options=[
-            {"label": "PM\u2081\u2080", "value": "PM10"},
-            {"label": "PM\u2082.\u2085", "value": "PM2,5"},
-            {"label": "NO\u2082", "value": "NO2"}
-        ],
-                   value="PM10"
-                   ),
+    # Research question
+    html.Div([
+        html.H3("Research Question"),
+        html.H4([
+            "How does the air quality vary between the different german federal states?"
+        ]),
+        html.P([
+            "TODO"
+        ]),
+    ]),
 
-    dcc.RangeSlider(
-        1, 
-        12,
-        id="states_month-slider",
-        allowCross=False,
-        marks={i+1: m for i, m in enumerate(MONTH_ORDER)},
-        value=[1, 12]
-        ),
+    # Data description
+    html.Div([
+        html.H6("Used Data"),
+        html.P([
+            "TODO"
+        ]),
+    ]),
 
-    dcc.RangeSlider(
-        2016, 
-        2026,
-        id="states_year-slider",
-        allowCross=False,
-        marks={y: str(y) for y in YEARS},
-        value=[2016, 2026]
-        ),
+    # Visualization description
+    html.Div([
+        html.H6("Visualization"),
+        html.P([
+            "TODO"
+        ]),
+    ]),
 
-    dcc.Graph(id="states_data-graph")
-    
+    html.Hr(),
+
+    # Controls
+    html.Div([
+
+        html.Div([
+            html.Label("Select Time Mode"),
+            dcc.RadioItems(
+                id="states_date-mode",
+                options=["Monthly", "Daily"],
+                value="Monthly"
+            ),
+        ], style={"margin-right": "40px"}),
+
+        html.Div([
+            html.Label("Select Pollutant"),
+            dcc.RadioItems(
+                id="states_pollutant-mode",
+                options=[
+                    {"label": "PM\u2081\u2080", "value": "PM10"},
+                    {"label": "PM\u2082.\u2085", "value": "PM2,5"},
+                    {"label": "NO\u2082", "value": "NO2"}
+                ],
+                value="PM10"
+            ),
+        ], style={"margin-right": "40px"}),
+
+    ], style={"display": "flex", "gap": "40px", "margin-bottom": "20px"}),
+
+    # Month and Year sliders
+    html.Div([
+        html.Div([
+            html.Label("Select Month"),
+            dcc.RangeSlider(
+                1, 
+                12,
+                id="states_month-slider",
+                allowCross=False,
+                marks={i+1: m for i, m in enumerate(MONTH_ORDER)},
+                value=[1, 12]
+            ),
+        ], style={"margin-bottom": "20px"}),
+
+        html.Div([
+            html.Label("Select Year"),
+            dcc.RangeSlider(
+                2016, 
+                2026,
+                id="states_year-slider",
+                allowCross=False,
+                marks={y: str(y) for y in YEARS},
+                value=[2016, 2026]
+            ),
+        ]),
+    ]),
+
+    # Graph
+    dcc.Graph(id="states_data-graph"),
+
+    html.Hr(),
+
+    # Interpretation
+    html.Div([
+        html.H4("Interpretation"),
+        html.P([
+            "TODO"
+        ])
+    ]),
+
 ])
 
 #################
@@ -159,16 +233,14 @@ def update_graph(selected_year, selected_month, selected_mode, selected_pollutan
                     x=filtered_df_month["date start"],
                     y=filtered_df_month["value"],
                     mode="lines",
-                    name=country
+                    name=country_labels[country]
                 )
             )
         
     fig.update_layout(
-            title=f"{selected_pollutant[:2]}<sub>{selected_pollutant[2:]}</sub> Air Pollution by Countries",
+            title=f"Air Pollution [{selected_pollutant[:2]}<sub>{selected_pollutant[2:]}</sub>] in german federal states",
             xaxis_title="Time",
-            yaxis_title=f"{selected_pollutant[:2]}<sub>{selected_pollutant[2:]}</sub> µg/m³",
-            width=1000,
-            height=500
+            yaxis_title=f"{selected_pollutant[:2]}<sub>{selected_pollutant[2:]}</sub> concentration (µg/m³)"
     )
 
     return fig
