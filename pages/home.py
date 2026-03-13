@@ -6,7 +6,7 @@ from dash import callback, Input, Output
 import plotly.express as px
 import plotly.graph_objects as go
 
-dash.register_page(__name__)
+dash.register_page(__name__, path = "/")
 
 layout = html.Div([
     html.H1("What is the state of air pollution in German cities?", style={

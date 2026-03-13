@@ -12,6 +12,17 @@ import plotly.graph_objects as go
 
 external_stylesheets = ["https://codepen.io/chriddyp/pen/bWLwgP.css"]
 
+# Global button style
+button_style = {
+    "border": "1px solid black",
+    "padding": "8px 15px",
+    "border-radius": "5px",
+    "text-decoration": "none",
+    "background-color": "#ffffff",
+    "color": "black",
+    "height": "22px"
+}
+
 # Custom labels for pages
 custom_labels = {
     "/about" : "About",
@@ -49,7 +60,7 @@ app.layout = html.Div([
 
     html.Div([
 
-        dcc.Link("Home", href="/home", 
+        dcc.Link("Home", href="/", 
             style={"border": "1px solid black",
                     "padding": "8px 15px",
                     "border-radius": "5px",
@@ -59,15 +70,7 @@ app.layout = html.Div([
                     "height":"22px"}
         ),
 
-        dcc.Link("Data", href="/data", 
-            style={"border": "1px solid black",
-                    "padding": "8px 15px",
-                    "border-radius": "5px",
-                    "text-decoration": "none",
-                    "background-color": "#ffffff",
-                    "color": "black",
-                    "height":"22px"}
-        ),
+        dcc.Link("Data", href="/data", style=button_style),
 
         dcc.Dropdown(
             options=[
@@ -138,16 +141,7 @@ app.layout = html.Div([
                     searchable=False
         ),
 
-        dcc.Link("About", href="/about", 
-            style={"border": "1px solid black",
-                    "padding": "8px 15px",
-                    "border-radius": "5px",
-                    "text-decoration": "none",
-                    "background-color": "#ffffff",
-                    "color": "black",
-                    "height":"22px"}
-        ),
-
+        dcc.Link("About", href="/about", style=button_style),
 
     ], style={"display": "flex", 
                     "gap": "20px", 
