@@ -74,7 +74,7 @@ layout = html.Div([
             " and ",
             html.Span(["PM", html.Sub("2.5")]), 
             " before aggregating it into monthly segments."
-            ". Weather data (temperature and precipitation) was obtained from the Open-Meteo API. "
+            " Weather data (temperature and precipitation) was obtained from the Open-Meteo API. "
             "As the amount of data we could request from Open-Meteo was imited, we chose to only look at the 100 largest german cities."
             "The Open-Meteo API requires geocoordinates to request weather related data, which were provided for the stations used by the Umweltbundesamt."
         ]),
