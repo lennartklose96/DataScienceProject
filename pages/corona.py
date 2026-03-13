@@ -97,11 +97,17 @@ layout = html.Div([
         html.H3("Research Question"),
         # The actual question
         html.H4([
-            "How did COVID-19 lockdowns and restrictions affect air pollution in Germany? "
+            "How did COVID-19 lockdowns and restrictions affect air pollution in Germany "
+            "compared to the previous and following years? "
         ]),
         # Description of why it is interesting and relevant
         html.P([
-           "TODO"
+           "The COVID-19 pandemic led to major changes in daily life, including lockdowns, "
+           "reduced traffic, and decreased industrial activity. These changes created a "
+           "unique opportunity to analyze how human activity influences air pollution "
+           "levels. Investigating the relationship between COVID-19 restrictions and "
+           "air quality can help better understand the impact of human behavior on "
+           "environmental conditions."
         ]),
     ]),
 
@@ -109,7 +115,15 @@ layout = html.Div([
     html.Div([
         html.H6("Used Data"),
         html.P([
-            "TODO"
+            "This study uses publicly available air quality data provided by the German "
+            "Environment Agency (Umweltbundesamt). The dataset includes measurements of "
+            "key air pollutants such as PM\u2081\u2080, PM\u2082.\u2085, and NO₂ collected from monitoring "
+            "stations across Germany. To analyze trends over time, the data was aggregated "
+            "into daily, monthly, and yearly averages. Each dataset contains a timestamp "
+            "(date start) and the corresponding pollutant concentration value in µg/m³. "
+            "These datasets enable the analysis of temporal changes in air pollution levels "
+            "and allow comparisons between different time periods, including the COVID-19 "
+            "pandemic."
         ]),
     ]),
 
@@ -117,7 +131,8 @@ layout = html.Div([
     html.Div([
         html.H6("Visualization"),
         html.P([
-           "TODO"
+           "The graph shows the daily and annual PM\u2081\u2080, PM\u2082.\u2085, and NO₂ values from 2019 to "
+           "the end of 2021 and their corresponding regression lines. "
         ]),
     ]),
 
@@ -179,7 +194,12 @@ layout = html.Div([
     html.Div([
         html.H4("Interpretation"),
         html.P([
-            "TODO"
+            "The graph suggests a slight decrease in PM\u2081\u2080, PM\u2082.\u2085, and NO₂ concentrations around"
+            " the beginning of the COVID-19 pandemic in 2020. This may be related to lockdown "
+            "measures that reduced traffic and economic activity. However, the effect "
+            "appears moderate, and pollution levels show strong daily fluctuations, "
+            "indicating that additional factors such as weather conditions also influence "
+            "air quality."
         ])
     ]),
 ])
