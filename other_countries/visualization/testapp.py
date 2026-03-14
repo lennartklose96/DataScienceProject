@@ -19,6 +19,19 @@ MONTH_ORDER = ["JAN","FEB","MAR","APR","MAY","JUNE","JULY","AUG","SEPT","OCT","N
 YEARS = [2016,2017,2018,2019,2020,2021,2022,2023,2024,2025,2026]
 POLLUTANTS = ["PM10","PM2.5","NO2"]
 
+# Labels for pollutants
+PM10_LABEL = "PM\u2081\u2080"   # PM₁₀
+PM25_LABEL = "PM\u2082.\u2085"  # PM₂.₅
+NO2_LABEL = "NO\u2082"          # NO₂
+
+# Dictionary for labels per pollutant
+POLLUTANT_LABELS = {
+    "PM10": "PM\u2081\u2080",   # PM₁₀
+    "PM2.5": "PM\u2082.\u2085",  # PM₂.₅
+    "NO2":  "NO\u2082"          # NO₂
+}
+
+
 ###########################
 ### Loading data frames ###
 ###########################
@@ -41,8 +54,16 @@ def add_data(country):
     for p in POLLUTANTS:
 
         try:
-            daily_data[p][country] = pd.read_csv(f"Collected Data/Question 8/{country}/daily_avg_{country}_{p}.csv")
-            monthly_data[p][country] = pd.read_csv(f"Collected Data/Question 8/{country}/monthly_avg_{country}_{p}.csv")
+            daily_df = pd.read_csv(f"Collected Data/Question 8/{country}/daily_avg_{country}_{p}.csv")
+            monthly_df = pd.read_csv(f"Collected Data/Question 8/{country}/monthly_avg_{country}_{p}.csv")
+
+            for df in [daily_df, monthly_df]:
+                df["date"] = pd.to_datetime(df["date"])
+                df["year"] = df["date"].dt.year
+                df["month"] = df["date"].dt.month
+
+            daily_data[p][country] = daily_df
+            monthly_data[p][country] = monthly_df
         
         except Exception:
             pass
@@ -58,18 +79,22 @@ for c in countries:
 app.layout = html.Div(children=[
     
    #Title    
-    html.H2("Air Pollution in different Countries"),
+    #html.H2("Air Pollution in different Countries"),
 
     #Research question
     html.Div([
-        html.H3("Research Question"),
+        #html.H3("Research Question"),
         # The actual question
         html.H4([
             "How does Germany compare to other countries in terms of the daily and monthly average concentrations of PM2.5, PM10 and NO2?"
-        ]),
+        ], style={
+            "font-size": "30px"
+        }),
         # Description of why it is interesting and relevant
         html.P([
-           "TODO"
+           "Comparing Germany with other European countries helps to understand how severe air pollution levels are in Germany relative to its neighbors. "
+           "In addition, future research could explore the underlying reasons for differences in air pollution levels between these countries, "
+           "particularly by examining domestic factors and environmental policy measures. "
         ]),
     ]),
     
@@ -77,7 +102,12 @@ app.layout = html.Div(children=[
     html.Div([
         html.H6("Used Data"),
         html.P([
-            "TODO"
+            "The Air Quality data for Germany were derived from an API provided by the German Environmental Agency (Umweltbundesamt), whereas "
+            "for the other countries we collected data through the OpenAQ API. The datasets include measurements of PM\u2081\u2080, PM\u2082.\u2085, and NO₂. "
+            "To analyze trends over time, the data was aggregated into daily and monthly averages. "
+            "Each dataset contains a timestamp (date) and the corresponding pollutant concentration value in µg/m³."
+            "“It should be noted that not all countries had continuous measurements between 2016 and 2026. Moreover, Italy and Romania did not have enough PM\u2082.\u2085 measurements"
+            "to provide meaningful results. "
         ]),
     ]),
 
@@ -90,86 +120,108 @@ app.layout = html.Div(children=[
     ]),
 
     html.Hr(),
-    
-    # Controls (time period + pollutants)
-    html.Div([
 
+    html.Div([
+        # Controls (time period + pollutants)
         html.Div([
-            html.Label("Select Time Period"),
-            dcc.RadioItems(id="countries_time-period",
-                   options=["Monthly", "Daily"],
-                   value="Monthly",
-                   style={"width": "200px"}
+
+            html.Div([
+                html.Label("Select Time Period"),
+                dcc.RadioItems(id="countries_time-period",
+                    options=["Monthly", "Daily"],
+                    value="Monthly",
+                    style={"width": "200px"}
+                    ),
+            ]),
+
+            html.Div([
+                html.Label("Select Pollutants"),
+                dcc.Dropdown(
+                    id="countries_pollutant-dropdown",
+                    options=[
+                        {"label": "PM\u2081\u2080", "value": "PM10"},
+                        {"label": "PM\u2082.\u2085", "value": "PM2.5"},
+                        {"label": "NO\u2082", "value": "NO2"}
+                    ],
+                    value=["PM10"],
+                    multi=True,
+                    clearable=False,
+                    searchable=False,
+                    style={"width": "200px"}
                 ),
-        ]),
+            ]),
 
+        ], style={
+            "display": "flex",
+            "gap": "40px",
+            "margin-bottom": "20px"
+        }),
+
+         # Controls (RangeSlider for months + years)
         html.Div([
-            html.Label("Select Pollutants"),
-            dcc.Dropdown(
-                id="countries_pollutant-dropdown",
-                options=[
-                    {"label": "PM\u2081\u2080", "value": "PM10"},
-                    {"label": "PM\u2082.\u2085", "value": "PM2.5"},
-                    {"label": "NO\u2082", "value": "NO2"}
-                ],
-                value="PM10",
-                multi=True,
-                clearable=False,
-                searchable=False,
-                style={"width": "200px"}
-            ),
-        ]),
 
-    ], style={
-        "display": "flex",
-        "gap": "40px",
-        "margin-bottom": "20px"
-    }),
-    
-    # Visualizations side by side
-    html.Div([
-        dcc.Graph(id="countries_pollution-graph", style={"width": "50%"}),
-        #dcc.Graph(id="corona_boxplot-graph", style={"width": "50%"})
-    ], 
-    style={
-        "display": "flex",
-        "gap": "20px"
-    }),
-
-    # Controls (RangeSlider for months + years)
-    html.Div([
-
-        html.Div([
-            html.Label("Select Month", style={"textAlign": "center", "width": "100%"}),
-            dcc.RangeSlider(
-            1, 
-            12,
-            id="countries_month-slider",
-            allowCross=False,
-            marks={i+1: m for i, m in enumerate(MONTH_ORDER)},
-            value=[1, 12],
-            ),
-        ]),
-
-        html.Div([
-            html.Label("Select Year", style={"textAlign": "center", "width": "100%"}),
-            dcc.RangeSlider(
-                2016, 
-                2026,
-                id="countries_year-slider",
+            html.Div([
+                html.Label("Select Month", style={"textAlign": "center", "width": "100%"}),
+                dcc.RangeSlider(
+                1, 
+                12,
+                id="countries_month-slider",
                 allowCross=False,
-                marks={y: str(y) for y in YEARS},
-                value=[2016, 2026],
-            ),
-        ]),
+                marks={i+1: m for i, m in enumerate(MONTH_ORDER)},
+                value=[1, 12],
+                ),
+            ]),
 
-    ], style={
-    "width": "50%",
-    "display": "flex",
-    "flexDirection": "column",
-    "gap": "30px",
-    "margin": "30px auto"
-}),
+            html.Div([
+                html.Label("Select Year", style={"textAlign": "center", "width": "100%"}),
+                dcc.RangeSlider(
+                    2016, 
+                    2026,
+                    id="countries_year-slider",
+                    allowCross=False,
+                    marks={y: str(y) for y in YEARS},
+                    value=[2016, 2026],
+                ),
+            ]),
+
+        ],style={
+            "width": "80%",
+            "display": "flex",
+            "flexDirection": "column",
+            "gap": "30px",
+            "margin": "30px auto"
+        }),
+        
+        html.Div([
+            dcc.Graph(id="countries_pollution-graph", style={"width": "100%"}),
+        ], style={
+            "display": "flex",
+            "gap": "20px",
+            
+            "border-radius": "3px",
+            "border": "1px solid black",
+            "box-shadow": "0 5px 30px rgba(0, 0, 0, 0.63)"
+            }),
+
+    ]),
+
+    #html.Hr(),
+
+  
+    html.Div([
+                
+        html.Div([
+            dcc.Graph(id="countries_boxplot-graph", style={"width": "100%"}),
+        ], style={
+            "display": "flex",
+            "gap": "20px",
+
+            "border-radius": "3px",
+            "border": "1px solid black",
+            "box-shadow": "0 5px 30px rgba(0, 0, 0, 0.63)"
+        }),
+
+    ]),
 
     html.Hr(),
 
@@ -201,44 +253,99 @@ def update_graph(selected_year, selected_month, selected_mode, selected_pollutan
     ##################
     ### Select DFs ###
     ##################
-        
-    if selected_mode == "Daily":
-        data = daily_data[selected_pollutant].items()
-    else:
-        data = monthly_data[selected_pollutant].items()
-
     
-    for country, df in data:
+    # Update each pollutant
+    for pollutant in selected_pollutant:
 
-            df["date"] = pd.to_datetime(df["date"])
-            df["year"] = df["date"].dt.year
-            df["month"] = df["date"].dt.month
+        if selected_mode == "Daily":
+            data = daily_data[pollutant].items()
+        else:
+            data = monthly_data[pollutant].items()
 
-            filtered_df_year = df[df["year"].between(selected_year[0], selected_year[1])]
+        for country, df in data:
 
-            filtered_df_month = filtered_df_year[filtered_df_year["month"].between(selected_month[0], selected_month[1])]
+            temp = df.copy()
+            
+            temp = temp[
+                (temp["year"].between(selected_year[0], selected_year[1])) &
+                (temp["month"].between(selected_month[0], selected_month[1]))
+            ]
 
+            # Getting country label
+            country_label = "UK" if country == "uk" else country.capitalize()
             fig.add_trace(
                 go.Scatter(
-                    x=filtered_df_month["date"],
-                    y=filtered_df_month["value"],
+                    x=temp["date"],
+                    y=temp["value"],
                     mode="lines+markers",
-                    name=country
+                    name=f"{country_label} ({POLLUTANT_LABELS[pollutant]})"
                 )
             )
-        
+
+    # Get proper labels
+    selected_labels = [POLLUTANT_LABELS[p] for p in selected_pollutant]
     fig.update_layout(
-            title=f"{selected_pollutant[:2]}<sub>{selected_pollutant[2:]}</sub> Air Pollution by Countries",
-            xaxis_title="Time",
-            yaxis_title=f"{selected_pollutant[:2]}<sub>{selected_pollutant[2:]}</sub> µg/m³",
-            width=1000,
-            height=500
+        title=f"Air Pollution ({', '.join(selected_labels)}) by Countries",
+        xaxis_title="Time",
+        yaxis_title="Concentration (µg/m³)"
+    ) 
+    
+    return fig
+
+
+@callback(
+    Output("countries_boxplot-graph", "figure"),
+    Input("countries_year-slider", "value"),
+    Input("countries_month-slider", "value"),
+    Input("countries_time-period", "value"),
+    Input("countries_pollutant-dropdown", "value")
+)
+def update_boxplot(selected_year, selected_month, selected_mode, selected_pollutant):
+
+    df_list = []
+
+    for p in selected_pollutant:
+
+        if selected_mode == "Daily":
+            data = daily_data[p].items()
+        else:
+            data = monthly_data[p].items()
+
+        for country, df in data:
+
+            temp = df.copy()
+
+            temp = temp[
+                (temp["year"].between(selected_year[0], selected_year[1])) &
+                (temp["month"].between(selected_month[0], selected_month[1]))
+            ]
+
+            temp["country"] = "UK" if country == "uk" else country.capitalize()
+            temp["pollutant"] = POLLUTANT_LABELS[p]
+
+            df_list.append(temp)
+
+    combined_df = pd.concat(df_list)
+
+    fig = px.box(
+        combined_df,
+        x="country",
+        y="value",
+        color="pollutant",
+        points="outliers"
+    )
+
+    fig.update_layout(
+        title="Distribution of Air Pollution by Country",
+        xaxis_title="Country",
+        yaxis_title="Concentration (µg/m³)"
     )
 
     return fig
 
+
 if __name__ == "__main__":
-    app.run(debug=True)  
+    app.run(debug=True) 
 
     
 

@@ -8,13 +8,14 @@ import plotly.graph_objects as go
 ### Initialize Dash page ###
 ############################
 
-dash.register_page(__name__)
+#dash.register_page(__name__)
+app = dash.Dash(__name__)
 
 #################
 ### Constants ###
 #################
 
-MONTH_ORDER = ["January","February","March","April","May","June","July","August","September","October","November","December"]
+MONTH_ORDER = ["JAN","FEB","MAR","APR","MAY","JUNE","JULY","AUG","SEPT","OCT","NOV","DEC"]
 YEARS = [2016,2017,2018,2019,2020,2021,2022,2023,2024,2025,2026]
 POLLUTANTS = ["PM10","PM2.5","NO2"]
 
@@ -54,7 +55,7 @@ for c in countries:
 ### Page layout ###
 ##################
 
-layout = html.Div(children=[
+app.layout = html.Div(children=[
     
    #Title    
     html.H2("Air Pollution in different Countries"),
@@ -111,7 +112,7 @@ layout = html.Div(children=[
                     {"label": "PM\u2082.\u2085", "value": "PM2.5"},
                     {"label": "NO\u2082", "value": "NO2"}
                 ],
-                value=["PM10"],
+                value="PM10",
                 multi=True,
                 clearable=False,
                 searchable=False,
@@ -129,15 +130,17 @@ layout = html.Div(children=[
     html.Div([
         dcc.Graph(id="countries_pollution-graph", style={"width": "50%"}),
         #dcc.Graph(id="corona_boxplot-graph", style={"width": "50%"})
-    ], style={
+    ], 
+    style={
         "display": "flex",
         "gap": "20px"
     }),
 
+    # Controls (RangeSlider for months + years)
     html.Div([
 
         html.Div([
-            html.Label("Select Month"),
+            html.Label("Select Month", style={"textAlign": "center", "width": "100%"}),
             dcc.RangeSlider(
             1, 
             12,
@@ -145,12 +148,11 @@ layout = html.Div(children=[
             allowCross=False,
             marks={i+1: m for i, m in enumerate(MONTH_ORDER)},
             value=[1, 12],
-            style={"width": "200px"}
             ),
         ]),
 
         html.Div([
-            html.Label("Select Year"),
+            html.Label("Select Year", style={"textAlign": "center", "width": "100%"}),
             dcc.RangeSlider(
                 2016, 
                 2026,
@@ -158,15 +160,16 @@ layout = html.Div(children=[
                 allowCross=False,
                 marks={y: str(y) for y in YEARS},
                 value=[2016, 2026],
-                style={"width": "200px"}
             ),
         ]),
 
     ], style={
-        "display": "flex",
-        "gap": "40px",
-        "margin-bottom": "20px"
-    }),
+    "width": "50%",
+    "display": "flex",
+    "flexDirection": "column",
+    "gap": "30px",
+    "margin": "30px auto"
+}),
 
     html.Hr(),
 
@@ -185,11 +188,11 @@ layout = html.Div(children=[
 #################
 
 @callback(
-    Output("countries_data-graph", "figure"),
+    Output("countries_pollution-graph", "figure"),
     Input("countries_year-slider", "value"),
     Input("countries_month-slider", "value"),
-    Input("countries_date-mode", "value"),
-    Input("countries_pollutant-mode", "value")
+    Input("countries_time-period", "value"),
+    Input("countries_pollutant-dropdown", "value")
 )
 def update_graph(selected_year, selected_month, selected_mode, selected_pollutant):
 
@@ -233,3 +236,6 @@ def update_graph(selected_year, selected_month, selected_mode, selected_pollutan
     )
 
     return fig
+
+if __name__ == "__main__":
+    app.run(debug=True) 
