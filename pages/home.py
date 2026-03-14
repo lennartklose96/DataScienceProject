@@ -29,7 +29,6 @@ layout = html.Div([
             "border": "1px solid black",
             "box-shadow": "0 5px 30px rgba(0, 0, 0, 0.63)",
             "background-color": "#ffffff",
-            "font-size": "18px"
         }),
 
     html.Div(
@@ -49,7 +48,6 @@ layout = html.Div([
             "border": "1px solid black",
             "box-shadow": "0 5px 30px rgba(0, 0, 0, 0.63)",
             "background-color": "#ffffff",
-            "font-size": "18px"
         }),
 
     html.Div([
@@ -61,13 +59,13 @@ layout = html.Div([
             "font-size": "30px"
         }),
 
-                    html.Li("How did the average values of PM₁₀, PM₂.₅ and NO₂ change in Germany?"),
-                    html.Li("How does air pollution in Germany behave around New Years?"),
-                    html.Li("How did COVID-19 lockdowns and restrictions affect air pollution in Germany compared to the previous and following years?"),
-                    html.Li("How does the air quality vary between the different german federal states?"),
-                    html.Li("How does air pollution vary across urban, suburban and rural areas?"),
-                    html.Li("How does air pollution vary between background, traffic and industrial monitoring stations?"),
-                    html.Li("How do seasonal changes influence the pollution concentrations in Germany between 2016 and 2025?")
+                    html.P("⦁ How did the average values of PM₁₀, PM₂.₅ and NO₂ change in Germany?"),
+                    html.P("⦁ How does air pollution in Germany behave around New Years?"),
+                    html.P("⦁ How did COVID-19 lockdowns and restrictions affect air pollution in Germany compared to the previous and following years?"),
+                    html.P("⦁ How does the air quality vary between the different german federal states?"),
+                    html.P("⦁ How does air pollution vary across urban, suburban and rural areas?"),
+                    html.P("⦁ How does air pollution vary between background, traffic and industrial monitoring stations?"),
+                    html.P("⦁ How do seasonal changes influence the pollution concentrations in Germany between 2016 and 2025?")
                 ],
 
                 style={
@@ -87,7 +85,7 @@ layout = html.Div([
                     html.H2("Weather", style={
             "font-size": "30px"
         }),
-                    html.Li("How do temperature and precipitation influence PM₁₀ and PM₂.₅ concentrations in major German cities between 2016 and 2025?")
+                    html.P("⦁ How do temperature and precipitation influence PM₁₀ and PM₂.₅ concentrations in major German cities between 2016 and 2025?")
                 ],
                 style={
                     "background-color": "#ffffff",
@@ -105,7 +103,7 @@ layout = html.Div([
                     html.H2("Holidays", style={
             "font-size": "30px"
         }),
-                    html.Li("How do summer school holidays in German federal states affect PM₁₀ and PM₂.₅ concentrations over the past ten years?")
+                    html.P("⦁ How do summer school holidays in German federal states affect PM₁₀ and PM₂.₅ concentrations over the past ten years?")
                 ],
                 style={
                     "background-color": "#ffffff",
@@ -123,7 +121,7 @@ layout = html.Div([
                     html.H2("International", style={
             "font-size": "30px"
         }),
-                    html.Li("How does Germany compare to other countries in terms of the daily and monthly average concentrations of PM₁₀, PM₂.₅ and NO₂?")
+                    html.P("⦁ How does Germany compare to other countries in terms of the daily and monthly average concentrations of PM₁₀, PM₂.₅ and NO₂?")
                 ],
                 style={
                     "background-color": "#ffffff",
