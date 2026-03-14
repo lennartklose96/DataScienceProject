@@ -33,7 +33,6 @@ layout = html.Div([
             "text-align": "center",
             "text-align": "left",
             "color": "black",
-            "font-size": "18px"
         })
     ],
     style={
@@ -72,7 +71,6 @@ layout = html.Div([
             "text-align": "center",
             "text-align": "left",
             "color": "black",
-            "font-size": "18px"
         })
     ],
     style={
@@ -111,7 +109,6 @@ layout = html.Div([
             "text-align": "center",
             "text-align": "left",
             "color": "black",
-            "font-size": "18px"
         })
     ],
     style={
