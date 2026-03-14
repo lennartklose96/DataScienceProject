@@ -39,13 +39,13 @@ dash.register_page(__name__)
 layout = html.Div([
 
     # Title
-    html.H2([
-        "Air Quality and Weather in Major German Cities"
-    ]),
+    #html.H2([
+    #    "Air Quality and Weather in Major German Cities"
+    #]),
 
     # Research question
     html.Div([
-        html.H3("Research Question"),
+        #html.H3("Research Question"),
         # The actual question
         html.H4([
             "How do temperature and precipitation influence ",
@@ -53,7 +53,9 @@ layout = html.Div([
             " and ",
             html.Span(["PM", html.Sub("2.5")]),
             " concentrations in major German cities between 2016 and 2025?"
-        ]),
+        ], style={
+            "font-size": "30px"
+        }),
         # Description of why it is interesting and relevant
         html.P([
             "This question was mostly based on our own curiousity. We were unsure if the weather "

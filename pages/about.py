@@ -33,15 +33,15 @@ layout = html.Div([
             "text-align": "center",
             "text-align": "left",
             "color": "black",
-            "font-size": "20px"
+            "font-size": "18px"
         })
     ],
     style={
         "display": "grid",
-        "grid-template-columns": "30% 70%",  # links 1, mittlere 0.5 Abstand, rechts 1
+        "grid-template-columns": "30% 70%",
         "grid-gap": "20px",
         "padding": "20px",
-        "margin": "30px auto 30px auto",
+        "margin": "50px auto 50px auto",
         "border-radius": "3px",
         "border": "1px solid black",
         "box-shadow": "0 5px 30px rgba(0, 0, 0, 0.63)",
@@ -72,15 +72,15 @@ layout = html.Div([
             "text-align": "center",
             "text-align": "left",
             "color": "black",
-            "font-size": "20px"
+            "font-size": "18px"
         })
     ],
     style={
         "display": "grid",
-        "grid-template-columns": "30% 70%",  # links 1, mittlere 0.5 Abstand, rechts 1
+        "grid-template-columns": "30% 70%",
         "grid-gap": "20px",
         "padding": "20px",
-        "margin": "30px auto 30px auto",
+        "margin": "50px auto 50px auto",
         "border-radius": "3px",
         "border": "1px solid black",
         "box-shadow": "0 5px 30px rgba(0, 0, 0, 0.63)",
@@ -111,7 +111,7 @@ layout = html.Div([
             "text-align": "center",
             "text-align": "left",
             "color": "black",
-            "font-size": "20px"
+            "font-size": "18px"
         })
     ],
     style={
@@ -119,7 +119,7 @@ layout = html.Div([
         "grid-template-columns": "30% 70%",
         "grid-gap": "20px",
         "padding": "20px",
-        "margin": "30px auto 30px auto",
+        "margin": "50px auto 50px auto",
         "border-radius": "3px",
         "border": "1px solid black",
         "box-shadow": "0 5px 30px rgba(0, 0, 0, 0.63)",

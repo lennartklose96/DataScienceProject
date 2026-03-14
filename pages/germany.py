@@ -70,14 +70,16 @@ pollutants={"PM10","PM2.5","NO2"}
 layout = html.Div([
 
     # Title
-    html.H2("Air Pollution Germany"),
+    #html.H2("Air Pollution Germany"),
 
     # Research question
     html.Div([
-        html.H3("Research Question"),
+        #html.H3("Research Question"),
         html.H4([
-            "How did the concentration of pollution develop in the past ten years in Germany?"
-        ]),
+            "How did the average values of PM₁₀, PM₂.₅ and NO₂ change in Germany?"
+        ], style={
+            "font-size": "30px"
+        }),
         html.P([
            "TODO"
         ]),
