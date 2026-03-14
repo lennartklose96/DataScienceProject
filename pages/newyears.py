@@ -58,14 +58,16 @@ for name, df in data.items():
 layout = html.Div([
 
     # Title
-    html.H2("Pollution during New Years"),
+    #html.H2("Pollution during New Years"),
 
     # Research question
     html.Div([
-        html.H3("Research Question"),
+        #html.H3("Research Question"),
         html.H4([
             "How does air pollution in Germany behave around New Years?"
-        ]),
+        ], style={
+            "font-size": "30px"
+        }),
         html.P([
             "TODO"
         ]),
@@ -131,7 +133,13 @@ layout = html.Div([
     # Graphs
     html.Div([
         dcc.Graph(id="newyears_pollutant-graph", style={"width": "100%"}),
-    ]),
+    ], style={
+            "display": "flex",
+            "gap": "20px",
+            "border-radius": "3px",
+            "border": "1px solid black",
+            "box-shadow": "0 5px 30px rgba(0, 0, 0, 0.63)"
+            }),
 
     html.Hr(),
 

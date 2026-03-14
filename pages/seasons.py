@@ -74,14 +74,16 @@ df_grouped_year = df_seasons.groupby(["year", "season"])[["pm10","pm25","no2"]].
 layout = html.Div([
 
     # Page title
-    html.H2("Seasonal Pollutant Analysis"),
+    #html.H2("Seasonal Pollutant Analysis"),
 
     # Research question
     html.Div([
-        html.H3("Research Question"),
+        #html.H3("Research Question"),
         html.H4([
             "How do seasonal changes influence the pollution concentrations in Germany between 2016 and 2025?"
-        ]),
+        ], style={
+            "font-size": "30px"
+        }),
         html.P([
             "We wanted to explore how air pollution varies across seasons. "
             "Perhaps there is a correlation between the season or how polluted it is, "
@@ -144,7 +146,14 @@ layout = html.Div([
     html.Div([
         dcc.Graph(id="seasons_bar", style={"width": "48%"}),
         dcc.Graph(id="seasons_pie", style={"width": "48%"})
-    ], style={"display": "flex", "justify-content": "space-between"}),
+    ], style={"display": "flex", 
+              "justify-content": 
+              "space-between", 
+              "display": "flex",
+              "gap": "20px",
+              "border-radius": "3px",
+              "border": "1px solid black",
+              "box-shadow": "0 5px 30px rgba(0, 0, 0, 0.63)"}),
 
     html.Hr(),
 

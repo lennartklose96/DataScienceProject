@@ -93,14 +93,16 @@ for c in countries:
 layout = html.Div([
 
     # Title
-    html.H2("Air Quality in different German States"),
+    #html.H2("Air Quality in different German States"),
 
     # Research question
     html.Div([
-        html.H3("Research Question"),
+        #html.H3("Research Question"),
         html.H4([
             "How does the air quality vary between the different german federal states?"
-        ]),
+        ], style={
+            "font-size": "30px"
+        }),
         html.P([
             "TODO"
         ]),
@@ -178,8 +180,17 @@ layout = html.Div([
         ]),
     ]),
 
-    # Graph
-    dcc.Graph(id="states_data-graph"),
+    html.Div([
+        # Graph
+        dcc.Graph(id="states_data-graph", style={"width": "100%"}),
+    ], style={
+            "display": "flex",
+            "gap": "20px",
+            "border-radius": "3px",
+            "border": "1px solid black",
+            "box-shadow": "0 5px 30px rgba(0, 0, 0, 0.63)",
+            "margin-top":"10px"
+            }),
 
     html.Hr(),
 

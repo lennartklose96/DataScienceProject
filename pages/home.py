@@ -6,9 +6,144 @@ from dash import callback, Input, Output
 import plotly.express as px
 import plotly.graph_objects as go
 
-dash.register_page(__name__, path='/home')
+dash.register_page(__name__, path = "/")
 
 layout = html.Div([
-    html.H2("This is our homepage for the Data Science Project"),
-    html.Div("We will put content here."),
+    html.Div([
+        html.H1("What is the state of air pollution in German cities?", style={
+            "font-size": "30px"
+        } ),
+        html.Div("In this project, we analyze trends in air quality in Germany from " \
+        "January 1, 2016, to March 1, 2026, focusing on the pollutants PM₁₀, PM₂.₅, and NO₂. " \
+        "The goal is to analyze trends and patterns in air pollution and to identify potential " \
+        "influencing factors. To this end, we examine temporal changes, regional differences, "
+        "and the influence of specific events, weather conditions, and seasonal factors. We " \
+        "also compare different types of measurement station locations and, in some cases, " \
+        "place the results in an international context."),
+
+
+    ], style={
+            "padding": "20px",
+            "margin": "50px auto 50px auto",
+            "border-radius": "3px",
+            "border": "1px solid black",
+            "box-shadow": "0 5px 30px rgba(0, 0, 0, 0.63)",
+            "background-color": "#ffffff",
+            "font-size": "18px"
+        }),
+
+    html.Div(
+        [
+        html.P("Essentially, the data provided by the Federal Environment Agency (UBA) forms " \
+            "the foundation for all of our questions. Below, we have therefore categorized " \
+            "our research questions to indicate whether additional APIs were used. The " \
+            "left-hand side shows questions that rely exclusively on the data provided by " \
+            "the Federal Environment Agency. The right-hand side, consequently, presents " \
+            "the questions for which we have utilized additional APIs in order to place the " \
+            "data obtained through our “main API” in a different context.")
+
+    ], style={
+            "padding": "20px",
+            "margin": "50px auto 30px auto",
+            "border-radius": "3px",
+            "border": "1px solid black",
+            "box-shadow": "0 5px 30px rgba(0, 0, 0, 0.63)",
+            "background-color": "#ffffff",
+            "font-size": "18px"
+        }),
+
+    html.Div([
+
+            # Große Box links
+            html.Div(
+                [
+                    html.H2("UBA", style={
+            "font-size": "30px"
+        }),
+
+                    html.Li("How did the average values of PM₁₀, PM₂.₅ and NO₂ change in Germany?"),
+                    html.Li("How does air pollution in Germany behave around New Years?"),
+                    html.Li("How did COVID-19 lockdowns and restrictions affect air pollution in Germany compared to the previous and following years?"),
+                    html.Li("How does the air quality vary between the different german federal states?"),
+                    html.Li("How does air pollution vary across urban, suburban and rural areas?"),
+                    html.Li("How does air pollution vary between background, traffic and industrial monitoring stations?"),
+                    html.Li("How do seasonal changes influence the pollution concentrations in Germany between 2016 and 2025?")
+                ],
+
+                style={
+                    "grid-row": "span 3",
+                    "background-color": "#ffffff",
+                    "padding": "25px",
+                    "border-radius": "3px",
+                    "border": "1px solid black",
+                    "box-shadow": "0 5px 30px rgba(0, 0, 0, 0.63)",
+                    "padding-top": "0px"
+                }
+            ),
+
+            # Box rechts oben
+            html.Div(
+                [
+                    html.H2("Weather", style={
+            "font-size": "30px"
+        }),
+                    html.Li("How do temperature and precipitation influence PM₁₀ and PM₂.₅ concentrations in major German cities between 2016 and 2025?")
+                ],
+                style={
+                    "background-color": "#ffffff",
+                    "padding": "25px",
+                    "border-radius": "3px",
+                    "border": "1px solid black",
+                    "box-shadow": "0 5px 30px rgba(0, 0, 0, 0.63)",
+                    "padding-top": "0px"
+                }
+            ),
+
+            # Box rechts mitte
+            html.Div(
+                [
+                    html.H2("Holidays", style={
+            "font-size": "30px"
+        }),
+                    html.Li("How do summer school holidays in German federal states affect PM₁₀ and PM₂.₅ concentrations over the past ten years?")
+                ],
+                style={
+                    "background-color": "#ffffff",
+                    "padding": "25px",
+                    "border-radius": "3px",
+                    "border": "1px solid black",
+                    "box-shadow": "0 5px 30px rgba(0, 0, 0, 0.63)",
+                    "padding-top": "0px"
+                }
+            ),
+
+            # Box rechts unten
+            html.Div(
+                [
+                    html.H2("International", style={
+            "font-size": "30px"
+        }),
+                    html.Li("How does Germany compare to other countries in terms of the daily and monthly average concentrations of PM₁₀, PM₂.₅ and NO₂?")
+                ],
+                style={
+                    "background-color": "#ffffff",
+                    "padding": "25px",
+                    "border-radius": "3px",
+                    "border": "1px solid black",
+                    "box-shadow": "0 5px 30px rgba(0, 0, 0, 0.63)",
+                    "padding-top": "0px"
+                }
+            ),
+
+        ],
+
+        style={
+            "display": "grid",
+            "grid-template-columns": "1fr 1fr",
+            "grid-template-rows": "auto auto auto",
+            "gap": "20px",
+            "padding": "0px"
+        })
+
+
 ])

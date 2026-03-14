@@ -39,13 +39,13 @@ dash.register_page(__name__)
 layout = html.Div([
 
     # Title
-    html.H2([
-        "Air Quality and Weather in Major German Cities"
-    ]),
+    #html.H2([
+    #    "Air Quality and Weather in Major German Cities"
+    #]),
 
     # Research question
     html.Div([
-        html.H3("Research Question"),
+        #html.H3("Research Question"),
         # The actual question
         html.H4([
             "How do temperature and precipitation influence ",
@@ -53,7 +53,9 @@ layout = html.Div([
             " and ",
             html.Span(["PM", html.Sub("2.5")]),
             " concentrations in major German cities between 2016 and 2025?"
-        ]),
+        ], style={
+            "font-size": "30px"
+        }),
         # Description of why it is interesting and relevant
         html.P([
             "This question was mostly based on our own curiousity. We were unsure if the weather "
@@ -129,8 +131,16 @@ layout = html.Div([
     ],
     style={"display": "flex", "align-items": "center", "margin-bottom": "30px"}),
 
+    html.Div([
     # Visualization
-    dcc.Graph(id="weather_graph"),
+    dcc.Graph(id="weather_graph" , style={"width": "100%"}),
+    ] , style={
+            "display": "flex",
+            "gap": "20px",
+            "border-radius": "3px",
+            "border": "1px solid black",
+            "box-shadow": "0 5px 30px rgba(0, 0, 0, 0.63)"
+            }),
 
     html.Hr(),
 
@@ -161,7 +171,7 @@ def update_combined_graph(selected_year, selected_weather):
     df_filtered = df_weather[df_weather["year"] == selected_year].sort_values("month")
 
     fig_weather = go.Figure()
-
+    
     # Add PM bars
     fig_weather.add_trace(go.Bar(
         x=df_filtered["month"],

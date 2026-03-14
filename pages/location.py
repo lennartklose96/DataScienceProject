@@ -77,14 +77,16 @@ layout = html.Div([
     ######################
 
     # Title
-    html.H2("Air Pollution Levels by Area Type"),
+    #html.H2("Air Pollution Levels by Area Type"),
 
     # Research question
     html.Div([
-        html.H3("Research Question"),
+        #html.H3("Research Question"),
         html.H4([
             "How does air pollution vary across urban, suburban and rural areas?"
-        ]),
+        ], style={
+            "font-size": "30px"
+        }),
         html.P([
             "TODO"
         ]),
@@ -149,8 +151,16 @@ layout = html.Div([
         "margin-bottom": "20px"
     }),
 
-    # Graph
-    dcc.Graph(id="location_pollution-graph"),
+    html.Div([
+        # Graph
+        dcc.Graph(id="location_pollution-graph" , style={"width": "100%"}),
+    ], style={
+            "display": "flex",
+            "gap": "20px",
+            "border-radius": "3px",
+            "border": "1px solid black",
+            "box-shadow": "0 5px 30px rgba(0, 0, 0, 0.63)"
+            }),
 
     html.Hr(),
 
@@ -169,14 +179,16 @@ layout = html.Div([
     #######################
 
     # Title for second section
-    html.H2("Air Pollution Levels by Area Type and Source"),
+    #html.H2("Air Pollution Levels by Area Type and Source"),
 
     # Research question
     html.Div([
-        html.H3("Research Question"),
+        #html.H3("Research Question"),
         html.H4([
             "How does air pollution vary between background, traffic and industrial monitoring stations?"
-        ]),
+        ], style={
+            "font-size": "30px"
+        }),
         html.P([
             "TODO"
         ]),
@@ -240,8 +252,16 @@ layout = html.Div([
         "margin-bottom": "20px"
     }),
 
-    # Graph
-    dcc.Graph(id="location_pollution-graph-2"),
+    html.Div([
+        # Graph
+        dcc.Graph(id="location_pollution-graph-2" , style={"width": "100%"}),
+    ], style={
+            "display": "flex",
+            "gap": "20px",
+            "border-radius": "3px",
+            "border": "1px solid black",
+            "box-shadow": "0 5px 30px rgba(0, 0, 0, 0.63)"
+            }),
 
     html.Hr(),
 
