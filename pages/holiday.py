@@ -61,13 +61,13 @@ df_diff["PM2.5"] = df_diff["pm25_holiday"] - df_diff["pm25_all"]
 layout = html.Div([
 
     # Title
-    html.H2([
-        "Summer Holidays and Air Pollution"
-    ]),
+    #html.H2([
+    #    "Summer Holidays and Air Pollution"
+    #]),
 
     # Research question
     html.Div([
-        html.H3("Research Question"),
+        #html.H3("Research Question"),
         # The actual question
         html.H4([
             "How do summer school holidays in German federal states affect ",
@@ -75,7 +75,9 @@ layout = html.Div([
             " and ",
             html.Span(["PM", html.Sub("2.5")]),
             " concentrations over the past ten years?"
-        ]),
+        ], style={
+            "font-size": "30px"
+        }),
         # Description of why it is interesting and relevant
         html.P([
             "Traffic is one of the main sources of particulate matter in urban areas. "

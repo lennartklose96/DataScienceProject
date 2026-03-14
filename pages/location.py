@@ -77,14 +77,16 @@ layout = html.Div([
     ######################
 
     # Title
-    html.H2("Air Pollution Levels by Area Type"),
+    #html.H2("Air Pollution Levels by Area Type"),
 
     # Research question
     html.Div([
-        html.H3("Research Question"),
+        #html.H3("Research Question"),
         html.H4([
             "How does air pollution vary across urban, suburban and rural areas?"
-        ]),
+        ], style={
+            "font-size": "30px"
+        }),
         html.P([
             "TODO"
         ]),
@@ -177,14 +179,16 @@ layout = html.Div([
     #######################
 
     # Title for second section
-    html.H2("Air Pollution Levels by Area Type and Source"),
+    #html.H2("Air Pollution Levels by Area Type and Source"),
 
     # Research question
     html.Div([
-        html.H3("Research Question"),
+        #html.H3("Research Question"),
         html.H4([
             "How does air pollution vary between background, traffic and industrial monitoring stations?"
-        ]),
+        ], style={
+            "font-size": "30px"
+        }),
         html.P([
             "TODO"
         ]),

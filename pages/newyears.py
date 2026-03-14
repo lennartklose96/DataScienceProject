@@ -58,14 +58,16 @@ for name, df in data.items():
 layout = html.Div([
 
     # Title
-    html.H2("Pollution during New Years"),
+    #html.H2("Pollution during New Years"),
 
     # Research question
     html.Div([
-        html.H3("Research Question"),
+        #html.H3("Research Question"),
         html.H4([
             "How does air pollution in Germany behave around New Years?"
-        ]),
+        ], style={
+            "font-size": "30px"
+        }),
         html.P([
             "TODO"
         ]),

@@ -90,16 +90,20 @@ pollutants={"PM10","PM2.5","NO2"}
 layout = html.Div([
 
     # Title
-    html.H2("COVID-19 and Air Pollution"),
+    #html.H2("COVID-19 and Air Pollution", style={
+        #    "font-size": "30px"
+        #}),
 
     # Research question
     html.Div([
-        html.H3("Research Question"),
+        #html.H3("Research Question"),
         # The actual question
         html.H4([
             "How did COVID-19 lockdowns and restrictions affect air pollution in Germany "
             "compared to the previous and following years? "
-        ]),
+        ], style={
+            "font-size": "30px"
+        }),
         # Description of why it is interesting and relevant
         html.P([
            "The COVID-19 pandemic led to major changes in daily life, including lockdowns, "

@@ -21,8 +21,9 @@ layout = html.Div([
                 html.H2(
                     "Data Acquisition",
                     style={
-                        "textAlign": "LEFT",
-                        "marginBottom": "10px"
+                        "text-align": "LEFT",
+                        "margin-bottom": "10px",
+                        "font-size": "30px"
                     }
                 ),
 
@@ -43,16 +44,16 @@ layout = html.Div([
                     identify trends, differences, and factors influencing air pollution.
                     """,
                     style={
-                        "textAlign": "left",
-                        "fontSize": "18px",
-                        "maxWidth": "900px",
+                        "text-align": "left",
+                        "font-size": "18px",
+                        "max-width": "900px",
                         "margin": "0 auto"
                     }
                 )
             ],
 
             style={
-                "marginBottom": "40px"
+                "margin-bottom": "40px"
             }
         ),
 
