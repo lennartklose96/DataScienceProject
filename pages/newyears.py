@@ -57,99 +57,123 @@ for name, df in data.items():
 
 layout = html.Div([
 
-    # Title
-    #html.H2("Pollution during New Years"),
-
-    # Research question
     html.Div([
-        #html.H3("Research Question"),
-        html.H4([
-            "How does air pollution in Germany behave around New Years?"
-        ], style={
-            "font-size": "30px"
-        }),
-        html.P([
-            "TODO"
-        ]),
-    ]),
+        # Title
+        #html.H2("Pollution during New Years"),
 
-    # Data description
-    html.Div([
-        html.H6("Used Data"),
-        html.P([
-            "TODO"
-        ]),
-    ]),
-
-    # Visualization description
-    html.Div([
-        html.H6("Visualization"),
-        html.P([
-            "TODO"
-        ]),
-    ]),
-
-    html.Hr(),
-
-    # Controls
-    html.Div([
-
+        # Research question
         html.Div([
-            html.Label("Select Pollutants"),
-            dcc.Dropdown(
-                id="newyears_pollutant-dropdown",
-                options=[
-                    {"label": POLLUTANT_LABELS["PM10"], "value": "PM10"},
-                    {"label": POLLUTANT_LABELS["PM2.5"], "value": "PM2.5"},
-                    {"label": POLLUTANT_LABELS["NO2"], "value": "NO2"},
-                ],
-                value=["PM10"],
-                multi=True,
-                clearable=False,
-                searchable=False,
-                style={"width": "200px"}
-            ),
-        ]),
-
-        html.Div([
-            html.Label("Select Yearly Averages"),
-            dcc.Dropdown(
-                id="newyears_avg-dropdown",
-                options=[
-                    {"label": POLLUTANT_LABELS["PM10"] + " yearly average", "value": "PM10yearly"},
-                    {"label": POLLUTANT_LABELS["PM2.5"] + " yearly average", "value": "PM2.5yearly"},
-                    {"label": POLLUTANT_LABELS["NO2"]  + " yearly average", "value": "NO2yearly"}
-                ],
-                value=[],
-                multi=True,
-                clearable=True,
-                searchable=False,
-                style={"width": "200px"}
-            ),
-        ]),
-
-    ], style={"display": "flex", "gap": "40px", "margin-bottom": "30px"}),
-
-    # Graphs
-    html.Div([
-        dcc.Graph(id="newyears_pollutant-graph", style={"width": "100%"}),
-    ], style={
-            "display": "flex",
-            "gap": "20px",
-            "border-radius": "3px",
-            "border": "1px solid black",
-            "box-shadow": "0 5px 30px rgba(0, 0, 0, 0.63)"
+            #html.H3("Research Question"),
+            html.H4([
+                "How does air pollution in Germany behave around New Years?"
+            ], style={
+                "font-size": "30px"
             }),
+            html.P([
+                "TODO"
+            ]),
+        ],style={"margin": "10px 30px 0px 30px"}),
 
-    html.Hr(),
+        # Data description
+        html.Div([
+            html.H6("Used Data"),
+            html.P([
+                "TODO"
+            ]),
+        ],style={"margin": "10px 30px 0px 30px"}),
+
+        # Visualization description
+        html.Div([
+            html.H6("Visualization"),
+            html.P([
+                "TODO"
+            ]),
+        ],style={"margin": "10px 30px 10px 30px"}),
+    ], style={
+                "display": "flex",
+                "flex-direction": "column",
+                "border-radius": "3px",
+                "border": "1px solid black",
+                "box-shadow": "0 5px 30px rgba(0, 0, 0, 0.63)",
+                "background-color":"white",
+                "min-height":"auto",
+                "margin": "40px auto 75px auto",
+                }),
+
+    html.Div([
+        # Controls
+        html.Div([
+
+            html.Div([
+                html.Label("Select Pollutants"),
+                dcc.Dropdown(
+                    id="newyears_pollutant-dropdown",
+                    options=[
+                        {"label": POLLUTANT_LABELS["PM10"], "value": "PM10"},
+                        {"label": POLLUTANT_LABELS["PM2.5"], "value": "PM2.5"},
+                        {"label": POLLUTANT_LABELS["NO2"], "value": "NO2"},
+                    ],
+                    value=["PM10"],
+                    multi=True,
+                    clearable=False,
+                    searchable=False,
+                    style={"width": "200px"}
+                ),
+            ]),
+
+            html.Div([
+                html.Label("Select Yearly Averages"),
+                dcc.Dropdown(
+                    id="newyears_avg-dropdown",
+                    options=[
+                        {"label": POLLUTANT_LABELS["PM10"] + " yearly average", "value": "PM10yearly"},
+                        {"label": POLLUTANT_LABELS["PM2.5"] + " yearly average", "value": "PM2.5yearly"},
+                        {"label": POLLUTANT_LABELS["NO2"]  + " yearly average", "value": "NO2yearly"}
+                    ],
+                    value=[],
+                    multi=True,
+                    clearable=True,
+                    searchable=False,
+                    style={"width": "200px"}
+                ),
+            ]),
+
+        ], style={"display": "flex", "gap": "40px", "margin": "30px 30px 0px 30px"}),
+
+        # Graphs
+        html.Div([
+            dcc.Graph(id="newyears_pollutant-graph", style={"width": "100%"}),
+        ], style={
+                "display": "flex",
+                "gap": "20px",
+                }),
+    ], style={
+                "display": "flex",
+                "flex-direction": "column",
+                "border-radius": "3px",
+                "border": "1px solid black",
+                "box-shadow": "0 5px 30px rgba(0, 0, 0, 0.63)",
+                "background-color":"white",
+                "min-height":"auto",
+                "margin": "75px auto 75px auto",
+                }),
 
     # Interpretation
     html.Div([
-        html.H4("Interpretation"),
+        html.H4("Interpretation",style={"margin": "10px 30px 0px 30px"}),
         html.P([
             "TODO"
-        ])
-    ]),
+        ],style={"margin": "10px 30px 10px 30px"})
+    ], style={
+                "display": "flex",
+                "flex-direction": "column",
+                "border-radius": "3px",
+                "border": "1px solid black",
+                "box-shadow": "0 5px 30px rgba(0, 0, 0, 0.63)",
+                "background-color":"white",
+                "min-height":"auto",
+                "margin": "75px auto 75px auto",
+                }),
 
 ])
 

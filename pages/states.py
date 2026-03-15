@@ -92,115 +92,150 @@ for c in countries:
 
 layout = html.Div([
 
-    # Title
-    #html.H2("Air Quality in different German States"),
-
-    # Research question
     html.Div([
-        #html.H3("Research Question"),
-        html.H4([
-            "How does the air quality vary between the different german federal states?"
-        ], style={
-            "font-size": "30px"
-        }),
-        html.P([
-            "TODO"
-        ]),
-    ]),
+        # Title
+        #html.H2("Air Quality in different German States"),
 
-    # Data description
-    html.Div([
-        html.H6("Used Data"),
-        html.P([
-            "TODO"
-        ]),
-    ]),
-
-    # Visualization description
-    html.Div([
-        html.H6("Visualization"),
-        html.P([
-            "TODO"
-        ]),
-    ]),
-
-    html.Hr(),
-
-    # Controls
-    html.Div([
-
+        # Research question
         html.Div([
-            html.Label("Select Time Mode"),
-            dcc.RadioItems(
-                id="states_date-mode",
-                options=["Monthly", "Daily"],
-                value="Monthly"
-            ),
-        ], style={"margin-right": "40px"}),
+            #html.H3("Research Question"),
+            html.H4([
+                "How does the air quality vary between the different german federal states?"
+            ], style={
+                "font-size": "30px"
+            }),
+            html.P([
+                "TODO"
+            ]),
+        ],style={"margin": "10px 30px 0px 30px"}),
 
+        # Data description
         html.Div([
-            html.Label("Select Pollutant"),
-            dcc.RadioItems(
-                id="states_pollutant-mode",
-                options=[
-                    {"label": "PM\u2081\u2080", "value": "PM10"},
-                    {"label": "PM\u2082.\u2085", "value": "PM2,5"},
-                    {"label": "NO\u2082", "value": "NO2"}
-                ],
-                value="PM10"
-            ),
-        ], style={"margin-right": "40px"}),
+            html.H6("Used Data"),
+            html.P([
+                "TODO"
+            ]),
+        ],style={"margin": "10px 30px 0px 30px"}),
 
-    ], style={"display": "flex", "gap": "40px", "margin-bottom": "20px"}),
-
-    # Month and Year sliders
-    html.Div([
+        # Visualization description
         html.Div([
-            html.Label("Select Month"),
-            dcc.RangeSlider(
-                1, 
-                12,
-                id="states_month-slider",
-                allowCross=False,
-                marks={i+1: m for i, m in enumerate(MONTH_ORDER)},
-                value=[1, 12]
-            ),
-        ], style={"margin-bottom": "20px"}),
-
-        html.Div([
-            html.Label("Select Year"),
-            dcc.RangeSlider(
-                2016, 
-                2026,
-                id="states_year-slider",
-                allowCross=False,
-                marks={y: str(y) for y in YEARS},
-                value=[2016, 2026]
-            ),
-        ]),
-    ]),
-
-    html.Div([
-        # Graph
-        dcc.Graph(id="states_data-graph", style={"width": "100%"}),
+            html.H6("Visualization"),
+            html.P([
+                "TODO"
+            ]),
+        ],style={"margin": "10px 30px 10px 30px"}),
     ], style={
-            "display": "flex",
-            "gap": "20px",
-            "border-radius": "3px",
-            "border": "1px solid black",
-            "box-shadow": "0 5px 30px rgba(0, 0, 0, 0.63)",
-            "margin-top":"10px"
+                "display": "flex",
+                "flex-direction": "column",
+                "border-radius": "3px",
+                "border": "1px solid black",
+                "box-shadow": "0 5px 30px rgba(0, 0, 0, 0.63)",
+                "background-color":"white",
+                "min-height":"auto",
+                "margin": "40px auto 75px auto",
+                }),
+
+    html.Div([
+        # Controls
+        html.Div([
+
+            html.Div([
+                html.Label("Select Time Mode"),
+                dcc.RadioItems(
+                    id="states_date-mode",
+                    options=["Monthly", "Daily"],
+                    value="Monthly"
+                ),
+            ], style={"margin-right": "40px"}),
+
+            html.Div([
+                html.Label("Select Pollutant"),
+                dcc.RadioItems(
+                    id="states_pollutant-mode",
+                    options=[
+                        {"label": "PM\u2081\u2080", "value": "PM10"},
+                        {"label": "PM\u2082.\u2085", "value": "PM2,5"},
+                        {"label": "NO\u2082", "value": "NO2"}
+                    ],
+                    value="PM10"
+                ),
+            ], style={"margin-right": "40px"}),
+
+        ], style={"display": "flex", "gap": "40px", "margin": "30px 30px 0px 30px"}),
+
+        # Month and Year sliders
+        html.Div([
+            html.Div([
+                html.Label("Select Month", style={"textAlign": "center", "width": "100%"}),
+                dcc.RangeSlider(
+                    1, 
+                    12,
+                    id="states_month-slider",
+                    allowCross=False,
+                    marks={i+1: m for i, m in enumerate(MONTH_ORDER)},
+                    value=[1, 12]
+                ),
+            ],style={
+                "width": "80%",
+                "display": "flex",
+                "flexDirection": "column",
+                "gap": "30px",
+                "margin": "30px auto"
             }),
 
-    html.Hr(),
+            html.Div([
+                html.Label("Select Year", style={"textAlign": "center", "width": "100%"}),
+                dcc.RangeSlider(
+                    2016, 
+                    2026,
+                    id="states_year-slider",
+                    allowCross=False,
+                    marks={y: str(y) for y in YEARS},
+                    value=[2016, 2026]
+                ),
+            ],style={
+                "width": "80%",
+                "display": "flex",
+                "flexDirection": "column",
+                "gap": "30px",
+                "margin": "30px auto"
+            }),
+        ]),
+
+        html.Div([
+            # Graph
+            dcc.Graph(id="states_data-graph", style={"width": "100%"}),
+        ], style={
+                "display": "flex",
+                "gap": "20px",
+                }),
+    ], style={
+                "display": "flex",
+                "flex-direction": "column",
+                "border-radius": "3px",
+                "border": "1px solid black",
+                "box-shadow": "0 5px 30px rgba(0, 0, 0, 0.63)",
+                "background-color":"white",
+                "min-height":"auto",
+                "margin": "75px auto 75px auto",
+                }),
 
     # Interpretation
     html.Div([
-        html.H4("Interpretation"),
+        html.H4("Interpretation",style={"margin": "10px 30px 0px 30px"}),
         html.P([
             "TODO"
-        ])
-    ]),
+        ],style={"margin": "10px 30px 10px 30px"})
+    ], style={
+                "display": "flex",
+                "flex-direction": "column",
+                "border-radius": "3px",
+                "border": "1px solid black",
+                "box-shadow": "0 5px 30px rgba(0, 0, 0, 0.63)",
+                "background-color":"white",
+                "min-height":"auto",
+                "margin": "75px auto 75px auto",
+                }),
 
 ])
 

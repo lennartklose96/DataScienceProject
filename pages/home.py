@@ -11,7 +11,7 @@ dash.register_page(__name__, path = "/")
 layout = html.Div([
     html.Div([
         html.H1("What is the state of air pollution in German cities?", style={
-            "font-size": "30px"
+            "font-size": "30px", "margin": "10px 30px 0px 30px"
         } ),
         html.Div("In this project, we analyze trends in air quality in Germany from " \
         "January 1, 2016, to March 1, 2026, focusing on the pollutants PM₁₀, PM₂.₅, and NO₂. " \
@@ -19,12 +19,12 @@ layout = html.Div([
         "influencing factors. To this end, we examine temporal changes, regional differences, "
         "and the influence of specific events, weather conditions, and seasonal factors. We " \
         "also compare different types of measurement station locations and, in some cases, " \
-        "place the results in an international context."),
+        "place the results in an international context.",style={"margin": "10px 30px 0px 30px"}),
 
 
     ], style={
             "padding": "20px",
-            "margin": "50px auto 50px auto",
+            "margin": "40px auto 75px auto",
             "border-radius": "3px",
             "border": "1px solid black",
             "box-shadow": "0 5px 30px rgba(0, 0, 0, 0.63)",
@@ -39,11 +39,11 @@ layout = html.Div([
             "left-hand side shows questions that rely exclusively on the data provided by " \
             "the Federal Environment Agency. The right-hand side, consequently, presents " \
             "the questions for which we have utilized additional APIs in order to place the " \
-            "data obtained through our “main API” in a different context.")
+            "data obtained through our “main API” in a different context.",style={"margin": "10px 30px 0px 30px"})
 
     ], style={
             "padding": "20px",
-            "margin": "50px auto 30px auto",
+            "margin": "75px auto 20px auto",
             "border-radius": "3px",
             "border": "1px solid black",
             "box-shadow": "0 5px 30px rgba(0, 0, 0, 0.63)",
@@ -56,16 +56,16 @@ layout = html.Div([
             html.Div(
                 [
                     html.H2("UBA", style={
-            "font-size": "30px"
+            "font-size": "30px", "margin": "20px 30px 0px 30px"
         }),
 
-                    html.P("⦁ How did the average values of PM₁₀, PM₂.₅ and NO₂ change in Germany?"),
-                    html.P("⦁ How does air pollution in Germany behave around New Years?"),
-                    html.P("⦁ How did COVID-19 lockdowns and restrictions affect air pollution in Germany compared to the previous and following years?"),
-                    html.P("⦁ How does the air quality vary between the different german federal states?"),
-                    html.P("⦁ How does air pollution vary across urban, suburban and rural areas?"),
-                    html.P("⦁ How does air pollution vary between background, traffic and industrial monitoring stations?"),
-                    html.P("⦁ How do seasonal changes influence the pollution concentrations in Germany between 2016 and 2025?")
+                    html.P("⦁ How did the average values of PM₁₀, PM₂.₅ and NO₂ change in Germany?",style={"margin": "10px 30px 0px 30px"}),
+                    html.P("⦁ How does air pollution in Germany behave around New Years?",style={"margin": "10px 30px 0px 30px"}),
+                    html.P("⦁ How did COVID-19 lockdowns and restrictions affect air pollution in Germany compared to the previous and following years?",style={"margin": "10px 30px 0px 30px"}),
+                    html.P("⦁ How does the air quality vary between the different german federal states?",style={"margin": "10px 30px 0px 30px"}),
+                    html.P("⦁ How does air pollution vary across urban, suburban and rural areas?",style={"margin": "10px 30px 0px 30px"}),
+                    html.P("⦁ How does air pollution vary between background, traffic and industrial monitoring stations?",style={"margin": "10px 30px 0px 30px"}),
+                    html.P("⦁ How do seasonal changes influence the pollution concentrations in Germany between 2016 and 2025?",style={"margin": "10px 30px 0px 30px"})
                 ],
 
                 style={
@@ -83,9 +83,9 @@ layout = html.Div([
             html.Div(
                 [
                     html.H2("Weather", style={
-            "font-size": "30px"
+            "font-size": "30px", "margin": "20px 30px 0px 30px"
         }),
-                    html.P("⦁ How do temperature and precipitation influence PM₁₀ and PM₂.₅ concentrations in major German cities between 2016 and 2025?")
+                    html.P("⦁ How did temperature and precipitation influence PM₁₀ and PM₂.₅ concentrations in major German cities between 2016 and 2025?",style={"margin": "10px 30px 0px 30px"})
                 ],
                 style={
                     "background-color": "#ffffff",
@@ -101,9 +101,9 @@ layout = html.Div([
             html.Div(
                 [
                     html.H2("Holidays", style={
-            "font-size": "30px"
+            "font-size": "30px", "margin": "20px 30px 0px 30px"
         }),
-                    html.P("⦁ How do summer school holidays in German federal states affect PM₁₀ and PM₂.₅ concentrations over the past ten years?")
+                    html.P("⦁ How did summer school holidays in German federal states affect PM₁₀ and PM₂.₅ concentrations over the past ten years?",style={"margin": "10px 30px 0px 30px"})
                 ],
                 style={
                     "background-color": "#ffffff",
@@ -119,9 +119,9 @@ layout = html.Div([
             html.Div(
                 [
                     html.H2("International", style={
-            "font-size": "30px"
+            "font-size": "30px", "margin": "20px 30px 0px 30px"
         }),
-                    html.P("⦁ How does Germany compare to other countries in terms of the daily and monthly average concentrations of PM₁₀, PM₂.₅ and NO₂?")
+                    html.P("⦁ How does Germany compare to other countries in terms of the daily and monthly average concentrations of PM₁₀, PM₂.₅ and NO₂?",style={"margin": "10px 30px 0px 30px"})
                 ],
                 style={
                     "background-color": "#ffffff",
