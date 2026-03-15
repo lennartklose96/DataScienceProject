@@ -60,6 +60,8 @@ df_diff["PM2.5"] = df_diff["pm25_holiday"] - df_diff["pm25_all"]
 
 layout = html.Div([
 
+    
+    html.Div([
     # Title
     #html.H2([
     #    "Summer Holidays and Air Pollution"
@@ -67,100 +69,124 @@ layout = html.Div([
 
     # Research question
     html.Div([
-        #html.H3("Research Question"),
-        # The actual question
-        html.H4([
-            "How do summer school holidays in German federal states affect ",
-            html.Span(["PM", html.Sub("10")]),
-            " and ",
-            html.Span(["PM", html.Sub("2.5")]),
-            " concentrations over the past ten years?"
-        ], style={
-            "font-size": "30px"
-        }),
-        # Description of why it is interesting and relevant
-        html.P([
-            "Traffic is one of the main sources of particulate matter in urban areas. "
-            "During summer school holidays, many families tend to go on vacation "
-            "and traffic patterns change. To determine how this affects the ",
-            html.Span(["PM", html.Sub("10")]),
-            " and ",
-            html.Span(["PM", html.Sub("2.5")]),
-            " concentrations, we compared the mean of each state during the summer holidays "
-            "to their yearly mean."
-        ]),
-    ]),
-
-    # Data description
-    html.Div([
-        html.H6([
-            "Used Data"
-        ]),
-        html.P([
-            "We used daily pollution data provided by the Umweltbundesamt API for ",
-            html.Span(["PM", html.Sub("10")]),
-            " and ",
-            html.Span(["PM", html.Sub("2.5")]),
-            "and additionally found out when the summer school holidays are via ",
-            html.A("https://www.schulferien.org/"),
-            " to make comparisons."
-        ]),
-    ]),
-
-    # Visualization description
-     html.Div([
-        html.H6([
-            "Visualization"
-        ]),
-        html.P([
-            "This visualization shows how particulate matter concentrations in each state "
-            "differ during summer holidays compared to the yearly average."
-        ]),
-    ]),
-
-    html.Hr(),
-
-    # Controls
-    html.Div([
-        html.Label("Select Year:"),
-        dcc.Dropdown(
-            id="holiday_year-dropdown",
-            options=[
-                {"label": y, "value": y}
-                for y in sorted(df_diff["year"].unique())
-            ],
-            value=sorted(df_diff["year"].unique())[0],
-            clearable=False,
-            searchable=False
-        ),
-    ], style={
-        "width": "250px",
-        "margin-bottom": "20px"
-    }),
-
-    html.Div([
-        # Visualization
-        dcc.Graph(id="holiday_heatmap-matrix" , style={"width": "100%"}),
-    ], style={
-            "display": "flex",
-            "gap": "20px",
-            "border-radius": "3px",
-            "border": "1px solid black",
-            "box-shadow": "0 5px 30px rgba(0, 0, 0, 0.63)"
+            #html.H3("Research Question"),
+            # The actual question
+            html.H4([
+                "How did summer school holidays in German federal states affect ",
+                html.Span(["PM", html.Sub("10")]),
+                " and ",
+                html.Span(["PM", html.Sub("2.5")]),
+                " concentrations over the past ten years?"
+            ], style={
+                "font-size": "30px"
             }),
+            # Description of why it is interesting and relevant
+            html.P([
+                "Traffic is one of the main sources of particulate matter in urban areas. "
+                "During summer school holidays, many families tend to go on vacation "
+                "and traffic patterns change. To determine how this affects the ",
+                html.Span(["PM", html.Sub("10")]),
+                " and ",
+                html.Span(["PM", html.Sub("2.5")]),
+                " concentrations, we compared the mean of each state during the summer holidays "
+                "to their yearly mean."
+            ]),
+        ],style={"margin": "10px 30px 0px 30px"}),
 
-    html.Hr(),
+        # Data description
+        html.Div([
+            html.H6([
+                "Used Data"
+            ]),
+            html.P([
+                "We used daily pollution data provided by the Umweltbundesamt API for ",
+                html.Span(["PM", html.Sub("10")]),
+                " and ",
+                html.Span(["PM", html.Sub("2.5")]),
+                "and additionally found out when the summer school holidays are via ",
+                html.A("https://www.schulferien.org/"),
+                " to make comparisons."
+            ]),
+        ],style={"margin": "10px 30px 0px 30px"}),
+
+        # Visualization description
+        html.Div([
+            html.H6([
+                "Visualization"
+            ]),
+            html.P([
+                "This visualization shows how particulate matter concentrations in each state "
+                "differ during summer holidays compared to the yearly average."
+            ]),
+        ],style={"margin": "10px 30px 10px 30px"}),
+    ], style={
+                "display": "flex",
+                "flex-direction": "column",
+                "border-radius": "3px",
+                "border": "1px solid black",
+                "box-shadow": "0 5px 30px rgba(0, 0, 0, 0.63)",
+                "background-color":"white",
+                "min-height":"auto",
+                "margin": "40px auto 75px auto",
+                }),
+
+    html.Div([
+        # Controls
+        html.Div([
+            html.Label("Select Year:"),
+            dcc.Dropdown(
+                id="holiday_year-dropdown",
+                options=[
+                    {"label": y, "value": y}
+                    for y in sorted(df_diff["year"].unique())
+                ],
+                value=sorted(df_diff["year"].unique())[0],
+                clearable=False,
+                searchable=False
+            ),
+        ], style={
+            "width": "250px",
+            "margin-bottom": "20px",
+            "margin": "30px 30px 0px 30px"
+        }),
+
+        html.Div([
+            # Visualization
+            dcc.Graph(id="holiday_heatmap-matrix" , style={"width": "100%"}),
+        ], style={
+                "display": "flex",
+                "gap": "20px",
+                }),
+    ], style={
+                "display": "flex",
+                "flex-direction": "column",
+                "border-radius": "3px",
+                "border": "1px solid black",
+                "box-shadow": "0 5px 30px rgba(0, 0, 0, 0.63)",
+                "background-color":"white",
+                "min-height":"auto",
+                "margin": "75px auto 75px auto",
+                }),
 
     # Explanation
     html.Div([
-        html.H4("Interpretation"),
+        html.H4("Interpretation",style={"margin": "10px 30px 0px 30px"}),
         html.P([
           "In the vast majority of years in most states, we can see the difference is negative. "
           "This heavily implies the summer holidays have a positive impact on air pollution in Germany. "
           "A likely cause for this is that a lot of families going on vacation end up having fewer daily "
           "commutes (for example, to bring their children to school), or leave the country entirely."
-        ])
-    ]),
+        ],style={"margin": "10px 30px 10px 30px"})
+    ], style={
+                "display": "flex",
+                "flex-direction": "column",
+                "border-radius": "3px",
+                "border": "1px solid black",
+                "box-shadow": "0 5px 30px rgba(0, 0, 0, 0.63)",
+                "background-color":"white",
+                "min-height":"auto",
+                "margin": "75px auto 75px auto",
+                }),
 ])
 
 

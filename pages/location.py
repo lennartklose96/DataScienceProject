@@ -72,107 +72,129 @@ pollutants={"PM10","PM2.5","NO2"}
 
 layout = html.Div([
 
-    ######################
-    ### First question ###
-    ######################
-
-    # Title
-    #html.H2("Air Pollution Levels by Area Type"),
-
-    # Research question
     html.Div([
-        #html.H3("Research Question"),
-        html.H4([
-            "How does air pollution vary across urban, suburban and rural areas?"
-        ], style={
-            "font-size": "30px"
-        }),
-        html.P([
-            "TODO"
-        ]),
-    ]),
+        ######################
+        ### First question ###
+        ######################
 
-    # Data description
-    html.Div([
-        html.H6("Used Data"),
-        html.P([
-            "TODO"
-        ]),
-    ]),
+        # Title
+        #html.H2("Air Pollution Levels by Area Type"),
 
-    # Visualization description
-    html.Div([
-        html.H6("Visualization"),
-        html.P([
-            "TODO"
-        ]),
-    ]),
-
-    html.Hr(),
-
-    # Controls (time period + area type)
-    html.Div([
-
+        # Research question
         html.Div([
-            html.Label("Select Time Period"),
-            dcc.Dropdown(
-                id="location_time-dropdown",
-                options=[
-                    {"label": "Daily", "value": "daily"},
-                    {"label": "Monthly", "value": "monthly"}
-                ],
-                value="daily",
-                clearable=False,
-                searchable=False,
-                style={"width": "200px"}
-            ),
-        ]),
-
-        html.Div([
-            html.Label("Select Area Type"),
-            dcc.Dropdown(
-                id="location_area-dropdown",
-                options=[
-                    {"label": "Rural", "value": "rural"},
-                    {"label": "Urban", "value": "urban"},
-                    {"label": "Suburban", "value": "suburban"}
-                ],
-                value=["rural"],
-                multi=True,
-                clearable=False,
-                searchable=False,
-                style={"width": "200px"}
-            ),
-        ]),
-
-    ], style={
-        "display": "flex",
-        "gap": "40px",
-        "margin-bottom": "20px"
-    }),
-
-    html.Div([
-        # Graph
-        dcc.Graph(id="location_pollution-graph" , style={"width": "100%"}),
-    ], style={
-            "display": "flex",
-            "gap": "20px",
-            "border-radius": "3px",
-            "border": "1px solid black",
-            "box-shadow": "0 5px 30px rgba(0, 0, 0, 0.63)"
+            #html.H3("Research Question"),
+            html.H4([
+                "How does air pollution vary across urban, suburban and rural areas?"
+            ], style={
+                "font-size": "30px"
             }),
+            html.P([
+                "TODO"
+            ]),
+        ],style={"margin": "10px 30px 0px 30px"}),
 
-    html.Hr(),
+        # Data description
+        html.Div([
+            html.H6("Used Data"),
+            html.P([
+                "TODO"
+            ]),
+        ],style={"margin": "10px 30px 0px 30px"}),
+
+        # Visualization description
+        html.Div([
+            html.H6("Visualization"),
+            html.P([
+                "TODO"
+            ]),
+        ],style={"margin": "10px 30px 10px 30px"}),
+    ], style={
+                "display": "flex",
+                "flex-direction": "column",
+                "border-radius": "3px",
+                "border": "1px solid black",
+                "box-shadow": "0 5px 30px rgba(0, 0, 0, 0.63)",
+                "background-color":"white",
+                "min-height":"auto",
+                "margin": "40px auto 75px auto",
+                }),
+
+    html.Div([
+        # Controls (time period + area type)
+        html.Div([
+
+            html.Div([
+                html.Label("Select Time Period"),
+                dcc.Dropdown(
+                    id="location_time-dropdown",
+                    options=[
+                        {"label": "Daily", "value": "daily"},
+                        {"label": "Monthly", "value": "monthly"}
+                    ],
+                    value="daily",
+                    clearable=False,
+                    searchable=False,
+                    style={"width": "200px"}
+                ),
+            ]),
+
+            html.Div([
+                html.Label("Select Area Type"),
+                dcc.Dropdown(
+                    id="location_area-dropdown",
+                    options=[
+                        {"label": "Rural", "value": "rural"},
+                        {"label": "Urban", "value": "urban"},
+                        {"label": "Suburban", "value": "suburban"}
+                    ],
+                    value=["rural"],
+                    multi=True,
+                    clearable=False,
+                    searchable=False,
+                    style={"width": "200px"}
+                ),
+            ]),
+
+        ], style={
+            "display": "flex",
+            "gap": "40px",
+            "margin": "30px 30px 0px 30px"
+        }),
+
+        html.Div([
+            # Graph
+            dcc.Graph(id="location_pollution-graph" , style={"width": "100%"}),
+        ], style={
+                "display": "flex",
+                "gap": "20px",
+                }),
+    ], style={
+                "display": "flex",
+                "flex-direction": "column",
+                "border-radius": "3px",
+                "border": "1px solid black",
+                "box-shadow": "0 5px 30px rgba(0, 0, 0, 0.63)",
+                "background-color":"white",
+                "min-height":"auto",
+                "margin": "75px auto 75px auto",
+                }),
 
     # Interpretation
     html.Div([
-        html.H4("Interpretation"),
+        html.H4("Interpretation",style={"margin": "10px 30px 0px 30px"}),
         html.P([
             "TODO"
-        ])
-    ]),
-
-    html.Hr(),
+        ],style={"margin": "10px 30px 10px 30px"})
+    ], style={
+                "display": "flex",
+                "flex-direction": "column",
+                "border-radius": "3px",
+                "border": "1px solid black",
+                "box-shadow": "0 5px 30px rgba(0, 0, 0, 0.63)",
+                "background-color":"white",
+                "min-height":"auto",
+                "margin": "75px auto 75px auto",
+                }),
 
     #######################
     ### Second question ###
@@ -181,97 +203,123 @@ layout = html.Div([
     # Title for second section
     #html.H2("Air Pollution Levels by Area Type and Source"),
 
-    # Research question
     html.Div([
-        #html.H3("Research Question"),
-        html.H4([
-            "How does air pollution vary between background, traffic and industrial monitoring stations?"
-        ], style={
-            "font-size": "30px"
-        }),
-        html.P([
-            "TODO"
-        ]),
-    ]),
-
-    # Data description
-    html.Div([
-        html.H6("Used Data"),
-        html.P([
-            "TODO"
-        ]),
-    ]),
-
-    # Visualization description
-    html.Div([
-        html.H6("Visualization"),
-        html.P([
-            "TODO"
-        ]),
-    ]),
-
-    # Controls (area type + source)
-    html.Div([
-
+        # Research question
         html.Div([
-            html.Label("Select Area Type"),
-            dcc.Dropdown(
-                id="location_area-dropdown-2",
-                options=[
-                    {"label": "Rural", "value": "rural"},
-                    {"label": "Urban", "value": "urban"},
-                    {"label": "Suburban", "value": "suburban"}
-                ],
-                value="rural",
-                clearable=False,
-                searchable=False,
-                style={"width": "200px"}
-            ),
-        ]),
-
-        html.Div([
-            html.Label("Select Pollutants"),
-            dcc.Dropdown(
-                id="location_source-dropdown-2",
-                options=[
-                    {"label": "Background", "value": "background"},
-                    {"label": "Traffic", "value": "traffic"},
-                    {"label": "Industry", "value": "industrie"}
-                ],
-                value=["background"],
-                multi=True,
-                clearable=False,
-                searchable=False,
-                style={"width": "200px"}
-            ),
-        ]),
-
-    ], style={
-        "display": "flex",
-        "gap": "40px",
-        "margin-bottom": "20px"
-    }),
-
-    html.Div([
-        # Graph
-        dcc.Graph(id="location_pollution-graph-2" , style={"width": "100%"}),
-    ], style={
-            "display": "flex",
-            "gap": "20px",
-            "border-radius": "3px",
-            "border": "1px solid black",
-            "box-shadow": "0 5px 30px rgba(0, 0, 0, 0.63)"
+            #html.H3("Research Question"),
+            html.H4([
+                "How does air pollution vary between background, traffic and industrial monitoring stations?"
+            ], style={
+                "font-size": "30px"
             }),
+            html.P([
+                "TODO"
+            ]),
+        ],style={"margin": "10px 30px 0px 30px"}),
 
-    html.Hr(),
+        # Data description
+        html.Div([
+            html.H6("Used Data"),
+            html.P([
+                "TODO"
+            ]),
+        ],style={"margin": "10px 30px 0px 30px"}),
+
+        # Visualization description
+        html.Div([
+            html.H6("Visualization"),
+            html.P([
+                "TODO"
+            ]),
+        ],style={"margin": "10px 30px 10px 30px"}),
+    ], style={
+                "display": "flex",
+                "flex-direction": "column",
+                "border-radius": "3px",
+                "border": "1px solid black",
+                "box-shadow": "0 5px 30px rgba(0, 0, 0, 0.63)",
+                "background-color":"white",
+                "min-height":"auto",
+                "margin": "75px auto 75px auto",
+                }),
+
+    html.Div([
+        # Controls (area type + source)
+        html.Div([
+
+            html.Div([
+                html.Label("Select Area Type"),
+                dcc.Dropdown(
+                    id="location_area-dropdown-2",
+                    options=[
+                        {"label": "Rural", "value": "rural"},
+                        {"label": "Urban", "value": "urban"},
+                        {"label": "Suburban", "value": "suburban"}
+                    ],
+                    value="rural",
+                    clearable=False,
+                    searchable=False,
+                    style={"width": "200px"}
+                ),
+            ]),
+
+            html.Div([
+                html.Label("Select Pollutants"),
+                dcc.Dropdown(
+                    id="location_source-dropdown-2",
+                    options=[
+                        {"label": "Background", "value": "background"},
+                        {"label": "Traffic", "value": "traffic"},
+                        {"label": "Industry", "value": "industrie"}
+                    ],
+                    value=["background"],
+                    multi=True,
+                    clearable=False,
+                    searchable=False,
+                    style={"width": "200px"}
+                ),
+            ]),
+
+        ], style={
+            "display": "flex",
+            "gap": "40px",
+            "margin": "30px 30px 0px 30px"
+        }),
+
+        html.Div([
+            # Graph
+            dcc.Graph(id="location_pollution-graph-2" , style={"width": "100%"}),
+        ], style={
+                "display": "flex",
+                "gap": "20px",
+                }),
+    ], style={
+                "display": "flex",
+                "flex-direction": "column",
+                "border-radius": "3px",
+                "border": "1px solid black",
+                "box-shadow": "0 5px 30px rgba(0, 0, 0, 0.63)",
+                "background-color":"white",
+                "min-height":"auto",
+                "margin": "75px auto 75px auto",
+                }),
 
     # Interpretation
     html.Div([
-        html.H4("Interpretation"),
+        html.H4("Interpretation",style={"margin": "10px 30px 0px 30px"}),
         html.P([
             "TODO"
-        ])
-    ]),
+        ],style={"margin": "10px 30px 10px 30px"})
+    ], style={
+                "display": "flex",
+                "flex-direction": "column",
+                "border-radius": "3px",
+                "border": "1px solid black",
+                "box-shadow": "0 5px 30px rgba(0, 0, 0, 0.63)",
+                "background-color":"white",
+                "min-height":"auto",
+                "margin": "75px auto 75px auto",
+                }),
 
 ])
 

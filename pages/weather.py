@@ -38,122 +38,146 @@ dash.register_page(__name__)
 
 layout = html.Div([
 
-    # Title
-    #html.H2([
-    #    "Air Quality and Weather in Major German Cities"
-    #]),
-
-    # Research question
     html.Div([
-        #html.H3("Research Question"),
-        # The actual question
-        html.H4([
-            "How do temperature and precipitation influence ",
-            html.Span(["PM", html.Sub("10")]),
-            " and ",
-            html.Span(["PM", html.Sub("2.5")]),
-            " concentrations in major German cities between 2016 and 2025?"
-        ], style={
-            "font-size": "30px"
-        }),
-        # Description of why it is interesting and relevant
-        html.P([
-            "This question was mostly based on our own curiousity. We were unsure if the weather "
-            "could influence the amount of air pollution. Perhaps high temperatures could destroy particles," 
-            "or the rainfall might wash them away. Unsure what we would find, we wanted to examine if there is "
-            "a correlation here at all, and if there were any, come up with theories as for why this might be."
-        ]),
-    ]),
+        # Title
+        #html.H2([
+        #    "Air Quality and Weather in Major German Cities"
+        #]),
 
-    # Data description
-    html.Div([
-        html.H6([
-            "Used Data"
-        ]),
-        html.P([
-            "We used daily pollution data provided by the Umweltbundesamt API for ",
-            html.Span(["PM", html.Sub("10")]),
-            " and ",
-            html.Span(["PM", html.Sub("2.5")]), 
-            " before aggregating it into monthly segments."
-            " Weather data (temperature and precipitation) was obtained from the Open-Meteo API. "
-            "As the amount of data we could request from Open-Meteo was imited, we chose to only look at the 100 largest german cities."
-            "The Open-Meteo API requires geocoordinates to request weather related data, which were provided for the stations used by the Umweltbundesamt."
-        ]),
-    ]),
-
-    # Visualization description
-    html.Div([
-        html.H6([
-            "Visualization"
-        ]),
-        html.P([
-            "This visualization shows monthly ",
-            html.Span(["PM", html.Sub("10")]),
-            " and ",
-            html.Span(["PM", html.Sub("2.5")]),
-            " concentrations alongside temperature or precipitation for a selected year."
-        ]),
-    ]),
-
-    html.Hr(),
-
-    # Controls in a horizontal layout
-    html.Div([
-        # Year dropdown
+        # Research question
         html.Div([
-            html.Label("Select Year:"),
-            dcc.Dropdown(
-                id="weather_year-dropdown",
-                options=[
-                    {"label": y, "value": y}
-                    for y in sorted(df_weather["year"].unique())
-                ],
-                value=sorted(df_weather["year"].unique())[0],
-                clearable=False,
-                searchable=False
-            ),
-        ], style={"margin-right": "40px", "width": "200px"}),
-
-        # Weather variable radio buttons
-        html.Div([
-            html.Label("Select Weather Variable:"),
-            dcc.RadioItems(
-                id="weather_dropdown",
-                options=[
-                    {"label": "Peak Temperature", "value": "peak_temperature"},
-                    {"label": "Precipitation", "value": "precipitation_mm"}
-                ],
-                value="peak_temperature",
-                labelStyle={"display": "inline-block", "margin-right": "20px"}
-            )
-        ])
-    ],
-    style={"display": "flex", "align-items": "center", "margin-bottom": "30px"}),
-
-    html.Div([
-    # Visualization
-    dcc.Graph(id="weather_graph" , style={"width": "100%"}),
-    ] , style={
-            "display": "flex",
-            "gap": "20px",
-            "border-radius": "3px",
-            "border": "1px solid black",
-            "box-shadow": "0 5px 30px rgba(0, 0, 0, 0.63)"
+            #html.H3("Research Question"),
+            # The actual question
+            html.H4([
+                "How did temperature and precipitation influence ",
+                html.Span(["PM", html.Sub("10")]),
+                " and ",
+                html.Span(["PM", html.Sub("2.5")]),
+                " concentrations in major German cities between 2016 and 2025?"
+            ], style={
+                "font-size": "30px"
             }),
+            # Description of why it is interesting and relevant
+            html.P([
+                "This question was mostly based on our own curiousity. We were unsure if the weather "
+                "could influence the amount of air pollution. Perhaps high temperatures could destroy particles," 
+                "or the rainfall might wash them away. Unsure what we would find, we wanted to examine if there is "
+                "a correlation here at all, and if there were any, come up with theories as for why this might be."
+            ]),
+        ],style={"margin": "10px 30px 0px 30px"}),
 
-    html.Hr(),
+        # Data description
+        html.Div([
+            html.H6([
+                "Used Data"
+            ]),
+            html.P([
+                "We used daily pollution data provided by the Umweltbundesamt API for ",
+                html.Span(["PM", html.Sub("10")]),
+                " and ",
+                html.Span(["PM", html.Sub("2.5")]), 
+                " before aggregating it into monthly segments."
+                " Weather data (temperature and precipitation) was obtained from the Open-Meteo API. "
+                "As the amount of data we could request from Open-Meteo was imited, we chose to only look at the 100 largest german cities."
+                "The Open-Meteo API requires geocoordinates to request weather related data, which were provided for the stations used by the Umweltbundesamt."
+            ]),
+        ],style={"margin": "10px 30px 0px 30px"}),
+
+        # Visualization description
+        html.Div([
+            html.H6([
+                "Visualization"
+            ]),
+            html.P([
+                "This visualization shows monthly ",
+                html.Span(["PM", html.Sub("10")]),
+                " and ",
+                html.Span(["PM", html.Sub("2.5")]),
+                " concentrations alongside temperature or precipitation for a selected year."
+            ]),
+        ],style={"margin": "10px 30px 10px 30px"}),
+    ], style={
+                "display": "flex",
+                "flex-direction": "column",
+                "border-radius": "3px",
+                "border": "1px solid black",
+                "box-shadow": "0 5px 30px rgba(0, 0, 0, 0.63)",
+                "background-color":"white",
+                "min-height":"auto",
+                "margin": "40px auto 75px auto",
+                }),
+
+    html.Div([
+        # Controls in a horizontal layout
+        html.Div([
+            # Year dropdown
+            html.Div([
+                html.Label("Select Year:"),
+                dcc.Dropdown(
+                    id="weather_year-dropdown",
+                    options=[
+                        {"label": y, "value": y}
+                        for y in sorted(df_weather["year"].unique())
+                    ],
+                    value=sorted(df_weather["year"].unique())[0],
+                    clearable=False,
+                    searchable=False
+                ),
+            ], style={"margin-right": "40px", "width": "200px"}),
+
+            # Weather variable radio buttons
+            html.Div([
+                html.Label("Select Weather Variable:"),
+                dcc.RadioItems(
+                    id="weather_dropdown",
+                    options=[
+                        {"label": "Peak Temperature", "value": "peak_temperature"},
+                        {"label": "Precipitation", "value": "precipitation_mm"}
+                    ],
+                    value="peak_temperature",
+                    labelStyle={"display": "inline-block", "margin-right": "20px"}
+                )
+            ])
+        ],
+        style={"display": "flex", "align-items": "center", "margin": "30px 30px 0px 30px"}),
+
+        html.Div([
+        # Visualization
+        dcc.Graph(id="weather_graph" , style={"width": "100%"}),
+        ] , style={
+                "display": "flex",
+                "gap": "20px",
+                }),
+    ], style={
+                "display": "flex",
+                "flex-direction": "column",
+                "border-radius": "3px",
+                "border": "1px solid black",
+                "box-shadow": "0 5px 30px rgba(0, 0, 0, 0.63)",
+                "background-color":"white",
+                "min-height":"auto",
+                "margin": "75px auto 75px auto",
+                }),
 
     # Interpretation
     html.Div([
-        html.H4("Interpretation"),
+        html.H4("Interpretation",style={"margin": "10px 30px 0px 30px"}),
         html.P([
             "By looking at all the different years and observing the peak temperature "
             "and precipitation, we concluded there is no correlation between the temperature "
             "or the amount of rain and air pollution. There simply were not any visible "
             "trends that indicate those variables are in any way correlated."
-        ])
-    ]),
+        ],style={"margin": "10px 30px 10px 30px"})
+    ], style={
+                "display": "flex",
+                "flex-direction": "column",
+                "border-radius": "3px",
+                "border": "1px solid black",
+                "box-shadow": "0 5px 30px rgba(0, 0, 0, 0.63)",
+                "background-color":"white",
+                "min-height":"auto",
+                "margin": "75px auto 75px auto",
+                }),
 ])
 
 #################

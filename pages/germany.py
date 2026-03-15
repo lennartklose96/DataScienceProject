@@ -69,97 +69,124 @@ pollutants={"PM10","PM2.5","NO2"}
 
 layout = html.Div([
 
-    # Title
-    #html.H2("Air Pollution Germany"),
-
-    # Research question
-    html.Div([
-        #html.H3("Research Question"),
-        html.H4([
-            "How did the average values of PM₁₀, PM₂.₅ and NO₂ change in Germany?"
-        ], style={
-            "font-size": "30px"
-        }),
-        html.P([
-           "TODO"
-        ]),
-    ]),
-
-    # Data description
-    html.Div([
-        html.H6("Used Data"),
-        html.P([
-            "TODO"
-        ]),
-    ]),
-
-    # Visualization description
-    html.Div([
-        html.H6("Visualization"),
-        html.P([
-           "TODO"
-        ]),
-    ]),
-
-    html.Hr(),
-
-    # Controls
     html.Div([
 
+        # Title
+        #html.H2("Air Pollution Germany"),
+
+        # Research question
         html.Div([
-            html.Label("Select Time Period"),
-            dcc.Dropdown(
-                id="Q10_time-dropdown",
-                options=[
-                    {"label": "Daily", "value": "daily"},
-                    {"label": "Monthly", "value": "monthly"},
-                    {"label": "Yearly", "value": "yearly"}
-                ],
-                value="monthly",
-                clearable=False,
-                searchable=False,
-                style={"width": "200px"}
-            ),
-        ]),
-
-        html.Div([
-            html.Label("Select Pollutants"),
-            dcc.Dropdown(
-                id="Q10_pollutant-dropdown",
-                options=[
-                    {"label": POLLUTANT_LABELS["PM10"], "value": "PM10"},
-                    {"label": POLLUTANT_LABELS["PM2.5"], "value": "PM2.5"},
-                    {"label": POLLUTANT_LABELS["NO2"], "value": "NO2"}
-                ],
-                value=["PM10"],
-                multi=True,
-                clearable=False,
-                searchable=False,
-                style={"width": "200px"}
-            ),
-        ]),
-    ], style={"display": "flex", "align-items": "center", "margin-bottom": "30px", "gap" : "40px"}),
-
-    html.Div([
-        # Graph
-        dcc.Graph(id="Q10_pollution-graph", style={"width": "100%"}),
-    ], style={
-            "display": "flex",
-            "gap": "20px",
-            "border-radius": "3px",
-            "border": "1px solid black",
-            "box-shadow": "0 5px 30px rgba(0, 0, 0, 0.63)"
+            #html.H3("Research Question"),
+            html.H4([
+                "How did the average values of PM₁₀, PM₂.₅ and NO₂ change in Germany?"
+            ], style={
+                "font-size": "30px"
             }),
+            html.P([
+            "TODO"
+            ]),
+        ],style={"margin": "10px 30px 0px 30px"}),
 
-    html.Hr(),
+        # Data description
+        html.Div([
+            html.H6("Used Data"),
+            html.P([
+                "TODO"
+            ]),
+        ],style={"margin": "10px 30px 0px 30px"}),
+
+        # Visualization description
+        html.Div([
+            html.H6("Visualization"),
+            html.P([
+            "TODO"
+            ]),
+        ],style={"margin": "10px 30px 10px 30px"}),
+
+    ], style={
+                "display": "flex",
+                "flex-direction": "column",
+                "border-radius": "3px",
+                "border": "1px solid black",
+                "box-shadow": "0 5px 30px rgba(0, 0, 0, 0.63)",
+                "background-color":"white",
+                "min-height":"auto",
+                "margin": "40px auto 75px auto",
+                }),
+
+    html.Div([
+
+        # Controls
+        html.Div([
+
+            html.Div([
+                html.Label("Select Time Period"),
+                dcc.Dropdown(
+                    id="Q10_time-dropdown",
+                    options=[
+                        {"label": "Daily", "value": "daily"},
+                        {"label": "Monthly", "value": "monthly"},
+                        {"label": "Yearly", "value": "yearly"}
+                    ],
+                    value="monthly",
+                    clearable=False,
+                    searchable=False,
+                    style={"width": "200px"}
+                ),
+            ]),
+
+            html.Div([
+                html.Label("Select Pollutants"),
+                dcc.Dropdown(
+                    id="Q10_pollutant-dropdown",
+                    options=[
+                        {"label": POLLUTANT_LABELS["PM10"], "value": "PM10"},
+                        {"label": POLLUTANT_LABELS["PM2.5"], "value": "PM2.5"},
+                        {"label": POLLUTANT_LABELS["NO2"], "value": "NO2"}
+                    ],
+                    value=["PM10"],
+                    multi=True,
+                    clearable=False,
+                    searchable=False,
+                    style={"width": "200px"}
+                ),
+            ]),
+        ], style={"display": "flex", "align-items": "left", "margin": "30px 30px 0px 30px", "gap" : "40px"}),
+
+        html.Div([
+            # Graph
+            dcc.Graph(id="Q10_pollution-graph", style={"width": "100%"}),
+        ], style={
+                "display": "flex",
+                "gap": "20px"
+                }),
+    ], style={
+                "display": "flex",
+                "flex-direction": "column",
+                "border-radius": "3px",
+                "border": "1px solid black",
+                "box-shadow": "0 5px 30px rgba(0, 0, 0, 0.63)",
+                "background-color":"white",
+                "min-height":"auto",
+                "margin": "75px auto 75px auto",
+                }),
 
     # Interpretation
     html.Div([
-        html.H4("Interpretation"),
+        html.H4("Interpretation",style={"margin": "10px 30px 0px 30px"}),
         html.P([
             "TODO"
-        ])
-    ]),
+        ],style={"margin": "10px 30px 10px 30px"})
+    ],style={
+                "display": "flex",
+                "flex-direction": "column",
+                "border-radius": "3px",
+                "border": "1px solid black",
+                "box-shadow": "0 5px 30px rgba(0, 0, 0, 0.63)",
+                "background-color":"white",
+                "min-height":"auto",
+                "margin": "75px auto 75px auto",
+                }),
 
 ])
 

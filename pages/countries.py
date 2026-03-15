@@ -77,160 +77,177 @@ for c in countries:
 
 layout = html.Div(children=[
     
-   #Title    
-    #html.H2("Air Pollution in different Countries"),
-
-    #Research question
     html.Div([
-        #html.H3("Research Question"),
-        # The actual question
-        html.H4([
-            "How does Germany compare to other countries in terms of the daily and monthly average concentrations of PM2.5, PM10 and NO2?"
-        ], style={
-            "font-size": "30px"
-        }),
-        # Description of why it is interesting and relevant
-        html.P([
-           "Comparing Germany with other European countries helps to understand how severe air pollution levels are in Germany relative to its neighbors. "
-           "In addition, future research could explore the underlying reasons for differences in air pollution levels between these countries, "
-           "particularly by examining domestic factors and environmental policy measures. "
-        ]),
-    ]),
-    
-    # Data description
-    html.Div([
-        html.H6("Used Data"),
-        html.P([
-            "The Air Quality data for Germany were derived from an API provided by the German Environmental Agency (Umweltbundesamt), whereas "
-            "for the other countries we collected data through the OpenAQ API. The datasets include measurements of PM\u2081\u2080, PM\u2082.\u2085, and NO₂. "
-            "To analyze trends over time, the data was aggregated into daily and monthly averages. "
-            "Each dataset contains a timestamp (date) and the corresponding pollutant concentration value in µg/m³."
-            "“It should be noted that not all countries had continuous measurements between 2016 and 2026. Moreover, Italy and Romania did not have enough PM\u2082.\u2085 measurements"
-            "to provide meaningful results. "
-        ]),
-    ]),
+    #Title    
+        #html.H2("Air Pollution in different Countries"),
 
-    # Visualization description
-    html.Div([
-        html.H6("Visualization"),
-        html.P([
-           "TODO"
-        ]),
-    ]),
-
-    html.Hr(),
-
-    html.Div([
-        # Controls (time period + pollutants)
+        #Research question
         html.Div([
-
-            html.Div([
-                html.Label("Select Time Period"),
-                dcc.RadioItems(id="countries_time-period",
-                    options=["Monthly", "Daily"],
-                    value="Monthly",
-                    style={"width": "200px"}
-                    ),
+            #html.H3("Research Question"),
+            # The actual question
+            html.H4([
+                "How does Germany compare to other countries in terms of the daily and monthly average concentrations of PM2.5, PM10 and NO2?"
+            ], style={
+                "font-size": "30px"
+            }),
+            # Description of why it is interesting and relevant
+            html.P([
+            "Comparing Germany with other European countries helps to understand how severe air pollution levels are in Germany relative to its neighbors. "
+            "In addition, future research could explore the underlying reasons for differences in air pollution levels between these countries, "
+            "particularly by examining domestic factors and environmental policy measures. "
             ]),
-
-            html.Div([
-                html.Label("Select Pollutants"),
-                dcc.Dropdown(
-                    id="countries_pollutant-dropdown",
-                    options=[
-                        {"label": "PM\u2081\u2080", "value": "PM10"},
-                        {"label": "PM\u2082.\u2085", "value": "PM2.5"},
-                        {"label": "NO\u2082", "value": "NO2"}
-                    ],
-                    value=["PM10"],
-                    multi=True,
-                    clearable=False,
-                    searchable=False,
-                    style={"width": "200px"}
-                ),
-            ]),
-
-        ], style={
-            "display": "flex",
-            "gap": "40px",
-            "margin-bottom": "20px"
-        }),
-
-         # Controls (RangeSlider for months + years)
-        html.Div([
-
-            html.Div([
-                html.Label("Select Month", style={"textAlign": "center", "width": "100%"}),
-                dcc.RangeSlider(
-                1, 
-                12,
-                id="countries_month-slider",
-                allowCross=False,
-                marks={i+1: m for i, m in enumerate(MONTH_ORDER)},
-                value=[1, 12],
-                ),
-            ]),
-
-            html.Div([
-                html.Label("Select Year", style={"textAlign": "center", "width": "100%"}),
-                dcc.RangeSlider(
-                    2016, 
-                    2026,
-                    id="countries_year-slider",
-                    allowCross=False,
-                    marks={y: str(y) for y in YEARS},
-                    value=[2016, 2026],
-                ),
-            ]),
-
-        ],style={
-            "width": "80%",
-            "display": "flex",
-            "flexDirection": "column",
-            "gap": "30px",
-            "margin": "30px auto"
-        }),
+        ],style={"margin": "10px 30px 0px 30px"}),
         
+        # Data description
         html.Div([
-            dcc.Graph(id="countries_pollution-graph", style={"width": "100%"}),
-        ], style={
-            "display": "flex",
-            "gap": "20px",
-            
-            "border-radius": "3px",
-            "border": "1px solid black",
-            "box-shadow": "0 5px 30px rgba(0, 0, 0, 0.63)"
+            html.H6("Used Data"),
+            html.P([
+                "The Air Quality data for Germany were derived from an API provided by the German Environmental Agency (Umweltbundesamt), whereas "
+                "for the other countries we collected data through the OpenAQ API. The datasets include measurements of PM\u2081\u2080, PM\u2082.\u2085, and NO₂. "
+                "To analyze trends over time, the data was aggregated into daily and monthly averages. "
+                "Each dataset contains a timestamp (date) and the corresponding pollutant concentration value in µg/m³."
+                "“It should be noted that not all countries had continuous measurements between 2016 and 2026. Moreover, Italy and Romania did not have enough PM\u2082.\u2085 measurements"
+                "to provide meaningful results. "
+            ]),
+        ],style={"margin": "10px 30px 0px 30px"}),
+
+        # Visualization description
+        html.Div([
+            html.H6("Visualization"),
+            html.P([
+            "TODO"
+            ]),
+        ],style={"margin": "10px 30px 10px 30px"}),
+    ], style={
+                "display": "flex",
+                "flex-direction": "column",
+                "border-radius": "3px",
+                "border": "1px solid black",
+                "box-shadow": "0 5px 30px rgba(0, 0, 0, 0.63)",
+                "background-color":"white",
+                "min-height":"auto",
+                "margin": "40px auto 75px auto",
+                }),
+
+    html.Div([
+        html.Div([
+            # Controls (time period + pollutants)
+            html.Div([
+
+                html.Div([
+                    html.Label("Select Time Period"),
+                    dcc.RadioItems(id="countries_time-period",
+                        options=["Monthly", "Daily"],
+                        value="Monthly",
+                        style={"width": "200px"}
+                        ),
+                ]),
+
+                html.Div([
+                    html.Label("Select Pollutants"),
+                    dcc.Dropdown(
+                        id="countries_pollutant-dropdown",
+                        options=[
+                            {"label": "PM\u2081\u2080", "value": "PM10"},
+                            {"label": "PM\u2082.\u2085", "value": "PM2.5"},
+                            {"label": "NO\u2082", "value": "NO2"}
+                        ],
+                        value=["PM10"],
+                        multi=True,
+                        clearable=False,
+                        searchable=False,
+                        style={"width": "200px"}
+                    ),
+                ]),
+
+            ], style={
+                "display": "flex",
+                "gap": "40px",
+                "margin-bottom": "20px",
+                "margin": "30px 30px 0px 30px"
             }),
 
-    ]),
+            # Controls (RangeSlider for months + years)
+            html.Div([
 
-    #html.Hr(),
+                html.Div([
+                    html.Label("Select Month", style={"textAlign": "center", "width": "100%"}),
+                    dcc.RangeSlider(
+                    1, 
+                    12,
+                    id="countries_month-slider",
+                    allowCross=False,
+                    marks={i+1: m for i, m in enumerate(MONTH_ORDER)},
+                    value=[1, 12],
+                    ),
+                ]),
 
-  
-    html.Div([
-                
+                html.Div([
+                    html.Label("Select Year", style={"textAlign": "center", "width": "100%"}),
+                    dcc.RangeSlider(
+                        2016, 
+                        2026,
+                        id="countries_year-slider",
+                        allowCross=False,
+                        marks={y: str(y) for y in YEARS},
+                        value=[2016, 2026],
+                    ),
+                ]),
+
+            ],style={
+                "width": "80%",
+                "display": "flex",
+                "flexDirection": "column",
+                "gap": "30px",
+                "margin": "30px auto"
+            }),
+            
+            html.Div([
+                dcc.Graph(id="countries_pollution-graph", style={"width": "100%"}),
+            ], style={
+                "display": "flex",
+                "gap": "20px",
+                }),
+
+        ]),
+    
         html.Div([
-            dcc.Graph(id="countries_boxplot-graph", style={"width": "100%"}),
-        ], style={
-            "display": "flex",
-            "gap": "20px",
+                    
+            html.Div([
+                dcc.Graph(id="countries_boxplot-graph", style={"width": "100%"}),
+            ], style={
+                "display": "flex",
+                "gap": "20px",
+            }),
 
-            "border-radius": "3px",
-            "border": "1px solid black",
-            "box-shadow": "0 5px 30px rgba(0, 0, 0, 0.63)"
-        }),
-
-    ]),
-
-    html.Hr(),
+        ]),
+    ], style={
+                "display": "flex",
+                "flex-direction": "column",
+                "border-radius": "3px",
+                "border": "1px solid black",
+                "box-shadow": "0 5px 30px rgba(0, 0, 0, 0.63)",
+                "background-color":"white",
+                "min-height":"auto",
+                "margin": "75px auto 75px auto",
+                }),
 
     # Interpretation
     html.Div([
-        html.H4("Interpretation"),
+        html.H4("Interpretation",style={"margin": "10px 30px 0px 30px"}),
         html.P([
             "TODO"
-        ])
-    ]),
+        ],style={"margin": "10px 30px 10px 30px"})
+    ], style={
+                "display": "flex",
+                "flex-direction": "column",
+                "border-radius": "3px",
+                "border": "1px solid black",
+                "box-shadow": "0 5px 30px rgba(0, 0, 0, 0.63)",
+                "background-color":"white",
+                "min-height":"auto",
+                "margin": "75px auto 75px auto",
+                }),
 ])
     
 

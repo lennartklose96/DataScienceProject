@@ -70,7 +70,11 @@ layout = html.Div([
                         "measuring stations in Germany."),
                         html.Br(),
                         html.A(
-                            html.Button("Open"),
+                            html.Button("Open", style={
+                        "backgroundColor": "rgb(53, 167, 187)",
+                        "color": "black",
+                        "cursor": "pointer"
+                    }),
                             href="https://www.umweltbundesamt.de/system/files/medien/358/dokumente/schnittstellenbeschreibung_luftdaten_api_v4.pdf",
                             target="_blank"
                         )
@@ -92,7 +96,11 @@ layout = html.Div([
                         html.P("Here, you can select the weather data for the chosen time " \
                         "period and, if desired, specific cities you’d like to view."),
                         html.Br(),
-                        html.A(html.Button("Open"), href="https://open-meteo.com/",
+                        html.A(html.Button("Open", style={
+                        "backgroundColor": "rgb(53, 167, 187)",
+                        "color": "black",
+                        "cursor": "pointer"
+                    }), href="https://open-meteo.com/",
                                target="_blank"
                                )
                     ],
@@ -112,7 +120,11 @@ layout = html.Div([
                         html.H4("Holiday API"),
                         html.P("The API returns the holidays for each federal state."),
                         html.Br(),
-                        html.A(html.Button("Open"), href="https://ferien-api.maxleistner.de/",
+                        html.A(html.Button("Open", style={
+                        "backgroundColor": "rgb(53, 167, 187)",
+                        "color": "black",
+                        "cursor": "pointer"
+                    }), href="https://ferien-api.maxleistner.de/",
                                target="_blank"
                                )
                     ],
@@ -133,9 +145,13 @@ layout = html.Div([
                         html.P("Here, just like with the UBA API, you can access data on " \
                         "air pollution levels in other countries."),
                         html.Br(),
-                        html.A(html.Button("Open"), href="https://openaq.org/",
-                               target="_blank"
-                               )
+                        html.A(html.Button("Open", style={
+                        "backgroundColor": "rgb(53, 167, 187)",
+                        "color": "black",
+                        "cursor": "pointer"
+                    }), href="https://openaq.org/",
+                                        target="_blank"
+                                        )
                     ],
                     style={
                         "border": "1px solid black",
@@ -165,7 +181,7 @@ layout = html.Div([
         style={
             "display": "grid",
             "padding": "20px",
-            "margin": "30px auto 30px auto",
+            "margin": "40px auto 75px auto",
             "border-radius": "3px",
             "border": "1px solid black",
             "box-shadow": "0 5px 30px rgba(0, 0, 0, 0.63)",
@@ -248,7 +264,7 @@ layout = html.Div([
         ])
                 ],
                 style={
-                    "background-color": "#ffffff",
+                    "background-color":  "rgb(53, 167, 187)",
                     "padding": "25px",
                     "border-radius": "3px",
                     "border": "1px solid black",
@@ -284,7 +300,7 @@ layout = html.Div([
         ])
                 ],
                 style={
-                    "background-color": "#ffffff",
+                    "background-color":  "rgb(53, 167, 187)",
                     "padding": "25px",
                     "border-radius": "3px",
                     "border": "1px solid black",
@@ -320,7 +336,7 @@ layout = html.Div([
         ])
                 ],
                 style={
-                    "background-color": "#ffffff",
+                    "background-color":  "rgb(53, 167, 187)",
                     "padding": "25px",
                     "border-radius": "3px",
                     "border": "1px solid black",
@@ -356,7 +372,7 @@ layout = html.Div([
         ])
                 ],
                 style={
-                    "background-color": "#ffffff",
+                    "background-color":  "rgb(53, 167, 187)",
                     "padding": "25px",
                     "border-radius": "3px",
                     "border": "1px solid black",
@@ -374,7 +390,7 @@ layout = html.Div([
             "gridTemplateRows": "auto auto auto auto",
             "gap": "25px",
             "padding": "20px",
-            "margin": "30px auto 30px auto",
+            "margin": "75px auto 75px auto",
             "border-radius": "3px",
             "border": "1px solid black",
             "box-shadow": "0 5px 30px rgba(0, 0, 0, 0.63)",
@@ -560,7 +576,8 @@ layout = html.Div([
                         "border-radius": "3px",
                         "border": "1px solid black",
                         "box-shadow": "0 5px 30px rgba(0, 0, 0, 0.63)",
-                        "padding-top": "0px"
+                        "padding-top": "0px",
+                        "margin": "75px auto 75px auto",
                     }),
     
 

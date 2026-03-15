@@ -150,7 +150,7 @@ app.layout = html.Div([
                     "padding": "8px 15px",
                     "border-radius": "5px",
                     "text-decoration": "none",
-                    "background-color": "#f5f5f5",
+                    "background-color":  "rgb(53, 167, 187)",
                     "color": "black",
                     "align-items":"center",
                     "justify-content": "center",
@@ -162,7 +162,7 @@ app.layout = html.Div([
     dcc.Location(id="url"),
 
     dash.page_container
-])
+]),
 
 @callback(
     Output("url", "pathname"),

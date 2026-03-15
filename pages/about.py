@@ -12,7 +12,7 @@ layout = html.Div([
     html.Div(
     children=[
         # Linke Textbox
-        html.Div("Who", style={
+        html.Div("Who?", style={
             "padding": "20px",
             "border-radius": "5px",
             "color": "white",
@@ -40,7 +40,7 @@ layout = html.Div([
         "grid-template-columns": "30% 70%",
         "grid-gap": "20px",
         "padding": "20px",
-        "margin": "50px auto 50px auto",
+        "margin": "40px auto 75px auto",
         "border-radius": "3px",
         "border": "1px solid black",
         "box-shadow": "0 5px 30px rgba(0, 0, 0, 0.63)",
@@ -50,7 +50,7 @@ layout = html.Div([
     html.Div(
     children=[
         # Linke Textbox
-        html.Div("What", style={
+        html.Div("What?", style={
             "padding": "20px",
             "border-radius": "5px",
             "color": "white",
@@ -78,7 +78,7 @@ layout = html.Div([
         "grid-template-columns": "30% 70%",
         "grid-gap": "20px",
         "padding": "20px",
-        "margin": "50px auto 50px auto",
+        "margin": "75px auto 75px auto",
         "border-radius": "3px",
         "border": "1px solid black",
         "box-shadow": "0 5px 30px rgba(0, 0, 0, 0.63)",
@@ -88,7 +88,7 @@ layout = html.Div([
     html.Div(
     children=[
         # Linke Textbox
-        html.Div("Why", style={
+        html.Div("Why?", style={
             "padding": "20px",
             "border-radius": "5px",
             "color": "white",
@@ -116,7 +116,7 @@ layout = html.Div([
         "grid-template-columns": "30% 70%",
         "grid-gap": "20px",
         "padding": "20px",
-        "margin": "50px auto 50px auto",
+        "margin": "75px auto 75px auto",
         "border-radius": "3px",
         "border": "1px solid black",
         "box-shadow": "0 5px 30px rgba(0, 0, 0, 0.63)",

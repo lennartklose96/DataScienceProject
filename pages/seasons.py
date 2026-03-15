@@ -73,101 +73,125 @@ df_grouped_year = df_seasons.groupby(["year", "season"])[["pm10","pm25","no2"]].
 
 layout = html.Div([
 
-    # Page title
-    #html.H2("Seasonal Pollutant Analysis"),
-
-    # Research question
     html.Div([
-        #html.H3("Research Question"),
-        html.H4([
-            "How do seasonal changes influence the pollution concentrations in Germany between 2016 and 2025?"
-        ], style={
-            "font-size": "30px"
-        }),
-        html.P([
-            "We wanted to explore how air pollution varies across seasons. "
-            "Perhaps there is a correlation between the season or how polluted it is, "
-            "or maybe certain months favor certain pollutants."
-        ]),
-    ]),
-    # Data description
-    html.Div([
-        html.H6("Used Data"),
-        html.P([
-            "Daily air quality data for the pollutants were obtained "
-            "obtained from the Umweltbundesamt API. "
-            "The data was aggregated into seasonal averages to facilitate comparisons."
-        ])
-    ]), 
+        # Page title
+        #html.H2("Seasonal Pollutant Analysis"),
 
-    # Visualization description
-    html.Div([
-        html.H6("Visualization"),
-        html.P([
-            "The bar chart shows the mean concentration of the selected pollutant per season. "
-            "The pie chart shows the relative distribution of the pollutant across seasons."
-        ])
-    ]),
-
-    html.Hr(),
-
-    # Controls in horizontal layout
-    html.Div([
-        # Year dropdown
+        # Research question
         html.Div([
-            html.Label("Select Year:"),
-            dcc.Dropdown(
-                id="seasons_year-dropdown",
-                options=[{"label": y, "value": y} for y in sorted(df_grouped_year["year"].unique())],
-                value=df_grouped_year["year"].unique()[0],
-                clearable=False,
-                searchable=False
-            )
-        ], style={"margin-right": "40px", "width": "200px"}),
-
-        # Pollutant dropdown
+            #html.H3("Research Question"),
+            html.H4([
+                "How do seasonal changes influence the pollution concentrations in Germany between 2016 and 2025?"
+            ], style={
+                "font-size": "30px"
+            }),
+            html.P([
+                "We wanted to explore how air pollution varies across seasons. "
+                "Perhaps there is a correlation between the season or how polluted it is, "
+                "or maybe certain months favor certain pollutants."
+            ]),
+        ],style={"margin": "10px 30px 0px 30px"}),
+        # Data description
         html.Div([
-            html.Label("Select Pollutant:"),
-            dcc.Dropdown(
-                id="seasons_pollutant-dropdown",
-                options=[
-                    {"label": PM10_LABEL, "value": "pm10"},
-                    {"label": PM25_LABEL, "value": "pm25"},
-                    {"label": NO2_LABEL, "value": "no2"}
-                ],
-                value="pm10",
-                clearable=False,
-                searchable=False
-            )
-        ], style={"width": "200px"})
-    ], style={"display": "flex", "align-items": "center", "margin-bottom": "30px"}),
+            html.H6("Used Data"),
+            html.P([
+                "Daily air quality data for the pollutants were obtained "
+                "obtained from the Umweltbundesamt API. "
+                "The data was aggregated into seasonal averages to facilitate comparisons."
+            ])
+        ],style={"margin": "10px 30px 0px 30px"}), 
 
-    # Visualization charts side by side
+        # Visualization description
+        html.Div([
+            html.H6("Visualization"),
+            html.P([
+                "The bar chart shows the mean concentration of the selected pollutant per season. "
+                "The pie chart shows the relative distribution of the pollutant across seasons."
+            ])
+        ],style={"margin": "10px 30px 10px 30px"}),
+    ], style={
+                "display": "flex",
+                "flex-direction": "column",
+                "border-radius": "3px",
+                "border": "1px solid black",
+                "box-shadow": "0 5px 30px rgba(0, 0, 0, 0.63)",
+                "background-color":"white",
+                "min-height":"auto",
+                "margin": "40px auto 75px auto",
+                }),
+
     html.Div([
-        dcc.Graph(id="seasons_bar", style={"width": "48%"}),
-        dcc.Graph(id="seasons_pie", style={"width": "48%"})
-    ], style={"display": "flex", 
-              "justify-content": 
-              "space-between", 
-              "display": "flex",
-              "gap": "20px",
-              "border-radius": "3px",
-              "border": "1px solid black",
-              "box-shadow": "0 5px 30px rgba(0, 0, 0, 0.63)"}),
+        # Controls in horizontal layout
+        html.Div([
+            # Year dropdown
+            html.Div([
+                html.Label("Select Year:"),
+                dcc.Dropdown(
+                    id="seasons_year-dropdown",
+                    options=[{"label": y, "value": y} for y in sorted(df_grouped_year["year"].unique())],
+                    value=df_grouped_year["year"].unique()[0],
+                    clearable=False,
+                    searchable=False
+                )
+            ], style={"margin-right": "40px", "width": "200px"}),
 
-    html.Hr(),
+            # Pollutant dropdown
+            html.Div([
+                html.Label("Select Pollutant:"),
+                dcc.Dropdown(
+                    id="seasons_pollutant-dropdown",
+                    options=[
+                        {"label": PM10_LABEL, "value": "pm10"},
+                        {"label": PM25_LABEL, "value": "pm25"},
+                        {"label": NO2_LABEL, "value": "no2"}
+                    ],
+                    value="pm10",
+                    clearable=False,
+                    searchable=False
+                )
+            ], style={"width": "200px"})
+        ], style={"display": "flex", "align-items": "center", "margin": "30px 30px 0px 30px"}),
+
+        # Visualization charts side by side
+        html.Div([
+            dcc.Graph(id="seasons_bar", style={"width": "48%"}),
+            dcc.Graph(id="seasons_pie", style={"width": "48%"})
+        ], style={"display": "flex", 
+                "justify-content": 
+                "space-between", 
+                "display": "flex",
+                "gap": "20px"}),
+    ], style={
+                "display": "flex",
+                "flex-direction": "column",
+                "border-radius": "3px",
+                "border": "1px solid black",
+                "box-shadow": "0 5px 30px rgba(0, 0, 0, 0.63)",
+                "background-color":"white",
+                "min-height":"auto",
+                "margin": "75px auto 75px auto",
+                }),
 
     # Interpretation
     html.Div([
-        html.H4("Interpretation"),
+        html.H4("Interpretation",style={"margin": "10px 30px 0px 30px"}),
         html.P([
             "By comparing pollutant levels across seasons for several different years, "
             "winter and spring are consistently more polluted, particularly when it comes to ",
             html.Span(["NO", html.Sub("2")]), 
             ". Summer however tends to be relatively clean. This effect is a bit less pronounced for the "
             "fine dust particles, but still observable."
-        ])
-    ])
+        ],style={"margin": "10px 30px 10px 30px"})
+    ], style={
+                "display": "flex",
+                "flex-direction": "column",
+                "border-radius": "3px",
+                "border": "1px solid black",
+                "box-shadow": "0 5px 30px rgba(0, 0, 0, 0.63)",
+                "background-color":"white",
+                "min-height":"auto",
+                "margin": "75px auto 75px auto",
+                })
 ])
 
 #################
