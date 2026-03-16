@@ -58,15 +58,16 @@ layout = html.Div([
                         html.H4("UBA API"),
                         html.P("This is where you can access all data related to the " \
                         "measuring stations in Germany."),
-                        html.Br(),
-                        html.A(
-                            html.Button("Open", style={
-                        "backgroundColor": "rgb(53, 167, 187)",
-                        "color": "black",
-                        "cursor": "pointer"
-                    }),
-                            href="https://www.umweltbundesamt.de/system/files/medien/358/dokumente/schnittstellenbeschreibung_luftdaten_api_v4.pdf",
-                            target="_blank"
+                        html.Div(
+                            html.A(
+                                html.Button("Open", style={
+                            "backgroundColor": "rgb(53, 167, 187)",
+                            "color": "black",
+                            "cursor": "pointer",
+                        }),
+                                href="https://www.umweltbundesamt.de/system/files/medien/358/dokumente/schnittstellenbeschreibung_luftdaten_api_v4.pdf",
+                                target="_blank"
+                            ), style={"margin-top": "auto"}
                         )
                     ], style={
                         "border": "1px solid black",
@@ -74,69 +75,84 @@ layout = html.Div([
                         "text-align": "center",
                         "border-radius": "3px",
                         "border": "1px solid black",
-                        "background-color": "#ffffff"
+                        "background-color": "#ffffff",
+                        "display": "flex",
+                        "flexDirection": "column",
+                        "height": "auto"
                     }),
 
                 html.Div([
                         html.H4("Weather API"),
                         html.P("Here, you can select the weather data for the chosen time " \
                         "period and, if desired, specific cities you’d like to view."),
-                        html.Br(),
-                        html.A(html.Button("Open", style={
-                        "backgroundColor": "rgb(53, 167, 187)",
-                        "color": "black",
-                        "cursor": "pointer"
-                    }), href="https://open-meteo.com/",
-                               target="_blank"
-                               )
+                        html.Div(
+                            html.A(html.Button("Open", style={
+                            "backgroundColor": "rgb(53, 167, 187)",
+                            "color": "black",
+                            "cursor": "pointer"
+                        }), href="https://open-meteo.com/",
+                                target="_blank"
+                            ), style={"margin-top": "auto"}
+                        )
                     ], style={
                         "border": "1px solid black",
                         "padding": "10px",
                         "text-align": "center",
                         "border-radius": "3px",
                         "border": "1px solid black",
-                        "background-color": "#ffffff"
+                        "background-color": "#ffffff",
+                        "display": "flex",
+                        "flexDirection": "column",
+                        "height": "auto"
                     }),
 
                 html.Div([
                         html.H4("Holiday API"),
                         html.P("The API returns the holidays for each federal state."),
-                        html.Br(),
-                        html.A(html.Button("Open", style={
-                        "backgroundColor": "rgb(53, 167, 187)",
-                        "color": "black",
-                        "cursor": "pointer"
-                    }), href="https://ferien-api.maxleistner.de/",
-                               target="_blank"
-                               )
+                        html.Div(
+                            html.A(html.Button("Open", style={
+                            "backgroundColor": "rgb(53, 167, 187)",
+                            "color": "black",
+                            "cursor": "pointer"
+                        }), href="https://ferien-api.maxleistner.de/",
+                                target="_blank"
+                            ), style={"margin-top": "auto"}
+                        )
                     ], style={
                         "border": "1px solid black",
                         "padding": "10px",
                         "text-align": "center",
                         "border-radius": "3px",
                         "border": "1px solid black",
-                        "background-color": "#ffffff"
+                        "background-color": "#ffffff",
+                        "display": "flex",
+                        "flexDirection": "column",
+                        "height": "auto"
                     }),
 
                 html.Div([
                         html.H4("Comparison API"),
                         html.P("Here, just like with the UBA API, you can access data on " \
                         "air pollution levels in other countries."),
-                        html.Br(),
-                        html.A(html.Button("Open", style={
-                        "backgroundColor": "rgb(53, 167, 187)",
-                        "color": "black",
-                        "cursor": "pointer"
-                    }), href="https://openaq.org/",
-                                        target="_blank"
-                                        )
+                        html.Div(
+                            html.A(html.Button("Open", style={
+                            "backgroundColor": "rgb(53, 167, 187)",
+                            "color": "black",
+                            "cursor": "pointer"
+                        }), href="https://openaq.org/",
+                                target="_blank"
+                            ), style={"margin-top": "auto"}
+                        )
                     ], style={
                         "border": "1px solid black",
                         "padding": "10px",
                         "text-align": "center",
                         "border-radius": "3px",
                         "border": "1px solid black",
-                        "background-color": "#ffffff"
+                        "background-color": "#ffffff",
+                        "display": "flex",
+                        "flexDirection": "column",
+                        "height": "auto"
                     }),
 
             ],
