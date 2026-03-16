@@ -261,6 +261,7 @@ layout = html.Div([
                     "padding-top": "0px"
                 }),
 
+            # Weather API
             # Box on the right (middle - top) for API request
             html.Div(
                 [
@@ -272,11 +273,15 @@ layout = html.Div([
         }),
 
             html.Pre(
-"""GET https://www.umweltbundesamt.de/api/airdata
+"""GET https://archive-api.open-meteo.com/v1/archive
 
 {
-    "station": "Berlin",
-    "parameter": "pm10"
+    "latitude": lat,
+    "longitude": lon,
+    "start_date": "2016-01-01",
+    "end_date": "2025-12-31",
+    "daily": ["temperature_2m_max", "precipitation_sum"],
+    "timezone": "Europe/Berlin"
 }""",
                 style={
                     "background-color": "#f4f4f4",
@@ -292,6 +297,7 @@ layout = html.Div([
                     "padding-top": "0px"
                 }),
 
+            # Holiday API
             # Box on the right (middle - bottom) for API request
             html.Div(
                 [
@@ -303,11 +309,10 @@ layout = html.Div([
         }),
 
             html.Pre(
-"""GET https://www.umweltbundesamt.de/api/airdata
+"""GET https://ferien-api.maxleistner.de/
 
 {
-    "station": "Berlin",
-    "parameter": "pm10"
+    "type": sommerferien"
 }""",
                 style={
                     "background-color": "#f4f4f4",
@@ -399,6 +404,8 @@ layout = html.Div([
             html.P("⦁ Station classification: station type, station setting (e.g. urban, " \
             "suburban, rural)",
                     style={"font-size": "18px"}),
+            html.P("⦁ Weather data: peak temperature, precipitation sum",
+                    style={"font-size": "18px"}),        
             html.P("Together with the pollutant measurements, these attributes allow us to " \
             "analyze spatial patterns, compare different types of monitoring stations, and " \
             "examine regional differences in air pollution levels across Germany.",
