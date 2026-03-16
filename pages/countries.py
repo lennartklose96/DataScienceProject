@@ -30,6 +30,7 @@ POLLUTANT_LABELS = {
     "NO2":  "NO\u2082"          # NO₂
 }
 
+COUNTRIES = ["austria", "france", "germany", "italy", "poland", "romania", "spain", "uk"]
 
 ###########################
 ### Loading data frames ###
@@ -46,8 +47,6 @@ monthly_data = {
     "NO2": {}
 }
 
-countries = ["austria", "france", "germany", "italy", "poland", "romania", "spain", "uk"]
-
 def add_data(country):
 
     for p in POLLUTANTS:
@@ -61,13 +60,15 @@ def add_data(country):
                 df["year"] = df["date"].dt.year
                 df["month"] = df["date"].dt.month
 
-            daily_data[p][country] = daily_df
-            monthly_data[p][country] = monthly_df
+            country_label = "UK" if country == "uk" else country.capitalize()
+            
+            daily_data[p][country_label] = daily_df
+            monthly_data[p][country_label] = monthly_df
         
         except Exception:
             pass
 
-for c in countries:
+for c in COUNTRIES:
     add_data(c)
 
 
@@ -105,8 +106,8 @@ layout = html.Div(children=[
                 "The Air Quality data for Germany were derived from an API provided by the German Environmental Agency (Umweltbundesamt), whereas "
                 "for the other countries we collected data through the OpenAQ API. The datasets include measurements of PM\u2081\u2080, PM\u2082.\u2085, and NO₂. "
                 "To analyze trends over time, the data was aggregated into daily and monthly averages. "
-                "Each dataset contains a timestamp (date) and the corresponding pollutant concentration value in µg/m³."
-                "“It should be noted that not all countries had continuous measurements between 2016 and 2026. Moreover, Italy and Romania did not have enough PM\u2082.\u2085 measurements"
+                "Each dataset contains a timestamp (date) and the corresponding pollutant concentration value in µg/m³. "
+                "“It should be noted that not all countries had continuous measurements between 2016 and 2026. Moreover, Italy and Romania did not have enough PM\u2082.\u2085 measurements "
                 "to provide meaningful results. "
             ]),
         ],style={"margin": "10px 30px 0px 30px"}),
@@ -115,7 +116,8 @@ layout = html.Div(children=[
         html.Div([
             html.H6("Visualization"),
             html.P([
-            "TODO"
+            "The first graph shows the recorded pollutant concentrations in µg/m³ for the listed countries over time. " 
+            "The box plot illustrates how the countries differ in terms of their recorded air pollution levels. "
             ]),
         ],style={"margin": "10px 30px 10px 30px"}),
     ], style={
@@ -160,6 +162,30 @@ layout = html.Div(children=[
                     ),
                 ]),
 
+                html.Div([
+                    html.Label("Select Countries"),
+                    dcc.Dropdown(
+                        id="countries_countries-dropdown",
+                        options=[
+                            {"label": "Austria", "value": "Austria"},
+                            {"label": "France", "value": "France"},
+                            {"label": "Germany", "value": "Germany"},
+                            {"label": "Italy", "value": "Italy"},
+                            {"label": "Poland", "value": "Poland"},
+                            {"label": "Romania", "value": "Romania"},
+                            {"label": "Spain", "value": "Spain"},
+                            {"label": "UK", "value": "UK"},
+                        ],
+                        value=["Austria", "France", "Germany", "Italy",
+                               "Poland", "Romania", "Spain", "UK"],
+                        multi=True,
+                        clearable=False,
+                        searchable=False,
+                        style={"width": "100%", "maxWidth": "750px"}
+                    ),
+                ]),
+
+                
             ], style={
                 "display": "flex",
                 "gap": "40px",
@@ -235,9 +261,27 @@ layout = html.Div(children=[
     # Interpretation
     html.Div([
         html.H4("Interpretation",style={"margin": "10px 30px 0px 30px"}),
-        html.P([
-            "TODO"
-        ],style={"margin": "10px 30px 10px 30px"})
+        html.P([            
+            "Among the countries examined, two groups can be "
+            "distinguished, each of which is relatively homogeneous "
+            "internally in terms of the distribution of air pollution. ",
+            html.Br(), html.Br(),
+
+            "Austria, France, Germany, Spain, and the United Kingdom "
+            "have PM10 and PM2.5 levels that are below or slightly "
+            "above the average, while Italy, Poland, and Romania "
+            "show above-average levels for these pollutants. ",
+            html.Br(), html.Br(),
+
+            "Only for NO2 are the recorded concentrations "
+            "in Germany higher than the average. ",
+            html.Br(), html.Br(),
+
+            "Factors such as environmental policy, the "
+            "(automotive) industry, etc could explain these "
+            "international differences."
+            
+        ],style={"whiteSpace": "pre-line", "margin": "10px 30px 10px 30px"})
     ], style={
                 "display": "flex",
                 "flex-direction": "column",
@@ -260,9 +304,10 @@ layout = html.Div(children=[
     Input("countries_year-slider", "value"),
     Input("countries_month-slider", "value"),
     Input("countries_time-period", "value"),
-    Input("countries_pollutant-dropdown", "value")
+    Input("countries_pollutant-dropdown", "value"),
+    Input("countries_countries-dropdown", "value")
 )
-def update_graph(selected_year, selected_month, selected_mode, selected_pollutant):
+def update_graph(selected_year, selected_month, selected_mode, selected_pollutant, selected_countries):
 
     fig = go.Figure()
 
@@ -274,11 +319,17 @@ def update_graph(selected_year, selected_month, selected_mode, selected_pollutan
     for pollutant in selected_pollutant:
 
         if selected_mode == "Daily":
-            data = daily_data[pollutant].items()
+            data = daily_data[pollutant]
+        
         else:
-            data = monthly_data[pollutant].items()
+            data = monthly_data[pollutant]
 
-        for country, df in data:
+        for country in selected_countries:
+
+            if country not in data:
+                continue
+
+            df = data[country]   
 
             temp = df.copy()
             
@@ -287,14 +338,12 @@ def update_graph(selected_year, selected_month, selected_mode, selected_pollutan
                 (temp["month"].between(selected_month[0], selected_month[1]))
             ]
 
-            # Getting country label
-            country_label = "UK" if country == "uk" else country.capitalize()
             fig.add_trace(
                 go.Scatter(
                     x=temp["date"],
                     y=temp["value"],
                     mode="lines+markers",
-                    name=f"{country_label} ({POLLUTANT_LABELS[pollutant]})"
+                    name=f"{country} ({POLLUTANT_LABELS[pollutant]})"
                 )
             )
 
@@ -314,20 +363,26 @@ def update_graph(selected_year, selected_month, selected_mode, selected_pollutan
     Input("countries_year-slider", "value"),
     Input("countries_month-slider", "value"),
     Input("countries_time-period", "value"),
-    Input("countries_pollutant-dropdown", "value")
+    Input("countries_pollutant-dropdown", "value"),
+    Input("countries_countries-dropdown", "value")
 )
-def update_boxplot(selected_year, selected_month, selected_mode, selected_pollutant):
+def update_boxplot(selected_year, selected_month, selected_mode, selected_pollutant, selected_countries):
 
     df_list = []
 
     for p in selected_pollutant:
 
         if selected_mode == "Daily":
-            data = daily_data[p].items()
+            data = daily_data[p]
         else:
-            data = monthly_data[p].items()
+            data = monthly_data[p]
 
-        for country, df in data:
+        for country in selected_countries:
+
+            if country not in data:
+                continue
+
+            df = data[country]
 
             temp = df.copy()
 
@@ -336,12 +391,20 @@ def update_boxplot(selected_year, selected_month, selected_mode, selected_pollut
                 (temp["month"].between(selected_month[0], selected_month[1]))
             ]
 
-            temp["country"] = "UK" if country == "uk" else country.capitalize()
+            temp["country"] = country
             temp["pollutant"] = POLLUTANT_LABELS[p]
 
             df_list.append(temp)
 
+    if not df_list:
+        return go.Figure()
+
     combined_df = pd.concat(df_list)
+
+    avg_df = combined_df.copy()
+    avg_df["country"] = "Average"
+
+    combined_df = pd.concat([combined_df, avg_df])
 
     fig = px.box(
         combined_df,
