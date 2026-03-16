@@ -129,19 +129,7 @@ layout = html.Div([
 
             ]),
         ],style={"margin": "10px 30px 10px 30px"}),
-
-    ], style={
-                "display": "flex",
-                "flex-direction": "column",
-                "border-radius": "3px",
-                "border": "1px solid black",
-                "box-shadow": "0 1px 7px rgba(0, 0, 0, 0.63)",
-                "background-color":"white",
-                "min-height":"auto",
-                "margin": "25px auto 25px auto",
-                }),
     ], style=div_margin),
-
 
     html.Div([
         # Controls
@@ -217,16 +205,7 @@ layout = html.Div([
             dcc.Graph(id="newyears_comparison-graph", style={"width": "100%"}),
         ], style={
                 "display": "flex",
-
-                "flex-direction": "column",
-                "border-radius": "3px",
-                "border": "1px solid black",
-                "box-shadow": "0 1px 7px rgba(0, 0, 0, 0.63)",
-                "background-color":"white",
-                "min-height":"auto",
-                "margin": "25px auto 25px auto",
                 "gap": "20px",
-
                 }),
     ], style=div_margin),
 
@@ -249,19 +228,7 @@ layout = html.Div([
             " however, there doesn't seem to be a significant difference. On a few years the value tends to be lower on January 1st, "
             "perhaps attributed to the fact that people stayed home celebrating."
         ],style={"margin": "10px 30px 10px 30px"})
-
-    ], style={
-                "display": "flex",
-                "flex-direction": "column",
-                "border-radius": "3px",
-                "border": "1px solid black",
-                "box-shadow": "0 1px 7px rgba(0, 0, 0, 0.63)",
-                "background-color":"white",
-                "min-height":"auto",
-                "margin": "25px auto 0px auto",
-                }),
     ],style=div_margin)
-
 ])
 
 #################
@@ -310,7 +277,7 @@ def update_graph(selected_pollutants, selected_averages):
         if len(df) > 3:
             x_num = df["date start"].map(pd.Timestamp.toordinal)
             y = df["value"]
-            coeff = np.polyfit(x_num, y, 1)  # the "1" is the coosen degree - in this case linear
+            coeff = np.polyfit(x_num, y, 3)
             poly = np.poly1d(coeff)
             y_reg = poly(x_num)
             fig.add_trace(
