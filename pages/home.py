@@ -21,7 +21,7 @@ layout = html.Div([
         "and the influence of specific events, weather conditions, and seasonal factors. We " \
         "also compare different types of measurement station locations and, in some cases, " \
         "place the results in an international context.",
-        style={"margin": "10px 30px 0px 30px"}),
+        style={"margin": "10px 30px 0px 30px", "font-size": "18px"}),
     ], style={
             "padding": "20px",
             "margin": "25px auto 25px auto",
@@ -40,7 +40,7 @@ layout = html.Div([
             "the Federal Environment Agency. The right-hand side, consequently, presents " \
             "the questions for which we have utilized additional APIs in order to place the " \
             "data obtained through our “main API” in a different context.",
-            style={"margin": "10px 30px 0px 30px"})
+            style={"margin": "10px 30px 0px 30px", "font-size": "18px"})
     ], style={
             "padding": "20px",
             "margin": "25px auto 25px auto",
@@ -58,24 +58,24 @@ layout = html.Div([
                             style={"font-size": "30px", "margin": "20px 30px 0px 30px"}),
                     html.P("⦁ How did the average values of PM₁₀, PM₂.₅ and NO₂ change in "\
                            "Germany?",
-                           style={"margin": "10px 30px 0px 30px"}),
+                           style={"margin": "10px 30px 0px 30px", "font-size": "18px"}),
                     html.P("⦁ How does air pollution in Germany behave around New Years?",
-                           style={"margin": "10px 30px 0px 30px"}),
+                           style={"margin": "10px 30px 0px 30px", "font-size": "18px"}),
                     html.P("⦁ How did COVID-19 lockdowns and restrictions affect air "\
                            "pollution in Germany compared to the previous and following years?",
-                           style={"margin": "10px 30px 0px 30px"}),
+                           style={"margin": "10px 30px 0px 30px", "font-size": "18px"}),
                     html.P("⦁ How does the air quality vary between the different german "\
                            "federal states?",
-                           style={"margin": "10px 30px 0px 30px"}),
+                           style={"margin": "10px 30px 0px 30px", "font-size": "18px"}),
                     html.P("⦁ How does air pollution vary across urban, suburban and rural "\
                            "areas?",
-                           style={"margin": "10px 30px 0px 30px"}),
+                           style={"margin": "10px 30px 0px 30px", "font-size": "18px"}),
                     html.P("⦁ How does air pollution vary between background, traffic and "\
                            "industrial monitoring stations?",
-                           style={"margin": "10px 30px 0px 30px"}),
+                           style={"margin": "10px 30px 0px 30px", "font-size": "18px"}),
                     html.P("⦁ How do seasonal changes influence the pollution concentrations"\
                            " in Germany between 2016 and 2025?",
-                           style={"margin": "10px 30px 0px 30px"})
+                           style={"margin": "10px 30px 0px 30px", "font-size": "18px"})
             ], style={
                     "grid-row": "span 3",
                     "background-color": "#ffffff",
@@ -92,7 +92,7 @@ layout = html.Div([
                             style={"font-size": "30px", "margin": "20px 30px 0px 30px"}),
                     html.P("⦁ How did temperature and precipitation influence PM₁₀ and PM₂.₅ "\
                            "concentrations in major German cities between 2016 and 2025?",
-                    style={"margin": "10px 30px 0px 30px"})
+                    style={"margin": "10px 30px 0px 30px", "font-size": "18px"})
             ], style={
                     "background-color": "#ffffff",
                     "padding": "25px",
@@ -108,7 +108,7 @@ layout = html.Div([
                             style={"font-size": "30px", "margin": "20px 30px 0px 30px"}),
                     html.P("⦁ How did summer school holidays in German federal states affect "\
                            "PM₁₀ and PM₂.₅ concentrations over the past ten years?",
-                           style={"margin": "10px 30px 0px 30px"})
+                           style={"margin": "10px 30px 0px 30px", "font-size": "18px"})
             ], style={
                     "background-color": "#ffffff",
                     "padding": "25px",
@@ -124,7 +124,7 @@ layout = html.Div([
                             style={"font-size": "30px", "margin": "20px 30px 0px 30px"}),
                     html.P("⦁ How does Germany compare to other countries in terms of the "\
                            "daily and monthly average concentrations of PM₁₀, PM₂.₅ and NO₂?",
-                           style={"margin": "10px 30px 0px 30px"})
+                           style={"margin": "10px 30px 0px 30px", "font-size": "18px"})
             ], style={
                     "background-color": "#ffffff",
                     "padding": "25px",

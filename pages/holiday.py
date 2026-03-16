@@ -90,12 +90,12 @@ layout = html.Div([
                 html.Span(["PM", html.Sub("2.5")]),
                 " concentrations, we compared the mean of each state during the summer holidays "
                 "to their yearly mean."
-            ]),
+            ], style={"font-size": "18px"}),
         ],style={"margin": "10px 30px 0px 30px"}),
 
         # Data description
         html.Div([
-            html.H6([
+            html.H4([
                 "Used Data"
             ]),
             html.P([
@@ -106,18 +106,18 @@ layout = html.Div([
                 "and additionally found out when the summer school holidays are via ",
                 html.A("https://www.schulferien.org/"),
                 " to make comparisons."
-            ]),
+            ], style={"font-size": "18px"}),
         ],style={"margin": "10px 30px 0px 30px"}),
 
         # Visualization description
         html.Div([
-            html.H6([
+            html.H4([
                 "Visualization"
             ]),
             html.P([
                 "This visualization shows how particulate matter concentrations in each state "
                 "differ during summer holidays compared to the yearly average."
-            ]),
+            ], style={"font-size": "18px"}),
         ],style={"margin": "10px 30px 10px 30px"}),
     ], style={
                 "display": "flex",
@@ -176,7 +176,7 @@ layout = html.Div([
           "This heavily implies the summer holidays have a positive impact on air pollution in Germany. "
           "A likely cause for this is that a lot of families going on vacation end up having fewer daily "
           "commutes (for example, to bring their children to school), or leave the country entirely."
-        ],style={"margin": "10px 30px 10px 30px"})
+        ],style={"margin": "10px 30px 10px 30px", "font-size": "18px"})
     ], style={
                 "display": "flex",
                 "flex-direction": "column",
