@@ -32,12 +32,11 @@ div_margin = {
                 "flex-direction": "column",
                 "border-radius": "3px",
                 "border": "1px solid black",
-                "box-shadow": "0 5px 30px rgba(0, 0, 0, 0.63)",
+                "box-shadow": "0 1px 7px rgba(0, 0, 0, 0.63)",
                 "background-color":"white",
                 "min-height":"auto",
-                "margin": "40px auto 75px auto",
+                "margin": "25px auto 25px auto",
             }
-
 
 
 ###########################
@@ -87,19 +86,18 @@ for name, df in data.items():
 layout = html.Div([
 
     html.Div([
-        # Title
-        #html.H2("Pollution during New Years"),
-
         # Research question
         html.Div([
-            #html.H3("Research Question"),
             html.H4([
                 "How does air pollution in Germany behave around New Years?"
             ], style={
                 "font-size": "30px"
             }),
             html.P([
-                "TODO"
+                "During New Years, people celebrate the arrival of the new year with fireworks. "
+                "Due to this we suspected that the air quality might get worse immediately on January "
+                "1st, and the remainder of the month. To answer how the pollution behaves during this "
+                "timeframe, we compare the yearly average pollution means with the pollution in January."
             ]),
         ],style={"margin": "10px 30px 0px 30px"}),
 
@@ -107,7 +105,11 @@ layout = html.Div([
         html.Div([
             html.H6("Used Data"),
             html.P([
-                "TODO"
+                    "Daily air quality data for the pollutants were obtained "
+                    "obtained from the Umweltbundesamt API. "
+                    "The data was then selected for the months of January, specifically "
+                    "also the values for January 1st, and also aggregated yearly, where  "
+                    "we calculated the mean values."
             ]),
         ],style={"margin": "10px 30px 0px 30px"}),
 
@@ -115,7 +117,16 @@ layout = html.Div([
         html.Div([
             html.H6("Visualization"),
             html.P([
-                "TODO"
+                "The first visualization shows the distribution of ",
+                html.Span(["PM", html.Sub("10")]),
+                ", ",
+                html.Span(["PM", html.Sub("2.5")]),
+                " and ",
+                html.Span(["NO", html.Sub("2")]),
+                " during the month of January in each year.",
+                html.Br(),
+                "The second visualization compares the values on January 1st with the yearly average means."
+
             ]),
         ],style={"margin": "10px 30px 10px 30px"}),
     ], style=div_margin),
@@ -123,7 +134,6 @@ layout = html.Div([
     html.Div([
         # Controls
         html.Div([
-
             html.Div([
                 html.Label("Select Pollutants"),
                 dcc.Dropdown(
@@ -150,7 +160,7 @@ layout = html.Div([
                         {"label": POLLUTANT_LABELS["PM2.5"] + " yearly average", "value": "PM2.5yearly"},
                         {"label": POLLUTANT_LABELS["NO2"]  + " yearly average", "value": "NO2yearly"}
                     ],
-                    value=[],
+                    value=["PM10yearly"],
                     multi=True,
                     clearable=True,
                     searchable=False,
@@ -168,14 +178,6 @@ layout = html.Div([
                 "gap": "20px",
                 }),
     ], style=div_margin),
-
-    # Interpretation
-    html.Div([
-        html.H4("Interpretation",style={"margin": "10px 30px 0px 30px"}),
-        html.P([
-            "TODO"
-        ],style={"margin": "10px 30px 10px 30px"})
-    ],style=div_margin),
 
     ####################
     ### Second graph ###
@@ -207,11 +209,24 @@ layout = html.Div([
                 }),
     ], style=div_margin),
 
-    # Interpretation
+    ######################
+    ### Interpretation ###
+    ######################
+
     html.Div([
         html.H4("Interpretation",style={"margin": "10px 30px 0px 30px"}),
         html.P([
-            "TODO"
+            "During most years we see that while most points cluster around the yearly mean, "
+            "there are some pretty extreme outliers for ",
+            html.Span(["PM", html.Sub("10")]),
+            " and ",
+            html.Span(["PM", html.Sub("2.5")]),
+            " that are far above average. Especially on January 1st, the values are much higher than "
+            "the yearly average, showing that the fireworks do drastically increase fine dust particle pollution."
+            "For ",
+            html.Span(["NO", html.Sub("2")]),
+            " however, there doesn't seem to be a significant difference. On a few years the value tends to be lower on January 1st, "
+            "perhaps attributed to the fact that people stayed home celebrating."
         ],style={"margin": "10px 30px 10px 30px"})
     ],style=div_margin)
 ])
@@ -232,6 +247,19 @@ layout = html.Div([
 def update_graph(selected_pollutants, selected_averages):
     fig = go.Figure()
 
+    # Colors to be used in the plot
+    pollutant_colors = {
+        "PM10": "#4791ff", 
+        "PM2.5": "#fcc653",
+        "NO2": "#ba3ef3"
+    }
+
+    yearly_colors = {
+        "PM10yearly": "#ff3535",
+        "PM2.5yearly": "#10c24b",
+        "NO2yearly": "#3a2db4"
+    }
+
     # Plot daily/individual pollutants
     for name in selected_pollutants:
         df = data[name]
@@ -240,9 +268,12 @@ def update_graph(selected_pollutants, selected_averages):
                 x=df["date start"],
                 y=df["value"],
                 mode="markers",
-                name=POLLUTANT_LABELS[name]
+                name=POLLUTANT_LABELS[name],
+                marker_color=pollutant_colors.get(name, None)
             )
         )
+        # Regression
+        """
         if len(df) > 3:
             x_num = df["date start"].map(pd.Timestamp.toordinal)
             y = df["value"]
@@ -257,6 +288,7 @@ def update_graph(selected_pollutants, selected_averages):
                     name=POLLUTANT_LABELS[name] + " trend"
                 )
             )
+        """
 
     # Plot yearly averages with proper label
     for name in selected_averages:
@@ -269,12 +301,13 @@ def update_graph(selected_pollutants, selected_averages):
                 x=df["date start"],
                 y=df["value"],
                 mode="lines+markers",
-                name=label
+                name=label,
+                line=dict(color=yearly_colors.get(name, None))
             )
         )
 
     fig.update_layout(
-        title="Pollution in Germany during New Years",
+        title="Distribution of pollution in Germany during January",
         xaxis_title="Year",
         yaxis_title="Concentration (µg/m³)",
         hovermode="closest"
@@ -317,22 +350,25 @@ def update_graph_2(selected_year):
     # Creating figure
     fig = go.Figure()
 
-    # Adding labels
+    # Adding january first bar
     fig.add_trace(go.Bar(
         x=labels,
         y=jan_values,
-        name="January 1st"
+        name="January 1st",
+        marker_color="#fcc653" 
     ))
 
+    # Adding yearly bar
     fig.add_trace(go.Bar(
         x=labels,
         y=yearly_values,
-        name="Yearly average"
+        name="Yearly average",
+        marker_color="#53befc"
     ))
 
     # Updating more labels and title
     fig.update_layout(
-        title=f"January 1 vs Yearly Average Pollution [{selected_year}]",
+        title=f"January 1st vs Yearly Average Pollution [{selected_year}]",
         yaxis_title="Concentration (µg/m³)",
         barmode="group"
     )

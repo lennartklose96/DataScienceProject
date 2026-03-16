@@ -74,12 +74,8 @@ df_grouped_year = df_seasons.groupby(["year", "season"])[["pm10","pm25","no2"]].
 layout = html.Div([
 
     html.Div([
-        # Page title
-        #html.H2("Seasonal Pollutant Analysis"),
-
         # Research question
         html.Div([
-            #html.H3("Research Question"),
             html.H4([
                 "How do seasonal changes influence the pollution concentrations in Germany between 2016 and 2025?"
             ], style={
