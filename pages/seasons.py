@@ -218,7 +218,7 @@ def update_pie(selected_year, selected_pollutant):
         df_year,
         x="season",
         y=selected_pollutant,
-        title=f"{pollutant_label} Concentration per Season [{selected_year}]",
+        title=f"{pollutant_label} mean concentration per Season [{selected_year}]",
         color="season",
         color_discrete_map=season_colors,
         category_orders={"season": SEASONS_ORDER},
