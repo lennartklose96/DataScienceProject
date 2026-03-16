@@ -86,7 +86,7 @@ layout = html.Div(children=[
             #html.H3("Research Question"),
             # The actual question
             html.H4([
-                "How does Germany compare to other countries in terms of the daily and monthly average concentrations of PM2.5, PM10 and NO2?"
+                "How does Germany compare to other countries in terms of the daily and monthly average concentrations of PM₁₀, PM₂.₅, and NO₂"
             ], style={
                 "font-size": "30px"
             }),
