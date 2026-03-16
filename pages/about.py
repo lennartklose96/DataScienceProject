@@ -11,7 +11,8 @@ dash.register_page(__name__)
 layout = html.Div([
     html.Div(
     children=[
-        # Linke Textbox
+        # first row
+        # left side
         html.Div("Who?", style={
             "padding": "20px",
             "border-radius": "5px",
@@ -20,7 +21,7 @@ layout = html.Div([
             "color": "black",
             "font-size": "30px"
         }),
-        # Rechte Textbox
+        # right side
         html.Div("Our group consists of four members. Lennart, Lasse, Jonas, and Finn. " \
         "We are studying \"Business Information Technology\" (Wirtschaftsinformatik) and "
         "Computer Science at Kiel University (CAU) in northern Germany. For most of us, "
@@ -34,8 +35,7 @@ layout = html.Div([
             "text-align": "left",
             "color": "black",
         })
-    ],
-    style={
+    ], style={
         "display": "grid",
         "grid-template-columns": "30% 70%",
         "grid-gap": "20px",
@@ -49,7 +49,8 @@ layout = html.Div([
 
     html.Div(
     children=[
-        # Linke Textbox
+        # second row
+        # left side
         html.Div("What?", style={
             "padding": "20px",
             "border-radius": "5px",
@@ -58,7 +59,7 @@ layout = html.Div([
             "color": "black",
             "font-size": "30px"
         }),
-        # Rechte Textbox
+        # right side
         html.Div("In this project, we analyze air quality data from Germany for the period " \
         "from 2016 to 2026. The project was completed over a four-week period. During this " \
         "time, we had to collect, process, and analyze the data, as well as create the final " \
@@ -72,8 +73,7 @@ layout = html.Div([
             "text-align": "left",
             "color": "black",
         })
-    ],
-    style={
+    ], style={
         "display": "grid",
         "grid-template-columns": "30% 70%",
         "grid-gap": "20px",
@@ -87,7 +87,8 @@ layout = html.Div([
 
     html.Div(
     children=[
-        # Linke Textbox
+        # third row
+        # left side
         html.Div("Why?", style={
             "padding": "20px",
             "border-radius": "5px",
@@ -96,7 +97,7 @@ layout = html.Div([
             "color": "black",
             "font-size": "30px"
         }),
-        # Rechte Textbox
+        # right side
         html.Div("Air quality is a key factor for the environment and public health. By " \
         "analyzing long-term measurement data, it is possible to identify trends, changes, "
         "and potential correlations with events, weather conditions, or human activity. " \
@@ -110,8 +111,7 @@ layout = html.Div([
             "text-align": "left",
             "color": "black",
         })
-    ],
-    style={
+    ], style={
         "display": "grid",
         "grid-template-columns": "30% 70%",
         "grid-gap": "20px",
