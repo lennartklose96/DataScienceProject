@@ -33,17 +33,17 @@ data2 = {
     "rural": {
         "background": pd.read_csv("Collected Data/Question 3.1/monthly_avg_ländlich_hintergrund_PM10.csv"),
         "traffic": pd.read_csv("Collected Data/Question 3.1/monthly_avg_ländlich_verkehr_PM10.csv"),
-        "industrie": pd.read_csv("Collected Data/Question 3.1/monthly_avg_ländlich_industrie_PM10.csv"),
+        "industry": pd.read_csv("Collected Data/Question 3.1/monthly_avg_ländlich_industrie_PM10.csv"),
     },
     "urban": {
         "background": pd.read_csv("Collected Data/Question 3.1/monthly_avg_städtisch_hintergrund_PM10.csv"),
         "traffic": pd.read_csv("Collected Data/Question 3.1/monthly_avg_städtisch_verkehr_PM10.csv"),
-        "industrie": pd.read_csv("Collected Data/Question 3.1/monthly_avg_städtisch_industrie_PM10.csv"),
+        "industry": pd.read_csv("Collected Data/Question 3.1/monthly_avg_städtisch_industrie_PM10.csv"),
     },
     "suburban": {
         "background": pd.read_csv("Collected Data/Question 3.1/monthly_avg_vorstädtisch_hintergrund_PM10.csv"),
         "traffic": pd.read_csv("Collected Data/Question 3.1/monthly_avg_vorstädtisch_verkehr_PM10.csv"),
-        "industrie": pd.read_csv("Collected Data/Question 3.1/monthly_avg_vorstädtisch_industrie_PM10.csv"),
+        "industry": pd.read_csv("Collected Data/Question 3.1/monthly_avg_vorstädtisch_industrie_PM10.csv"),
     }
 }
 
@@ -90,33 +90,33 @@ layout = html.Div([
             }),
             html.P([
                 "TODO"
-            ]),
+            ], style={"font-size": "18px"}),
         ],style={"margin": "10px 30px 0px 30px"}),
 
         # Data description
         html.Div([
-            html.H6("Used Data"),
+            html.H4("Used Data"),
             html.P([
                 "TODO"
-            ]),
+            ], style={"font-size": "18px"}),
         ],style={"margin": "10px 30px 0px 30px"}),
 
         # Visualization description
         html.Div([
-            html.H6("Visualization"),
+            html.H4("Visualization"),
             html.P([
                 "TODO"
-            ]),
+            ], style={"font-size": "18px"}),
         ],style={"margin": "10px 30px 10px 30px"}),
     ], style={
                 "display": "flex",
                 "flex-direction": "column",
                 "border-radius": "3px",
                 "border": "1px solid black",
-                "box-shadow": "0 5px 30px rgba(0, 0, 0, 0.63)",
+                "box-shadow": "0 1px 7px rgba(0, 0, 0, 0.63)",
                 "background-color":"white",
                 "min-height":"auto",
-                "margin": "40px auto 75px auto",
+                "margin": "25px auto 25px auto",
                 }),
 
     html.Div([
@@ -173,10 +173,10 @@ layout = html.Div([
                 "flex-direction": "column",
                 "border-radius": "3px",
                 "border": "1px solid black",
-                "box-shadow": "0 5px 30px rgba(0, 0, 0, 0.63)",
+                "box-shadow": "0 1px 7px rgba(0, 0, 0, 0.63)",
                 "background-color":"white",
                 "min-height":"auto",
-                "margin": "75px auto 75px auto",
+                "margin": "25px auto 25px auto",
                 }),
 
     # Interpretation
@@ -184,16 +184,16 @@ layout = html.Div([
         html.H4("Interpretation",style={"margin": "10px 30px 0px 30px"}),
         html.P([
             "TODO"
-        ],style={"margin": "10px 30px 10px 30px"})
+        ],style={"margin": "10px 30px 10px 30px","font-size": "18px"})
     ], style={
                 "display": "flex",
                 "flex-direction": "column",
                 "border-radius": "3px",
                 "border": "1px solid black",
-                "box-shadow": "0 5px 30px rgba(0, 0, 0, 0.63)",
+                "box-shadow": "0 1px 7px rgba(0, 0, 0, 0.63)",
                 "background-color":"white",
                 "min-height":"auto",
-                "margin": "75px auto 75px auto",
+                "margin": "25px auto 25px auto",
                 }),
 
     #######################
@@ -214,33 +214,33 @@ layout = html.Div([
             }),
             html.P([
                 "TODO"
-            ]),
+            ], style={"font-size": "18px"}),
         ],style={"margin": "10px 30px 0px 30px"}),
 
         # Data description
         html.Div([
-            html.H6("Used Data"),
+            html.H4("Used Data"),
             html.P([
                 "TODO"
-            ]),
+            ], style={"font-size": "18px"}),
         ],style={"margin": "10px 30px 0px 30px"}),
 
         # Visualization description
         html.Div([
-            html.H6("Visualization"),
+            html.H4("Visualization"),
             html.P([
                 "TODO"
-            ]),
+            ], style={"font-size": "18px"}),
         ],style={"margin": "10px 30px 10px 30px"}),
     ], style={
                 "display": "flex",
                 "flex-direction": "column",
                 "border-radius": "3px",
                 "border": "1px solid black",
-                "box-shadow": "0 5px 30px rgba(0, 0, 0, 0.63)",
+                "box-shadow": "0 1px 7px rgba(0, 0, 0, 0.63)",
                 "background-color":"white",
                 "min-height":"auto",
-                "margin": "75px auto 75px auto",
+                "margin": "25px auto 25px auto",
                 }),
 
     html.Div([
@@ -270,7 +270,7 @@ layout = html.Div([
                     options=[
                         {"label": "Background", "value": "background"},
                         {"label": "Traffic", "value": "traffic"},
-                        {"label": "Industry", "value": "industrie"}
+                        {"label": "Industry", "value": "industry"}
                     ],
                     value=["background"],
                     multi=True,
@@ -298,10 +298,10 @@ layout = html.Div([
                 "flex-direction": "column",
                 "border-radius": "3px",
                 "border": "1px solid black",
-                "box-shadow": "0 5px 30px rgba(0, 0, 0, 0.63)",
+                "box-shadow": "0 1px 7px rgba(0, 0, 0, 0.63)",
                 "background-color":"white",
                 "min-height":"auto",
-                "margin": "75px auto 75px auto",
+                "margin": "25px auto 25px auto",
                 }),
 
     # Interpretation
@@ -309,16 +309,16 @@ layout = html.Div([
         html.H4("Interpretation",style={"margin": "10px 30px 0px 30px"}),
         html.P([
             "TODO"
-        ],style={"margin": "10px 30px 10px 30px"})
+        ],style={"margin": "10px 30px 10px 30px", "font-size": "18px"})
     ], style={
                 "display": "flex",
                 "flex-direction": "column",
                 "border-radius": "3px",
                 "border": "1px solid black",
-                "box-shadow": "0 5px 30px rgba(0, 0, 0, 0.63)",
+                "box-shadow": "0 1px 7px rgba(0, 0, 0, 0.63)",
                 "background-color":"white",
                 "min-height":"auto",
-                "margin": "75px auto 75px auto",
+                "margin": "25px auto 0px auto",
                 }),
 
 ])
@@ -357,9 +357,9 @@ def update_graph(time_period, pollutants):
 
             n_points = len(df)
             if n_points <= 20:
-                deg = min(2, n_points - 1)
+                deg = min(1, n_points - 1)
             else:
-                deg = 3
+                deg = 1
 
             coeff = np.polyfit(x_num, y, deg)
             poly = np.poly1d(coeff)
@@ -409,9 +409,9 @@ def update_graph_2(time_period, pollutants):
 
             n_points = len(df)
             if n_points <= 20:
-                deg = min(2, n_points - 1)
+                deg = min(1, n_points - 1)
             else:
-                deg = 3
+                deg = 1
 
             coeff = np.polyfit(x_num, y, deg)
             poly = np.poly1d(coeff)

@@ -74,12 +74,8 @@ df_grouped_year = df_seasons.groupby(["year", "season"])[["pm10","pm25","no2"]].
 layout = html.Div([
 
     html.Div([
-        # Page title
-        #html.H2("Seasonal Pollutant Analysis"),
-
         # Research question
         html.Div([
-            #html.H3("Research Question"),
             html.H4([
                 "How do seasonal changes influence the pollution concentrations in Germany between 2016 and 2025?"
             ], style={
@@ -89,35 +85,35 @@ layout = html.Div([
                 "We wanted to explore how air pollution varies across seasons. "
                 "Perhaps there is a correlation between the season or how polluted it is, "
                 "or maybe certain months favor certain pollutants."
-            ]),
+            ], style={"font-size": "18px"}),
         ],style={"margin": "10px 30px 0px 30px"}),
         # Data description
         html.Div([
-            html.H6("Used Data"),
+            html.H4("Used Data"),
             html.P([
                 "Daily air quality data for the pollutants were obtained "
                 "obtained from the Umweltbundesamt API. "
                 "The data was aggregated into seasonal averages to facilitate comparisons."
-            ])
+            ], style={"font-size": "18px"})
         ],style={"margin": "10px 30px 0px 30px"}), 
 
         # Visualization description
         html.Div([
-            html.H6("Visualization"),
+            html.H4("Visualization"),
             html.P([
                 "The bar chart shows the mean concentration of the selected pollutant per season. "
                 "The pie chart shows the relative distribution of the pollutant across seasons."
-            ])
+            ], style={"font-size": "18px"})
         ],style={"margin": "10px 30px 10px 30px"}),
     ], style={
                 "display": "flex",
                 "flex-direction": "column",
                 "border-radius": "3px",
                 "border": "1px solid black",
-                "box-shadow": "0 5px 30px rgba(0, 0, 0, 0.63)",
+                "box-shadow": "0 1px 7px rgba(0, 0, 0, 0.63)",
                 "background-color":"white",
                 "min-height":"auto",
-                "margin": "40px auto 75px auto",
+                "margin": "25px auto 25px auto",
                 }),
 
     html.Div([
@@ -166,10 +162,10 @@ layout = html.Div([
                 "flex-direction": "column",
                 "border-radius": "3px",
                 "border": "1px solid black",
-                "box-shadow": "0 5px 30px rgba(0, 0, 0, 0.63)",
+                "box-shadow": "0 1px 7px rgba(0, 0, 0, 0.63)",
                 "background-color":"white",
                 "min-height":"auto",
-                "margin": "75px auto 75px auto",
+                "margin": "25px auto 25px auto",
                 }),
 
     # Interpretation
@@ -181,16 +177,16 @@ layout = html.Div([
             html.Span(["NO", html.Sub("2")]), 
             ". Summer however tends to be relatively clean. This effect is a bit less pronounced for the "
             "fine dust particles, but still observable."
-        ],style={"margin": "10px 30px 10px 30px"})
+        ],style={"margin": "10px 30px 10px 30px", "font-size": "18px"})
     ], style={
                 "display": "flex",
                 "flex-direction": "column",
                 "border-radius": "3px",
                 "border": "1px solid black",
-                "box-shadow": "0 5px 30px rgba(0, 0, 0, 0.63)",
+                "box-shadow": "0 1px 7px rgba(0, 0, 0, 0.63)",
                 "background-color":"white",
                 "min-height":"auto",
-                "margin": "75px auto 75px auto",
+                "margin": "25px auto 0px auto",
                 })
 ])
 

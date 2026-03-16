@@ -63,12 +63,12 @@ layout = html.Div([
                 "could influence the amount of air pollution. Perhaps high temperatures could destroy particles," 
                 "or the rainfall might wash them away. Unsure what we would find, we wanted to examine if there is "
                 "a correlation here at all, and if there were any, come up with theories as for why this might be."
-            ]),
+            ], style={"font-size": "18px"}),
         ],style={"margin": "10px 30px 0px 30px"}),
 
         # Data description
         html.Div([
-            html.H6([
+            html.H4([
                 "Used Data"
             ]),
             html.P([
@@ -80,12 +80,12 @@ layout = html.Div([
                 " Weather data (temperature and precipitation) was obtained from the Open-Meteo API. "
                 "As the amount of data we could request from Open-Meteo was imited, we chose to only look at the 100 largest german cities."
                 "The Open-Meteo API requires geocoordinates to request weather related data, which were provided for the stations used by the Umweltbundesamt."
-            ]),
+            ], style={"font-size": "18px"}),
         ],style={"margin": "10px 30px 0px 30px"}),
 
         # Visualization description
         html.Div([
-            html.H6([
+            html.H4([
                 "Visualization"
             ]),
             html.P([
@@ -94,17 +94,17 @@ layout = html.Div([
                 " and ",
                 html.Span(["PM", html.Sub("2.5")]),
                 " concentrations alongside temperature or precipitation for a selected year."
-            ]),
+            ], style={"font-size": "18px"}),
         ],style={"margin": "10px 30px 10px 30px"}),
     ], style={
                 "display": "flex",
                 "flex-direction": "column",
                 "border-radius": "3px",
                 "border": "1px solid black",
-                "box-shadow": "0 5px 30px rgba(0, 0, 0, 0.63)",
+                "box-shadow": "0 1px 7px rgba(0, 0, 0, 0.63)",
                 "background-color":"white",
                 "min-height":"auto",
-                "margin": "40px auto 75px auto",
+                "margin": "25px auto 25px auto",
                 }),
 
     html.Div([
@@ -153,10 +153,10 @@ layout = html.Div([
                 "flex-direction": "column",
                 "border-radius": "3px",
                 "border": "1px solid black",
-                "box-shadow": "0 5px 30px rgba(0, 0, 0, 0.63)",
+                "box-shadow": "0 1px 7px rgba(0, 0, 0, 0.63)",
                 "background-color":"white",
                 "min-height":"auto",
-                "margin": "75px auto 75px auto",
+                "margin": "25px auto 25px auto",
                 }),
 
     # Interpretation
@@ -167,16 +167,16 @@ layout = html.Div([
             "and precipitation, we concluded there is no correlation between the temperature "
             "or the amount of rain and air pollution. There simply were not any visible "
             "trends that indicate those variables are in any way correlated."
-        ],style={"margin": "10px 30px 10px 30px"})
+        ],style={"margin": "10px 30px 10px 30px", "font-size": "18px"})
     ], style={
                 "display": "flex",
                 "flex-direction": "column",
                 "border-radius": "3px",
                 "border": "1px solid black",
-                "box-shadow": "0 5px 30px rgba(0, 0, 0, 0.63)",
+                "box-shadow": "0 1px 7px rgba(0, 0, 0, 0.63)",
                 "background-color":"white",
                 "min-height":"auto",
-                "margin": "75px auto 75px auto",
+                "margin": "25px auto 0px auto",
                 }),
 ])
 

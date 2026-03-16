@@ -87,7 +87,7 @@ layout = html.Div(children=[
             #html.H3("Research Question"),
             # The actual question
             html.H4([
-                "How does Germany compare to other countries in terms of the daily and monthly average concentrations of PM2.5, PM10 and NO2?"
+                "How does Germany compare to other countries in terms of the daily and monthly average concentrations of PM₁₀, PM₂.₅, and NO₂"
             ], style={
                 "font-size": "30px"
             }),
@@ -96,12 +96,12 @@ layout = html.Div(children=[
             "Comparing Germany with other European countries helps to understand how severe air pollution levels are in Germany relative to its neighbors. "
             "In addition, future research could explore the underlying reasons for differences in air pollution levels between these countries, "
             "particularly by examining domestic factors and environmental policy measures. "
-            ]),
+            ], style={"font-size": "18px"}),
         ],style={"margin": "10px 30px 0px 30px"}),
         
         # Data description
         html.Div([
-            html.H6("Used Data"),
+            html.H4("Used Data"),
             html.P([
                 "The Air Quality data for Germany were derived from an API provided by the German Environmental Agency (Umweltbundesamt), whereas "
                 "for the other countries we collected data through the OpenAQ API. The datasets include measurements of PM\u2081\u2080, PM\u2082.\u2085, and NO₂. "
@@ -109,12 +109,12 @@ layout = html.Div(children=[
                 "Each dataset contains a timestamp (date) and the corresponding pollutant concentration value in µg/m³. "
                 "“It should be noted that not all countries had continuous measurements between 2016 and 2026. Moreover, Italy and Romania did not have enough PM\u2082.\u2085 measurements "
                 "to provide meaningful results. "
-            ]),
+            ], style={"font-size": "18px"}),
         ],style={"margin": "10px 30px 0px 30px"}),
 
         # Visualization description
         html.Div([
-            html.H6("Visualization"),
+            html.H4("Visualization"),
             html.P([
             "The first graph shows the recorded pollutant concentrations in µg/m³ for the listed countries over time. " 
             "The box plot illustrates how the countries differ in terms of their recorded air pollution levels. "
@@ -125,10 +125,10 @@ layout = html.Div(children=[
                 "flex-direction": "column",
                 "border-radius": "3px",
                 "border": "1px solid black",
-                "box-shadow": "0 5px 30px rgba(0, 0, 0, 0.63)",
+                "box-shadow": "0 1px 7px rgba(0, 0, 0, 0.63)",
                 "background-color":"white",
                 "min-height":"auto",
-                "margin": "40px auto 75px auto",
+                "margin": "25px auto 25px auto",
                 }),
 
     html.Div([
@@ -252,10 +252,10 @@ layout = html.Div(children=[
                 "flex-direction": "column",
                 "border-radius": "3px",
                 "border": "1px solid black",
-                "box-shadow": "0 5px 30px rgba(0, 0, 0, 0.63)",
+                "box-shadow": "0 1px 7px rgba(0, 0, 0, 0.63)",
                 "background-color":"white",
                 "min-height":"auto",
-                "margin": "75px auto 75px auto",
+                "margin": "25px auto 25px auto",
                 }),
 
     # Interpretation
@@ -287,10 +287,10 @@ layout = html.Div(children=[
                 "flex-direction": "column",
                 "border-radius": "3px",
                 "border": "1px solid black",
-                "box-shadow": "0 5px 30px rgba(0, 0, 0, 0.63)",
+                "box-shadow": "0 1px 7px rgba(0, 0, 0, 0.63)",
                 "background-color":"white",
                 "min-height":"auto",
-                "margin": "75px auto 75px auto",
+                "margin": "25px auto 0px auto",
                 }),
 ])
     
