@@ -34,16 +34,17 @@ layout = html.Div([
             "text-align": "center",
             "text-align": "left",
             "color": "black",
+            "font-size": "18px",
         })
     ], style={
         "display": "grid",
         "grid-template-columns": "30% 70%",
         "grid-gap": "20px",
         "padding": "20px",
-        "margin": "40px auto 75px auto",
+        "margin": "25px auto 25px auto",
         "border-radius": "3px",
         "border": "1px solid black",
-        "box-shadow": "0 5px 30px rgba(0, 0, 0, 0.63)",
+        "box-shadow": "0 1px 7px rgba(0, 0, 0, 0.63)",
         "background-color": "#ffffff"
     }),
 
@@ -78,10 +79,10 @@ layout = html.Div([
         "grid-template-columns": "30% 70%",
         "grid-gap": "20px",
         "padding": "20px",
-        "margin": "75px auto 75px auto",
+        "margin": "25px auto 25px auto",
         "border-radius": "3px",
         "border": "1px solid black",
-        "box-shadow": "0 5px 30px rgba(0, 0, 0, 0.63)",
+        "box-shadow": "0 1px 7px rgba(0, 0, 0, 0.63)",
         "background-color": "#ffffff"
     }),
 
@@ -116,10 +117,10 @@ layout = html.Div([
         "grid-template-columns": "30% 70%",
         "grid-gap": "20px",
         "padding": "20px",
-        "margin": "75px auto 75px auto",
+        "margin": "25px auto 0px auto",
         "border-radius": "3px",
         "border": "1px solid black",
-        "box-shadow": "0 5px 30px rgba(0, 0, 0, 0.63)",
+        "box-shadow": "0 1px 7px rgba(0, 0, 0, 0.63)",
         "background-color": "#ffffff"
     })
 ])

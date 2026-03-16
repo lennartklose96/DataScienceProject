@@ -169,10 +169,10 @@ layout = html.Div([
     ], style={  # Section Styling
             "display": "grid",
             "padding": "20px",
-            "margin": "40px auto 75px auto",
+            "margin": "25px auto 25px auto",
             "border-radius": "3px",
             "border": "1px solid black",
-            "box-shadow": "0 5px 30px rgba(0, 0, 0, 0.63)",
+            "box-shadow": "0 1px 7px rgba(0, 0, 0, 0.63)",
             "background-color": "#ffffff"
         }),
 
@@ -359,10 +359,10 @@ layout = html.Div([
             "gridTemplateRows": "auto auto auto auto",
             "gap": "25px",
             "padding": "20px",
-            "margin": "75px auto 75px auto",
+            "margin": "25px auto 25px auto",
             "border-radius": "3px",
             "border": "1px solid black",
-            "box-shadow": "0 5px 30px rgba(0, 0, 0, 0.63)",
+            "box-shadow": "0 1px 7px rgba(0, 0, 0, 0.63)",
             "background-color": "#ffffff"
         }),
 
@@ -454,47 +454,6 @@ layout = html.Div([
                         "margin": "10px",
                     }),
 
-                # bottom row, left
-                html.Div([html.H2("Temperature", style={"font-size": "20px"}),
-                          
-                        html.P("...")
-                    ], style={
-                        "background-color": "#ffffff",
-                        "padding": "25px",
-                        "border-radius": "3px",
-                        "border": "1px solid black",
-                        "padding-top": "0px",
-                        "margin": "10px",
-                    }
-                ),
-
-                # bottom row, middle
-                html.Div([html.H2("Rainfall patterns", style={"font-size": "20px"}),
-                          
-                        html.P("...")
-                    ], style={
-                        "background-color": "#ffffff",
-                        "padding": "25px",
-                        "border-radius": "3px",
-                        "border": "1px solid black",
-                        "padding-top": "0px",
-                        "margin": "10px",
-                    }
-                ),
-
-                # bottom row, right
-                html.Div([html.H2("Summer holidays", style={"font-size": "20px"}),
-                          
-                        html.P("...")
-                    ], style={
-                        "background-color": "#ffffff",
-                        "padding": "25px",
-                        "border-radius": "3px",
-                        "border": "1px solid black",
-                        "padding-top": "0px",
-                        "margin": "10px",
-                    }),
-
             ], style={
                     "display": "grid",
                     "gridTemplateColumns": "33% 33% 33%", 
@@ -506,8 +465,8 @@ layout = html.Div([
                 "background-color": "#ffffff",
                 "border-radius": "3px",
                 "border": "1px solid black",
-                "box-shadow": "0 5px 30px rgba(0, 0, 0, 0.63)",
+                "box-shadow": "0 1px 7px rgba(0, 0, 0, 0.63)",
                 "padding-top": "0px",
-                "margin": "75px auto 75px auto",
+                "margin": "25px auto 0px auto",
             }),
 ])

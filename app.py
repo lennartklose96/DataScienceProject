@@ -14,7 +14,7 @@ external_stylesheets = ["https://codepen.io/chriddyp/pen/bWLwgP.css"]
 
 # Global button style
 button_style = {
-    "border": "1px solid black",
+    #"border": "1px solid black",
     "padding": "8px 15px",
     "border-radius": "5px",
     "text-decoration": "none",
@@ -61,7 +61,7 @@ app.layout = html.Div([
     html.Div([
 
         dcc.Link("Home", href="/", 
-            style={"border": "1px solid black",
+            style={#"border": "1px solid black",
                     "padding": "8px 15px",
                     "border-radius": "5px",
                     "text-decoration": "none",
@@ -84,7 +84,7 @@ app.layout = html.Div([
             placeholder="UBA",
             id="germany-dropdown1",
             style={"width": "100px",
-                    "border": "1px solid black",
+                    #"border": "1px solid black",
                     "border-radius": "5px",
                     "text-decoration": "none",
                     "color": "black",
@@ -100,7 +100,7 @@ app.layout = html.Div([
             placeholder="Weather",
             id="events-dropdown2",
             style={"width": "140px",
-                   "border": "1px solid black",
+                   #"border": "1px solid black",
                     "border-radius": "5px",
                     "text-decoration": "none",
                     "color": "black",
@@ -116,7 +116,7 @@ app.layout = html.Div([
             placeholder="Holidays",
             id="events-dropdown3",
             style={"width": "140px",
-                   "border": "1px solid black",
+                   #"border": "1px solid black",
                     "border-radius": "5px",
                     "text-decoration": "none",
                     "color": "black",
@@ -132,7 +132,7 @@ app.layout = html.Div([
             placeholder="International",
             id="events-dropdown4",
             style={"width": "190px", 
-                   "border": "1px solid black",
+                   #"border": "1px solid black",
                     "border-radius": "5px",
                     "text-decoration": "none",
                     "color": "black",
@@ -154,7 +154,7 @@ app.layout = html.Div([
                     "color": "black",
                     "align-items":"center",
                     "justify-content": "center",
-                    "box-shadow": "0 5px 30px rgba(0, 0, 0, 0.63)",
+                    "box-shadow": "0 1px 7px rgba(0, 0, 0, 0.63)",
                     "position": "sticky",
                     "top":"0",
                     "z-index": "1000"}),
