@@ -95,12 +95,12 @@ layout = html.Div(children=[
             "Comparing Germany with other European countries helps to understand how severe air pollution levels are in Germany relative to its neighbors. "
             "In addition, future research could explore the underlying reasons for differences in air pollution levels between these countries, "
             "particularly by examining domestic factors and environmental policy measures. "
-            ]),
+            ], style={"font-size": "18px"}),
         ],style={"margin": "10px 30px 0px 30px"}),
         
         # Data description
         html.Div([
-            html.H6("Used Data"),
+            html.H4("Used Data"),
             html.P([
                 "The Air Quality data for Germany were derived from an API provided by the German Environmental Agency (Umweltbundesamt), whereas "
                 "for the other countries we collected data through the OpenAQ API. The datasets include measurements of PM\u2081\u2080, PM\u2082.\u2085, and NO₂. "
@@ -108,15 +108,15 @@ layout = html.Div(children=[
                 "Each dataset contains a timestamp (date) and the corresponding pollutant concentration value in µg/m³."
                 "“It should be noted that not all countries had continuous measurements between 2016 and 2026. Moreover, Italy and Romania did not have enough PM\u2082.\u2085 measurements"
                 "to provide meaningful results. "
-            ]),
+            ], style={"font-size": "18px"}),
         ],style={"margin": "10px 30px 0px 30px"}),
 
         # Visualization description
         html.Div([
-            html.H6("Visualization"),
+            html.H4("Visualization"),
             html.P([
             "TODO"
-            ]),
+            ], style={"font-size": "18px"}),
         ],style={"margin": "10px 30px 10px 30px"}),
     ], style={
                 "display": "flex",
@@ -237,7 +237,7 @@ layout = html.Div(children=[
         html.H4("Interpretation",style={"margin": "10px 30px 0px 30px"}),
         html.P([
             "TODO"
-        ],style={"margin": "10px 30px 10px 30px"})
+        ],style={"margin": "10px 30px 10px 30px", "font-size": "18px"})
     ], style={
                 "display": "flex",
                 "flex-direction": "column",

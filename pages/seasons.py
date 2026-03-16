@@ -85,25 +85,25 @@ layout = html.Div([
                 "We wanted to explore how air pollution varies across seasons. "
                 "Perhaps there is a correlation between the season or how polluted it is, "
                 "or maybe certain months favor certain pollutants."
-            ]),
+            ], style={"font-size": "18px"}),
         ],style={"margin": "10px 30px 0px 30px"}),
         # Data description
         html.Div([
-            html.H6("Used Data"),
+            html.H4("Used Data"),
             html.P([
                 "Daily air quality data for the pollutants were obtained "
                 "obtained from the Umweltbundesamt API. "
                 "The data was aggregated into seasonal averages to facilitate comparisons."
-            ])
+            ], style={"font-size": "18px"})
         ],style={"margin": "10px 30px 0px 30px"}), 
 
         # Visualization description
         html.Div([
-            html.H6("Visualization"),
+            html.H4("Visualization"),
             html.P([
                 "The bar chart shows the mean concentration of the selected pollutant per season. "
                 "The pie chart shows the relative distribution of the pollutant across seasons."
-            ])
+            ], style={"font-size": "18px"})
         ],style={"margin": "10px 30px 10px 30px"}),
     ], style={
                 "display": "flex",
@@ -177,7 +177,7 @@ layout = html.Div([
             html.Span(["NO", html.Sub("2")]), 
             ". Summer however tends to be relatively clean. This effect is a bit less pronounced for the "
             "fine dust particles, but still observable."
-        ],style={"margin": "10px 30px 10px 30px"})
+        ],style={"margin": "10px 30px 10px 30px", "font-size": "18px"})
     ], style={
                 "display": "flex",
                 "flex-direction": "column",

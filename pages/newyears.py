@@ -98,24 +98,24 @@ layout = html.Div([
                 "Due to this we suspected that the air quality might get worse immediately on January "
                 "1st, and the remainder of the month. To answer how the pollution behaves during this "
                 "timeframe, we compare the yearly average pollution means with the pollution in January."
-            ]),
+            ], style={"font-size": "18px"}),
         ],style={"margin": "10px 30px 0px 30px"}),
 
         # Data description
         html.Div([
-            html.H6("Used Data"),
+            html.H4("Used Data"),
             html.P([
                     "Daily air quality data for the pollutants were obtained "
                     "obtained from the Umweltbundesamt API. "
                     "The data was then selected for the months of January, specifically "
                     "also the values for January 1st, and also aggregated yearly, where  "
                     "we calculated the mean values."
-            ]),
+            ], style={"font-size": "18px"}),
         ],style={"margin": "10px 30px 0px 30px"}),
 
         # Visualization description
         html.Div([
-            html.H6("Visualization"),
+            html.H4("Visualization"),
             html.P([
                 "The first visualization shows the distribution of ",
                 html.Span(["PM", html.Sub("10")]),
@@ -127,7 +127,7 @@ layout = html.Div([
                 html.Br(),
                 "The second visualization compares the values on January 1st with the yearly average means."
 
-            ]),
+            ], style={"font-size": "18px"}),
         ],style={"margin": "10px 30px 10px 30px"}),
     ], style=div_margin),
 
@@ -227,7 +227,7 @@ layout = html.Div([
             html.Span(["NO", html.Sub("2")]),
             " however, there doesn't seem to be a significant difference. On a few years the value tends to be lower on January 1st, "
             "perhaps attributed to the fact that people stayed home celebrating."
-        ],style={"margin": "10px 30px 10px 30px"})
+        ],style={"margin": "10px 30px 10px 30px", "font-size": "18px"})
     ],style=div_margin)
 ])
 

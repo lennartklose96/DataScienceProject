@@ -112,13 +112,13 @@ layout = html.Div([
             "unique opportunity to analyze how human activity influences air pollution "
             "levels. Investigating the relationship between COVID-19 restrictions and "
             "air quality can help better understand the impact of human behavior on "
-            "environmental conditions."
-            ]),
+            "environmental conditions.",
+            ], style={"font-size": "18px"}),
         ],style={"margin": "10px 30px 0px 30px"}),
 
         # Data description
         html.Div([
-            html.H6("Used Data"),
+            html.H4("Used Data"),
             html.P([
                 "This study uses publicly available air quality data provided by the German "
                 "Environment Agency (Umweltbundesamt). The dataset includes measurements of "
@@ -129,16 +129,16 @@ layout = html.Div([
                 "These datasets enable the analysis of temporal changes in air pollution levels "
                 "and allow comparisons between different time periods, including the COVID-19 "
                 "pandemic."
-            ]),
+            ], style={"font-size": "18px"}),
         ],style={"margin": "10px 30px 0px 30px"}),
 
         # Visualization description
         html.Div([
-            html.H6("Visualization"),
+            html.H4("Visualization"),
             html.P([
             "The graph shows the daily and annual PM\u2081\u2080, PM\u2082.\u2085, and NO₂ values from 2019 to "
             "the end of 2021 and their corresponding regression lines. "
-            ]),
+            ], style={"font-size": "18px"}),
         ],style={"margin": "10px 30px 10px 30px"}),
     ], style={
                 "display": "flex",
@@ -212,7 +212,7 @@ layout = html.Div([
                 "box-shadow": "0 1px 7px rgba(0, 0, 0, 0.63)",
                 "background-color":"white",
                 "min-height":"auto",
-                "margin": "25px auto 255px auto",
+                "margin": "25px auto 25px auto",
                 }),
 
     # Interpretation
@@ -225,7 +225,7 @@ layout = html.Div([
             "appears moderate, and pollution levels show strong daily fluctuations, "
             "indicating that additional factors such as weather conditions also influence "
             "air quality."
-        ],style={"margin": "10px 30px 10px 30px"})
+        ],style={"margin": "10px 30px 10px 30px", "font-size": "18px"})
     ], style={
                 "display": "flex",
                 "flex-direction": "column",

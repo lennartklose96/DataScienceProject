@@ -47,6 +47,7 @@ layout = html.Div([
                         "padding": "25px",
                         "padding-top": "0px",
                         "margin": "0px",
+                        "font-size": "18px"
                     })
         ], style={
             "margin-bottom": "40px"
@@ -58,7 +59,8 @@ layout = html.Div([
                 html.Div([
                         html.H4("UBA API"),
                         html.P("This is where you can access all data related to the " \
-                        "measuring stations in Germany."),
+                        "measuring stations in Germany.", 
+                        style={"font-size": "18px"}),
                         html.Div(
                             html.A(
                                 html.Button("Open", style={
@@ -86,7 +88,8 @@ layout = html.Div([
                 html.Div([
                         html.H4("Weather API"),
                         html.P("Here, you can select the weather data for the chosen time " \
-                        "period and, if desired, specific cities you’d like to view."),
+                        "period and, if desired, specific cities you’d like to view.", 
+                        style={"font-size": "18px"}),
                         html.Div(
                             html.A(html.Button("Open", style={
                             "backgroundColor": "rgb(53, 167, 187)",
@@ -111,7 +114,8 @@ layout = html.Div([
                 # Holiday API cell + button
                 html.Div([
                         html.H4("Holiday API"),
-                        html.P("The API returns the holidays for each federal state."),
+                        html.P("The API returns the holidays for each federal state.", 
+                               style={"font-size": "18px"}),
                         html.Div(
                             html.A(html.Button("Open", style={
                             "backgroundColor": "rgb(53, 167, 187)",
@@ -137,7 +141,8 @@ layout = html.Div([
                 html.Div([
                         html.H4("Comparison API"),
                         html.P("Here, just like with the UBA API, you can access data on " \
-                        "air pollution levels in other countries."),
+                        "air pollution levels in other countries.", 
+                        style={"font-size": "18px"}),
                         html.Div(
                             html.A(html.Button("Open", style={
                             "backgroundColor": "rgb(53, 167, 187)",
@@ -194,7 +199,8 @@ layout = html.Div([
                     "preprocessed in order to remove incomplete records and unnecessary " \
                     "attributes. After this preparation step, the relevant information was " \
                     "stored as CSV files, which are then used for the " \
-                    "visualizations and analyses presented in this project."),
+                    "visualizations and analyses presented in this project.",
+                    style={"font-size": "18px"}),
                 ],
 
                 style={
@@ -252,7 +258,6 @@ layout = html.Div([
                     "background-color":  "rgb(53, 167, 187)",
                     "padding": "25px",
                     "border-radius": "3px",
-                    "border": "1px solid black",
                     "padding-top": "0px"
                 }),
 
@@ -284,7 +289,6 @@ layout = html.Div([
                     "background-color":  "rgb(53, 167, 187)",
                     "padding": "25px",
                     "border-radius": "3px",
-                    "border": "1px solid black",
                     "padding-top": "0px"
                 }),
 
@@ -317,7 +321,6 @@ layout = html.Div([
                     "background-color":  "rgb(53, 167, 187)",
                     "padding": "25px",
                     "border-radius": "3px",
-                    "border": "1px solid black",
                     "padding-top": "0px"
                 }),
 
@@ -350,7 +353,6 @@ layout = html.Div([
                     "background-color":  "rgb(53, 167, 187)",
                     "padding": "25px",
                     "border-radius": "3px",
-                    "border": "1px solid black",
                     "padding-top": "0px"
                 }),
 
@@ -383,19 +385,27 @@ layout = html.Div([
                     }),
             html.P("Each measurement station in the dataset is described by several " \
             "attributes that provide information about its location, operational period, "
-            "and classification within the monitoring network. Important attributes include:"),
-            html.P("⦁ Station identification: station id, station code, station name"),
+            "and classification within the monitoring network. Important attributes include:",
+                    style={"font-size": "18px"}),
+            html.P("⦁ Station identification: station id, station code, station name",
+                    style={"font-size": "18px"}),
             html.P("⦁ Location information: city, street, street number, ZIP code, " \
-            "longitude, latitude"),
-            html.P("⦁ Operational information: active from, active to"),
-            html.P("⦁ Network information: network id, network code, network name"),
+            "longitude, latitude",
+                    style={"font-size": "18px"}),
+            html.P("⦁ Operational information: active from, active to",
+                    style={"font-size": "18px"}),
+            html.P("⦁ Network information: network id, network code, network name",
+                    style={"font-size": "18px"}),
             html.P("⦁ Station classification: station type, station setting (e.g. urban, " \
-            "suburban, rural)"),
+            "suburban, rural)",
+                    style={"font-size": "18px"}),
             html.P("Together with the pollutant measurements, these attributes allow us to " \
             "analyze spatial patterns, compare different types of monitoring stations, and " \
-            "examine regional differences in air pollution levels across Germany."),
+            "examine regional differences in air pollution levels across Germany.",
+                    style={"font-size": "18px"}),
             html.P("The attributes we considered important for our research questions are as " \
-            "follows:"),
+            "follows:",
+                    style={"font-size": "18px"}),
         ], style={
                 "padding": "25px",
                 "padding-top": "0px",
@@ -407,13 +417,14 @@ layout = html.Div([
         html.Div([
             
                 # top row, left
-                html.Div([html.H2("PM₁₀", style={"font-size": "20px"}),
+                html.Div([html.H2("PM₁₀", style={"font-size": "25px"}),
 
                         html.P("PM₁₀ refers to particulate matter with a diameter of 10 " \
                         "micrometers or smaller. These particles originate from sources such " \
                         "as road traffic, industrial processes, and natural sources like " \
                         "dust. Due to their small size, they can enter the respiratory " \
-                        "system and affect human health."),
+                        "system and affect human health.",
+                        style={"font-size": "18px"}),
                     ], style={
                         "grid-row": "span 1",
                         "background-color": "#ffffff",
@@ -425,13 +436,14 @@ layout = html.Div([
                     }),
 
                 # top row, middle
-                html.Div([html.H2("PM₂.₅", style={"font-size": "20px"}),
+                html.Div([html.H2("PM₂.₅", style={"font-size": "25px"}),
                           
                         html.P("PM₂.₅ consists of even finer particles with a diameter of " \
                         "2.5 micrometers or smaller. They are mainly produced by combustion " \
                         "processes, such as vehicle emissions, heating systems, and power " \
                         "plants. Because of their extremely small size, these particles " \
-                        "can penetrate deep into the lungs and even enter the bloodstream.")
+                        "can penetrate deep into the lungs and even enter the bloodstream.",
+                        style={"font-size": "18px"})
                     ], style={
                         "background-color": "#ffffff",
                         "padding": "25px",
@@ -442,13 +454,14 @@ layout = html.Div([
                     }),
 
                 # top row, right
-                html.Div([html.H2("NO₂", style={"font-size": "20px"}),
+                html.Div([html.H2("NO₂", style={"font-size": "25px"}),
                           
                         html.P("Nitrogen dioxide is a gaseous air pollutant primarily " \
                         "produced by combustion processes, especially from road traffic "
                         "and industrial activities. High concentrations of NO₂ can irritate " \
                         "the respiratory system and contribute to the formation of other " \
-                        "pollutants such as ozone and particulate matter.")
+                        "pollutants such as ozone and particulate matter.",
+                        style={"font-size": "18px"})
                     ], style={
                         "background-color": "#ffffff",
                         "padding": "25px",
