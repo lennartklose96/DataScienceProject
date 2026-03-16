@@ -54,6 +54,7 @@ layout = html.Div([
 
         # Lower section: Grid with 4 cells for the different APIs
         html.Div([
+                # UBA API cell + button
                 html.Div([
                         html.H4("UBA API"),
                         html.P("This is where you can access all data related to the " \
@@ -81,6 +82,7 @@ layout = html.Div([
                         "height": "auto"
                     }),
 
+                # Weather API cell + button
                 html.Div([
                         html.H4("Weather API"),
                         html.P("Here, you can select the weather data for the chosen time " \
@@ -106,6 +108,7 @@ layout = html.Div([
                         "height": "auto"
                     }),
 
+                # Holiday API cell + button
                 html.Div([
                         html.H4("Holiday API"),
                         html.P("The API returns the holidays for each federal state."),
@@ -130,6 +133,7 @@ layout = html.Div([
                         "height": "auto"
                     }),
 
+                # Comparison API cell + button
                 html.Div([
                         html.H4("Comparison API"),
                         html.P("Here, just like with the UBA API, you can access data on " \
@@ -178,7 +182,7 @@ layout = html.Div([
 
     html.Div([
 
-            # Large box on the left
+            # Text on the left
             html.Div([
                     html.H2("Our Data", style={"font-size": "30px"}),
 
@@ -200,7 +204,7 @@ layout = html.Div([
                     "padding-top": "0px"
                 }),
 
-            # Box on the right (top)
+            # Box on the right (top) for API request
             html.Div([
                 html.Details([
             html.Summary("UBA API request", style={
@@ -252,7 +256,7 @@ layout = html.Div([
                     "padding-top": "0px"
                 }),
 
-            # Box on the right (middle - top)
+            # Box on the right (middle - top) for API request
             html.Div(
                 [
                    html.Details([
@@ -284,7 +288,7 @@ layout = html.Div([
                     "padding-top": "0px"
                 }),
 
-            # Box on the right (middle - bottom)
+            # Box on the right (middle - bottom) for API request
             html.Div(
                 [
                    html.Details([
@@ -317,7 +321,7 @@ layout = html.Div([
                     "padding-top": "0px"
                 }),
 
-            # Box on the right (bottom)
+            # Box on the right (bottom) for API request
             html.Div(
                 [
                    html.Details([
