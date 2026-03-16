@@ -11,16 +11,34 @@ import numpy as np
 ### Constants ###
 #################
 
-PM10_LABEL = "PM\u2081\u2080"   # PM₁₀
-PM25_LABEL = "PM\u2082.\u2085"  # PM₂.₅
-NO2_LABEL = "NO\u2082"          # NO₂
+PM10_LABEL = "PM\u2081\u2080"
+PM25_LABEL = "PM\u2082.\u2085"
+NO2_LABEL = "NO\u2082"
 
 # Dictionary for labels per pollutant
 POLLUTANT_LABELS = {
-    "PM10": PM10_LABEL,   # PM₁₀
-    "PM2.5": PM25_LABEL,  # PM₂.₅
-    "NO2":  NO2_LABEL     # NO₂
+    "PM10": PM10_LABEL,
+    "PM2.5": PM25_LABEL,
+    "NO2":  NO2_LABEL
 }
+
+###############
+### Styling ###
+###############
+
+# For the main container divs
+div_margin = {
+                "display": "flex",
+                "flex-direction": "column",
+                "border-radius": "3px",
+                "border": "1px solid black",
+                "box-shadow": "0 5px 30px rgba(0, 0, 0, 0.63)",
+                "background-color":"white",
+                "min-height":"auto",
+                "margin": "40px auto 75px auto",
+            }
+
+
 
 ###########################
 ### Initialize Dash app ###
@@ -50,6 +68,17 @@ for name, df in data.items():
     else:
         df["date start"] = pd.to_datetime(df["date start"])
 
+# Available years
+years = sorted(data["PM10"]["date start"].dt.year.unique())
+
+# Getting data from january first
+jan1_data = {}
+
+for name, df in data.items():
+    jan1_data[name] = df[
+        (df["date start"].dt.month == 1) &
+        (df["date start"].dt.day == 1)
+    ]
 
 ##################
 ### App layout ###
@@ -89,16 +118,7 @@ layout = html.Div([
                 "TODO"
             ]),
         ],style={"margin": "10px 30px 10px 30px"}),
-    ], style={
-                "display": "flex",
-                "flex-direction": "column",
-                "border-radius": "3px",
-                "border": "1px solid black",
-                "box-shadow": "0 5px 30px rgba(0, 0, 0, 0.63)",
-                "background-color":"white",
-                "min-height":"auto",
-                "margin": "40px auto 75px auto",
-                }),
+    ], style=div_margin),
 
     html.Div([
         # Controls
@@ -147,16 +167,7 @@ layout = html.Div([
                 "display": "flex",
                 "gap": "20px",
                 }),
-    ], style={
-                "display": "flex",
-                "flex-direction": "column",
-                "border-radius": "3px",
-                "border": "1px solid black",
-                "box-shadow": "0 5px 30px rgba(0, 0, 0, 0.63)",
-                "background-color":"white",
-                "min-height":"auto",
-                "margin": "75px auto 75px auto",
-                }),
+    ], style=div_margin),
 
     # Interpretation
     html.Div([
@@ -164,22 +175,54 @@ layout = html.Div([
         html.P([
             "TODO"
         ],style={"margin": "10px 30px 10px 30px"})
-    ], style={
-                "display": "flex",
-                "flex-direction": "column",
-                "border-radius": "3px",
-                "border": "1px solid black",
-                "box-shadow": "0 5px 30px rgba(0, 0, 0, 0.63)",
-                "background-color":"white",
-                "min-height":"auto",
-                "margin": "75px auto 75px auto",
-                }),
+    ],style=div_margin),
 
+    ####################
+    ### Second graph ###
+    ####################
+
+    html.Div([
+        # Controls
+        html.Div([
+            html.Div([
+                html.Label("Select year"),
+                dcc.Dropdown(
+                    id="newyears_year-select",
+                    options=[{"label": str(y), "value": y} for y in years],
+                    value= years[0],
+                    clearable=False,
+                    searchable=False,
+                    style={"width": "200px"}
+                ),
+            
+            ]),
+        ], style={"display": "flex", "gap": "40px", "margin": "30px 30px 0px 30px"}),
+
+        # Graphs
+        html.Div([
+            dcc.Graph(id="newyears_comparison-graph", style={"width": "100%"}),
+        ], style={
+                "display": "flex",
+                "gap": "20px",
+                }),
+    ], style=div_margin),
+
+    # Interpretation
+    html.Div([
+        html.H4("Interpretation",style={"margin": "10px 30px 0px 30px"}),
+        html.P([
+            "TODO"
+        ],style={"margin": "10px 30px 10px 30px"})
+    ],style=div_margin)
 ])
 
 #################
 ### Callbacks ###
 #################
+
+# -----------
+# Scatterplot
+# -----------
 
 @callback(
     Output("newyears_pollutant-graph", "figure"),
@@ -235,6 +278,63 @@ def update_graph(selected_pollutants, selected_averages):
         xaxis_title="Year",
         yaxis_title="Concentration (µg/m³)",
         hovermode="closest"
+    )
+
+    return fig
+
+
+# ---------
+# Bar chart
+# ---------
+
+@callback(
+    Output("newyears_comparison-graph", "figure"),
+    Input("newyears_year-select", "value")
+)
+
+def update_graph_2(selected_year):
+
+    # Pollutants
+    pollutants = ["PM10", "PM2.5", "NO2"]
+
+    jan_values = []
+    yearly_values = []
+    labels = []
+
+    # Getting the relevant data
+    for pollutant in pollutants:
+
+        jan_df = jan1_data[pollutant]
+        jan_val = jan_df[jan_df["date start"].dt.year == selected_year]["value"].mean()
+
+        yearly_df = data[pollutant + "yearly"]
+        yearly_val = yearly_df[yearly_df["date start"].dt.year == selected_year]["value"].mean()
+
+        jan_values.append(jan_val)
+        yearly_values.append(yearly_val)
+        labels.append(POLLUTANT_LABELS[pollutant])
+
+    # Creating figure
+    fig = go.Figure()
+
+    # Adding labels
+    fig.add_trace(go.Bar(
+        x=labels,
+        y=jan_values,
+        name="January 1st"
+    ))
+
+    fig.add_trace(go.Bar(
+        x=labels,
+        y=yearly_values,
+        name="Yearly average"
+    ))
+
+    # Updating more labels and title
+    fig.update_layout(
+        title=f"January 1 vs Yearly Average Pollution [{selected_year}]",
+        yaxis_title="Concentration (µg/m³)",
+        barmode="group"
     )
 
     return fig
