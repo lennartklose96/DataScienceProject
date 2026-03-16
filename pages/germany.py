@@ -241,9 +241,3 @@ def update_graph(time_period, pollutants):
     )
 
     return fig
-
-options=[
-                    {"label": POLLUTANT_LABELS["PM10"], "value": "PM10"},
-                    {"label": POLLUTANT_LABELS["PM2.5"], "value": "PM2.5"},
-                    {"label": POLLUTANT_LABELS["NO2"], "value": "NO2"}
-                ],
