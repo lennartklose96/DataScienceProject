@@ -13,6 +13,7 @@ numpy = "*"
 gunicorn = "*"
 plotly-express = "*"
 dash-ag-grid = "*"
+scikit-learn = "*"
 
 [dev-packages]
 
