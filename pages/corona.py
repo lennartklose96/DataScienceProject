@@ -6,6 +6,9 @@ from dash import callback, Input, Output
 import plotly.express as px
 import plotly.graph_objects as go
 import numpy as np
+from scipy import stats
+from sklearn.linear_model import LinearRegression
+
 
 # Labels for pollutants
 PM10_LABEL = "PM\u2081\u2080"   # PM₁₀
@@ -265,29 +268,82 @@ def update_graph(time_period, pollutants):
             )
         )
 
-    for p in pollutants:
-        df = data_corona[time_period][p]
-        # Regression
-        if len(df) > 1:  # mindestens 2 Punkte
-            x_num = df["date start"].map(pd.Timestamp.toordinal)
-            y = df["value"]
+    # Regression
+        if len(df) > 1:
 
-            n_points = len(df)
-            if n_points <= 20:
-                deg = min(1, n_points - 1)
-            else:
-                deg = 1
+            # X vorbereiten (muss 2D sein für sklearn!)
+            X_raw = df["date start"].map(pd.Timestamp.toordinal).values
+            X = (X_raw - X_raw.min()).reshape(-1, 1)
+            y = df["value"].values
 
-            coeff = np.polyfit(x_num, y, deg)
-            poly = np.poly1d(coeff)
-            y_reg = poly(x_num)
+            # Modell
+            model = LinearRegression()
+            model.fit(X, y)
 
+            # Vorhersage
+            y_pred = model.predict(X)
+
+            # Koeffizienten
+            slope = model.coef_[0]
+            intercept = model.intercept_
+
+            if time_period == "daily":
+                factor = 1
+                unit = "day"
+
+            elif time_period == "monthly":
+                factor = 30
+                unit = "month"
+
+            elif time_period == "yearly":
+                factor = 365
+                unit = "year"
+
+            slope_adjusted = slope * factor
+
+            # --- Confidence Interval ---
+            n = len(y)
+            y_mean = np.mean(y)
+            residuals = y - y_pred
+
+            # Standardfehler
+            s_err = np.sqrt(np.sum(residuals**2) / (n - 2))
+
+            # t-Wert (95% CI)
+            t_val = stats.t.ppf(0.975, df=n-2)
+
+            # Konfidenzintervall berechnen
+            x_mean = np.mean(X)
+            conf = t_val * s_err * np.sqrt(
+                1/n + (X - x_mean)**2 / np.sum((X - x_mean)**2)
+            )
+
+            upper = y_pred + conf.flatten()
+            lower = y_pred - conf.flatten()
+
+            # --- Plot ---
             fig.add_trace(
                 go.Scatter(
                     x=df["date start"],
-                    y=y_reg,
+                    y=y_pred,
                     mode="lines",
-                    name=LABEL_MAP[p] + " trend",
+                    name=f"{LABEL_MAP[p]} trend<br>"
+                    f"(slope={slope_adjusted:.4f}, CI≈[{lower.mean():.2f},{upper.mean():.2f}])",
+                    line=dict(width=3)
+                )
+            )
+
+            # Confidence Band
+            fig.add_trace(
+                go.Scatter(
+                    x=list(df["date start"]) + list(df["date start"][::-1]),
+                    y=list(upper) + list(lower[::-1]),
+                    fill="toself",
+                    fillcolor="rgba(0,0,0,0.1)",
+                    line=dict(color="rgba(255,255,255,0)"),
+                    hoverinfo="skip",
+                    showlegend=True,
+                    name=f"{LABEL_MAP[p]} CI <br>"
                 )
             )
 
