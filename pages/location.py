@@ -7,6 +7,10 @@ import plotly.express as px
 import plotly.graph_objects as go
 import numpy as np
 
+# Labels for pollutants
+PM10_LABEL = "PM\u2081\u2080"
+PM25_LABEL = "PM\u2082.\u2085"
+NO2_LABEL = "NO\u2082"
 
 ###########################
 ### Initialize Dash app ###
@@ -71,25 +75,23 @@ pollutants={"PM10","PM2.5","NO2"}
 ##################
 
 layout = html.Div([
+    
+    ######################
+    ### First question ###
+    ######################
 
+    # Research question
     html.Div([
-        ######################
-        ### First question ###
-        ######################
-
-        # Title
-        #html.H2("Air Pollution Levels by Area Type"),
-
-        # Research question
         html.Div([
-            #html.H3("Research Question"),
             html.H4([
-                "How does air pollution vary across urban, suburban and rural areas?"
+                "How does air pollution for " + PM10_LABEL +  " vary across urban, suburban and rural areas?"
             ], style={
                 "font-size": "30px"
             }),
             html.P([
-                "TODO"
+                "Urban areas are naturally more populated than suburban and rural areas. On the other hand, "
+                "rural areas typically have agricultural emissions that might affect the air quality. To find out "
+                "the differences in pollution we compared data based on the monitoring station's location."
             ], style={"font-size": "18px"}),
         ],style={"margin": "10px 30px 0px 30px"}),
 
@@ -97,7 +99,10 @@ layout = html.Div([
         html.Div([
             html.H4("Used Data"),
             html.P([
-                "TODO"
+                "Daily air quality data for " + PM10_LABEL +  " was obtained from the Umweltbundesamt "
+                "API. For this process, each station had an attribute, that specified "
+                "in what kind of location the station is in - urban, suburban or rural. The data "
+                "was then aggregated into daily and monthly means for each of the different locations."
             ], style={"font-size": "18px"}),
         ],style={"margin": "10px 30px 0px 30px"}),
 
@@ -105,7 +110,8 @@ layout = html.Div([
         html.Div([
             html.H4("Visualization"),
             html.P([
-                "TODO"
+                "This visualization shows daily or monthly values for the past ten years for " + PM10_LABEL +
+                " based on the chosen location type. Additionally it also displays the trend line."
             ], style={"font-size": "18px"}),
         ],style={"margin": "10px 30px 10px 30px"}),
     ], style={
@@ -119,10 +125,12 @@ layout = html.Div([
                 "margin": "25px auto 25px auto",
                 }),
 
+    # Visualization
     html.Div([
         # Controls (time period + area type)
         html.Div([
 
+            # Time period
             html.Div([
                 html.Label("Select Time Period"),
                 dcc.Dropdown(
@@ -138,8 +146,9 @@ layout = html.Div([
                 ),
             ]),
 
+            # Location type
             html.Div([
-                html.Label("Select Area Type"),
+                html.Label("Select Location Type"),
                 dcc.Dropdown(
                     id="location_area-dropdown",
                     options=[
@@ -154,20 +163,16 @@ layout = html.Div([
                     style={"width": "200px"}
                 ),
             ]),
-
         ], style={
             "display": "flex",
             "gap": "40px",
             "margin": "30px 30px 0px 30px"
         }),
 
+        # Graph
         html.Div([
-            # Graph
             dcc.Graph(id="location_pollution-graph" , style={"width": "100%"}),
-        ], style={
-                "display": "flex",
-                "gap": "20px",
-                }),
+        ], style={"display": "flex","gap": "20px",}),
     ], style={
                 "display": "flex",
                 "flex-direction": "column",
@@ -183,7 +188,10 @@ layout = html.Div([
     html.Div([
         html.H4("Interpretation",style={"margin": "10px 30px 0px 30px"}),
         html.P([
-            "TODO"
+            "The different station types vary in intensity exactly like we expected them to. The more populated "
+            "areas have a higher amount of concentration, meaning that the population amount does contribute to "
+            "the amount of air pollution. The lines all follow the same pattern, indicating that pollution patterns "
+            "are consistent between different location types."
         ],style={"margin": "10px 30px 10px 30px","font-size": "18px"})
     ], style={
                 "display": "flex",
@@ -200,20 +208,18 @@ layout = html.Div([
     ### Second question ###
     #######################
 
-    # Title for second section
-    #html.H2("Air Pollution Levels by Area Type and Source"),
-
+    # Research question
     html.Div([
-        # Research question
         html.Div([
-            #html.H3("Research Question"),
             html.H4([
-                "How does air pollution vary between background, traffic and industrial monitoring stations?"
+                "How does air pollution for " + PM10_LABEL + " vary between background, traffic and industrial monitoring stations?"
             ], style={
                 "font-size": "30px"
             }),
             html.P([
-                "TODO"
+                "Different areas in the country contribute differently to air pollution. To find out just how intense those differences "
+                "are, we checked different station locations. For this we examined stations located near roads, near the industrial areas "
+                "and in background environmental areas with low population and traffic. "
             ], style={"font-size": "18px"}),
         ],style={"margin": "10px 30px 0px 30px"}),
 
@@ -221,7 +227,11 @@ layout = html.Div([
         html.Div([
             html.H4("Used Data"),
             html.P([
-                "TODO"
+                "Daily air quality data for " + PM10_LABEL +  " was obtained from the Umweltbundesamt "
+                "API. For this process, each station had an attribute, that specified "
+                "what kind of station type collected the data. Those types included industry, traffic and "
+                "background monitoring stations. Additionally, we also filtered for the location once again. The data "
+                "was then aggregated monthly means for each of the different station types and locations."
             ], style={"font-size": "18px"}),
         ],style={"margin": "10px 30px 0px 30px"}),
 
@@ -229,7 +239,8 @@ layout = html.Div([
         html.Div([
             html.H4("Visualization"),
             html.P([
-                "TODO"
+                "This visualization shows monthly values for the past ten years for " + PM10_LABEL +
+                " based on the chosen station types and the location. Additionally it also displays the trend line."
             ], style={"font-size": "18px"}),
         ],style={"margin": "10px 30px 10px 30px"}),
     ], style={
@@ -243,12 +254,14 @@ layout = html.Div([
                 "margin": "25px auto 25px auto",
                 }),
 
+    # Visualization
     html.Div([
-        # Controls (area type + source)
+        # Controls
         html.Div([
 
+            # Location type
             html.Div([
-                html.Label("Select Area Type"),
+                html.Label("Select Location Type"),
                 dcc.Dropdown(
                     id="location_area-dropdown-2",
                     options=[
@@ -263,8 +276,9 @@ layout = html.Div([
                 ),
             ]),
 
+            # Station type 
             html.Div([
-                html.Label("Select Pollutants"),
+                html.Label("Select Station Type"),
                 dcc.Dropdown(
                     id="location_source-dropdown-2",
                     options=[
@@ -279,7 +293,6 @@ layout = html.Div([
                     style={"width": "200px"}
                 ),
             ]),
-
         ], style={
             "display": "flex",
             "gap": "40px",
@@ -308,7 +321,10 @@ layout = html.Div([
     html.Div([
         html.H4("Interpretation",style={"margin": "10px 30px 0px 30px"}),
         html.P([
-            "TODO"
+            "Overall, across all different location types, the industry and traffic monitoring stations "
+            "shows a significantly higher amount of " + PM10_LABEL + " concentration. This aligns with out intiial "
+            "expectations, although traffic and industry are somewhat close when it comes to pollution. This shows "
+            "just how much of an impact big production factories and car traffic have an effect on our air quality."
         ],style={"margin": "10px 30px 10px 30px", "font-size": "18px"})
     ], style={
                 "display": "flex",
@@ -326,6 +342,10 @@ layout = html.Div([
 #################
 ### Callbacks ###
 #################
+
+######################
+### First question ###
+######################
 
 @callback(
     Output("location_pollution-graph", "figure"),
@@ -381,6 +401,11 @@ def update_graph(time_period, pollutants):
     )
 
     return fig
+
+
+#######################
+### Second question ###
+#######################
 
 @callback(
     Output("location_pollution-graph-2", "figure"),

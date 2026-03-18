@@ -1,10 +1,11 @@
-import pandas as pd
 import dash
-from dash import dcc
 from dash import html
-from dash import callback, Input, Output
-import plotly.express as px
-import plotly.graph_objects as go
+
+
+# Labels for pollutants
+PM10_LABEL = "PM\u2081\u2080"
+PM25_LABEL = "PM\u2082.\u2085"
+NO2_LABEL = "NO\u2082"
 
 dash.register_page(__name__, path = "/")
 
@@ -56,8 +57,8 @@ layout = html.Div([
             html.Div([
                     html.H2("UBA", 
                             style={"font-size": "30px", "margin": "20px 30px 0px 30px"}),
-                    html.P("⦁ How did the average values of PM₁₀, PM₂.₅ and NO₂ change in "\
-                           "Germany?",
+                    html.P("⦁ How did the average values of " + PM10_LABEL + ", " + PM25_LABEL + " and "\
+                           + NO2_LABEL + " change in Germany?",
                            style={"margin": "10px 30px 0px 30px", "font-size": "18px"}),
                     html.P("⦁ How does air pollution in Germany behave around New Years?",
                            style={"margin": "10px 30px 0px 30px", "font-size": "18px"}),
@@ -67,10 +68,10 @@ layout = html.Div([
                     html.P("⦁ How does the air quality vary between the different german "\
                            "federal states?",
                            style={"margin": "10px 30px 0px 30px", "font-size": "18px"}),
-                    html.P("⦁ How does air pollution vary across urban, suburban and rural "\
+                    html.P("⦁ How does air pollution for " + PM10_LABEL + " vary across urban, suburban and rural "\
                            "areas?",
                            style={"margin": "10px 30px 0px 30px", "font-size": "18px"}),
-                    html.P("⦁ How does air pollution vary between background, traffic and "\
+                    html.P("⦁ How does air pollution for " + PM10_LABEL + " vary between background, traffic and "\
                            "industrial monitoring stations?",
                            style={"margin": "10px 30px 0px 30px", "font-size": "18px"}),
                     html.P("⦁ How do seasonal changes influence the pollution concentrations"\
@@ -107,7 +108,7 @@ layout = html.Div([
                     html.H2("Holidays", 
                             style={"font-size": "30px", "margin": "20px 30px 0px 30px"}),
                     html.P("⦁ How did summer school holidays in German federal states affect "\
-                           "PM₁₀ and PM₂.₅ concentrations over the past ten years?",
+                           + PM10_LABEL +" and " + PM25_LABEL + " concentrations over the past ten years?",
                            style={"margin": "10px 30px 0px 30px", "font-size": "18px"})
             ], style={
                     "background-color": "#ffffff",
