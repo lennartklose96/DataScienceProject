@@ -101,7 +101,9 @@ layout = html.Div([
                 "font-size": "30px"
             }),
             html.P([
-                "TODO"
+                "As the different german states naturally have different geographical locations, "
+                "we were curious how the air quality in those state differ, and what might cause those "
+                " differences, if any are applicable."
             ], style={"font-size": "18px"}),
         ],style={"margin": "10px 30px 0px 30px"}),
 
@@ -109,7 +111,10 @@ layout = html.Div([
         html.Div([
             html.H4("Used Data"),
             html.P([
-                "TODO"
+                "Daily air quality data for the pollutants were obtained from the Umweltbundesamt "
+                "API. For this process, each station had a region code, that specified "
+                "which federal state the station is in. The data was then aggregated into "
+                "daily and monthly means for each state."
             ], style={"font-size": "18px"}),
         ],style={"margin": "10px 30px 0px 30px"}),
 
@@ -117,7 +122,9 @@ layout = html.Div([
         html.Div([
             html.H4("Visualization"),
             html.P([
-                "TODO"
+                "The visualization shows the concentration of the selected pollutant for the various "
+                "states over time. The time period can be selected to limit it to a certain year range "
+                "and specific months."
             ], style={"font-size": "18px"}),
         ],style={"margin": "10px 30px 10px 30px"}),
     ], style={
@@ -165,8 +172,8 @@ layout = html.Div([
                 dcc.Dropdown(
                     id="states_state-selector",
                     options=[{"label": country_labels[c], "value": c} for c in countries],
-                    value=["schleswig-holstein", "berlin", "bayern", "sachsen"],    
-                    multi=True,
+                    value=["schleswig-holstein", "berlin", "bayern"],    
+                    multi = True,
                     searchable = False,
                     placeholder="Select states"
                 ),
@@ -235,7 +242,11 @@ layout = html.Div([
     html.Div([
         html.H4("Interpretation",style={"margin": "10px 30px 0px 30px"}),
         html.P([
-            "TODO"
+            "While there are absolute differences in the raw amount of concentration, the overall pattern "
+            "remains the same across all federal states. This seems to either suggest that the air particles "
+            "travel far enough that the measurements affect the entire country, and perhaps we cannot tell "
+            "if the states are truly meaningfully different when it comes to polluting the air. Alternative, perhaps "
+            "everyone follows certain patterns where the amount of air pollution spikes."
         ],style={"margin": "10px 30px 10px 30px", "font-size": "18px"})
     ], style={
                 "display": "flex",
@@ -265,6 +276,25 @@ layout = html.Div([
 def update_graph(selected_year, selected_month, selected_mode, selected_pollutant, selected_states):
 
     fig = go.Figure()
+    # Assign a color to each state
+    state_colors = {
+        "baden-württemberg": "#636EFA",
+        "bayern": "#EF553B",
+        "berlin": "#00CC96",
+        "brandenburg": "#AB63FA",
+        "bremen": "#FFA15A",
+        "hamburg": "#19D3F3",
+        "hessen": "#FF6692",
+        "mecklenburg-vorpommern": "#B6E880",
+        "niedersachsen": "#FF97FF",
+        "nordrhein-westfalen": "#FECB52",
+        "rheinland-pfalz": "#636EFA",
+        "saarland": "#EF553B",
+        "sachsen": "#43DD24",
+        "sachsen-anhalt": "#AB63FA",
+        "schleswig-holstein": "#FFA15A",
+        "thüringen": "#19D3F3",
+    }
 
     ##################
     ### Select DFs ###
@@ -295,14 +325,25 @@ def update_graph(selected_year, selected_month, selected_mode, selected_pollutan
                     x=filtered_df_month["date start"],
                     y=filtered_df_month["value"],
                     mode="lines",
-                    name=country_labels[country]
+                    name=country_labels[country],
+                    line=dict(color=state_colors[country])
                 )
             )
         
+    # Updating axis and titles
     fig.update_layout(
-            title=f"Air Pollution [{selected_pollutant[:2]}<sub>{selected_pollutant[2:]}</sub>] in german federal states",
-            xaxis_title="Time",
-            yaxis_title=f"{selected_pollutant[:2]}<sub>{selected_pollutant[2:]}</sub> concentration (µg/m³)"
+        title=f"Air Pollution [{selected_pollutant[:2]}<sub>{selected_pollutant[2:]}</sub>] in german federal states",
+        xaxis_title="Time",
+        yaxis_title=f"{selected_pollutant[:2]}<sub>{selected_pollutant[2:]}</sub> concentration (µg/m³)",
+        # Fixed values so the visualization doesn't change size with new selections
+        yaxis=dict(range=[0, 40]),
+        legend=dict(
+            x=1.02,
+            y=1,
+            xanchor="left",
+            yanchor="top"
+        ),
+        margin=dict(r=200)
     )
 
     return fig
