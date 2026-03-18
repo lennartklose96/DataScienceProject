@@ -91,7 +91,7 @@ layout = html.Div([
         html.Div([
             html.H4("Used Data"),
             html.P([
-                "Daily air quality data for the pollutants were obtained "
+                "Daily air quality data for the pollutants were "
                 "obtained from the Umweltbundesamt API. "
                 "The data was aggregated into seasonal averages to facilitate comparisons."
             ], style={"font-size": "18px"})

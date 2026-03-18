@@ -51,7 +51,7 @@ data = {
     }
 }
 
-
+# Creating yearly columns for the pollutants
 for period_name, period in data.items():
     for df in period.values():
 
@@ -68,22 +68,19 @@ pollutants={"PM10","PM2.5","NO2"}
 ##################
 
 layout = html.Div([
-
+    # Research question
     html.Div([
-
-        # Title
-        #html.H2("Air Pollution Germany"),
-
-        # Research question
         html.Div([
-            #html.H3("Research Question"),
             html.H4([
                 "How did the average values of PM₁₀, PM₂.₅ and NO₂ change in Germany?"
             ], style={
                 "font-size": "30px"
             }),
             html.P([
-            "TODO"
+            "Our world is ever-changing. As such it would also make sense that the concentration of air pollution "
+            "has been changing over the past ten years. In this question, we want to see how the concentration "
+            "has changed and developed, and what could be attributed to this change."
+              
             ], style={"font-size": "18px"}),
         ],style={"margin": "10px 30px 0px 30px"}),
 
@@ -91,7 +88,9 @@ layout = html.Div([
         html.Div([
             html.H4("Used Data"),
             html.P([
-                "TODO"
+                "Daily air quality data for the pollutants were obtained "
+                "from the Umweltbundesamt API. The data was aggregated "
+                "into daily, monthly and yearly means to facilitate comparisons."
             ], style={"font-size": "18px"}),
         ],style={"margin": "10px 30px 0px 30px"}),
 
@@ -99,7 +98,9 @@ layout = html.Div([
         html.Div([
             html.H4("Visualization"),
             html.P([
-            "TODO"
+            "The visualization shows the mean pollution across all monitoring stations in Germany "
+            "for the past ten years. Daily, monthly and yearly intervals can be chosen. "
+            "A trend line also shows how the concenctration of pollution has developed."
             ], style={"font-size": "18px"}),
         ],style={"margin": "10px 30px 10px 30px"}),
 
@@ -113,12 +114,11 @@ layout = html.Div([
                 "min-height":"auto",
                 "margin": "25px auto 25px auto",
                 }),
-
+                
+    # Layout for the visualization
     html.Div([
-
         # Controls
         html.Div([
-
             html.Div([
                 html.Label("Select Time Period"),
                 dcc.Dropdown(
@@ -134,7 +134,6 @@ layout = html.Div([
                     style={"width": "200px"}
                 ),
             ]),
-
             html.Div([
                 html.Label("Select Pollutants"),
                 dcc.Dropdown(
@@ -160,6 +159,7 @@ layout = html.Div([
                 "display": "flex",
                 "gap": "20px"
                 }),
+    # Style for the visualization section
     ], style={
                 "display": "flex",
                 "flex-direction": "column",
@@ -175,7 +175,12 @@ layout = html.Div([
     html.Div([
         html.H4("Interpretation",style={"margin": "10px 30px 0px 30px"}),
         html.P([
-            "TODO"
+            "We can see that while the pollution for fine dust particles remains fairly "
+            "constant, there is a small declining trend visible. For " + NO2_LABEL +
+            " specifically however, there is a strong downwards trend, indicating "
+            "that the overall air quality has been increasing over the past 10 years." 
+            "One cause for this could be a general push for environmental awareness and "
+            "concious decisionmaking that improves our overall air quality."
         ],style={"margin": "10px 30px 10px 30px", "font-size": "18px"})
     ],style={
                 "display": "flex",
@@ -209,9 +214,8 @@ def update_graph(time_period, pollutants):
                 name=POLLUTANT_LABELS[p]
             )
         )
-
-                # Regression
-        if len(df) > 1:  # mindestens 2 Punkte
+        # Regression
+        if len(df) > 1:  # requires a minimum of two points
             x_num = df["date start"].map(pd.Timestamp.toordinal)
             y = df["value"]
 

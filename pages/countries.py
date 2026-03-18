@@ -78,19 +78,13 @@ for c in COUNTRIES:
 
 layout = html.Div(children=[
     
+    # Research question
     html.Div([
-    #Title    
-        #html.H2("Air Pollution in different Countries"),
-
-        #Research question
         html.Div([
-            #html.H3("Research Question"),
             # The actual question
             html.H4([
                 "How does Germany compare to other countries in terms of the daily and monthly average concentrations of PM₁₀, PM₂.₅, and NO₂"
-            ], style={
-                "font-size": "30px"
-            }),
+            ], style={"font-size": "30px"}),
             # Description of why it is interesting and relevant
             html.P([
             "Comparing Germany with other European countries helps to understand how severe air pollution levels are in Germany relative to its neighbors. "
@@ -118,7 +112,7 @@ layout = html.Div(children=[
             html.P([
             "The first graph shows the recorded pollutant concentrations in µg/m³ for the listed countries over time. " 
             "The box plot illustrates how the countries differ in terms of their recorded air pollution levels. "
-            ]),
+            ], style={"font-size": "18px"}),
         ],style={"margin": "10px 30px 10px 30px"}),
     ], style={
                 "display": "flex",
@@ -131,9 +125,9 @@ layout = html.Div(children=[
                 "margin": "25px auto 25px auto",
                 }),
 
+    # Layout for the visualization
     html.Div([
         html.Div([
-            # Controls (time period + pollutants)
             html.Div([
 
                 html.Div([
@@ -281,7 +275,7 @@ layout = html.Div(children=[
             "(automotive) industry, etc could explain these "
             "international differences."
             
-        ],style={"whiteSpace": "pre-line", "margin": "10px 30px 10px 30px"})
+        ],style={"whiteSpace": "pre-line", "margin": "10px 30px 10px 30px", "font-size": "18px"})
     ], style={
                 "display": "flex",
                 "flex-direction": "column",

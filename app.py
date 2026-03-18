@@ -1,10 +1,7 @@
-import pandas as pd
 import dash
 from dash import dcc
 from dash import html
 from dash import callback, Input, Output
-import plotly.express as px
-import plotly.graph_objects as go
 
 ###############
 ### Styling ###
@@ -14,7 +11,6 @@ external_stylesheets = ["https://codepen.io/chriddyp/pen/bWLwgP.css"]
 
 # Global button style
 button_style = {
-    #"border": "1px solid black",
     "padding": "8px 15px",
     "border-radius": "5px",
     "text-decoration": "none",
@@ -58,11 +54,11 @@ server = app.server
 
 app.layout = html.Div([
 
+    # Nagivation bar
     html.Div([
-
+        # Home button
         dcc.Link("Home", href="/", 
-            style={#"border": "1px solid black",
-                    "padding": "8px 15px",
+            style={ "padding": "8px 15px",
                     "border-radius": "5px",
                     "text-decoration": "none",
                     "background-color": "#ffffff",
@@ -70,8 +66,10 @@ app.layout = html.Div([
                     "height":"22px"}
         ),
 
+        # Data button
         dcc.Link("Data", href="/data", style=button_style),
 
+        # UBA dropdown
         dcc.Dropdown(
             options=[
                 {"label": "Trends in Germany", "value": "/germany"},
@@ -84,7 +82,6 @@ app.layout = html.Div([
             placeholder="UBA",
             id="germany-dropdown1",
             style={"width": "100px",
-                    #"border": "1px solid black",
                     "border-radius": "5px",
                     "text-decoration": "none",
                     "color": "black",
@@ -93,6 +90,7 @@ app.layout = html.Div([
                     searchable=False
         ),
 
+        # Weather dropdown
         dcc.Dropdown(
             options=[
                 {"label": "Weather", "value": "/weather"}
@@ -100,7 +98,6 @@ app.layout = html.Div([
             placeholder="Weather",
             id="events-dropdown2",
             style={"width": "140px",
-                   #"border": "1px solid black",
                     "border-radius": "5px",
                     "text-decoration": "none",
                     "color": "black",
@@ -109,6 +106,7 @@ app.layout = html.Div([
                     searchable=False
         ),
 
+        # Holiday dropdown
         dcc.Dropdown(
             options=[
                 {"label": "Summer Holidays", "value": "/holiday"}
@@ -116,7 +114,6 @@ app.layout = html.Div([
             placeholder="Holidays",
             id="events-dropdown3",
             style={"width": "140px",
-                   #"border": "1px solid black",
                     "border-radius": "5px",
                     "text-decoration": "none",
                     "color": "black",
@@ -125,14 +122,15 @@ app.layout = html.Div([
                     searchable=False
         ),
 
+        # Countries dropdown
         dcc.Dropdown(
             options=[
                 {"label": "Other Countries", "value": "/countries"}
             ],
             placeholder="International",
             id="events-dropdown4",
-            style={"width": "190px", 
-                   #"border": "1px solid black",
+            style={
+                "width": "190px", 
                     "border-radius": "5px",
                     "text-decoration": "none",
                     "color": "black",
@@ -141,8 +139,9 @@ app.layout = html.Div([
                     searchable=False
         ),
 
+        # About button
         dcc.Link("About", href="/about", style=button_style),
-
+    # Styling for the nagivation bar
     ], style={"display": "flex", 
                     "gap": "20px", 
                     "margin": "0px",
@@ -162,7 +161,12 @@ app.layout = html.Div([
     dcc.Location(id="url"),
 
     dash.page_container
-]),
+])
+
+
+#################
+### Callbacks ###
+#################
 
 @callback(
     Output("url", "pathname"),
@@ -172,11 +176,12 @@ app.layout = html.Div([
     Input("events-dropdown4", "value"),
     prevent_initial_call=True
 )
-def navigate_page(v1, v2, v3, v4):
 
+def navigate_page(v1, v2, v3, v4):
     for v in [v1, v2, v3, v4]:
         if v:
             return v
+        
 ###################
 ### Run the APP ###
 ###################

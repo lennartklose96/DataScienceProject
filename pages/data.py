@@ -1,19 +1,12 @@
-import pandas as pd
 import dash
-from dash import dcc
 from dash import html
-from dash import callback, Input, Output
-import plotly.express as px
-import plotly.graph_objects as go
 
+# Initialize Dash page
 dash.register_page(__name__)
 
 layout = html.Div([
-    html.Div(
-
-    # entire section
-    [
-
+    # Entire section
+    html.Div([
         # Top section: Description
         html.Div([
                 html.H2(
@@ -219,6 +212,7 @@ layout = html.Div([
             "margin-bottom": "-15px"
         }),
 
+# This weird formatting is necessary for the page to look right
             html.Pre(
 """GET https://luftdaten.umweltbundesamt.de/api/air-data/v4/measures/json
 

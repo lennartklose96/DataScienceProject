@@ -92,13 +92,9 @@ for c in countries:
 
 layout = html.Div([
 
+    # Research question
     html.Div([
-        # Title
-        #html.H2("Air Quality in different German States"),
-
-        # Research question
         html.Div([
-            #html.H3("Research Question"),
             html.H4([
                 "How does the air quality vary between the different german federal states?"
             ], style={
@@ -135,12 +131,14 @@ layout = html.Div([
                 "margin": "25px auto 25px auto",
                 }),
 
+    # Visualization
     html.Div([
         # Controls
         html.Div([
-
+            
+            # Time selection
             html.Div([
-                html.Label("Select Time Mode"),
+                html.Label("Select Time Period"),
                 dcc.RadioItems(
                     id="states_date-mode",
                     options=["Monthly", "Daily"],
@@ -148,6 +146,7 @@ layout = html.Div([
                 ),
             ], style={"margin-right": "40px"}),
 
+            # Pollutant seleciton
             html.Div([
                 html.Label("Select Pollutant"),
                 dcc.RadioItems(
@@ -160,6 +159,18 @@ layout = html.Div([
                     value="PM10"
                 ),
             ], style={"margin-right": "40px"}),
+            # State selection
+            html.Div([
+                html.Label("Select States"),
+                dcc.Dropdown(
+                    id="states_state-selector",
+                    options=[{"label": country_labels[c], "value": c} for c in countries],
+                    value=["schleswig-holstein", "berlin", "bayern", "sachsen"],    
+                    multi=True,
+                    searchable = False,
+                    placeholder="Select states"
+                ),
+            ], style={"margin-right": "40px"})
 
         ], style={"display": "flex", "gap": "40px", "margin": "30px 30px 0px 30px"}),
 
@@ -248,23 +259,28 @@ layout = html.Div([
     Input("states_year-slider", "value"),
     Input("states_month-slider", "value"),
     Input("states_date-mode", "value"),
-    Input("states_pollutant-mode", "value")
+    Input("states_pollutant-mode", "value"),
+    Input("states_state-selector", "value")
 )
-def update_graph(selected_year, selected_month, selected_mode, selected_pollutant):
+def update_graph(selected_year, selected_month, selected_mode, selected_pollutant, selected_states):
 
     fig = go.Figure()
 
     ##################
     ### Select DFs ###
     ##################
-        
+    
+    # Choose the correct data frame
     if selected_mode == "Daily":
         data = daily_data[selected_pollutant].items()
     else:
         data = monthly_data[selected_pollutant].items()
 
-    
-    for country, df in data:
+    # Displaying every relevant country
+    for country, df in data:            
+            # Ignore countries that are not selected
+            if country not in selected_states:
+                continue
 
             df["date start"] = pd.to_datetime(df["date start"])
             df["year"] = df["date start"].dt.year
