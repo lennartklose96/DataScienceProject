@@ -34,7 +34,7 @@ layout = html.Div([
 
     html.Div([
         # second text-section
-        html.P("Essentially, the data provided by the Federal Environment Agency (UBA) forms " \
+        html.P("Essentially, the data provided by the Umweltbundesamt (UBA) forms " \
             "the foundation for all of our questions. Below, we have therefore categorized " \
             "our research questions to indicate whether additional APIs were used. The " \
             "left-hand side shows questions that rely exclusively on the data provided by " \
