@@ -39,15 +39,8 @@ dash.register_page(__name__)
 layout = html.Div([
 
     html.Div([
-        # Title
-        #html.H2([
-        #    "Air Quality and Weather in Major German Cities"
-        #]),
-
-        # Research question
         html.Div([
-            #html.H3("Research Question"),
-            # The actual question
+        # Research question
             html.H4([
                 "How did temperature and precipitation influence ",
                 html.Span(["PM", html.Sub("10")]),
@@ -125,17 +118,19 @@ layout = html.Div([
                 ),
             ], style={"margin-right": "40px", "width": "200px"}),
 
-            # Weather variable radio buttons
+            # Weather variable selection
             html.Div([
                 html.Label("Select Weather Variable:"),
-                dcc.RadioItems(
+                dcc.Dropdown(
                     id="weather_dropdown",
                     options=[
                         {"label": "Peak Temperature", "value": "peak_temperature"},
                         {"label": "Precipitation", "value": "precipitation_mm"}
                     ],
-                    value="peak_temperature",
-                    labelStyle={"display": "inline-block", "margin-right": "20px"}
+                    value=["peak_temperature"], 
+                    multi=True,
+                    searchable=False,
+                    clearable=False
                 )
             ])
         ],
@@ -193,6 +188,16 @@ def update_combined_graph(selected_year, selected_weather):
 
     # Filter data
     df_filtered = df_weather[df_weather["year"] == selected_year].sort_values("month")
+    # Labels for the title
+    selected_labels = [weather_labels[w] for w in selected_weather]
+    # Dynamic title creation
+    title_text = " & ".join(selected_labels)
+
+    # Color for the graph
+    weather_colors = {
+        "peak_temperature": "#f54033",
+        "precipitation_mm": "#1f77b4"
+    }
 
     fig_weather = go.Figure()
     
@@ -213,33 +218,38 @@ def update_combined_graph(selected_year, selected_weather):
     ))
 
     # Add weather line trace
-    fig_weather.add_trace(go.Scatter(
-        x=df_filtered["month"],
-        y=df_filtered[selected_weather],
-        name=weather_labels[selected_weather],
-        mode="lines+markers",
-        line=dict(color="#f54033", width=3),
-        yaxis="y2"
-    ))
+    for weather_var in selected_weather:
+        fig_weather.add_trace(go.Scatter(
+            x=df_filtered["month"],
+            y=df_filtered[weather_var],
+            name=weather_labels[weather_var],
+            mode="lines+markers",
+            line=dict(color=weather_colors[weather_var], width=3),
+            yaxis="y2"
+        ))
 
     # Define fixed ranges for second y-axis
-    if selected_weather == "peak_temperature":
-        y2_range = [0, 40]  # fixed temperature range
-    else:  # precipitation_mm
-        y2_range = [0, 10]  # fixed precipitation range
+    if "peak_temperature" in selected_weather and "precipitation_mm" in selected_weather:
+        y2_range = [0, 40]
+    elif "peak_temperature" in selected_weather:
+        y2_range = [0, 40]
+    elif "precipitation_mm" in selected_weather:
+        y2_range = [0, 10]
+    else:
+        y2_range = None
 
     # Update layout
     fig_weather.update_layout(
-        title=f"Air Quality & {weather_labels[selected_weather]} [{selected_year}]",
+        title=f"Air Quality & {title_text} [{selected_year}]",
         title_x=0.5,
         xaxis=dict(title="Month"),
         yaxis=dict(
             title="Concentration (µg/m³)",
             side="left",
-            range=[0, 30]  # fixed PM range
+            range=[0, 30]
         ),
         yaxis2=dict(
-            title=weather_labels[selected_weather],
+            title=title_text,
             overlaying="y",
             side="right",
             range=y2_range,
