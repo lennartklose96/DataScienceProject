@@ -334,12 +334,34 @@ layout = html.Div([
         }),
 
             html.Pre(
-"""GET https://www.umweltbundesamt.de/api/airdata
+"""GET https://api.openaq.org/v3/sensors/3917/measurements?limit=1
 
-{
-    "station": "Berlin",
-    "parameter": "pm10"
-}""",
+{'meta': {'name': 'openaq-api',
+  'website': '/',
+  'page': 1,
+  'limit': 1,
+  'found': '>1'},
+ 'results': [{'value': 0.043,
+   'flagInfo': {'hasFlags': False},
+   'parameter': {'id': 10, 'name': 'o3', 'units': 'ppm', 'displayName': None},
+   'period': {'label': 'raw',
+    'interval': '01:00:00',
+    'datetimeFrom': {'utc': '2016-03-06T19:00:00Z',
+     'local': '2016-03-06T12:00:00-07:00'},
+    'datetimeTo': {'utc': '2016-03-06T20:00:00Z',
+     'local': '2016-03-06T13:00:00-07:00'}},
+   'coordinates': None,
+   'summary': None,
+   'coverage': {'expectedCount': 1,
+    'expectedInterval': '01:00:00',
+    'observedCount': 1,
+    'observedInterval': '01:00:00',
+    'percentComplete': 100.0,
+    'percentCoverage': 100.0,
+    'datetimeFrom': {'utc': '2016-03-06T19:00:00Z',
+     'local': '2016-03-06T12:00:00-07:00'},
+    'datetimeTo': {'utc': '2016-03-06T20:00:00Z',
+     'local': '2016-03-06T13:00:00-07:00'}}}]}""",
                 style={
                     "background-color": "#f4f4f4",
                     "padding": "15px",

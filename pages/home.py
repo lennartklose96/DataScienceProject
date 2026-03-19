@@ -124,7 +124,7 @@ layout = html.Div([
                     html.H2("International", 
                             style={"font-size": "30px", "margin": "20px 30px 0px 30px"}),
                     html.P("⦁ How does Germany compare to other countries in terms of the "\
-                           "daily and monthly average concentrations of PM₁₀, PM₂.₅ and NO₂?",
+                           "average concentrations of PM₁₀, PM₂.₅, and NO₂?",
                            style={"margin": "10px 30px 0px 30px", "font-size": "18px"})
             ], style={
                     "background-color": "#ffffff",
