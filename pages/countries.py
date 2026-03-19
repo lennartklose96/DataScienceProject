@@ -83,7 +83,7 @@ layout = html.Div(children=[
         html.Div([
             # The actual question
             html.H4([
-                "How does Germany compare to other countries in terms of the daily and monthly average concentrations of PM₁₀, PM₂.₅, and NO₂"
+                "How does Germany compare to other countries in terms of the average concentrations of PM₁₀, PM₂.₅, and NO₂?"
             ], style={"font-size": "30px"}),
             # Description of why it is interesting and relevant
             html.P([
@@ -256,24 +256,11 @@ layout = html.Div(children=[
     html.Div([
         html.H4("Interpretation",style={"margin": "10px 30px 0px 30px"}),
         html.P([            
-            "Among the countries examined, two groups can be "
-            "distinguished, each of which is relatively homogeneous "
-            "internally in terms of the distribution of air pollution. ",
-            html.Br(), html.Br(),
-
-            "Austria, France, Germany, Spain, and the United Kingdom "
-            "have PM10 and PM2.5 levels that are below or slightly "
-            "above the average, while Italy, Poland, and Romania "
-            "show above-average levels for these pollutants. ",
-            html.Br(), html.Br(),
-
-            "Only for NO2 are the recorded concentrations "
-            "in Germany higher than the average. ",
-            html.Br(), html.Br(),
-
-            "Factors such as environmental policy, the "
-            "(automotive) industry, etc could explain these "
-            "international differences."
+            "Compared to the average across all countries, Germany's recorded "
+            "PM\u2081\u2080 and PM\u2082.\u2085 concentrations are below average. For NO₂, however, "
+            "Germany has above-average concentrations, which could be explained by "
+            "the lack of a general speed limit on the Autobahn and the continued "
+            "popularity of gasoline-powered cars. "
             
         ],style={"whiteSpace": "pre-line", "margin": "10px 30px 10px 30px", "font-size": "18px"})
     ], style={

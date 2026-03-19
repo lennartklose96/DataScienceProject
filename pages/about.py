@@ -23,8 +23,8 @@ layout = html.Div([
         }),
         # right side
         html.Div("Our group consists of four members. Lennart, Lasse, Jonas, and Finn. " \
-        "We are studying \"Business Information Technology\" (Wirtschaftsinformatik) and "
-        "Computer Science at Kiel University (CAU) in northern Germany. For most of us, "
+        "We are studying \"Business Informatics\" (Wirtschaftsinformatik) and "
+        "Computer Science at Kiel University (CAU) in Northern Germany. For most of us, "
         "this data science project is part of our fifth semester and is a required component "
         "of our bachelor’s degree."
         , style={
