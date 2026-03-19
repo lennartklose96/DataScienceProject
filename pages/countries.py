@@ -83,7 +83,7 @@ layout = html.Div(children=[
         html.Div([
             # The actual question
             html.H4([
-                "How does Germany compare to other countries in terms of the average concentrations of PM₁₀, PM₂.₅, and NO₂?"
+                "How does Germany compare to other countries in terms of the average concentrations of PM₁₀, PM₂.₅ and NO₂?"
             ], style={"font-size": "30px"}),
             # Description of why it is interesting and relevant
             html.P([
@@ -260,7 +260,7 @@ layout = html.Div(children=[
             "PM\u2081\u2080 and PM\u2082.\u2085 concentrations are below average. For NO₂, however, "
             "Germany has above-average concentrations, which could be explained by "
             "the lack of a general speed limit on the Autobahn and the continued "
-            "popularity of gasoline-powered cars. "
+            "popularity of gasoline-powered cars in Germany. "
             
         ],style={"whiteSpace": "pre-line", "margin": "10px 30px 10px 30px", "font-size": "18px"})
     ], style={
