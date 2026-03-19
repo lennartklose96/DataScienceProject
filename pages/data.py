@@ -61,7 +61,7 @@ layout = html.Div([
                             "color": "black",
                             "cursor": "pointer",
                         }),
-                                href="https://www.umweltbundesamt.de/system/files/medien/358/dokumente/schnittstellenbeschreibung_luftdaten_api_v4.pdf",
+                                href="https://luftdaten.umweltbundesamt.de/",
                                 target="_blank"
                             ), style={"margin-top": "auto"}
                         )
@@ -141,7 +141,7 @@ layout = html.Div([
                             "backgroundColor": "rgb(53, 167, 187)",
                             "color": "black",
                             "cursor": "pointer"
-                        }), href="https://openaq.org/",
+                        }), href="https://docs.openaq.org/",
                                 target="_blank"
                             ), style={"margin-top": "auto"}
                         )

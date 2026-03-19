@@ -83,7 +83,7 @@ layout = html.Div(children=[
         html.Div([
             # The actual question
             html.H4([
-                "How does Germany compare to other countries in terms of the average concentrations of PM₁₀, PM₂.₅, and NO₂?"
+                "How does Germany compare to other countries in terms of the average concentrations of PM₁₀, PM₂.₅ and NO₂?"
             ], style={"font-size": "30px"}),
             # Description of why it is interesting and relevant
             html.P([
