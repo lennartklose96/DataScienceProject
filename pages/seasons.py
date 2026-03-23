@@ -77,7 +77,8 @@ layout = html.Div([
         # Research question
         html.Div([
             html.H4([
-                "How do seasonal changes influence the pollution concentrations in Germany between 2016 and 2025?"
+                "How do seasonal changes influence the pollution concentrations in Germany "\
+                "between 2016 and 2025?"
             ], style={
                 "font-size": "30px"
             }),

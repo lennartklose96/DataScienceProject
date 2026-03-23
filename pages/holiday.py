@@ -62,11 +62,7 @@ layout = html.Div([
 
     
     html.Div([
-    # Title
-    #html.H2([
-    #    "Summer Holidays and Air Pollution"
-    #]),
-
+        
     # Research question
     html.Div([
             #html.H3("Research Question"),
