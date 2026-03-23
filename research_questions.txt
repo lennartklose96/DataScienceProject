@@ -1,21 +1,10 @@
-1. How do the average yearly values of PM10, PM2.5 and NO₂ change in Germany from 2016-2026?
-
-1.1 How did New Years Eve change the air pollution from 2016 to 2025?
-
-1.2 How did the COVID-19 pandemic affect the air pollution compared to the previous and following years?
-
-2 How much do the annual average values for PM10, PM2.5, and NO_2 differ between the federal states in the period 2016–2026?
-
-3. How do the PM10 concentration between urban, suburban and rural areas differ in the period 2016-2026?
-
-3.1 Do the data for urban, suburban, and rural measuring stations differ in terms of the positioning of the stations (background, traffic, industry) in the period 2016-2026?
-
-4. How do the PM10 concentrations vary between seasons in the years 2016 to 2026?
-
-5. How does daily maximum temperature influence PM10 and PM2.5 concentrations in major German cities between 2016 and 2026?
-
-6. How do rainfall patterns relate to changes in PM10 and PM2.5 concentrations in major German cities between 2016 and 2026?
-
-7. What is the impact of summer school holidays in the individual federal states on NO_2 concentrations in the years 2016 to 2026?
-
-(8. comparison with other countries)
+How did the average values of PM₁₀, PM₂.₅ and NO₂ change in Germany?
+How does air pollution in Germany behave around New Years?
+How did COVID-19 lockdowns and restrictions affect air pollution in Germany compared to the previous and following years?
+How does the air quality for PM₁₀ vary between the different german federal states?
+How does air pollution for PM₁₀ vary across urban, suburban and rural areas?
+How does air pollution vary between background, traffic and industrial monitoring stations?
+How do seasonal changes influence the pollution concentrations in Germany between 2016 and 2025?
+How did temperature and precipitation influence PM₁₀ and PM₂.₅ concentrations in major German cities between 2016 and 2025?
+How did summer school holidays in German federal states affect PM₁₀ and PM₂.₅ concentrations over the past ten years?
+How does Germany compare to other countries in terms of the daily and monthly average concentrations of PM₁₀, PM₂.₅ and NO₂?
