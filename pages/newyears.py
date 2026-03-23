@@ -225,7 +225,8 @@ layout = html.Div([
             "the yearly average, showing that the fireworks do drastically increase fine dust particle pollution."
             "For ",
             html.Span(["NO", html.Sub("2")]),
-            " however, there doesn't seem to be a significant difference. On a few years the value tends to be lower on January 1st, "
+            " however, there doesn't seem to be a significant difference. On a few years "\
+            "the value tends to be lower on January 1st, "
             "perhaps attributed to the fact that people stayed home celebrating."
         ],style={"margin": "10px 30px 10px 30px", "font-size": "18px"})
     ],style=div_margin)
@@ -272,23 +273,6 @@ def update_graph(selected_pollutants, selected_averages):
                 marker_color=pollutant_colors.get(name, None)
             )
         )
-        # Regression
-        """
-        if len(df) > 3:
-            x_num = df["date start"].map(pd.Timestamp.toordinal)
-            y = df["value"]
-            coeff = np.polyfit(x_num, y, 3)
-            poly = np.poly1d(coeff)
-            y_reg = poly(x_num)
-            fig.add_trace(
-                go.Scatter(
-                    x=df["date start"],
-                    y=y_reg,
-                    mode="lines",
-                    name=POLLUTANT_LABELS[name] + " trend"
-                )
-            )
-        """
 
     # Plot yearly averages with proper label
     for name in selected_averages:

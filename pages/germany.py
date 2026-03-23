@@ -209,7 +209,7 @@ def update_graph(time_period, pollutants):
     for p in pollutants:
         df = data[time_period][p]
 
-        # Balken
+        # Bars
         fig.add_trace(
             go.Bar(
                 x=df["date start"],
@@ -221,19 +221,19 @@ def update_graph(time_period, pollutants):
         # Regression
         if len(df) > 1:
 
-            # X vorbereiten (muss 2D sein für sklearn!)
+            # prepare X
             X_raw = df["date start"].map(pd.Timestamp.toordinal).values
             X = (X_raw - X_raw.min()).reshape(-1, 1)
             y = df["value"].values
 
-            # Modell
+            # modell
             model = LinearRegression()
             model.fit(X, y)
 
-            # Vorhersage
+            # prediction
             y_pred = model.predict(X)
 
-            # Koeffizienten
+            # coefficients
             slope = model.coef_[0]
             intercept = model.intercept_
 
@@ -251,18 +251,18 @@ def update_graph(time_period, pollutants):
 
             slope_adjusted = slope * factor
 
-            # --- Confidence Interval ---
+            # confidence interval
             n = len(y)
             y_mean = np.mean(y)
             residuals = y - y_pred
 
-            # Standardfehler
+            # standard error
             s_err = np.sqrt(np.sum(residuals**2) / (n - 2))
 
-            # t-Wert (95% CI)
+            # t-Value (95% CI)
             t_val = stats.t.ppf(0.975, df=n-2)
 
-            # Konfidenzintervall berechnen
+            # Calculate the confidence interval
             x_mean = np.mean(X)
             conf = t_val * s_err * np.sqrt(
                 1/n + (X - x_mean)**2 / np.sum((X - x_mean)**2)
@@ -271,7 +271,7 @@ def update_graph(time_period, pollutants):
             upper = y_pred + conf.flatten()
             lower = y_pred - conf.flatten()
 
-            # --- Plot ---
+            # Plot
             fig.add_trace(
                 go.Scatter(
                     x=df["date start"],

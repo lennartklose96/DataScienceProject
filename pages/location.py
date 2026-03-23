@@ -56,6 +56,7 @@ data2 = {
 
 AREA_MAP = {"rural": "Rural", "urban": "Urban", "suburban": "Suburban"}
 
+# Convert to a valid time format
 
 for period in data2.values():
     for df in period.values():
@@ -217,13 +218,16 @@ layout = html.Div([
     html.Div([
         html.Div([
             html.H4([
-                "How does air pollution for " + PM10_LABEL + " vary between background, traffic and industrial monitoring stations?"
+                "How does air pollution for " + PM10_LABEL + " vary between background, "\
+                "traffic and industrial monitoring stations?"
             ], style={
                 "font-size": "30px"
             }),
             html.P([
-                "Different areas in the country contribute differently to air pollution. To find out just how intense those differences "
-                "are, we checked different station locations. For this we examined stations located near roads, near the industrial areas "
+                "Different areas in the country contribute differently to air pollution. "\
+                "To find out just how intense those differences "
+                "are, we checked different station locations. For this we examined stations "\
+                "located near roads, near the industrial areas "
                 "and in background environmental areas with low population and traffic. "
             ], style={"font-size": "18px"}),
         ],style={"margin": "10px 30px 0px 30px"}),
@@ -364,7 +368,7 @@ def update_graph(time_period, pollutants):
     for p in pollutants:
         df = data[time_period][p]
 
-        # Balken
+        # Bars
         fig.add_trace(
             go.Bar(
                 x=df["date start"],
@@ -376,19 +380,19 @@ def update_graph(time_period, pollutants):
         # Regression
         if len(df) > 1:
 
-            # X vorbereiten (muss 2D sein für sklearn!)
+            # prepare X 
             X_raw = df["date start"].map(pd.Timestamp.toordinal).values
             X = (X_raw - X_raw.min()).reshape(-1, 1)
             y = df["value"].values
 
-            # Modell
+            # modell
             model = LinearRegression()
             model.fit(X, y)
 
-            # Vorhersage
+            # prediction
             y_pred = model.predict(X)
 
-            # Koeffizienten
+            # coefficients
             slope = model.coef_[0]
             intercept = model.intercept_
 
@@ -406,18 +410,18 @@ def update_graph(time_period, pollutants):
 
             slope_adjusted = slope * factor
 
-            # --- Confidence Interval ---
+            # Confidence Interval
             n = len(y)
             y_mean = np.mean(y)
             residuals = y - y_pred
 
-            # Standardfehler
+            # standard error
             s_err = np.sqrt(np.sum(residuals**2) / (n - 2))
 
-            # t-Wert (95% CI)
+            # t-Value (95% CI)
             t_val = stats.t.ppf(0.975, df=n-2)
 
-            # Konfidenzintervall berechnen
+            # Calculate the confidence interval
             x_mean = np.mean(X)
             conf = t_val * s_err * np.sqrt(
                 1/n + (X - x_mean)**2 / np.sum((X - x_mean)**2)
@@ -426,7 +430,7 @@ def update_graph(time_period, pollutants):
             upper = y_pred + conf.flatten()
             lower = y_pred - conf.flatten()
 
-            # --- Plot ---
+            # Plot 
             fig.add_trace(
                 go.Scatter(
                     x=df["date start"],
@@ -486,30 +490,6 @@ def update_graph_2(time_period, pollutants):
                 showlegend=True,
             )
         )
-
-        # Regression
-        #if len(df) > 1:  # mindestens 2 Punkte
-        #    x_num = df["date start"].map(pd.Timestamp.toordinal)
-        #    y = df["value"]
-
-        #    n_points = len(df)
-        #    if n_points <= 20:
-        #        deg = min(1, n_points - 1)
-        #    else:
-        #        deg = 1
-
-        #    coeff = np.polyfit(x_num, y, deg)
-        #    poly = np.poly1d(coeff)
-        #    y_reg = poly(x_num)
-
-        #    fig.add_trace(
-        #        go.Scatter(
-        #            x=df["date start"],
-        #            y=y_reg,
-        #            mode="lines",
-        #            name=p + " trend",
-        #        )
-        #    )
 
     fig.update_layout(
         title="Air quality over the last 10 years for PM\u2081\u2080",

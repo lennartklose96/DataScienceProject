@@ -83,13 +83,16 @@ layout = html.Div(children=[
         html.Div([
             # The actual question
             html.H4([
-                "How does Germany compare to other countries in terms of the average concentrations of PM₁₀, PM₂.₅ and NO₂?"
+                "How does Germany compare to other countries in terms of the average" \
+                "concentrations of PM₁₀, PM₂.₅ and NO₂?"
             ], style={"font-size": "30px"}),
             # Description of why it is interesting and relevant
             html.P([
-            "Comparing Germany with other European countries helps to understand how severe air pollution levels are in Germany relative to its neighbors. "
-            "In addition, future research could explore the underlying reasons for differences in air pollution levels between these countries, "
-            "particularly by examining domestic factors and environmental policy measures. "
+                "Comparing Germany with other European countries helps to understand how severe" \
+                "air pollution levels are in Germany relative to its neighbors. "
+                "In addition, future research could explore the underlying reasons for " \
+                "differences in air pollution levels between these countries, "
+                "particularly by examining domestic factors and environmental policy measures. "
             ], style={"font-size": "18px"}),
         ],style={"margin": "10px 30px 0px 30px"}),
         
@@ -97,11 +100,17 @@ layout = html.Div(children=[
         html.Div([
             html.H4("Used Data"),
             html.P([
-                "The Air Quality data for Germany were derived from an API provided by the German Environmental Agency (Umweltbundesamt), whereas "
-                "for the other countries we collected data through the OpenAQ API. The datasets include measurements of PM\u2081\u2080, PM\u2082.\u2085, and NO₂. "
-                "To analyze trends over time, the data was aggregated into daily and monthly averages. "
-                "Each dataset contains a timestamp (date) and the corresponding pollutant concentration value in µg/m³. "
-                "“It should be noted that not all countries had continuous measurements between 2016 and 2026. Moreover, Italy and Romania did not have enough PM\u2082.\u2085 measurements "
+                "The Air Quality data for Germany were derived from an API provided by the " \
+                "German Environmental Agency (Umweltbundesamt), whereas "
+                "for the other countries we collected data through the OpenAQ API. The " \
+                "datasets include measurements of PM\u2081\u2080, PM\u2082.\u2085, and NO₂. "
+                "To analyze trends over time, the data was aggregated into daily and monthly " \
+                "averages. "
+                "Each dataset contains a timestamp (date) and the corresponding pollutant " \
+                "concentration value in µg/m³. "
+                "“It should be noted that not all countries had continuous measurements between " \
+                "2016 and 2026. Moreover, Italy and Romania did not have enough PM\u2082.\u2085 " \
+                "measurements "
                 "to provide meaningful results. "
             ], style={"font-size": "18px"}),
         ],style={"margin": "10px 30px 0px 30px"}),
@@ -110,8 +119,11 @@ layout = html.Div(children=[
         html.Div([
             html.H4("Visualization"),
             html.P([
-            "The first graph shows the recorded pollutant concentrations in µg/m³ for the listed countries over time. " 
-            "The box plot illustrates how the countries differ in terms of their recorded air pollution levels. "
+            "The first graph shows the recorded pollutant concentrations in µg/m³ for the " \
+            "listed " \
+            "countries over time. " 
+            "The box plot illustrates how the countries differ in terms of their recorded air " \
+            "pollution levels. "
             ], style={"font-size": "18px"}),
         ],style={"margin": "10px 30px 10px 30px"}),
     ], style={

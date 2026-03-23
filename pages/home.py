@@ -53,7 +53,7 @@ layout = html.Div([
 
     html.Div([
 
-            # Box in the right
+            # Box on the right
             html.Div([
                     html.H2("UBA", 
                             style={"font-size": "30px", "margin": "20px 30px 0px 30px"}),
