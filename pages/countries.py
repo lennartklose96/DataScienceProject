@@ -142,6 +142,7 @@ layout = html.Div(children=[
         html.Div([
             html.Div([
 
+                # Time Period Menu
                 html.Div([
                     html.Label("Select Time Period"),
                     dcc.RadioItems(id="countries_time-period",
@@ -151,6 +152,7 @@ layout = html.Div(children=[
                         ),
                 ]),
 
+                # Pollutant Dropdown Menu
                 html.Div([
                     html.Label("Select Pollutants"),
                     dcc.Dropdown(
@@ -168,6 +170,7 @@ layout = html.Div(children=[
                     ),
                 ]),
 
+                # Countries Dropdown Menu
                 html.Div([
                     html.Label("Select Countries"),
                     dcc.Dropdown(
@@ -234,6 +237,7 @@ layout = html.Div(children=[
                 "margin": "30px auto"
             }),
             
+            # Pollution Graph 
             html.Div([
                 dcc.Graph(id="countries_pollution-graph", style={"width": "100%"}),
             ], style={
@@ -243,6 +247,7 @@ layout = html.Div(children=[
 
         ]),
     
+        # Boxplots
         html.Div([
                     
             html.Div([
@@ -319,6 +324,7 @@ def update_graph(selected_year, selected_month, selected_mode, selected_pollutan
 
         for country in selected_countries:
 
+            # country could be selected that doesnt have data (e.g. Italy, Romania for PM2.5)
             if country not in data:
                 continue
 
@@ -372,11 +378,14 @@ def update_boxplot(selected_year, selected_month, selected_mode, selected_pollut
 
         for country in selected_countries:
 
+            # country could be selected that doesnt have data (e.g. Italy, Romania for PM2.5)
             if country not in data:
                 continue
 
             df = data[country]
 
+            # copy of df necessary because country and pollutant column gets added
+            # in the following
             temp = df.copy()
 
             temp = temp[
@@ -389,9 +398,12 @@ def update_boxplot(selected_year, selected_month, selected_mode, selected_pollut
 
             df_list.append(temp)
 
+    # avoid error when no data is available 
+    # (e.g. only Italy & PM2.5 selected, Italy has no PM2.5 data)
     if not df_list:
         return go.Figure()
 
+    # add Average boxplot, data from every country selected
     combined_df = pd.concat(df_list)
 
     avg_df = combined_df.copy()
